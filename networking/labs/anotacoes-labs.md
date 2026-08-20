@@ -25,3 +25,6 @@ O NAT64: (Network Address Translation 64) permite que os dispositivos habilitado
 
 Os endereços IPv6 têm 128 bits e são escritos como uma sequência de valores hexadecimais. Cada 4 bits são representados por um único dígito hexadecimal, totalizando 32 valores hexadecimais, como mostra a Figura 1. Os endereços IPv6 não diferenciam maiúsculas e minúsculas e podem ser escritos tanto em minúsculas como em maiúsculas.
 
+<img width="1230" height="751" alt="image" src="https://github.com/user-attachments/assets/84e2b9bd-e18e-420d-8257-10135a3b3bae" />
+
+
