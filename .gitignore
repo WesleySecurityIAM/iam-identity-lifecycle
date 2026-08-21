@@ -1,0 +1,39 @@
+# Credenciais e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.kdbx
+id_rsa
+id_ed25519
+secrets/
+**/secrets/
+private/
+**/private/
+
+# Evidências brutas
+raw/
+**/raw/
+
+# Máquinas virtuais e imagens
+*.iso
+*.vdi
+*.vhd
+*.vhdx
+*.vmdk
+*.ova
+*.ovf
+
+# Arquivos temporários
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configurações locais
+.vscode/
