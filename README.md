@@ -1,4 +1,4 @@
-# Operacao de identidades e acessos — laboratorio proprio
+# Operacao de identidades e acessos — laboratorio prório
 
  
 
