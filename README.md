@@ -20,19 +20,18 @@ A entrega demonstra:
 - tratamento de erros;
 - separação entre detecção, aprovação e remediação.
 
-O script não concede nem revoga acessos automaticamente. Toda exceção exige validação da fonte, aprovação do responsável e registro em ticket.
+O script não concede nem revoga acessos automaticamente, pois uma fonte incorreta poderia propagar o erro em escala. Toda exceção exige validação da fonte, aprovação do responsável e registro em ticket antes de qualquer remediação.
 
 [Ver a entrega e as instruções de reprodução](./05-automacao/)
 
 ## Resultado atual
 
-Foram avaliadas cinco associações entre contas e grupos:
+Foram avaliadas cinco associações entre contas e grupos. Duas estavam de acordo com o esperado e três foram classificadas como exceções:
 
-- duas associações estavam de acordo com o esperado;
 - duas exigem análise para possível remoção;
 - uma exige análise para possível concessão.
 
-O relatório final contém três exceções. Nenhum acesso foi alterado.
+Nenhum acesso foi alterado.
 
 ## Tecnologias e conceitos
 
@@ -43,20 +42,7 @@ O relatório final contém três exceções. Nenhum acesso foi alterado.
 - tratamento de erros;
 - contas e grupos de segurança;
 - reconciliação de acessos;
-- menor privilégio;
 - evidências para auditoria.
-
-## Próximas etapas
-
-O laboratório será evoluído gradualmente com:
-
-- fonte autoritativa de RH;
-- casos Joiner, Mover e Leaver;
-- matriz de acessos por cargo;
-- Active Directory;
-- Microsoft Entra ID;
-- recertificação e revisão de acessos;
-- integração e automação com Microsoft Graph.
 
 ## Limitações
 
