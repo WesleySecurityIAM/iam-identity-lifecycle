@@ -6,6 +6,13 @@ As identidades de negócio e os cenários são fictícios. As operações foram 
 
 ## Entregas realizadas
 
+| Entrega | Resultado | Evidência |
+|---|---|---|
+| Reconciliação de acessos | Cinco associações avaliadas; três exceções identificadas, sem remediação automática. | [Script, CSVs e reprodução](05-automacao/) |
+| Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |
+| Operação no Entra ID | Três tickets documentados: provisionamento, recuperação de autenticação e verificação de MFA. | [IAM-001, IAM-006 e IAM-007](00-operacao-itsm/05-fila-tickets.md) |
+| Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
+
 ### Reconciliação de acessos — estado esperado versus estado atual
 
 O artefato compara associações atuais de contas e grupos com um estado esperado e produz uma lista de exceções para investigação.
@@ -51,10 +58,10 @@ Teste realizado em 11/09/2026 com `adm.wesley` no domínio `empresa.lab`:
 | IAM-006 | Incidente de autenticação | Investigação de senha expirada, recuperação e entradas posteriores bem-sucedidas. |
 | IAM-007 | Requisição de verificação de MFA | Cadastro do Authenticator e uso em uma entrada confirmados por evidências distintas. |
 
-[Ler os três tickets, evidências e limitações](tickets/05-fila-tickets.md).
+[Ler os três tickets, evidências e limitações](00-operacao-itsm/05-fila-tickets.md).
 
 ### Troubleshooting do acesso ao ADUC
 
 Diagnóstico de indisponibilidade do console, placa virtual desconectada e serviço NAT parado no host, com recuperação do ADUC observada e limitações registradas.
 
-[Ver o relato e as oito capturas](troubleshooting/2026-09-11-aduc-rede-nat/README.md).
+[Ver o relato e as oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md).

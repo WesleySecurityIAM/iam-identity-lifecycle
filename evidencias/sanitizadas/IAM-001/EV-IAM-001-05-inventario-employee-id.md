@@ -26,4 +26,3 @@ correlacionar a identidade do diretório com o respectivo registro de RH.
 - O preenchimento do atributo foi realizado manualmente no laboratório.
 - A criação da identidade é comprovada separadamente na evidência 03.
 - Não comprova associação ao grupo nem acesso ao sistema financeiro.
-

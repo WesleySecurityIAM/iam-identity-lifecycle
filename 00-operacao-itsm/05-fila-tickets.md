@@ -210,5 +210,3 @@ ou nos métodos. Não há alteração a reverter.
 Critério atendido: estado atual verificado, alterações de
 cadastro localizadas e uso de MFA comprovado.
 Nenhuma alteração de configuração foi necessária.
-
-
