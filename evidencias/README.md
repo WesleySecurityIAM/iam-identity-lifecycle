@@ -9,7 +9,14 @@ Esta pasta funciona como índice das evidências produzidas pelas entregas do la
 - [Script utilizado para reproduzir a comparação](../05-automacao/Invoke-IamReconciliation.ps1)
 - [Procedimento de execução e interpretação do resultado](../05-automacao/)
 
-## Critérios para novas evidências
+## Entregas de setembro de 2026
+
+- [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
+- [Fila IAM-001, IAM-006 e IAM-007](../tickets/05-fila-tickets.md).
+- [ADUC indisponível: diagnóstico e recuperação](../troubleshooting/2026-09-11-aduc-rede-nat/README.md).
+- [Estado da conta de serviço desabilitada](sanitizadas/conta-servico/README.md).
+
+## Cuidados na publicação
 
 - remover credenciais, tokens e dados pessoais;
 - registrar a origem, a data e o objetivo da evidência;

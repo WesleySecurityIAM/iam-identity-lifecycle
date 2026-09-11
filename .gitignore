@@ -41,3 +41,9 @@ desktop.ini
 # ---- transcricoes e dumps do PowerShell ----
 *.ps1xml
 transcript*.txt
+
+private/
+**/private/
+exportUsers*.csv
+*senhas*.txt
+*senha*.txt

@@ -1,0 +1,2 @@
+cargo,grupo,recurso,nivel_acesso,justificativa,aprovador,mfa,conflito_sod,prazo,status
+Analista Financeiro,GG_FIN_READ,Relatorios Financeiros,Leitura,Consultar relatorios da area,Gestor Financeiro,Sim,GG_FIN_APPROVE,Enquanto estiver no cargo,ATIVO

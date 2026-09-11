@@ -2,9 +2,9 @@
 
 Projeto de portfólio em desenvolvimento para praticar operação de identidades e acessos, governança, evidências e automação com PowerShell.
 
-Todos os dados são sintéticos. Nenhuma conta ou ambiente corporativo é utilizado.
+As identidades de negócio e os cenários são fictícios. As operações foram realizadas em ambientes de laboratório; nenhum ambiente corporativo é utilizado. As evidências públicas omitem credenciais e identificadores privados.
 
-## Primeira entrega concluída
+## Entregas realizadas
 
 ### Reconciliação de acessos — estado esperado versus estado atual
 
@@ -24,14 +24,50 @@ O script não concede nem revoga acessos automaticamente, pois uma fonte incorre
 
 [Ver a entrega e as instruções de reprodução](./05-automacao/)
 
-## Resultado atual
+### Resultado da reconciliação
 
 Foram avaliadas cinco associações entre contas e grupos. Duas estavam de acordo com o esperado e três foram classificadas como exceções:
 
 - duas exigem análise para possível remoção;
 - uma exige análise para possível concessão.
 
-Nenhum acesso foi alterado.
+Nenhum acesso foi alterado pelo script de reconciliação.
+
+### Delegação de redefinição de senha no Active Directory
+
+Teste realizado em 11/09/2026 com `adm.wesley` no domínio `empresa.lab`:
+
+- **Suporte:** redefinição permitida e alteração de `pwdLastSet` confirmada.
+- **Terceiros:** `Access is denied`, sem alteração de `pwdLastSet`.
+- As duas contas de teste permaneceram desabilitadas durante a validação.
+
+[Ver procedimento, resultados e três capturas](evidencias/sanitizadas/delegacao-reset-ou/README.md).
+
+### Três tickets documentados no Microsoft Entra ID
+
+| Ticket | Tipo | Resultado documentado |
+|---|---|---|
+| IAM-001 | Requisição de provisionamento | Criação de EMP0006 e associação ao `GG_FIN_READ`; conferência cadastral complementada em 10/09. |
+| IAM-006 | Incidente de autenticação | Investigação de senha expirada, recuperação e entradas posteriores bem-sucedidas. |
+| IAM-007 | Requisição de verificação de MFA | Cadastro do Authenticator e uso em uma entrada confirmados por evidências distintas. |
+
+[Ler os três tickets, evidências e limitações](tickets/05-fila-tickets.md).
+
+### Troubleshooting do acesso ao ADUC
+
+Diagnóstico de indisponibilidade do console, placa virtual desconectada e serviço NAT parado no host, com recuperação do ADUC observada e limitações registradas.
+
+[Ver o relato e as oito capturas](troubleshooting/2026-09-11-aduc-rede-nat/README.md).
+
+### Estado da conta de serviço registrado
+
+`svc_relatorio_fin` desabilitada, com responsável e finalidade registrados. Integração e autorização pendentes; IAM-005 ainda não concluído.
+
+[Ver o comprovante e a pendência de identificação do ticket](evidencias/sanitizadas/conta-servico/README.md).
+
+## Convenção de registro dos tickets
+
+Neste laboratório, o aging conta desde a abertura real. O SLA começa em Ready, após dependências e aprovações, e continua em execução. Essa é uma convenção didática, não uma regra universal. Transições sem registro histórico não são reconstruídas como se tivessem sido observadas. Aprovações simuladas são identificadas nos tickets.
 
 ## Tecnologias e conceitos
 
@@ -43,7 +79,10 @@ Nenhum acesso foi alterado.
 - contas e grupos de segurança;
 - reconciliação de acessos;
 - evidências para auditoria.
+- Active Directory, OUs e delegação de controle;
+- Microsoft Entra ID, logs de auditoria e autenticação;
+- testes de autorização permitida e negada.
 
 ## Limitações
 
-A entrega atual é introdutória e utiliza um cenário local com dados sintéticos. Ainda não existe integração com RH, Active Directory, Microsoft Entra ID, SAP ou plataforma ITSM.
+O AD e o Entra são ambientes independentes, sem sincronização híbrida. A correlação com RH é manual, e a automação de reconciliação usa arquivos CSV, sem conectores com os diretórios. Não há integração com sistema financeiro, SAP ou plataforma ITSM. Capturas e extratos documentam o escopo descrito em cada entrega; não representam uma auditoria integral do ambiente.

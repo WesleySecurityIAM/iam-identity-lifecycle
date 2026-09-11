@@ -1,0 +1,42 @@
+[
+  {
+    "original": "Captura de tela 2026-09-11 111445.png",
+    "file": "evidencias/01-aduc-servidor-nao-operacional.png",
+    "sha256": "0317D004613BAB22C119D8FBAB1EB360D3E85C4D41A8EF1C6DF58BF3C60B7C37"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 111940.png",
+    "file": "evidencias/02-dns-e-ldap-loopback-falharam.png",
+    "sha256": "96208573A65F3BFB69EEA03CC9354EBD9348068F416E917A8DDC7183C65452F8"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 112154.png",
+    "file": "evidencias/03-ethernet-desconectada-sem-listener-389.png",
+    "sha256": "E44DAFFACF83D1193FEF6EAEA2808379FF4FC989E453781FCB32734117B8C13A"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 112549.png",
+    "file": "evidencias/04-teste-ip-389-sem-conexao.png",
+    "sha256": "A4A669E40929B581192FEE4D6FF6E8F0041C92F0961D64B8D4B22DBA808DCB73"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 112913.png",
+    "file": "evidencias/05-servicos-vmware-tools-no-guest.png",
+    "sha256": "4E01DC25ACC89A1DDB26C70C15CB86A65677E069FA84124CE586F173C3275C7F"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 113014.png",
+    "file": "evidencias/06-servico-nat-parado-no-host.png",
+    "sha256": "980B645B7F5EF1A3176C6DF587C271AD05754B4C237573C8E3F5D1A5D67FEA20"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 113523.png",
+    "file": "evidencias/07-aduc-recuperado-cargo-departamento.png",
+    "sha256": "AB5B549BE678D23A6F0A1F87874DC35ECD1D2DC8DA4E2C3391364C50E87FEFF6"
+  },
+  {
+    "original": "Captura de tela 2026-09-11 113547.png",
+    "file": "evidencias/08-aduc-recuperado-matricula-ou.png",
+    "sha256": "D3E29CC2551364921E02BF8ABEC5D1272A6E8A6FBE6FCF56BADC1C7BDD4547C2"
+  }
+]
