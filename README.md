@@ -10,6 +10,7 @@ As identidades de negócio e os cenários são fictícios. As operações foram 
 |---|---|---|
 | Reconciliação de acessos | Cinco associações avaliadas; três exceções identificadas, sem remediação automática. | [Script, CSVs e reprodução](05-automacao/) |
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |
+| Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
 | Operação no Entra ID | Três tickets documentados: provisionamento, recuperação de autenticação e verificação de MFA. | [IAM-001, IAM-006 e IAM-007](00-operacao-itsm/05-fila-tickets.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
