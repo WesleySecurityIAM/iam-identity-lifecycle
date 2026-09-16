@@ -133,6 +133,7 @@ Em 15/09, horário de Brasília (UTC−03:00): primeira execução iniciou às 1
 
 ## Evidências
 
+- [Script original e instruções de reprodução](../05-automacao/IAM-005/README.md).
 - [Índice: sete capturas, resultados e limitações](../evidencias/sanitizadas/IAM-005/README.md).
 - [02 — Grupos e ACL da saída](../evidencias/sanitizadas/IAM-005/02-grupos-e-permissoes-saida.png).
 - [06 — Reexecução e testes](../evidencias/sanitizadas/IAM-005/06-reexecucao-testes-e-resultado-zero.png).
@@ -145,7 +146,7 @@ Riscos: exposição da credencial, alteração do código e acesso excessivo. Co
 ## Limitações e pendências
 
 - Conta AD tradicional, não gMSA; execução na DC01 é adaptação ao laboratório de uma VM, não arquitetura recomendada para produção.
-- Provas públicas são capturas; script final e XML da tarefa não foram exportados. O negativo testa arquivo descartável, não altera o próprio .ps1. Exclusão de arquivos e alteração de ACL não foram testadas.
+- Script fornecido após os testes e anexado sem alterações; sintaxe revisada, sem nova execução. XML da tarefa e erros brutos não anexados. O negativo testa arquivo descartável; exclusão e alteração de ACL não foram testadas.
 - GPO, tarefa e correções descritas conforme atendimento, sem exportação completa anexada. Sem cálculo de SLA.
 
 ## Fechamento

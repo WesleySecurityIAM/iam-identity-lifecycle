@@ -20,7 +20,7 @@
 
 ## Validação e limites
 
-A primeira execução gera o resumo; a segunda o atualiza. O resultado registra leitura permitida, escrita na entrada negada e alteração de arquivo descartável na pasta dos scripts negada. Os testes negativos são resultados reportados pelo script, acompanhados da identidade executora; o arquivo .ps1 final e os erros brutos não foram anexados.
+A primeira execução gera o resumo; a segunda o atualiza. O resultado registra leitura permitida, escrita na entrada negada e alteração de arquivo descartável na pasta dos scripts negada. Os testes negativos são resultados reportados pelo script, acompanhados da identidade executora; o [script fornecido após os testes](../../../05-automacao/IAM-005/README.md) foi anexado sem alterações. A sintaxe foi conferida sem nova execução; os erros brutos não foram anexados.
 
 A tarefa foi configurada com privilégios limitados e direitos de logon em lote durante o atendimento. Não há tentativa interativa/RDP anexada. Acesso de exclusão e alteração de permissões não foram testados. Desabilitar conta e tarefa não remove grupos, ACLs ou arquivos.
 
