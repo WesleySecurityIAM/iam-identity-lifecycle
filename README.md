@@ -11,7 +11,9 @@ As identidades de negócio e os cenários são fictícios. As operações foram 
 | Reconciliação de acessos | Cinco associações avaliadas; três exceções identificadas, sem remediação automática. | [Script, CSVs e reprodução](05-automacao/) |
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |
 | Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
-| Operação no Entra ID | Três tickets documentados: provisionamento, recuperação de autenticação e verificação de MFA. | [IAM-001, IAM-006 e IAM-007](00-operacao-itsm/05-fila-tickets.md) |
+| Conta de serviço no AD | Rotina executada duas vezes; escrita indevida negada e conta/tarefa desabilitadas ao final. | [IAM-005: sete provas e resultados](evidencias/sanitizadas/IAM-005/README.md) |
+| Operação no Entra ID | Provisionamento, recuperação de autenticação, MFA e pré-admissão/ativação documentados. | [Fila e evidências](00-operacao-itsm/05-fila-tickets.md) |
+| Pré-admissão e ativação da Ana | Conta bloqueada antes da admissão; ativação, grupo, troca de senha e entrada com MFA comprovados. | [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
 ### Reconciliação de acessos — estado esperado versus estado atual
@@ -51,15 +53,16 @@ Teste realizado em 11/09/2026 com `adm.wesley` no domínio `empresa.lab`:
 
 [Ver procedimento, resultados e três capturas](evidencias/sanitizadas/delegacao-reset-ou/README.md).
 
-### Três tickets documentados no Microsoft Entra ID
+### Operação documentada no Microsoft Entra ID
 
 | Ticket | Tipo | Resultado documentado |
 |---|---|---|
 | IAM-001 | Requisição de provisionamento | Criação de EMP0006 e associação ao `GG_FIN_READ`; conferência cadastral complementada em 10/09. |
 | IAM-006 | Incidente de autenticação | Investigação de senha expirada, recuperação e entradas posteriores bem-sucedidas. |
 | IAM-007 | Requisição de verificação de MFA | Cadastro do Authenticator e uso em uma entrada confirmados por evidências distintas. |
+| IAM-011 | Requisição de pré-admissão e ativação | Bloqueio em 14/09 e ativação em 15/09, com grupo, troca de senha e entrada com MFA. |
 
-[Ler os três tickets, evidências e limitações](00-operacao-itsm/05-fila-tickets.md).
+[Ler a fila, evidências e limitações](00-operacao-itsm/05-fila-tickets.md).
 
 ### Troubleshooting do acesso ao ADUC
 

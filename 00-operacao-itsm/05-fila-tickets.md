@@ -1,3 +1,15 @@
+# Fila de tickets do laboratório
+
+| Ticket | Objetivo | Resultado documentado |
+|---|---|---|
+| [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
+| [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
+| [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
+| [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
+| [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
+
+<a id="iam-001"></a>
+
 # IAM-001 — Provisionamento de identidade — EMP0006
 - Ambiente: laboratório fictício — Microsoft Entra ID Free
 - Tipo: requisição de provisionamento
@@ -33,11 +45,9 @@ conforme o registro do atendimento.
 - Inventário de usuários exportado em 2026-09-04.
 
 ## Validação
-A auditoria confirmou a criação e a associação ao grupo. O evento de
-criação registrou departamento Financeiro e conta habilitada.
+A auditoria confirmou criação, departamento Financeiro, conta habilitada e associação ao grupo. O inventário de 04/09 confirmou a identidade e a matrícula, mas não continha a coluna de cargo.
 
-O inventário confirmou EMP0006 e Felipe Gomes. A exportação não contém
-a coluna de cargo. Em 10/09/2026, a captura EV-IAM-001-06 mostra Felipe Gomes, Employee ID EMP0006, cargo Analista Financeiro e departamento Financeiro, compatíveis com o RH e a matriz. Posteriormente, na mesma data, o CSV exportado do Entra confirmou esses valores e accountEnabled=True. A evidência 07 fundamenta a conclusão da conferência cadastral; a captura 06 é complementar.
+Em 10/09, nova exportação confirmou EMP0006, Analista Financeiro, Financeiro e accountEnabled=True (evidência 07). A captura 06 é complementar.
 
 ## Teste de acesso
 Não realizado: o grupo não está integrado a uma aplicação. A evidência comprova provisionamento e associação ao grupo, sem afirmar acesso permitido ou negado ao recurso.
@@ -60,21 +70,70 @@ Se a concessão for considerada inválida, remover a associação indevida
 e avaliar o bloqueio da conta conforme o procedimento, preservando os logs.
 
 ## Limitações e pendências
-- O grupo não está vinculado ao sistema financeiro; não houve teste
-  de acesso ao recurso.
+- O grupo não está integrado ao sistema financeiro; não houve teste de acesso ao recurso.
 - A correlação entre RH e Entra foi manual.
-- A captura de 10/09 mostra valores em uma tela de edição; não contém confirmação de salvamento ou reabertura. Essa limitação da captura foi suprida, para o estado cadastral atual, pela exportação da evidência 07. Nenhuma das duas evidências comprova retroativamente o cargo em 03/09.
+- A captura 06 é uma tela de edição, sem confirmação de salvamento. O CSV 07 comprova o estado cadastral de 10/09, mas não demonstra retroativamente o cargo em 03/09.
 
 ## Fechamento
-O atendimento foi registrado como resolvido em 2026-09-04.
-Criação, Employee ID e associação ao grupo estão comprovados.
-O fechamento histórico de 04/09 permanece registrado. Em 10/09/2026, foi acrescentada evidência posterior, sem atribuí-la à data original do atendimento.
+Resolvido em 04/09/2026, com criação, matrícula e associação ao grupo comprovadas. Em 10/09, o CSV 07 concluiu REV-IAM-001-01, sem alteração de conta por esta revisão. A evidência posterior complementa a conferência cadastral e não modifica a data original do fechamento.
 
-### Complementação documental - 10/09/2026
+<a id="iam-005"></a>
 
-A captura 06 foi inicialmente usada para encerrar a revisão visual; sua limitação como tela editável foi posteriormente reconhecida. Na mesma data, o operador forneceu nova exportação do Entra. A conferência do CSV confirmou EMP0006, Analista Financeiro, Financeiro e conta habilitada (evidência 07), concluindo REV-IAM-001-01 com evidência cadastral atual. Não houve alteração de conta por esta revisão. A data original de preenchimento do cargo permanece não demonstrada, e não se declara teste de acesso ao recurso.
+# IAM-005 — Integração de conta de serviço — Relatórios financeiros
 
+- Ambiente: laboratório fictício — AD DS, VM DC01
+- Tipo: requisição de configuração e integração
+- Identidade: svc_relatorio_fin — OU Contas-de-Servico
+- Abertura: 2026-09-15
+- Status: Fechado
+- Responsável pela execução e manutenção: Wesley
+- Fechamento: 2026-09-15
 
+## Contexto e objetivo
+Executar uma rotina financeira com identidade própria e acesso limitado: ler um arquivo fictício de entrada e gerar/atualizar um resumo em pasta separada. Comprovar leitura e gravação autorizadas, negação de escritas indevidas e desativação ao terminar a demonstração.
+
+## Estado anterior
+Conta criada e desabilitada em 11/09, responsável Wesley, departamento Financeiro e integração pendente (01). Consulta de 15/09 retornou somente Domain Users, conforme resultado enviado pelo operador. A abertura deste atendimento não retroage à criação.
+
+## Aprovação e fundamento
+- Aprovação simulada do Gestor Financeiro registrada pelo operador em 15/09 para leitura da entrada e gravação da saída, sem privilégios administrativos; horário não informado.
+- Modelo: svc_relatorio_fin → GG_SVC_RELATORIO_FIN → DL_FIN_RELATORIOS_READ / DL_FIN_SAIDA_WRITE. O GG_FIN_READ dos usuários foi preservado.
+- Entrada: `C:\IAM-Lab\Relatorios-Financeiros\relatorio-teste.txt`; saída: `C:\IAM-Lab\Saidas-Relatorios-Financeiros\resumo.json`.
+- Script: `C:\IAM-Lab\Scripts-Relatorios\gerar-resumo.ps1`, com leitura/execução para a rotina e alteração reservada à administração.
+
+## Ações realizadas
+- **Concluído:** conferir cadastro/grupos, responsável e corrigir AM-005 para IAM-005 na descrição, conforme operador.
+- **Concluído:** configurar grupos e permissões da saída; habilitar leitura do script pela conta (02 e 03).
+- **Concluído:** configurar a tarefa sob svc_relatorio_fin, com RunLevel Limited, e a GPO LAB-IAM005-Logon-Servico para logon em lote e negação de logon local/RDP, conforme consultas do atendimento.
+- **Concluído:** corrigir nome divergente do script e ausência de leitura; executar e repetir os testes (04 a 06).
+- **Concluído:** desabilitar tarefa e conta, preservar provas e documentar manutenção da credencial (07).
+
+## Validação
+Em 15/09, horário de Brasília (UTC−03:00): primeira execução iniciou às 17:56:11 e gerou o resumo às 17:56:14; repetição iniciou às 18:00:35 e atualizou o resumo às 18:00:36. Ambas retornaram LastTaskResult=0. Os resumos registram EMPRESA\svc_relatorio_fin e duas linhas lidas. Estado final: tarefa Disabled e conta Enabled=False.
+
+## Teste de acesso
+- **Positivo:** leitura da entrada e criação/atualização do resumo na saída.
+- **Negativo:** criação de arquivo de teste na entrada e alteração de arquivo descartável na pasta de scripts negadas, conforme resultado do script.
+- **Logon:** configuração de restrições registrada no atendimento; não houve teste de tentativa interativa local/RDP anexado.
+
+## Evidências
+- [Índice: sete capturas, resultados e limitações](../evidencias/sanitizadas/IAM-005/README.md).
+- [02 — Grupos e ACL da saída](../evidencias/sanitizadas/IAM-005/02-grupos-e-permissoes-saida.png).
+- [06 — Reexecução e testes](../evidencias/sanitizadas/IAM-005/06-reexecucao-testes-e-resultado-zero.png).
+- [07 — Tarefa e conta desabilitadas](../evidencias/sanitizadas/IAM-005/07-estado-final-desabilitado.png).
+
+## Riscos e reversão
+Riscos: credencial exposta, alteração do código ou acesso excessivo. Tarefa e conta foram desabilitadas; grupos, ACLs e arquivos permanecem preparados. Para remover a integração, retirar concessões específicas e revisar a GPO antes de desvinculá-la. Senha deve ficar em armazenamento privado apropriado, nunca em script/Git; em nova execução, conferir validade, atualizar a credencial da tarefa se alterada e repetir os testes. Rotação não foi testada neste caso.
+
+## Limitações e pendências
+- Conta AD tradicional, não gMSA; execução na DC01 é adaptação ao laboratório de uma VM, não arquitetura recomendada para produção.
+- Provas públicas são capturas; script final e XML da tarefa não foram exportados. O negativo testa arquivo descartável, não altera o próprio .ps1. Exclusão de arquivos e alteração de ACL não foram testadas.
+- Correções e configuração de GPO/tarefa são descritas a partir do atendimento; as sete capturas anexadas não incluem exportação completa dessas configurações. Sem cálculo de SLA.
+
+## Fechamento
+Escopo demonstrativo concluído: execução com a identidade prevista, permissões positivas/negativas verificadas pelo script, repetição com sucesso e desativação final comprovadas. Manutenção de credenciais documentada; sem afirmar operação contínua ou controles não testados.
+
+<a id="iam-006"></a>
 
 # IAM-006 — Restabelecimento de login — EMP0006
 - Ambiente: laboratório fictício — Microsoft Entra ID Free
@@ -116,10 +175,10 @@ redefinição por autoatendimento indisponível para Felipe às 20:14:27Z.
 Foram confirmadas três entradas posteriores com status Êxito:
 - 20:33:27Z — My Profile.
 - 20:33:43Z — My Signins, com primeiro fator satisfeito pelo token.
-- 20:34:08Z — My Signins, com notificação de aplicativo móvel
- resultado “MFA completed in Azure AD”.
- As três entradas apresentaram status Êxito.
- O campo de código de erro não foi preenchido no CSV exportado.
+- 20:34:08Z — My Signins, com notificação de aplicativo móvel e
+  resultado “MFA completed in Azure AD”.
+
+O campo de código de erro não foi preenchido no CSV exportado.
 
 ## Evidências
 - [01 — Entradas interrompidas](../evidencias/sanitizadas/IAM-006/EV-IAM-006-01-eventos-50055.md)
@@ -147,12 +206,12 @@ Causa identificada, tratamento registrado e autenticação posterior
 bem-sucedida comprovada. Critério de resolução atendido.
 Status final registrado: Resolvido.
 
-
+<a id="iam-007"></a>
 
 # IAM-007 — Verificação de cadastro e uso de MFA — EMP0006
 - Ambiente: laboratório fictício — Microsoft Entra ID Free
 - Tipo: requisição de verificação de MFA
-- Identidade: EMP0006
+- Identidade: EMP0006 — Felipe Gomes
 - Abertura: 2026-09-08
 - Fechamento: 2026-09-08
 - Status: Resolvido
@@ -166,11 +225,6 @@ de EMP0006 e comprovar seu uso em uma entrada bem-sucedida.
 Já havia registro de uso de MFA em 2026-09-03T20:34:08Z,
 conforme a EV-IAM-006-04. Na abertura deste ticket, faltava
 verificar o método atual e localizar os eventos de cadastro.
-
-## Análise
-Foram examinadas três fontes: métodos atuais no Entra,
-auditoria das alterações de cadastro e detalhes de autenticação
-da entrada identificada no IAM-006.
 
 ## Ações realizadas
 - Consultados os métodos de autenticação em 2026-09-08.
@@ -210,3 +264,63 @@ ou nos métodos. Não há alteração a reverter.
 Critério atendido: estado atual verificado, alterações de
 cadastro localizadas e uso de MFA comprovado.
 Nenhuma alteração de configuração foi necessária.
+
+<a id="iam-011"></a>
+
+# IAM-011 — Pré-admissão e ativação — EMP0001
+- Ambiente: laboratório fictício — Microsoft Entra ID, cloud-only
+- Tipo: requisição de provisionamento
+- Identidade: EMP0001 — Ana Ribeiro
+- Abertura: 2026-09-14
+- Status: Fechado
+- Responsável pela execução: Wesley
+- Admissão: 2026-09-15
+- Fechamento: 2026-09-15
+
+## Contexto e objetivo
+Preparar Ana antes da admissão, com entrada bloqueada. Após confirmação simulada do RH e aprovação, ativar a conta, conceder o grupo previsto e validar a entrada.
+
+## Estado anterior
+A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da conta foi conferida conforme relato do operador. Em 14/09, a conta foi criada bloqueada e sem associação direta ao grupo financeiro.
+
+## Aprovação e fundamento
+- EMP0001: Analista Financeiro, Financeiro; gestor Carlos Lima. Matriz: Analista Financeiro → GG_FIN_READ.
+- Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
+- 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
+- Atualização do RH para ATIVO informada pelo operador; novo arquivo do RH não foi anexado a este fechamento.
+
+## Ações realizadas
+- **Concluído — 14/09:** conferir a identidade, criar a conta bloqueada e validar atributos/troca obrigatória (01 e 02).
+- **Concluído — 14/09:** conferir ausência direta no GG_FIN_READ e testar entrada bloqueada (03 e 04).
+- **Concluído — 15/09:** registrar confirmação e aprovação simuladas; habilitar a conta e adicionar ao GG_FIN_READ (05).
+- **Concluído — 15/09:** trocar a senha no fluxo do usuário e cadastrar as informações de autenticação exigidas (05).
+- **Concluído — 15/09:** conferir entrada positiva com MFA, preservar os dois JSONs e anexar extratos sanitizados (06).
+- **Concluído — 15/09:** revisar resultados e encerrar o atendimento.
+
+## Validação
+Horários de Brasília (UTC−03:00). Auditoria: AccountEnabled false → true às 11:30:41; inclusão no GG_FIN_READ às 11:33:44; troca de senha e ForceChangePassword True → False às 11:38:51. Cadastro do Authenticator às 11:39:49 e conclusão das informações exigidas às 11:40:18, com sucesso.
+
+## Teste de acesso
+- **Negativo:** 14/09 às 16:18:05, My Profile, 50057 — conta desabilitada.
+- **Intermediário:** 15/09 às 11:37:59, Azure Portal, 50055 — troca de senha necessária; senha correta não concluiu o login.
+- **Positivo:** 15/09 às 11:40:18, Azure Portal, errorCode=0 e MFA completed in Azure AD.
+
+## Evidências
+- [01 — Estado da pré-admissão](../evidencias/sanitizadas/IAM-011/EV-IAM-011-01-estado-pre-admissao.md).
+- [02 — Criação da conta](../evidencias/sanitizadas/IAM-011/EV-IAM-011-02-auditoria-criacao.md).
+- [03 — Grupo sem Ana na preparação](../evidencias/sanitizadas/IAM-011/EV-IAM-011-03-grupo-sem-ana.md).
+- [04 — Entrada bloqueada](../evidencias/sanitizadas/IAM-011/EV-IAM-011-04-entrada-bloqueada.md).
+- [05 — Ativação, grupo, senha e cadastro](../evidencias/sanitizadas/IAM-011/EV-IAM-011-05-ativacao-grupo-autenticacao.md).
+- [06 — Entrada positiva e MFA](../evidencias/sanitizadas/IAM-011/EV-IAM-011-06-entrada-positiva.md).
+
+## Riscos e reversão
+Risco: concessão antes da admissão ou acima do aprovado. A preparação permaneceu bloqueada e a ativação ocorreu após a aprovação registrada. Se houver cancelamento ou concessão indevida, bloquear a conta, remover acessos e avaliar/revogar sessões.
+
+## Limitações e pendências
+- Aprovações são simuladas; conferência anterior à criação e atualização do RH foram informadas pelo operador.
+- Estado após ativação comprovado por alterações auditadas e entrada, sem nova exportação cadastral anexada.
+- Cadastro do Authenticator e MFA concluído estão comprovados; o evento de entrada não detalha o método específico (null).
+- Grupo no Entra e entrada no Azure Portal não comprovam acesso ao relatório do AD ou privilégios administrativos Azure. Não há cálculo de SLA.
+
+## Fechamento
+Escopo atendido: preparação bloqueada, ativação e associação aprovadas ao grupo, troca de senha cumprida e entrada positiva com MFA comprovadas. Encerrado em 15/09/2026; os resultados se limitam ao ambiente Entra e às evidências anexadas.

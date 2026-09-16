@@ -1,6 +1,6 @@
 # Fila de tickets do laboratório
 
-[IAM-001, IAM-006 e IAM-007 — registros, evidências e limitações](05-fila-tickets.md).
+[Fila de tickets — registros, evidências, pendências e limitações](05-fila-tickets.md).
 
 [Acompanhamento documental do IAM-001](acompanhamentos.md).
 
