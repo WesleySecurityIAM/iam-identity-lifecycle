@@ -12,6 +12,7 @@ Prática de IAM com Active Directory, Microsoft Entra ID e PowerShell: provision
 | Conta de serviço no AD | Rotina executada duas vezes; escrita indevida negada e conta/tarefa desabilitadas ao final. | [IAM-005: sete provas e resultados](evidencias/sanitizadas/IAM-005/README.md) |
 | Operação no Entra ID | Provisionamento, recuperação de autenticação e verificação de MFA documentados. | [Fila e evidências](00-operacao-itsm/05-fila-tickets.md) |
 | Pré-admissão e ativação da Ana | Conta bloqueada antes da admissão; ativação, grupo, troca de senha e entrada com MFA comprovados. | [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
+| Remoção de acesso e conexão SMB | Leitura persistiu após remoção do grupo; reconexão negou acesso e restauração foi validada. | [IAM-009: seis provas](evidencias/sanitizadas/IAM-009/README.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
 [Fila de tickets: aprovações, ações e validações](00-operacao-itsm/05-fila-tickets.md) · [Índice de evidências](evidencias/README.md)

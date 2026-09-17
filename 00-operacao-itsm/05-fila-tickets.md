@@ -7,7 +7,7 @@
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
 | [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
-| [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Aberto: reprodução, retestes e restauração pendentes. |
+| [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
 <a id="iam-001"></a>
@@ -453,65 +453,60 @@ Encerrado em 17/09/2026: pedido avaliado, decisão simulada registrada e provas 
 - Tipo: incidente simulado — reprodução controlada
 - Identidade: EMP0006 — Felipe Gomes
 - Abertura: 2026-09-17
-- Status: Aberto
+- Status: Fechado
 - Responsável pela execução: Wesley
-- Fechamento: pendente
+- Fechamento: 2026-09-17
 
 ## Contexto e objetivo
 
-Comparar o acesso de Felipe ao relatório antes e depois da remoção temporária do GG_FIN_READ, usando a conexão existente e uma nova autenticação. Investigar sessão, identidade e permissões sem antecipar a causa ou afirmar persistência de acesso sem teste.
+Comparar a leitura do relatório antes/depois da remoção temporária de Felipe do GG_FIN_READ, na conexão existente e após reconexão. Restaurar o acesso original ao terminar.
 
 ## Estado anterior
 
-O IAM-008 conferiu em 17/09 Felipe no GG_FIN_READ, o GG no DL_FIN_RELATORIOS_READ e leitura/execução atribuída à DL. A leitura funcional comprovada é de 14/09. O estado inicial deste experimento ainda será coletado.
+O IAM-008 conferiu o acesso por grupo, sem permissão individual. Nesta rodada, Felipe aparece no GG_FIN_READ às 11:51:53 e lê o arquivo às 11:55:20, após conexão SMB com sua credencial (01 e 02).
 
 ## Aprovação e fundamento
 
 - Exercício solicitado por Wesley em 17/09, restrito ao laboratório.
-- Registrar autorização simulada do responsável antes de remover e restaurar temporariamente a associação de Felipe.
-- Preservar ACLs, grupos e demais membros, incluindo a conta de serviço. O RH não muda: não há desligamento nem mudança de cargo.
-- Relação com [IAM-008](#iam-008): acesso por grupo mantido; nenhuma permissão individual foi concedida.
+- Aprovação simulada — 17/09/2026, 11:50 UTC−03:00 (horário fictício do cenário): responsável autoriza remover temporariamente Felipe do GG_FIN_READ, testar as conexões e restaurar a associação ao final.
+- Escopo: Felipe e sua associação ao GG_FIN_READ; preservar ACLs e demais membros. Sem mudança no RH ou no Entra.
 
 ## Ações realizadas
 
-- **A fazer:** registrar autorização simulada e conferir o estado inicial.
-- **A fazer:** identificar as conexões SMB do cliente, autenticar como Felipe e comprovar leitura; manter a conexão de teste aberta.
-- **A fazer:** remover somente Felipe do GG_FIN_READ e comprovar a remoção.
-- **A fazer:** testar leitura pela conexão existente e registrar o resultado real.
-- **A fazer:** encerrar a conexão de teste, estabelecer nova autenticação como Felipe e retestar.
-- **A fazer:** investigar eventual acesso persistente: identidade, sessões, credenciais/tickets reutilizados e outras concessões.
-- **A fazer:** restaurar Felipe ao grupo, renovar a conexão e comprovar leitura novamente.
-- **A fazer:** anexar evidências, registrar conclusão e fechar.
+- **Concluído:** conferir grupo/compartilhamento e leitura inicial como Felipe (01 e 02).
+- **Concluído:** remover a associação conforme relato e comprovar FelipePresente=False (03).
+- **Concluído:** testar a conexão mantida; leitura ainda permitida (04).
+- **Concluído:** conferir lista vazia de conexões, reconectar como Felipe e observar leitura negada (05).
+- **Concluído:** restaurar Felipe ao grupo, desconectar/reconectar e confirmar leitura (06).
+- **Concluído:** ordenar as provas pelos horários exibidos, registrar a conclusão e a aprovação simulada.
 
 ## Validação
 
-Pendente. Registrar data/hora e fuso, máquina de cada comando, identidade usada no acesso, associação no AD e resultado de cada leitura. A identidade administrativa da consulta não é a identidade do teste SMB.
+Em 17/09, UTC−03:00: às 12:06:10 o grupo tem zero membros; às 12:07:07 a leitura continua permitida. Às 12:10:22, após nova conexão, Get-Content retorna Access is denied/PermissionDenied. Felipe reaparece no grupo às 12:12:19 e a leitura funciona após reconexão às 12:16:59.
+
+A sequência é compatível com manutenção do contexto de autorização da conexão anterior. As capturas demonstram o comportamento; não identificam o token, os tickets nem o protocolo de autenticação que o sustentaram.
 
 ## Teste de acesso
 
-- Inicial: leitura esperada como permitida; ainda não testada nesta rodada.
-- Após remoção, conexão existente: resultado a observar.
-- Após nova autenticação: negação esperada na ausência de outra concessão; investigar se houver leitura.
-- Após restauração e renovação da conexão: leitura esperada como permitida.
-
-Se a negação for imediata, registrar que a persistência não foi reproduzida. Não modificar o cenário para fabricar o resultado.
+- **Positivo inicial:** leitura permitida com associação ao grupo.
+- **Após remoção, conexão existente:** leitura ainda permitida.
+- **Negativo após reconexão:** conexão aceita, leitura negada.
+- **Positivo final:** associação restaurada, reconexão e leitura permitidas.
 
 ## Evidências
 
-Pendentes: 01 — grupo e leitura iniciais; 02 — remoção no AD; 03 — leitura na conexão existente; 04 — nova autenticação e reteste; 05 — restauração e leitura final.
-
-Guardar comandos e resultados sem senhas. Datas reais dos testes não são substituídas pelos horários dos nomes das capturas.
+[Seis capturas, linha do tempo e limites da coleta](../evidencias/sanitizadas/IAM-009/README.md). A captura nominal de 12:25 contém o teste das 12:10 e precede a de restauração na ordem dos eventos.
 
 ## Riscos e reversão
 
-Risco: interrupção temporária do acesso ou conclusão incorreta por conexão reutilizada. Restringir o exercício a Felipe e às conexões do laboratório; não encerrar conexões de outros usuários. Reversão: restaurar a associação original, renovar a conexão e validar leitura.
+Risco: remover a associação sem verificar acesso pela conexão existente. Reversão executada: Felipe readicionado ao GG_FIN_READ, conexão renovada e leitura comprovada. Nenhuma alteração de ACL foi relatada.
 
 ## Limitações e pendências
 
-- Nenhuma remoção ou reprodução realizada neste atendimento até o momento.
-- Reconectar não comprova, sozinho, renovação de todo o contexto de autenticação; a causa depende dos resultados coletados.
-- Escopo AD/SMB; não envolve sessões do Entra. Sem cálculo de SLA.
+- Horários vêm de Get-Date próximo aos comandos, não de eventos de auditoria das operações.
+- Na prova 05, /delete retorna 2250 (conexão não encontrada); net use mostra lista vazia antes da reconexão. A desconexão anterior bem-sucedida não foi capturada.
+- Sem exportação de sessões/tokens, identificação Kerberos/NTLM ou auditoria da remoção. Aprovação e horário simulados. Sem cálculo de SLA.
 
 ## Fechamento
 
-Pendente de execução, investigação e restauração comprovada. Encerrar com o comportamento observado, inclusive se o incidente simulado não for reproduzido.
+Reprodução concluída: acesso persistiu na conexão mantida após remoção, foi negado após reconexão e voltou após restauração do grupo e nova conexão. Estado final de Felipe restaurado e comprovado.

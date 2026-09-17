@@ -13,11 +13,12 @@ Esta pasta funciona como índice das evidências produzidas pelas entregas do la
 
 - [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
 - [Acesso financeiro por grupos: leitura permitida e acessos negados](sanitizadas/agdlp-financeiro/README.md).
-- [Fila IAM-001, IAM-005, IAM-006, IAM-007, IAM-008 e IAM-011](../00-operacao-itsm/05-fila-tickets.md).
+- [Fila IAM-001, IAM-005, IAM-006, IAM-007, IAM-008, IAM-009 e IAM-011](../00-operacao-itsm/05-fila-tickets.md).
 - [ADUC indisponível: diagnóstico e recuperação](../06-troubleshooting/2026-09-11-aduc-rede-nat/README.md).
 - [IAM-005: integração de conta de serviço, testes e desativação](sanitizadas/IAM-005/README.md).
 - [IAM-011: preparação e ativação de Ana](../00-operacao-itsm/05-fila-tickets.md#iam-011).
 - [IAM-008: acesso por grupo mantido; pedido direto não aprovado](sanitizadas/IAM-008/README.md).
+- [IAM-009: remoção de grupo, reconexão e restauração](sanitizadas/IAM-009/README.md).
 - [Estado inicial da conta de serviço desabilitada](sanitizadas/conta-servico/README.md).
 
 ## Cuidados na publicação
