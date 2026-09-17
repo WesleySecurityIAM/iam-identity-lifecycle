@@ -6,6 +6,7 @@
 | [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
+| [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
 <a id="iam-001"></a>
@@ -374,3 +375,71 @@ Risco: acesso antecipado ou excessivo. Conta mantida bloqueada até a admissão/
 ## Fechamento
 
 Encerrado em 15/09: pré-admissão bloqueada, ativação e grupo aprovados, troca de senha e entrada com MFA comprovadas no Entra.
+
+<a id="iam-008"></a>
+
+# IAM-008 — Avaliação de acesso direto — EMP0006
+
+- Ambiente: laboratório fictício — AD DS
+- Tipo: requisição de acesso — cenário simulado
+- Identidade: EMP0006 — Felipe Gomes
+- Abertura: 2026-09-17
+- Status: Fechado
+- Responsável pela execução: Wesley
+- Fechamento: 2026-09-17
+
+## Contexto e objetivo
+
+Avaliar um pedido simulado de leitura diretamente para Felipe na pasta financeira. Conferir o acesso por grupo e evitar uma permissão individual redundante.
+
+## Estado anterior
+
+Em 14/09, o caso AGDLP comprovou Felipe no GG_FIN_READ, associado ao DL_FIN_RELATORIOS_READ, com leitura permitida e criação de arquivo negada. Em 17/09, grupos e ACL foram novamente consultados.
+
+## Aprovação e fundamento
+
+- Necessidade simulada: consultar relatórios financeiros.
+- Modelo: Felipe → GG_FIN_READ → DL_FIN_RELATORIOS_READ → leitura na pasta.
+- Aprovador previsto: Gestor Financeiro.
+- Recomendação: manter o acesso por grupo, sem permissão individual adicional.
+- Decisão simulada — 17/09/2026: Gestor Financeiro aprova manter a leitura pelo modelo existente e não aprova a permissão individual redundante. Registrada por solicitação de Wesley neste atendimento; horário não informado.
+
+## Ações realizadas
+
+- **Concluído:** registrar o pedido e a necessidade simulados.
+- **Concluído:** conferir Felipe no GG_FIN_READ e o GG na DL (01 e 02).
+- **Concluído:** conferir a ACL da pasta, sem entrada direta para Felipe (03).
+- **Concluído:** avaliar a configuração e recomendar manutenção do acesso por grupo.
+- **Concluído:** vincular as três provas atuais e o teste histórico.
+- **Concluído:** registrar a decisão simulada de manter o acesso por grupo e encerrar sem alteração de permissões.
+
+## Validação
+
+Consultas de 17/09 confirmam Felipe no GG_FIN_READ; a DL contém GG_FIN_READ e GG_SVC_RELATORIO_FIN. Na pasta, DL_FIN_RELATORIOS_READ possui Allow, ReadAndExecute/Synchronize; SYSTEM e Administrators possuem FullControl. Não há entrada direta para Felipe na ACL mostrada.
+
+ContainerInherit e ObjectInherit permitem propagação aos filhos. IsInherited=False identifica entradas explícitas nesta pasta; não comprova, sozinho, a ACL efetiva de cada arquivo ou subpasta.
+
+## Teste de acesso
+
+Histórico de 14/09: leitura permitida e criação de arquivo negada para Felipe. Não houve novo teste de leitura em 17/09. O escopo atual avalia o pedido e a configuração, sem nova concessão.
+
+## Evidências
+
+- [01 — Felipe no grupo global](../evidencias/sanitizadas/IAM-008/01-felipe-no-gg-fin-read.png).
+- [02 — Grupos globais na DL](../evidencias/sanitizadas/IAM-008/02-membros-dl-fin-relatorios-read.png).
+- [03 — ACL da pasta financeira](../evidencias/sanitizadas/IAM-008/03-acl-pasta-financeira.png).
+- [Histórico de 14/09 — Teste de Felipe](../evidencias/sanitizadas/agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png).
+
+## Riscos e reversão
+
+Risco: permissão individual redundante dificultar revisão e revogação. Nenhuma alteração de grupo ou ACL foi realizada neste atendimento; não há mudança a reverter.
+
+## Limitações e pendências
+
+- Solicitação e decisão do gestor são simuladas, sem aprovação corporativa real.
+- Consultas atuais comprovam configuração, sem novo teste funcional ou auditoria de todos os arquivos.
+- Sem cálculo de SLA.
+
+## Fechamento
+
+Encerrado em 17/09/2026: pedido avaliado, decisão simulada registrada e provas vinculadas. Mantido o acesso por grupo, sem acrescentar permissão individual. Nenhuma alteração no AD ou na ACL foi necessária.
