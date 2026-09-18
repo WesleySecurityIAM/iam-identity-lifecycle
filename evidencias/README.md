@@ -11,6 +11,8 @@ Esta pasta funciona como índice das evidências produzidas pelas entregas do la
 
 ## Entregas de setembro de 2026
 
+- [IAM-006 no ServiceNow: classificação, notas, resolução e limites dos SLAs](sanitizadas/IAM-006/servicenow/README.md).
+
 - [Inventário AD de 18/09: 8 usuários, 5 grupos, 6 associações e estados finais](sanitizadas/inventario-ad-2026-09-18/README.md).
 - [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
 - [Acesso financeiro por grupos: leitura permitida e acessos negados](sanitizadas/agdlp-financeiro/README.md).

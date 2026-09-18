@@ -197,6 +197,7 @@ redefinição por autoatendimento indisponível para Felipe às 20:14:27Z.
   de senha às 20:33:21Z.
 - **Concluído:** Logs foram preservados e correlacionados por identificadores
   mantidos somente no cofre privado.
+- **Concluído — 18/09, complemento operacional:** transcrever o caso no Incident INC0010001 da PDI ServiceNow, com notas e estado Resolved; sem nova intervenção no Entra (05).
 
 ## Validação
 
@@ -215,6 +216,7 @@ O campo de código de erro não foi preenchido no CSV exportado.
 - [02 — Detalhes da autenticação](../evidencias/sanitizadas/IAM-006/EV-IAM-006-02-detalhes-autenticacao.md)
 - [03 — Alterações e redefinição de senha](../evidencias/sanitizadas/IAM-006/EV-IAM-006-03-eventos-senha.md)
 - [04 — Autenticação restabelecida](../evidencias/sanitizadas/IAM-006/EV-IAM-006-04-login-posterior.md)
+- [05 — Representação do incidente no ServiceNow](../evidencias/sanitizadas/IAM-006/servicenow/README.md): transcrição didática em 18/09, classificação, atribuição, Work notes, resolução e SLAs da PDI.
 
 ## Riscos e reversão
 

@@ -16,6 +16,6 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 | Revogação de acesso e sessão SMB | Leitura persistiu após remoção do grupo; reconexão negou acesso e restauração foi validada. | [IAM-009: seis provas](evidencias/sanitizadas/IAM-009/README.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
-[Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Índice de evidências](evidencias/README.md)
+[Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Índice de evidências](evidencias/README.md)
 
 **Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e identificadores privados são omitidos das evidências públicas.
