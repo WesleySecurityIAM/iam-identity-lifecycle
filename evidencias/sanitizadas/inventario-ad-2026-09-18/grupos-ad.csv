@@ -1,0 +1,6 @@
+﻿"Name","GroupScope","GroupCategory","ManagedBy","Description"
+"GG_AD_SUP_RESET","Global","Security",,
+"GG_FIN_READ","Global","Security",,
+"GG_SVC_RELATORIO_FIN","Global","Security",,"IAM-005 | Identidades da rotina de relatorios financeiros."
+"DL_FIN_RELATORIOS_READ","DomainLocal","Security",,
+"DL_FIN_SAIDA_WRITE","DomainLocal","Security",,"IAM-005 | Leitura e gravacao na pasta de saida da rotina financeira"

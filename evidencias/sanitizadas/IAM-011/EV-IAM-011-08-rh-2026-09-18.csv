@@ -1,0 +1,10 @@
+employee_id,nome,cargo,area,gestor,admissao,desligamento,status
+EMP0001,Ana Ribeiro,Analista Financeiro,Financeiro,Carlos Lima,2026-09-15,,ATIVO
+EMP0002,Bruno Costa,Analista de Suporte,Suporte,Daniela Alves,2025-02-10,,ATIVO
+EMP0003,Carla Mendes,Assistente Financeiro,Financeiro,Carlos Lima,2024-03-18,2026-08-28,DESLIGADO
+EMP0004,Diego Rocha,Terceiro de Sistemas,TI,Fernanda Souza,2026-06-01,2026-09-30,ATIVO
+EMP0005,Elisa Martins,Analista de RH,RH,Gabriel Nunes,2026-08-20,,ATIVO
+EMP0006,Felipe Gomes,Analista Financeiro,Financeiro,Carlos Lima,2024-01-08,,ATIVO
+EMP0007,Gabriela Santos,Analista de Suporte,Suporte,Daniela Alves,2023-11-13,,ATIVO
+EMP0008,Henrique Oliveira,Analista de RH,RH,Gabriel Nunes,2025-05-05,,ATIVO
+EMP0009,Isabela Ferreira,Analista de Sistemas,TI,Fernanda Souza,2024-09-02,,ATIVO

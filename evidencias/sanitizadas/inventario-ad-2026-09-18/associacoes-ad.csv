@@ -1,0 +1,7 @@
+﻿"Grupo","Membro","TipoMembro"
+"GG_AD_SUP_RESET","adm.wesley","user"
+"GG_FIN_READ","felipe.gomes","user"
+"GG_SVC_RELATORIO_FIN","svc_relatorio_fin","user"
+"DL_FIN_RELATORIOS_READ","GG_SVC_RELATORIO_FIN","group"
+"DL_FIN_RELATORIOS_READ","GG_FIN_READ","group"
+"DL_FIN_SAIDA_WRITE","GG_SVC_RELATORIO_FIN","group"

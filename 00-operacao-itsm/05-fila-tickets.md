@@ -333,7 +333,7 @@ A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da co
 - EMP0001: Analista Financeiro, Financeiro; gestor Carlos Lima. Matriz: Analista Financeiro → GG_FIN_READ.
 - Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
 - 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
-- Atualização do RH para ATIVO informada pelo operador; novo arquivo do RH não foi anexado a este fechamento.
+- Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).
 
 ## Ações realizadas
 
@@ -342,6 +342,7 @@ A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da co
 - **Concluído — 15/09:** registrar confirmação e aprovação simuladas; habilitar a conta e adicionar ao GG_FIN_READ (05).
 - **Concluído — 15/09:** trocar a senha no fluxo do usuário e cadastrar as informações de autenticação exigidas (05).
 - **Concluído — 15/09:** conferir entrada positiva com MFA, preservar os dois JSONs e anexar extratos sanitizados (06).
+- **Concluído — 18/09, complemento documental:** copiar a fonte fictícia de RH e atualizar somente EMP0001 de PRE_ADMISSAO para ATIVO; comparar as versões e preservar o histórico (07–09).
 
 ## Validação
 
@@ -361,6 +362,9 @@ Horários de Brasília (UTC−03:00). Auditoria: AccountEnabled false → true �
 - [04 — Entrada bloqueada](../evidencias/sanitizadas/IAM-011/EV-IAM-011-04-entrada-bloqueada.md).
 - [05 — Ativação, grupo, senha e cadastro](../evidencias/sanitizadas/IAM-011/EV-IAM-011-05-ativacao-grupo-autenticacao.md).
 - [06 — Entrada positiva e MFA](../evidencias/sanitizadas/IAM-011/EV-IAM-011-06-entrada-positiva.md).
+- [07 — RH histórico de 29/08](../evidencias/sanitizadas/IAM-011/EV-IAM-011-07-rh-2026-08-29.csv).
+- [08 — RH atualizado em 18/09](../evidencias/sanitizadas/IAM-011/EV-IAM-011-08-rh-2026-09-18.csv).
+- [09 — Origem, alteração e limites do complemento](../evidencias/sanitizadas/IAM-011/EV-IAM-011-09-atualizacao-rh.md).
 
 ## Riscos e reversão
 
@@ -368,7 +372,7 @@ Risco: acesso antecipado ou excessivo. Conta mantida bloqueada até a admissão/
 
 ## Limitações e pendências
 
-- Aprovações são simuladas; conferência anterior à criação e atualização do RH foram informadas pelo operador.
+- Aprovações são simuladas; conferência anterior à criação foi informada pelo operador. O CSV de RH de 18/09 é atualização manual simulada posterior à ativação, não evidência contemporânea de 15/09.
 - Estado após ativação comprovado por alterações auditadas e entrada, sem nova exportação cadastral anexada.
 - Cadastro do Authenticator e MFA concluído estão comprovados; o evento de entrada não detalha o método específico (null).
 - Grupo no Entra e entrada no Azure Portal não comprovam acesso ao relatório do AD ou privilégios administrativos Azure. Não há cálculo de SLA.
