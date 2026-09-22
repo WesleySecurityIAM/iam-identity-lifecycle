@@ -18,4 +18,4 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 
 [Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Índice de evidências](evidencias/README.md)
 
-**Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e identificadores privados são omitidos das evidências públicas.
+**Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e tokens permanecem privados; as capturas do Guest contêm dados pessoais do operador publicados com sua autorização.

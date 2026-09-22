@@ -1,6 +1,6 @@
 # Evidências
 
-Esta pasta funciona como índice das evidências produzidas pelas entregas do laboratório. Os arquivos atuais usam somente dados sintéticos e não representam um ambiente corporativo.
+Esta pasta funciona como índice das evidências do laboratório, sem representar um ambiente corporativo. As identidades de negócio são fictícias; as capturas do Guest incluem dados pessoais do operador publicados com sua autorização. Credenciais e tokens permanecem privados.
 
 ## Evidências disponíveis
 
