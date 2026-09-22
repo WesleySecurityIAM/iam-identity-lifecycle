@@ -3,18 +3,18 @@
 - Ambiente: Microsoft Entra ID — laboratório fictício
 - Tipo: requisição de colaboração B2B, complementar à fila IAM
 - Abertura: 2026-09-22
-- Status: Aberto — registro preparado; convite pendente
+- Status: Em andamento — convite, sponsor e aceite comprovados; encerramento pendente
 - Solicitante e responsável: Wesley
-- Nome de exibição previsto: Convidado LAB 01
+- Nome de exibição: Convidado LAB 01
 - Encerramento previsto: 2026-09-25, após validação
 
 ## Contexto e objetivo
 
-Demonstrar convite e aceite de uma identidade externa B2B com finalidade, responsável e prazo documentados. Usar endereço externo controlado pelo operador, diferente da conta administrativa do tenant. Não expor o endereço no repositório público.
+Demonstrar convite e aceite de uma identidade externa B2B com finalidade, responsável e prazo documentados. Usar endereço externo controlado pelo operador, diferente da conta administrativa do tenant. O operador autorizou publicar o e-mail pessoal nas duas capturas do Guest; JSON bruto, tokens e dados de sessão permanecem privados.
 
 ## Estado anterior
 
-Convite e criação do Guest ainda não comprovados neste atendimento. Endereço externo a selecionar pelo operador; conferir se já existe no tenant antes de convidar para evitar duplicidade.
+Antes desta execução, convite pendente no registro. Em 22/09, a criação foi comprovada por Add user, com Guest, Invitation e PendingAcceptance. Endereço externo controlado pelo operador.
 
 ## Aprovação e fundamento
 
@@ -23,15 +23,18 @@ Preparação solicitada por Wesley em 22/09/2026 para o próprio laboratório. F
 ## Ações e validação
 
 - **Concluído:** registrar finalidade, responsável, início e prazo de encerramento.
-- **Pendente:** conferir a identidade externa e enviar o convite.
-- **Pendente:** registrar User type=Guest e estado inicial do convite.
-- **Pendente:** aceitar o convite com a identidade externa e conferir Accepted.
-- **Pendente:** exportar auditoria e inventário complementar; preservar originais privados e publicar provas sanitizadas.
+- **Concluído:** criar a identidade externa e processar o convite às 14:09:48 de 22/09 (UTC−03:00).
+- **Concluído:** registrar Guest e PendingAcceptance (01); ADMIN-LAB-001 associado como sponsor às 14:09:49 (03). Wesley responde pelo ciclo de vida e a conta administrativa é o executor técnico.
+- **Concluído:** aceite comprovado pela captura Accepted e pelos eventos Update user / Redeem external user invite às 14:17:23 (02–03).
+- **Concluído:** preservar auditoria complementar e duas capturas na área privada; publicar extratos sanitizados e cópias das capturas autorizadas pelo operador.
+- **Pendente:** inventário posterior ao Guest e conferência de grupos, papéis e aplicações; arquivo de Sign-in logs não recebido, sem alegar teste de aplicação ou MFA.
 - **Pendente — 25/09:** encerrar a participação: bloquear entrada, revogar sessões quando aplicável e conferir ausência de grupos, papéis e aplicações atribuídos. Preservar evidências; eventual exclusão do objeto deve ser registrada separadamente.
 
 ## Evidências
 
-Ainda não recebidas. Acrescentar convite, aceite, auditoria e estado final conforme execução, sem antecipar resultados.
+- [01 — Estado inicial do Guest](../evidencias/sanitizadas/REQ-GUEST-001/01-estado-pendente.md).
+- [02 — Aceite na captura](../evidencias/sanitizadas/REQ-GUEST-001/02-estado-aceito.md).
+- [03 — Auditoria do convite, sponsor e aceite](../evidencias/sanitizadas/REQ-GUEST-001/03-auditoria-convite-aceite.md).
 
 ## Riscos, limites e reversão
 
@@ -39,6 +42,6 @@ O prazo é controle documental/manual; não configura expiração automática no
 
 ## Fechamento
 
-Aberto. Encerrar após convite/aceite documentados e encerramento efetivamente validado. Se o aceite ficar bloqueado, registrar o motivo e o estado observado. Não considerar o teste concluído apenas por criar o objeto.
+Em andamento. Convite, sponsor e aceite documentados em 22/09. Encerrar somente após executar e comprovar o encerramento previsto para 25/09. A data é um prazo manual; não há expiração automática configurada.
 
 [Voltar à fila](05-fila-tickets.md).

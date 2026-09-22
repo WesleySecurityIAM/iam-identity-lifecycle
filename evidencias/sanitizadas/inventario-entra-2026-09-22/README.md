@@ -30,7 +30,7 @@ Carla permanece habilitada apesar do desligamento na fonte de RH: a divergência
 
 [03 — GG_FIN_READ com Carla](03-membros-financeiro-com-carla.png): nova captura recebida em 22/09 mostra Ana, Carla e Felipe como membros diretos. A captura 01 permanece como estado anterior. Inclusão informada pelo operador, sem horário de evento visível na nova imagem.
 
-Preparação controlada do futuro IAM-003: conta residual de desligada e associação ao grupo. Não representa concessão válida pela matriz de cargos nem comprova acesso a aplicação. A auditoria abaixo foi exportada antes deste complemento e não comprova a inclusão de Carla; exportação posterior permanece pendente. Nenhuma correção do Leaver foi executada nesta preparação.
+Preparação controlada do futuro IAM-003: conta residual de desligada e associação ao grupo. Não representa concessão válida pela matriz de cargos nem comprova acesso a aplicação. A auditoria abaixo é a exportação inicial. A [exportação complementar](04-auditoria-inclusao-carla.md) confirmou Add member to group com success às 13:53:22 (UTC-03:00), em 22/09. Nenhuma correção do Leaver foi executada nesta preparação.
 
 ## Extrato de auditoria
 

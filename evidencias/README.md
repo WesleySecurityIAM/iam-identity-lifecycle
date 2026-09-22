@@ -11,6 +11,8 @@ Esta pasta funciona como índice das evidências produzidas pelas entregas do la
 
 ## Entregas de setembro de 2026
 
+- [Guest B2B: convite, sponsor e aceite; encerramento pendente](sanitizadas/REQ-GUEST-001/03-auditoria-convite-aceite.md).
+
 - [IAM-002 em andamento: estado inicial de Suporte e testes da Gabriela](sanitizadas/IAM-002/README.md).
 - [Entra em 22/09: inventário, grupos e auditoria](sanitizadas/inventario-entra-2026-09-22/README.md).
 
