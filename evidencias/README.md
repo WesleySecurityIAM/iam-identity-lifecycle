@@ -11,12 +11,15 @@ Esta pasta funciona como índice das evidências produzidas pelas entregas do la
 
 ## Entregas de setembro de 2026
 
+- [IAM-002 em andamento: estado inicial de Suporte e testes da Gabriela](sanitizadas/IAM-002/README.md).
+- [Entra em 22/09: inventário, grupos e auditoria](sanitizadas/inventario-entra-2026-09-22/README.md).
+
 - [IAM-006 no ServiceNow: classificação, notas, resolução e limites dos SLAs](sanitizadas/IAM-006/servicenow/README.md).
 
 - [Inventário AD de 18/09: 8 usuários, 5 grupos, 6 associações e estados finais](sanitizadas/inventario-ad-2026-09-18/README.md).
 - [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
 - [Acesso financeiro por grupos: leitura permitida e acessos negados](sanitizadas/agdlp-financeiro/README.md).
-- [Fila IAM-001, IAM-005, IAM-006, IAM-007, IAM-008, IAM-009 e IAM-011](../00-operacao-itsm/05-fila-tickets.md).
+- [Fila IAM-001, IAM-002, IAM-005, IAM-006, IAM-007, IAM-008, IAM-009 e IAM-011](../00-operacao-itsm/05-fila-tickets.md).
 - [ADUC indisponível: diagnóstico e recuperação](../06-troubleshooting/2026-09-11-aduc-rede-nat/README.md).
 - [IAM-005: integração de conta de serviço, testes e desativação](sanitizadas/IAM-005/README.md).
 - [IAM-011: preparação e ativação de Ana](../00-operacao-itsm/05-fila-tickets.md#iam-011).
