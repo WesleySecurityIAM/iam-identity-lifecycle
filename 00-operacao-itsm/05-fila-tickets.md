@@ -11,6 +11,8 @@
 | [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
+**Solicitação complementar:** [REQ-GUEST-001 — Convidado externo B2B](REQ-GUEST-001.md): aberto em 22/09; convite/aceite pendentes; encerramento previsto em 25/09. Registro separado dos 11 cenários IAM do plano.
+
 <a id="iam-001"></a>
 
 # IAM-001 — Provisionamento de identidade — EMP0006
