@@ -3,7 +3,8 @@
 | Ticket | Objetivo | Resultado documentado |
 |---|---|---|
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
-| [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Em andamento: estado inicial e testes de Suporte comprovados; mudança pendente. |
+| [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Em andamento: testes de Suporte e reconciliação cadastral inicial; mudança pendente. |
+| [IAM-003](#iam-003) | Leaver de Carla no Entra | Fechado: conta/grupo tratados, revogação auditada, entrada bloqueada e comparação final conforme. |
 | [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
@@ -123,6 +124,8 @@ Gabriela está habilitada no AD, EMP0007, Analista de Suporte, OU Suporte. Perte
 - **Concluído:** preparar associação GG/DL e permissões NTFS/SMB de leitura (03–04).
 - **Concluído, conforme operador:** retirar a exigência de troca de senha para o teste do laboratório (05), sem alegar troca realizada pela usuária.
 - **Concluído:** conectar como Gabriela, ler o arquivo e observar criação de arquivo negada (06–07).
+- **Concluído — 23/09:** reconciliar RH × CSV Entra de 22/09 por matrícula; Gabriela conforme em habilitação e departamento Suporte, preservando o estado anterior ao Mover.
+- **Concluído — 23/09, complemento:** nova exportação confirma Gabriela True/Suporte; comparação posterior ao Leaver de Carla mantém as duas regras conformes, sem executar o Mover.
 - **Pendente:** registrar mudança/aprovação; atualizar atributos, retirar Suporte e testar negação após nova conexão; conceder Financeiro e validar o novo acesso.
 - **Pendente:** validar alterações no Entra separadamente e conferir ausência de acesso antigo/residual antes de fechar.
 
@@ -130,10 +133,14 @@ Gabriela está habilitada no AD, EMP0007, Analista de Suporte, OU Suporte. Perte
 
 Em 22/09, UTC−03:00: associação GG/DL às 11:26:08; ACL e compartilhamento às 11:35:49; conexão como EMPRESA\gabriela.santos e leitura às 11:57:15; criação de arquivo negada às 11:58:50. Estado inicial demonstrado, sem evidência de mudança de área nesta data.
 
+Em 23/09 às 16:57:25 UTC−03:00, a captura da reconciliação apresenta duas verificações conformes para EMP0007: habilitação True/True e departamento Suporte/Suporte. A fonte observada continua sendo o CSV de 22/09; grupos e acessos efetivos não foram comparados pelo script.
+
 ## Evidências
 
-- [Sete capturas — cadastro, grupos, permissões, ajuste e testes](../evidencias/sanitizadas/IAM-002/README.md).
-- [Conferência complementar do Entra — inventário e auditoria de 22/09](../evidencias/sanitizadas/inventario-entra-2026-09-22/README.md).
+- [Índice das capturas — cadastro, grupos, permissões e testes](../evidencias/sanitizadas/IAM-002/README.md): inclui consulta AD de 23/09; MemberOf não abrange grupo primário nem expande aninhamentos.
+- [Entra — inventário e auditoria de 22/09](../evidencias/sanitizadas/inventario-entra-2026-09-22/README.md) e [conferência visual de 23/09](../evidencias/sanitizadas/inventario-entra-2026-09-23/README.md).
+- [Reconciliação inicial — captura e CSVs](../evidencias/sanitizadas/reconciliacao-2026-09-23/README.md): Gabriela conforme; exceção de Carla tratada no IAM-003.
+- [Nova comparação com CSV de 23/09](../evidencias/sanitizadas/IAM-003/08-validacao-final.md): Gabriela permanece True/Suporte; Mover pendente.
 
 ## Riscos e reversão
 
@@ -146,6 +153,65 @@ Recurso é pasta de teste, sem integração com sistema de chamados. Negativo co
 ## Fechamento
 
 **Não fechado.** Encerrar somente após comprovar acesso antigo negado, novo permitido e grupos/atributos finais conferidos no AD e no Entra. A preparação de 22/09 permanece como evidência do estado anterior.
+
+<a id="iam-003"></a>
+
+# IAM-003 — Leaver e divergência entre RH e Entra — EMP0003
+
+- Ambiente: laboratório fictício — Microsoft Entra ID cloud-only
+- Tipo: tratamento de desligamento — Leaver/JML
+- Identidade: EMP0003 — Carla Mendes
+- Abertura e fechamento: 2026-09-23
+- Status: Fechado
+- Responsável pela execução: Wesley
+- Validação final: nova comparação após as mudanças, em 23/09/2026
+
+## Contexto e objetivo
+
+Corrigir a incompatibilidade entre RH desligado e conta habilitada com associação financeira. Validar conta, associação, ação sobre sessões e nova entrada, preservando o antes/depois.
+
+## Estado anterior
+
+RH fictício: DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a divergência; não se alega acesso contínuo desde agosto. CSV de 22/09 e perfil de 23/09 mostram habilitação; GG_FIN_READ presente. Telas de papéis de diretório e aplicações retornaram sem atribuições no escopo consultado.
+
+## Aprovação e fundamento
+
+- Regra: conta desabilitada e associação financeira retirada para EMP0003 desligada.
+- Decisão simulada solicitada por Wesley: desabilitar conta, retirar GG_FIN_READ e revogar sessões. Registro documental às 17:10; consulta do relógio às 17:10:52 e bloqueio auditado às 17:10:26. Não se comprova aprovação anterior à ação.
+- Wesley atua como responsável técnico/executor. Tela de owner do grupo não equivale a aprovação de negócio nem prova papel administrativo do tenant.
+
+## Ações realizadas
+
+- **Concluído:** preservar RH, exportação e provas do estado anterior.
+- **Concluído:** comparar por matrícula; identificar habilitação incompatível e conferir associação financeira separadamente.
+- **Concluído:** desabilitar conta, revogar refresh tokens e remover GG_FIN_READ, com auditoria success.
+- **Concluído:** validar perfil desabilitado, ausência de grupos na consulta e nova entrada bloqueada.
+- **Concluído:** repetir comparação com CSV de 23/09; Carla conforme. Conta preservada, sem exclusão.
+
+## Validação e teste de acesso
+
+Em 23/09, UTC−03:00: bloqueio às 17:10:26; atualização StsRefreshTokensValidFrom às 17:15:36; remoção do grupo às 17:17:18. Às 17:29:19, AMC PROD registra 50057 — conta desabilitada. A captura de bloqueio complementa o sign-in.
+
+Após as mudanças, nova comparação confirmou Carla False/False, Gabriela True/True e Suporte/Suporte: três verificações conformes e zero exceções cadastrais. Carla passou a corresponder ao RH desligado; Gabriela permanece na área vigente. Grupos foram validados por tela/auditoria, não por esse comparador.
+
+## Evidências
+
+- [Estado anterior — perfil, grupo, papéis e aplicações](../evidencias/sanitizadas/inventario-entra-2026-09-23/README.md).
+- [Reconciliação inicial — uma exceção](../evidencias/sanitizadas/reconciliacao-2026-09-23/README.md).
+- [Índice do Leaver — prints, auditoria, sign-in e resultado posterior](../evidencias/sanitizadas/IAM-003/README.md).
+- [Validação final — fontes, integridade e limites](../evidencias/sanitizadas/IAM-003/08-validacao-final.md).
+
+## Riscos e reversão
+
+Reativação indevida pode restaurar acesso por concessões mantidas. Eventual reversão exige decisão justificada e revisão dos acessos; não restaurar automaticamente o estado incompatível com RH desligado. Sessões revogadas exigem nova autenticação, não simples reversão do evento.
+
+## Limitações e pendências
+
+Grupo cloud sem recurso financeiro integrado; sem teste de arquivo no Entra. Azure RBAC e permissões internas de aplicações não foram auditados. Revogação registrada não comprova fim imediato de toda sessão própria de aplicação. AD independente está fora deste caso. Sem cálculo de SLA desde o desligamento fictício. Nenhuma pendência de fechamento no escopo definido.
+
+## Fechamento
+
+Fechado em 23/09: conta desabilitada, associação financeira removida, ação de revogação auditada, nova entrada bloqueada e exceção de habilitação corrigida na comparação posterior. Exclusão da conta não faz parte do critério.
 
 <a id="iam-005"></a>
 

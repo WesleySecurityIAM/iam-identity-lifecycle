@@ -55,6 +55,8 @@ Eventos selecionados: criação de usuários/grupos, inclusão de membros e owne
 
 ## Origem e limites
 
+[Conferência em 23/09 para a reconciliação](05-conferencia-reconciliacao-2026-09-23.md): cadastro de Carla/Gabriela reaproveitado do CSV, evidências de grupos e lacunas de coleta. Sem nova consulta ao tenant.
+
 CSV completo, JSON completo e captura administrativa preservados sem alteração em área privada. A data do CSV vem da coleta informada/nome do arquivo, sem horário de exportação por linha. Grupos Entra não estão integrados ao recurso SMB; as associações não comprovam acesso a aplicação. Senhas não foram lidas nem incluídas.
 
 - SHA-256 de `exportUsers_2026-9-22.csv`: `47fb8a68e4ccd4717d5d81025ccccd607c7c52fdab1ad9998571eaacab35a1a0`.

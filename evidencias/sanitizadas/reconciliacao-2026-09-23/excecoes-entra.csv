@@ -1,0 +1,2 @@
+﻿"Matricula","Nome","Sistema","ObjectID","Regra","Esperado","Observado","Resultado","Fonte"
+"EMP0003","Carla Mendes","Entra","e7e071d7-e369-4438-ba91-19c1caac8d8b","Conta habilitada conforme status do RH","False","True","EXCECAO","CSV Entra 2026-09-22"

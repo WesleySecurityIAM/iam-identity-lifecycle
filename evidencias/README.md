@@ -11,6 +11,9 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 
 ## Entregas de setembro de 2026
 
+- [Reconciliação RH × Entra em 23/09: uma exceção para o Leaver e referência inicial do Mover](sanitizadas/reconciliacao-2026-09-23/README.md).
+- [IAM-003 fechado: bloqueio, revogação, grupo removido e reteste](../00-operacao-itsm/05-fila-tickets.md#iam-003).
+
 - [Guest B2B: convite, sponsor e aceite; encerramento pendente](sanitizadas/REQ-GUEST-001/03-auditoria-convite-aceite.md).
 
 - [IAM-002 em andamento: estado inicial de Suporte e testes da Gabriela](sanitizadas/IAM-002/README.md).
@@ -21,7 +24,7 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 - [Inventário AD de 18/09: 8 usuários, 5 grupos, 6 associações e estados finais](sanitizadas/inventario-ad-2026-09-18/README.md).
 - [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
 - [Acesso financeiro por grupos: leitura permitida e acessos negados](sanitizadas/agdlp-financeiro/README.md).
-- [Fila IAM-001, IAM-002, IAM-005, IAM-006, IAM-007, IAM-008, IAM-009 e IAM-011](../00-operacao-itsm/05-fila-tickets.md).
+- [Fila de tickets IAM: resultados, evidências e pendências](../00-operacao-itsm/05-fila-tickets.md).
 - [ADUC indisponível: diagnóstico e recuperação](../06-troubleshooting/2026-09-11-aduc-rede-nat/README.md).
 - [IAM-005: integração de conta de serviço, testes e desativação](sanitizadas/IAM-005/README.md).
 - [IAM-011: preparação e ativação de Ana](../00-operacao-itsm/05-fila-tickets.md#iam-011).
@@ -30,6 +33,8 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 - [Estado inicial da conta de serviço desabilitada](sanitizadas/conta-servico/README.md).
 
 ## Cuidados na publicação
+
+[Entra em 23/09: grupos de Carla/Gabriela e consultas de papéis/aplicações de Carla](sanitizadas/inventario-entra-2026-09-23/README.md).
 
 - remover credenciais, tokens e dados pessoais;
 - registrar a origem, a data e o objetivo da evidência;

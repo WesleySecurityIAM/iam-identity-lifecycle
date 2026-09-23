@@ -1,0 +1,4 @@
+﻿"Matricula","Nome","Sistema","ObjectID","Regra","Esperado","Observado","Resultado","Fonte"
+"EMP0003","Carla Mendes","Entra","e7e071d7-e369-4438-ba91-19c1caac8d8b","Conta habilitada conforme status do RH","False","True","EXCECAO","CSV Entra 2026-09-22"
+"EMP0007","Gabriela Santos","Entra","2d5bee1a-e26c-47ef-bea2-a55a2fd8614d","Conta habilitada conforme status do RH","True","True","CONFORME","CSV Entra 2026-09-22"
+"EMP0007","Gabriela Santos","Entra","2d5bee1a-e26c-47ef-bea2-a55a2fd8614d","Departamento conforme RH","Suporte","Suporte","CONFORME","CSV Entra 2026-09-22"

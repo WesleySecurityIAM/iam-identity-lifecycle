@@ -24,8 +24,22 @@ Horários visíveis de 22/09, UTC−03:00. As capturas 02 e 05 não mostram hor�
 - Herança configurada para arquivos/subpastas não equivale a uma auditoria individual de todos os filhos. Desconexão final não foi capturada.
 - Os grupos do Entra e do AD são independentes neste laboratório. [Conferências do Entra em 22/09](../inventario-entra-2026-09-22/README.md) complementam o cadastro, sem provar acesso a aplicação.
 
-## Próxima execução
+## Complemento de 23/09 - estado anterior preservado
+
+[08 - Cadastro e grupos diretos no AD](08-gabriela-ad-grupos-diretos-2026-09-23.png): horário visível 23/09/2026, 11:19:12 UTC-03:00. A consulta mostra EMP0007, Enabled=True, departamento Suporte, cargo Analista de Suporte e ObjectGUID. A consulta MemberOf apresenta GG_SUP_TICKET (Global/Security).
+
+MemberOf não inclui o grupo primário nem expande associações aninhadas. A captura comprova cadastro e grupos diretos retornados, não todos os acessos efetivos; não mostra uma nova consulta GG/DL. A cadeia documentada em 22/09 permanece histórica. Nenhum Mover foi executado nesta coleta.
+
+[Conferência das fontes do Entra de 22/09 e lacunas](../inventario-entra-2026-09-22/05-conferencia-reconciliacao-2026-09-23.md).
+
+## Próxima execução do Mover
+
+[10 — Reconciliação RH × Entra em 23/09](../reconciliacao-2026-09-23/README.md): duas regras conformes para EMP0007 (habilitação e departamento Suporte), com captura às 16:57:25 UTC−03:00 e CSVs preservados. A comparação usa o inventário de 22/09, não inclui grupos e não comprova execução do Mover.
+
+[09 - Grupo de Gabriela no Entra em 23/09](../inventario-entra-2026-09-23/04-gabriela-grupos.png): GG_SUP_TICKET visível na tela da usuária; coleta informada em 23/09, sem horário interno. [Escopo e limitações](../inventario-entra-2026-09-23/README.md).
 
 Registrar evento de RH e aprovação simulada da mudança, retirar acesso de Suporte, renovar a conexão e provar leitura negada. Conceder o grupo financeiro, validar leitura e conferir ausência de acesso acumulado. Atualizar e conferir separadamente o Entra, mantendo EMP0007 e as contas existentes.
 
 [Ticket e critérios de fechamento](../../../00-operacao-itsm/05-fila-tickets.md#iam-002).
+
+[11 — Nova conferência com CSV de 23/09](../IAM-003/08-validacao-final.md): Gabriela permanece True/Suporte e conforme nas duas regras. Estado anterior ao Mover preservado; nenhum acesso novo foi concedido por esta comparação.
