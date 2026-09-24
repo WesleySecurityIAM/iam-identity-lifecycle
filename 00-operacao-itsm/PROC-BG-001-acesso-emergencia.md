@@ -3,7 +3,7 @@
 - Data: **24/09/2026**. Responsável e custodiante declarado: Wesley.
 - Estado: **validação administrativa concluída; independência da autenticação e custódia a validar**.
 - Escopo: tenant de laboratório Entra; entrega complementar à v0.3, sem criar um 12º ticket.
-- [Evidências: quatro capturas, auditoria e entradas](../evidencias/sanitizadas/PROC-BG-001/README.md).
+- [Evidências: oito capturas, auditoria e entradas](../evidencias/sanitizadas/PROC-BG-001/README.md).
 
 ## Objetivo e resultado
 
@@ -17,7 +17,7 @@ No teste controlado, bg-lab-01 criou um grupo sem membros às **19:12:10**; bg-l
 |---|---|
 | Duas contas alternativas | Contas e atribuições comprovadas. |
 | Entrada e administração | Entradas com código 0 e ações administrativas auditadas. |
-| Autenticação | Registro de passkey vinculada ao dispositivo para ambas; as últimas entradas indicam autenticação previamente satisfeita. Uso de passkey não comprovado. |
+| Autenticação | Senha + notificação na bg-lab-01 e senha + código OATH na bg-lab-02, com etapas bem-sucedidas e MFA concluída. Passkeys cadastradas; uso de passkey não comprovado. |
 | Independência | Não demonstrada contra perda do celular/computador habitual; não presumir dois caminhos independentes apenas por haver duas contas. |
 | Custódia | Responsável identificado; localização privada e recuperação sem dependência do tenant precisam ser conferidas pelo operador. |
 | Monitoramento | Consulta manual de logs realizada; alerta automático não demonstrado. |
@@ -30,7 +30,7 @@ Portanto, a entrega comprova **contas alternativas capazes de administrar**, com
 1. Conferir o método e a custódia de cada conta; recuperar o material deve ser possível sem depender do acesso que se pretende substituir. Não registrar senhas, PINs, QR codes ou chaves no Git.
 2. Em uma nova entrada, selecionar explicitamente a passkey cadastrada e conferir o método bem-sucedido nos detalhes de autenticação. Se os logs mostrarem apenas `Previously satisfied`, manter essa verificação pendente. Não repetir criação de grupos só para produzir novas capturas.
 3. Avaliar dependências comuns de dispositivo e recuperação. Um PIN desbloqueia o autenticador local; um pendrive comum não se torna uma chave FIDO2. Não retirar MFA para contornar o teste.
-4. Conferir as políticas efetivas de proteção; esta coleta não comprova o estado de Security Defaults ou Conditional Access. Planejar alertas de uso separadamente da consulta manual.
+4. As novas capturas mostram Security Defaults aplicado aos dois eventos de MFA; não representam revisão completa das políticas do tenant ou de Conditional Access. Planejar alertas de uso separadamente da consulta manual.
 5. Validar periodicamente, no máximo a cada 90 dias, e após alterações relevantes. Se o experimento for abandonado, tratar os privilégios e objetos de teste, preservando o acesso habitual.
 
 ## Quando e como acionar
