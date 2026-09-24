@@ -1,0 +1,93 @@
+{
+  "source": "InteractiveSignIns_2026-09-23_2026-09-24.json",
+  "sourceSha256": "43dc98449bc3039d3198353b5a1eaeab2d2a23191eb352a5141cb5f425e28df2",
+  "sourceEvents": 93,
+  "scope": "Última entrada recebida de cada conta e um desafio MFA anterior da bg-lab-01; não é inventário completo do tenant",
+  "entries": [
+    {
+      "id": "1b7a7b0f-de6f-40a9-a3fb-cd8a48855c00",
+      "utc": "2026-09-24T21:46:40Z",
+      "brasilia": "2026-09-24T18:46:40-03:00",
+      "account": "ADMIN-LAB-001",
+      "userId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "app": "Azure Portal",
+      "errorCode": 0,
+      "statusAdditionalDetails": "MFA requirement satisfied by claim in the token",
+      "authenticationRequirement": "singleFactorAuthentication",
+      "authenticationDetails": [],
+      "selection": "latestReceivedForAccount"
+    },
+    {
+      "id": "912cc0f1-75b2-493d-a3b5-da483f911c00",
+      "utc": "2026-09-24T22:07:05Z",
+      "brasilia": "2026-09-24T19:07:05-03:00",
+      "account": "bg-lab-01",
+      "userId": "c5852a82-073d-4dcc-909b-8116f1effb04",
+      "app": "Azure Portal",
+      "errorCode": 0,
+      "statusAdditionalDetails": "MFA requirement satisfied by claim in the token",
+      "authenticationRequirement": "multiFactorAuthentication",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-09-24T22:07:05Z",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA requirement satisfied by claim in the token"
+        }
+      ],
+      "selection": "latestReceivedForAccount"
+    },
+    {
+      "id": "f51695f7-242a-4999-a26b-a338f7df1800",
+      "utc": "2026-09-24T22:21:25Z",
+      "brasilia": "2026-09-24T19:21:25-03:00",
+      "account": "bg-lab-02",
+      "userId": "b560eb63-be55-4fdf-8972-15fa017a504f",
+      "app": "Azure Portal",
+      "errorCode": 0,
+      "statusAdditionalDetails": "MFA requirement satisfied by claim in the token",
+      "authenticationRequirement": "multiFactorAuthentication",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-09-24T22:21:25Z",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "First factor requirement satisfied by claim in the token"
+        },
+        {
+          "authenticationStepDateTime": "2026-09-24T22:21:25Z",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA requirement satisfied by claim in the token"
+        }
+      ],
+      "selection": "latestReceivedForAccount"
+    },
+    {
+      "id": "e432128a-f9b2-41a0-9c37-5168e24bc700",
+      "utc": "2026-09-24T21:42:53Z",
+      "brasilia": "2026-09-24T18:42:53-03:00",
+      "account": "bg-lab-01",
+      "userId": "c5852a82-073d-4dcc-909b-8116f1effb04",
+      "app": "My Signins",
+      "errorCode": 0,
+      "statusAdditionalDetails": "MFA completed in Azure AD",
+      "authenticationRequirement": "multiFactorAuthentication",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-09-24T21:42:53Z",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "First factor requirement satisfied by claim in the token"
+        },
+        {
+          "authenticationStepDateTime": "2026-09-24T21:42:53Z",
+          "authenticationMethod": "Mobile app notification",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA completed in Azure AD"
+        }
+      ],
+      "selection": "earlierExplicitMfaChallenge"
+    }
+  ]
+}

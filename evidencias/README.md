@@ -1,6 +1,6 @@
 # Evidências
 
-Esta pasta funciona como índice das evidências do laboratório, sem representar um ambiente corporativo. As identidades de negócio são fictícias; as capturas do Guest incluem dados pessoais do operador publicados com sua autorização. Credenciais e tokens permanecem privados.
+Esta pasta funciona como índice das evidências do laboratório, sem representar um ambiente corporativo. As identidades de negócio são fictícias; algumas capturas (Guest e acesso de emergência) incluem dados pessoais do operador publicados com sua autorização. Credenciais e tokens permanecem privados.
 
 ## Evidências disponíveis
 
@@ -10,6 +10,8 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 - [Procedimento de execução e interpretação do resultado](../05-automacao/)
 
 ## Entregas de setembro de 2026
+
+- [Acesso administrativo de emergência: duas contas, teste de grupo e logs; limites de autenticação registrados](sanitizadas/PROC-BG-001/README.md).
 
 - [Reconciliação RH × Entra em 23/09: uma exceção para o Leaver e referência inicial do Mover](sanitizadas/reconciliacao-2026-09-23/README.md).
 - [IAM-003 fechado: bloqueio, revogação, grupo removido e reteste](../00-operacao-itsm/05-fila-tickets.md#iam-003).

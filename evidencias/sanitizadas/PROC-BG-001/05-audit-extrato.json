@@ -1,0 +1,216 @@
+{
+  "source": "AuditLogs_2026-09-24.json",
+  "sourceSha256": "6856888ae5022e51957ec32ad6c49d152592b594b54d49f2fba23c486e83a8b3",
+  "sourceEvents": 171,
+  "scope": "11 eventos selecionados; campos permitidos explicitamente; sem dados de credenciais",
+  "events": [
+    {
+      "id": "Directory_b9d7c7eb-6293-4edd-b168-67faf52da6f7_8J59I_47661033",
+      "utc": "2026-09-24T20:24:17.4745372Z",
+      "brasilia": "2026-09-24T17:24:17-03:00",
+      "action": "Add user",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "c5852a82-073d-4dcc-909b-8116f1effb04",
+          "label": "bg-lab-01"
+        }
+      ]
+    },
+    {
+      "id": "Directory_e71d3616-7e5c-45b6-ad47-d3c796c76440_8J59I_47787080",
+      "utc": "2026-09-24T20:25:52.044357Z",
+      "brasilia": "2026-09-24T17:25:52-03:00",
+      "action": "Add user",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "b560eb63-be55-4fdf-8972-15fa017a504f",
+          "label": "bg-lab-02"
+        }
+      ]
+    },
+    {
+      "id": "Device Registration Service_5e2bdccc-796b-44b5-beb5-1a7cb559c469_M6YV7_456680926",
+      "utc": "2026-09-24T21:53:29.2431777Z",
+      "brasilia": "2026-09-24T18:53:29-03:00",
+      "action": "Add Passkey (device-bound)",
+      "result": "success",
+      "actor": "bg-lab-01",
+      "actorId": "c5852a82-073d-4dcc-909b-8116f1effb04",
+      "targets": [
+        {
+          "id": null,
+          "label": "User"
+        }
+      ]
+    },
+    {
+      "id": "Directory_e6f24dfe-ff0e-4ab0-b8c1-d762cae55789_0GPWF_52216170",
+      "utc": "2026-09-24T22:03:43.5645118Z",
+      "brasilia": "2026-09-24T19:03:43-03:00",
+      "action": "Add member to role",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "c5852a82-073d-4dcc-909b-8116f1effb04",
+          "label": "bg-lab-01",
+          "properties": [
+            {
+              "displayName": "Role.DisplayName",
+              "oldValue": null,
+              "newValue": "\"Global Administrator\""
+            }
+          ]
+        },
+        {
+          "id": "e5e08751-7a60-4413-b7e0-1ac06d1db43d",
+          "label": "Role"
+        }
+      ]
+    },
+    {
+      "id": "Directory_81770ac0-9f66-4a9c-b83b-780c40cf07ab_0GPWF_52239415",
+      "utc": "2026-09-24T22:04:04.359741Z",
+      "brasilia": "2026-09-24T19:04:04-03:00",
+      "action": "Add member to role",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "b560eb63-be55-4fdf-8972-15fa017a504f",
+          "label": "bg-lab-02",
+          "properties": [
+            {
+              "displayName": "Role.DisplayName",
+              "oldValue": null,
+              "newValue": "\"Global Administrator\""
+            }
+          ]
+        },
+        {
+          "id": "e5e08751-7a60-4413-b7e0-1ac06d1db43d",
+          "label": "Role"
+        }
+      ]
+    },
+    {
+      "id": "Directory_7e955ee8-e8bf-4a23-8286-5d507615db5c_RHF4C_184441121",
+      "utc": "2026-09-24T22:08:55.3559225Z",
+      "brasilia": "2026-09-24T19:08:55-03:00",
+      "action": "Add group",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "42e4df9a-b8ef-4c8c-8ce3-7803794dbe45",
+          "label": "LAB-BG-VALIDACAO (ensaio do administrador)",
+          "properties": [
+            {
+              "displayName": "Description",
+              "oldValue": "[]",
+              "newValue": "[\"Teste administrativo bg-lab-01\"]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Directory_f0d81778-1799-49f3-b695-c7ec63abfd72_9UBG3_165030252",
+      "utc": "2026-09-24T22:11:09.8404881Z",
+      "brasilia": "2026-09-24T19:11:09-03:00",
+      "action": "Delete group",
+      "result": "success",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "targets": [
+        {
+          "id": "42e4df9a-b8ef-4c8c-8ce3-7803794dbe45",
+          "label": "LAB-BG-VALIDACAO (ensaio do administrador)"
+        }
+      ]
+    },
+    {
+      "id": "Directory_25ebe489-52b9-4274-9282-ba2ea56b98fc_7PZMJ_219515446",
+      "utc": "2026-09-24T22:12:10.3980568Z",
+      "brasilia": "2026-09-24T19:12:10-03:00",
+      "action": "Add group",
+      "result": "success",
+      "actor": "bg-lab-01",
+      "actorId": "c5852a82-073d-4dcc-909b-8116f1effb04",
+      "targets": [
+        {
+          "id": "5e11f8b2-05a8-449f-96d9-cd91e708c85e",
+          "label": "LAB-BG-VALIDACAO (teste de emergência)",
+          "properties": [
+            {
+              "displayName": "Description",
+              "oldValue": "[]",
+              "newValue": "[\"Teste administrativo bg-lab-01\"]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Device Registration Service_8bd16717-45b6-4d9d-a15e-0658d2e138c2_FGG92_375093079",
+      "utc": "2026-09-24T22:20:49.0530963Z",
+      "brasilia": "2026-09-24T19:20:49-03:00",
+      "action": "Add Passkey (device-bound)",
+      "result": "success",
+      "actor": "bg-lab-02",
+      "actorId": "b560eb63-be55-4fdf-8972-15fa017a504f",
+      "targets": [
+        {
+          "id": null,
+          "label": "User"
+        }
+      ]
+    },
+    {
+      "id": "Directory_02898b57-b09d-4cd7-b7d4-2e3b5d422b6a_MC4BF_240944739",
+      "utc": "2026-09-24T22:24:38.86781Z",
+      "brasilia": "2026-09-24T19:24:38-03:00",
+      "action": "Update group",
+      "result": "success",
+      "actor": "bg-lab-02",
+      "actorId": "b560eb63-be55-4fdf-8972-15fa017a504f",
+      "targets": [
+        {
+          "id": "5e11f8b2-05a8-449f-96d9-cd91e708c85e",
+          "label": "LAB-BG-VALIDACAO (teste de emergência)",
+          "properties": [
+            {
+              "displayName": "Description",
+              "oldValue": "[\"Teste administrativo bg-lab-01\"]",
+              "newValue": "[\"Teste2 administrativo bg-lab-02\"]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Directory_2ed7b2cd-67a8-434a-bb26-4a9637161677_E2JL0_233782494",
+      "utc": "2026-09-24T22:26:14.1364942Z",
+      "brasilia": "2026-09-24T19:26:14-03:00",
+      "action": "Delete group",
+      "result": "success",
+      "actor": "bg-lab-02",
+      "actorId": "b560eb63-be55-4fdf-8972-15fa017a504f",
+      "targets": [
+        {
+          "id": "5e11f8b2-05a8-449f-96d9-cd91e708c85e",
+          "label": "LAB-BG-VALIDACAO (teste de emergência)"
+        }
+      ]
+    }
+  ]
+}

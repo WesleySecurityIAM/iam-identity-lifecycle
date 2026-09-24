@@ -14,8 +14,9 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |
 | Conta de serviço no AD | Rotina executada duas vezes; escrita indevida negada e conta/tarefa desabilitadas ao final. | [IAM-005: sete provas e resultados](evidencias/sanitizadas/IAM-005/README.md) |
 | Revogação de acesso e sessão SMB | Leitura persistiu após remoção do grupo; reconexão negou acesso e restauração foi validada. | [IAM-009: seis provas](evidencias/sanitizadas/IAM-009/README.md) |
+| Acesso administrativo de emergência | Duas contas alternativas administraram um grupo de teste; independência da autenticação ainda a validar. | [Procedimento e provas](00-operacao-itsm/PROC-BG-001-acesso-emergencia.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
 [Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Índice de evidências](evidencias/README.md)
 
-**Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e tokens permanecem privados; as capturas do Guest contêm dados pessoais do operador publicados com sua autorização.
+**Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e tokens permanecem privados; algumas capturas (Guest e acesso de emergência) contêm dados pessoais do operador publicados com sua autorização.
