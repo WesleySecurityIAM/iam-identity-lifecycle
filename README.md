@@ -2,12 +2,19 @@
 
 Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provisionamento, menor privilégio, autenticação e reconciliação de acessos. Cada entrega apresenta objetivo, resultado e evidências.
 
-## Entregas realizadas
+## Lifecycle/JML — Joiner | Mover | Leaver
+
+| Etapa | Estado | Resultado e evidência |
+|---|---|---|
+| **Joiner — entrada** | **Concluído** | Pré-admissão bloqueada; ativação, grupo, troca de senha e MFA comprovados no Entra. [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
+| **Mover — mudança de área** | **Em andamento** | Acesso inicial de Suporte e reconciliação cadastral registrados; mudança para Financeiro ainda pendente. [IAM-002](00-operacao-itsm/05-fila-tickets.md#iam-002) |
+| **Leaver — desligamento** | **Concluído** | Conta bloqueada, revogação de sessões auditada, grupo removido, nova entrada negada e comparação final conforme no Entra. [IAM-003](00-operacao-itsm/05-fila-tickets.md#iam-003) |
+
+## Outras entregas realizadas
 
 | Entrega | Resultado | Evidência |
 |---|---|---|
 | Provisionamento e autenticação no Entra ID | Provisionamento, recuperação de autenticação e verificação de MFA documentados. | [IAM-001](00-operacao-itsm/05-fila-tickets.md#iam-001) · [IAM-006](00-operacao-itsm/05-fila-tickets.md#iam-006) · [IAM-007](00-operacao-itsm/05-fila-tickets.md#iam-007) |
-| Joiner — pré-admissão e ativação no Entra ID | Conta bloqueada antes da admissão; ativação, grupo, troca de senha e entrada com MFA comprovados. | [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
 | Reconciliação de acessos com PowerShell | Cinco associações avaliadas; três exceções identificadas, sem remediação automática. | [Script, CSVs e reprodução](05-automacao/) |
 | Governança de acesso — avaliação de permissão direta | Acesso por grupo mantido; pedido de permissão individual redundante não aprovado na simulação. | [IAM-008: decisão e evidências](00-operacao-itsm/05-fila-tickets.md#iam-008) |
 | Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
