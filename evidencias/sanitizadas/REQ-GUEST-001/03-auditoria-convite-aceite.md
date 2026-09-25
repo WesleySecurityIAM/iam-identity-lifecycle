@@ -16,7 +16,7 @@ O campo AcceptedOn registra 17:17:22Z (14:17:22 Brasília); os eventos de atuali
 
 ## Conclusão e limites
 
-Convite, associação de sponsor e aceite comprovados; encerramento permanece pendente para 25/09. As capturas confirmam a mudança de estado. Não foi fornecido arquivo de Sign-in logs nem inventário novo após a inclusão do Guest. Não alegar MFA, acesso a aplicação ou ausência de atribuições com base somente neste extrato.
+Convite, associação de sponsor e aceite comprovados em 22/09. Encerramento posteriormente concluído em 25/09: [estado final e auditoria](06-encerramento.md). As capturas confirmam a mudança de estado. Não foi fornecido arquivo de Sign-in logs nem inventário novo após a inclusão do Guest. Não alegar MFA, acesso a aplicação ou ausência de atribuições com base somente neste extrato.
 
 O JSON também contém falhas de Add service principal; são operações distintas dos eventos selecionados. O resultado success se refere a cada evento, não a todo o arquivo. Nenhuma causa dessas falhas foi diagnosticada nesta revisão.
 

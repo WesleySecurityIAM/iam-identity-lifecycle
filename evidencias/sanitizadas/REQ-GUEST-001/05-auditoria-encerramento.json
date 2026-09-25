@@ -1,0 +1,75 @@
+{
+  "source": "AuditLogs_2026-09-25.json",
+  "sha256": "0edb5859a116cbe9a2959a730d0ab5b4ba6570f3db01d3ef607ebf7641dc6823",
+  "scope": "Quatro eventos de encerramento do Guest; extrato com campos selecionados, sem tokens ou dados de sessão",
+  "events": [
+    {
+      "id": "Directory_aeba15c2-2e0c-4171-b141-2a52172ade29_XHZQH_165951283",
+      "utc": "2026-09-25T14:38:41.9187316Z",
+      "brasilia": "2026-09-25T11:38:41-03:00",
+      "activityDisplayName": "Disable account",
+      "result": "success",
+      "targetId": "2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "modifiedProperties": [
+        {
+          "displayName": "AccountEnabled",
+          "oldValue": "[true]",
+          "newValue": "[false]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_aeba15c2-2e0c-4171-b141-2a52172ade29_XHZQH_165951290",
+      "utc": "2026-09-25T14:38:41.91973Z",
+      "brasilia": "2026-09-25T11:38:41-03:00",
+      "activityDisplayName": "Update user",
+      "result": "success",
+      "targetId": "2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "modifiedProperties": [
+        {
+          "displayName": "AccountEnabled",
+          "oldValue": "[true]",
+          "newValue": "[false]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_e3bdd21f-dd1f-40ed-98fc-f85d5fa8a575_L6SSI_258299115",
+      "utc": "2026-09-25T14:40:20.923365Z",
+      "brasilia": "2026-09-25T11:40:20-03:00",
+      "activityDisplayName": "Update StsRefreshTokenValidFrom Timestamp",
+      "result": "success",
+      "targetId": "2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "modifiedProperties": [
+        {
+          "displayName": "StsRefreshTokensValidFrom",
+          "oldValue": "[\"2026-09-22T17:09:48Z\"]",
+          "newValue": "[\"2026-09-25T14:40:20Z\"]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_e3bdd21f-dd1f-40ed-98fc-f85d5fa8a575_L6SSI_258299121",
+      "utc": "2026-09-25T14:40:20.9243646Z",
+      "brasilia": "2026-09-25T11:40:20-03:00",
+      "activityDisplayName": "Update user",
+      "result": "success",
+      "targetId": "2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f",
+      "actor": "ADMIN-LAB-001",
+      "actorId": "73b2a417-316d-4a0c-a852-832faa25a2ed",
+      "modifiedProperties": [
+        {
+          "displayName": "StsRefreshTokensValidFrom",
+          "oldValue": "[\"2026-09-22T17:09:48Z\"]",
+          "newValue": "[\"2026-09-25T14:40:20Z\"]"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 - Ambiente: Microsoft Entra ID — laboratório fictício
 - Tipo: requisição de colaboração B2B, complementar à fila IAM
 - Abertura: 2026-09-22
-- Status: Em andamento — convite, sponsor e aceite comprovados; encerramento pendente
+- Status: **Fechado em 2026-09-25** — conta desabilitada, revogação auditada e estado final conferido
 - Solicitante e responsável: Wesley
 - Nome de exibição: Convidado LAB 01
 - Encerramento previsto: 2026-09-25, após validação
@@ -27,8 +27,8 @@ Preparação solicitada por Wesley em 22/09/2026 para o próprio laboratório. F
 - **Concluído:** registrar Guest e PendingAcceptance (01); ADMIN-LAB-001 associado como sponsor às 14:09:49 (03). Wesley responde pelo ciclo de vida e a conta administrativa é o executor técnico.
 - **Concluído:** aceite comprovado pela captura Accepted e pelos eventos Update user / Redeem external user invite às 14:17:23 (02–03).
 - **Concluído:** preservar auditoria complementar e duas capturas na área privada; publicar extratos sanitizados e cópias das capturas autorizadas pelo operador.
-- **Pendente:** inventário posterior ao Guest e conferência de grupos, papéis e aplicações; arquivo de Sign-in logs não recebido, sem alegar teste de aplicação ou MFA.
-- **Pendente — 25/09:** encerrar a participação: bloquear entrada, revogar sessões quando aplicável e conferir ausência de grupos, papéis e aplicações atribuídos. Preservar evidências; eventual exclusão do objeto deve ser registrada separadamente.
+- **Concluído — 25/09:** bloquear entrada às 11:38:41 e executar revogação às 11:40:20 (UTC−03:00), com auditoria success e alterações AccountEnabled / StsRefreshTokensValidFrom.
+- **Concluído:** conferir Disabled e contadores de grupos, aplicações e papéis iguais a zero no resumo do portal. Objeto preservado. Não houve novo CSV ou teste de entrada/aplicação; o fechamento se apoia no estado individual e na auditoria.
 
 ## Evidências
 
@@ -36,12 +36,14 @@ Preparação solicitada por Wesley em 22/09/2026 para o próprio laboratório. F
 - [02 — Aceite na captura](../evidencias/sanitizadas/REQ-GUEST-001/02-estado-aceito.md).
 - [03 — Auditoria do convite, sponsor e aceite](../evidencias/sanitizadas/REQ-GUEST-001/03-auditoria-convite-aceite.md).
 
+- [04–06 — Estado final, auditoria e interpretação do encerramento](../evidencias/sanitizadas/REQ-GUEST-001/06-encerramento.md).
+
 ## Riscos, limites e reversão
 
 O prazo é controle documental/manual; não configura expiração automática no Entra. O aceite comprova resgate do convite, não acesso a aplicação. Se o convite for enviado à identidade errada, interromper o teste e remover o objeto indevido após conferir as dependências. Não registrar senhas ou links de resgate no Git.
 
 ## Fechamento
 
-Em andamento. Convite, sponsor e aceite documentados em 22/09. Encerrar somente após executar e comprovar o encerramento previsto para 25/09. A data é um prazo manual; não há expiração automática configurada.
+**Fechado em 25/09/2026:** convite, sponsor e aceite registrados em 22/09; conta desabilitada, ação de revogação auditada e ausência de grupos/aplicações/papéis indicada no portal em 25/09. Prazo manual cumprido, sem exclusão do objeto. A ação de revogação não comprova término imediato de toda sessão de aplicação ou do provedor externo. Sem nova tentativa de entrada; conclusão limitada ao escopo comprovado.
 
 [Voltar à fila](05-fila-tickets.md).

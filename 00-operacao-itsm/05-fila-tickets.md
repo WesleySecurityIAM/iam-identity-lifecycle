@@ -14,7 +14,7 @@
 
 **Procedimento complementar:** [PROC-BG-001 — Acesso de emergência](PROC-BG-001-acesso-emergencia.md): teste administrativo validado em 24/09; independência da autenticação e custódia a validar. Não altera a contagem dos 11 cenários.
 
-**Solicitação complementar:** [REQ-GUEST-001 — Convidado externo B2B](REQ-GUEST-001.md): em andamento; convite, sponsor e aceite comprovados em 22/09; encerramento pendente em 25/09. Registro separado dos 11 cenários IAM do plano.
+**Solicitação complementar:** [REQ-GUEST-001 — Convidado externo B2B](REQ-GUEST-001.md): fechado em 25/09; convite, sponsor e aceite em 22/09; conta desabilitada, revogação auditada e estado final sem grupos/aplicações/papéis no resumo do portal. Registro separado dos 11 cenários IAM do plano.
 
 <a id="iam-001"></a>
 
