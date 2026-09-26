@@ -10,6 +10,7 @@
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
 | [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
 | [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
+| [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Planejado: escopo e regra definidos; coleta, decisão e testes pendentes. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
 **Procedimento complementar:** [PROC-BG-001 — Acesso de emergência](PROC-BG-001-acesso-emergencia.md): teste administrativo validado em 24/09; independência da autenticação e custódia a validar. Não altera a contagem dos 11 cenários.
@@ -643,3 +644,73 @@ Risco: remover a associação sem verificar acesso pela conexão existente. Reve
 ## Fechamento
 
 Reprodução concluída: acesso persistiu na conexão mantida após remoção, foi negado após reconexão e voltou após restauração do grupo e nova conexão. Estado final de Felipe restaurado e comprovado.
+
+<a id="iam-010"></a>
+
+# IAM-010 — Recertificação de acessos e segregação de funções
+
+- Ambiente: laboratório fictício — AD DS e Entra independentes; microcaso SoD em dados locais simulados
+- Tipo: revisão de acesso e avaliação de segregação de funções (SoD)
+- Registro do preparo: 2026-09-26
+- Status: Planejado — execução e evidências pendentes
+- Execução prevista: preparo em 30/09 e revisão em 01/10, após validação do Mover IAM-002
+- Responsável pela execução: Wesley
+- Identidade do microcaso: EMP0007 — Gabriela Santos
+- Relação com o ciclo: [IAM-002 — Mover](#iam-002) → avaliação SoD → recertificação
+
+## Contexto e objetivo
+
+Revisar se as concessões da população escolhida continuam necessárias e registrar decisão por acesso: manter, remover ou investigar. Usar Gabriela após o Mover como contexto para um microcaso de combinação incompatível de direitos. A revisão deve ter responsável de negócio, justificativa e verificação posterior.
+
+## Estado anterior
+
+O estado de Suporte e a reconciliação inicial de Gabriela estão documentados no IAM-002. A mudança para Financeiro ainda não foi executada. O IAM-010 partirá de uma coleta posterior ao Mover; essa coleta e os resultados da revisão não estão disponíveis neste registro de preparo.
+
+## Aprovação e fundamento
+
+- Conferir RH e matriz vigentes, definir população, sistemas, recursos e data das coletas antes da revisão.
+- Registrar a decisão simulada do responsável de negócio no momento do exercício, com data e justificativa. Wesley executa o laboratório; atuação técnica não equivale a aprovação independente.
+- A regra abaixo é uma política fictícia do processo **Compras-LAB**. Não é uma incompatibilidade universal deduzida pelo nome do cargo ou do grupo.
+
+| Regra SoD-001 | Definição do microcaso |
+|---|---|
+| Direito A — `FORNECEDOR_MANTER` | Cadastrar ou alterar fornecedores no processo simulado. |
+| Direito B — `ORCAMENTO_APROVAR` | Aprovar orçamento de compra no mesmo processo. |
+| Conflito | A mesma pessoa acumular A e B no escopo Compras-LAB. Apenas indicar fornecedores ou mudar de departamento não estabelece esse conflito. |
+| Tratamento a avaliar | Se B for necessário à função, manter B e rejeitar/retirar A do modelo. Registrar decisão; exceção exige justificativa, prazo, revisão e controle compensatório. |
+
+## Ações planejadas
+
+1. Conferir o fechamento do Mover e coletar o estado real no escopo escolhido, distinguindo AD e Entra. Identificar pessoas por matrícula e contas por identificador do diretório.
+2. Relacionar concessões observadas com RH/matriz e necessidade atual; registrar manter/remover/investigar, responsável e fundamento.
+3. Montar uma entrada didática separada com matrícula, sistema, escopo e direitos A/B. Identificar todos esses registros como **simulados**.
+4. Avaliar três casos: somente A, somente B e A+B. Registrar o conflito, a decisão e a comparação após retirar um dos direitos no modelo.
+5. Aplicar correções reais somente se justificadas e autorizadas no escopo do laboratório; verificar estado final e acesso efetivo quando houver recurso integrado.
+
+## Validação prevista
+
+| Caso local simulado | Resultado esperado pela regra |
+|---|---|
+| A somente ou B somente | Sem conflito SoD-001; isso não prova que a concessão é necessária. |
+| A+B, mesma pessoa e mesmo escopo | Conflito SoD-001. |
+| Após decisão e retirada de A do modelo | B permanece; nova comparação sem conflito SoD-001. |
+
+Esses são critérios de teste, não resultados executados. O microcaso pode usar PowerShell para comparar entradas locais, sem conceder direitos excessivos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
+
+## Evidências previstas
+
+- População e coleta real da revisão, com sistema, data, regra e concessões observadas.
+- Matriz SoD-001 e entradas simuladas, identificadas separadamente da coleta real.
+- Relatório dos testes e comparação antes/depois, decisão simulada datada e justificativa.
+- Estado final e reteste das correções reais, se necessárias. Nenhuma dessas evidências foi produzida pelo preparo do ticket.
+
+## Riscos, reversão e limitações
+
+- Aprovação de orçamento e manutenção de fornecedor são direitos fictícios; não há ERP, workflow financeiro ou integração IGA implementados. Pertencer a `GG_FIN_READ` não demonstra esses poderes.
+- A regra é **SoD estática**, sobre acumular direitos. Impedir que alguém aprove a própria transação é um controle dinâmico no aplicativo e não será apresentado como executado.
+- Para uma correção real, registrar dependências e reversão antes da mudança; preservar concessões de outras pessoas. A reversão da entrada simulada não exige mudar diretórios.
+- O microcaso tem limite de cerca de 90 minutos, incluindo preparo, dentro da revisão já prevista. Sem cálculo de SLA ou aprovação corporativa real.
+
+## Fechamento
+
+Pendente. Encerrar após coleta, decisões e validações, com regra, conflito simulado, tratamento e limites sustentados pelas evidências. Esta preparação não altera o status do Mover nem antecipa o aceite da v0.5.
