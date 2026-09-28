@@ -1,6 +1,6 @@
 # Reconciliação RH × Entra — 23/09/2026
 
-**Duas pessoas, três verificações e uma exceção calculada:** Carla deveria estar desabilitada; o CSV registra conta habilitada. Gabriela está conforme em habilitação e departamento Suporte. Resultado vinculado ao [IAM-002](../../../00-operacao-itsm/05-fila-tickets.md#iam-002) e ao [IAM-003](../../../00-operacao-itsm/05-fila-tickets.md#iam-003). IAM-002 permanece em andamento; o IAM-003 foi posteriormente fechado, conforme a [validação final](../IAM-003/08-validacao-final.md).
+**Duas pessoas, três verificações e uma exceção calculada em 23/09:** Carla deveria estar desabilitada; o CSV registra conta habilitada. Gabriela está conforme em habilitação e departamento Suporte. Resultado vinculado ao [IAM-002](../../../00-operacao-itsm/05-fila-tickets.md#iam-002) e ao [IAM-003](../../../00-operacao-itsm/05-fila-tickets.md#iam-003). O IAM-003 foi posteriormente fechado, conforme a [validação final](../IAM-003/08-validacao-final.md). O Mover foi concluído em 28/09, com [nova comparação](../IAM-002/23-comparacao-final.md); os dados abaixo preservam o estado histórico de 23/09.
 
 | Evidência | Conteúdo |
 |---|---|
@@ -20,7 +20,7 @@ A habilitação é comparada para as duas pessoas. O departamento é comparado a
 - O resultado CONFORME de Gabriela vale para habilitação e departamento nas fontes utilizadas. Não representa Mover executado nem auditoria completa de acessos.
 - Este relatório não compara grupos, AD, papéis, aplicações ou sessões. As consultas visuais e os testes SMB possuem evidências próprias.
 - O desligamento fictício de Carla em 28/08 e a criação real da conta no laboratório em 21/09 reproduzem uma divergência. Não demonstram acesso contínuo desde agosto nem SLA histórico.
-- Atualização posterior: Leaver concluído, com auditoria, entrada bloqueada e comparação final conforme no IAM-003. Mover continua pendente do evento efetivo de RH e execução; este relatório preserva a divergência inicial.
+- Atualização posterior: Leaver concluído em 23/09 e Mover em 28/09, ambos com validações próprias. Este relatório preserva a divergência inicial e não deve ser tratado como inventário atual.
 
 ## Integridade
 

@@ -103,4 +103,6 @@ Por isso, o script apenas detecta e reporta diferenças. Toda concessão ou revo
 
 Este é um laboratório introdutório. O estado esperado está definido no script e não existe integração com RH, Active Directory, Microsoft Entra ou plataforma ITSM.
 
-Em uma evolução futura, o estado esperado será obtido de uma fonte autoritativa de RH e o estado atual poderá ser consultado no Microsoft Entra por meio do Microsoft Graph.
+Em outros casos do portfólio, já existem comparações com fonte de RH e exportações reais do laboratório: [Leaver de Carla](../evidencias/sanitizadas/IAM-003/08-validacao-final.md) e [Mover de Gabriela](../evidencias/sanitizadas/IAM-002/23-comparacao-final.md). Elas não são resultados deste script sintético.
+
+A próxima evolução prevista é um comparador reproduzível de população, cadastro e concessões com validação de completude e correspondência. Consulta direta por Microsoft Graph permanece uma etapa futura.

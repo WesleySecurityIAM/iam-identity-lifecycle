@@ -4,7 +4,7 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 
 ## Evidências disponíveis
 
-- [Estado atual das associações entre contas e grupos](../05-automacao/estado-final.csv)
+- [Estado observado no exercício sintético de associações](../05-automacao/estado-final.csv)
 - [Relatório com as três exceções encontradas](../05-automacao/excecoes.csv)
 - [Script utilizado para reproduzir a comparação](../05-automacao/Invoke-IamReconciliation.ps1)
 - [Procedimento de execução e interpretação do resultado](../05-automacao/)
@@ -18,7 +18,7 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 
 - [Guest B2B encerrado em 25/09: bloqueio, revogação auditada e estado final](sanitizadas/REQ-GUEST-001/06-encerramento.md).
 
-- [IAM-002 em andamento: estado inicial de Suporte e testes da Gabriela](sanitizadas/IAM-002/README.md).
+- [IAM-002 fechado em 28/09: Suporte retirado, Financeiro validado e comparação final conforme](sanitizadas/IAM-002/README.md).
 - [Entra em 22/09: inventário, grupos e auditoria](sanitizadas/inventario-entra-2026-09-22/README.md).
 
 - [IAM-006 no ServiceNow: classificação, notas, resolução e limites dos SLAs](sanitizadas/IAM-006/servicenow/README.md).
@@ -33,10 +33,9 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 - [IAM-008: acesso por grupo mantido; pedido direto não aprovado](sanitizadas/IAM-008/README.md).
 - [IAM-009: remoção de grupo, reconexão e restauração](sanitizadas/IAM-009/README.md).
 - [Estado inicial da conta de serviço desabilitada](sanitizadas/conta-servico/README.md).
+- [Entra em 23/09: grupos de Carla/Gabriela e consultas de papéis/aplicações de Carla](sanitizadas/inventario-entra-2026-09-23/README.md).
 
 ## Cuidados na publicação
-
-[Entra em 23/09: grupos de Carla/Gabriela e consultas de papéis/aplicações de Carla](sanitizadas/inventario-entra-2026-09-23/README.md).
 
 - remover credenciais, tokens e dados pessoais;
 - registrar a origem, a data e o objetivo da evidência;
