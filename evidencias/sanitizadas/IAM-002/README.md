@@ -1,6 +1,6 @@
 # IAM-002 — Preparação do Mover de Gabriela
 
-**Em andamento — 22/09/2026.** Estado inicial de Suporte comprovado: leitura permitida e criação de arquivo negada. A mudança para Financeiro ainda não foi executada.
+**Fechado em 28/09/2026.** Preparação iniciada em 22/09. Suporte removido, leitura antiga negada, Financeiro concedido com leitura permitida e criação negada. Cadastro/grupos finais conferidos no AD e Entra; seis verificações da comparação final conformes.
 
 Modelo observado: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_READ → SuporteLab`. Recurso fictício, sem integração com sistema de chamados.
 
@@ -32,14 +32,43 @@ MemberOf não inclui o grupo primário nem expande associações aninhadas. A ca
 
 [Conferência das fontes do Entra de 22/09 e lacunas](../inventario-entra-2026-09-22/05-conferencia-reconciliacao-2026-09-23.md).
 
-## Próxima execução do Mover
+## Preparação preservada — 23 a 28/09
 
 [10 — Reconciliação RH × Entra em 23/09](../reconciliacao-2026-09-23/README.md): duas regras conformes para EMP0007 (habilitação e departamento Suporte), com captura às 16:57:25 UTC−03:00 e CSVs preservados. A comparação usa o inventário de 22/09, não inclui grupos e não comprova execução do Mover.
 
 [09 - Grupo de Gabriela no Entra em 23/09](../inventario-entra-2026-09-23/04-gabriela-grupos.png): GG_SUP_TICKET visível na tela da usuária; coleta informada em 23/09, sem horário interno. [Escopo e limitações](../inventario-entra-2026-09-23/README.md).
 
-Registrar evento de RH e aprovação simulada da mudança, retirar acesso de Suporte, renovar a conexão e provar leitura negada. Conceder o grupo financeiro, validar leitura e conferir ausência de acesso acumulado. Atualizar e conferir separadamente o Entra, mantendo EMP0007 e as contas existentes.
+Na preparação de 28/09, o roteiro definido foi: retirar acesso de Suporte, renovar a conexão e provar leitura negada. Conceder o grupo financeiro, validar leitura e conferir ausência de acesso acumulado. Atualizar e conferir separadamente o Entra, mantendo EMP0007 e as contas existentes.
+
+**Atualização em 28/09:** evento de RH preparado, com vigência em 28/09/2026. O [recorte da nova fonte](12-fonte-rh-mover-2026-09-28.csv) registra Gabriela como Analista Financeiro, Financeiro, gestor Carlos Lima. A versão integral privada em `280926/hr_authoritative_source.csv` preserva os nove registros da fonte de 23/09, alterando somente esses três campos de EMP0007. Matrícula, admissão e status ATIVO permanecem. Estado anterior e decisão simulada documentados; execução comprovada nas evidências 15–23 abaixo. Esta fonte define o esperado, não prova mudança nos diretórios.
+
+## Estado anterior coletado em 28/09
+
+- [13 — AD, às 11:01:02 UTC−03:00](13-gabriela-ad-antes-mover-2026-09-28.png): ObjectGUID `cc17f00e-178a-47be-91be-dab949512b83`, EMP0007, Enabled=True, Suporte e Analista de Suporte. MemberOf mostra GG_SUP_TICKET; consulta desse grupo retorna Gabriela. GG_FIN_READ retorna somente Felipe. Não é teste de acesso ao recurso.
+- [14 — Entra, relógio da estação às 11:08 de 28/09](14-gabriela-entra-antes-mover-2026-09-28.png): Object ID `2d5bee1a-e26c-47ef-bea2-a55a2fd8614d`, EMP0007, Member, Account enabled=Yes, Analista de Suporte, departamento Suporte e On-premises sync enabled=No. A captura não mostra grupos; os campos com data 22/09 referem-se ao cadastro/sessões/senha, não ao horário desta coleta.
+
+Decisão registrada no ticket com **horário fictício de 10:53 UTC−03:00**, 15 minutos antes do relógio da captura 14. Não representa um evento real de aprovação auditada. Reversão prevista: retirar o novo grupo, restaurar cadastro/grupo anterior e retestar, se autorizada.
+
+Originais movidos de Downloads para a área privada de 28/09; cópias sem edição neste diretório. Nomes de origem e hashes SHA-256 preservados no manifesto privado.
 
 [Ticket e critérios de fechamento](../../../00-operacao-itsm/05-fila-tickets.md#iam-002).
 
 [11 — Nova conferência com CSV de 23/09](../IAM-003/08-validacao-final.md): Gabriela permanece True/Suporte e conforme nas duas regras. Estado anterior ao Mover preservado; nenhum acesso novo foi concedido por esta comparação.
+
+## Execução e fechamento — 28/09
+
+| Prova | Resultado e horário de Brasília |
+|---|---|
+| [15 — Remoção no AD](15-ad-remocao-suporte.png) | 11:33:46: GabrielaPresente=False, GG_SUP_TICKET com zero membros no AD. |
+| [16 — Suporte negado](16-suporte-leitura-negada.png) | 11:36:50: conexão como Gabriela aceita, leitura do chamado negada. /delete retornou 2250: não comprova desconexão anterior bem-sucedida. |
+| [17 — Estado AD final](17-ad-cadastro-grupos-finais.png) | 11:42:55: identidade preservada, Financeiro/Analista Financeiro, Suporte=False e Financeiro=True. |
+| [18 — Leitura financeira](18-financeiro-leitura-permitida.png) | 11:52:39: lista net use inicialmente vazia, conexão explícita como Gabriela e conteúdo lido. |
+| [19 — Criação negada](19-financeiro-criacao-negada.png) | 11:54:34: criação no compartilhamento financeiro retorna acesso negado. |
+| [20 — Perfil Entra](20-entra-cadastro-final.png) | Relógio 12:00: mesma conta, EMP0007, Financeiro/Analista Financeiro e Enabled=Yes. |
+| [21 — Grupos Entra](21-entra-grupos-finais.png) | Relógio 12:01: GG_FIN_READ na lista sem filtro de busca. |
+| [22 — Auditoria](22-auditoria-entra-mover.md) | 11:56:12 remoção Suporte; 11:58:04 cadastro; 11:58:42 inclusão Financeiro. Todos success. |
+| [23 — Comparação final](23-comparacao-final.md) | RH e exportações atuais: seis regras conformes, zero exceções no escopo. |
+
+Os horários do AD são de Get-Date junto às consultas/testes, não auditoria da alteração. No Entra, 20–21 mostram o relógio da estação; 22 contém timestamps dos eventos. Originais dos sete prints e quatro exportações preservados na área privada de 28/09 com manifesto SHA-256; CSVs integrais e JSON não foram publicados.
+
+Conclusão: Mover validado no escopo definido. Não houve teste de acesso a aplicação no Entra, nem verificação de todas as sessões/atribuições. A prova negativa de escrita testa criação, não alteração/exclusão. Reversão documentada, não executada.

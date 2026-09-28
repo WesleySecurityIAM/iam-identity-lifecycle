@@ -3,7 +3,7 @@
 | Ticket | Objetivo | Resultado documentado |
 |---|---|---|
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
-| [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Em andamento: testes de Suporte e reconciliação cadastral inicial; mudança pendente. |
+| [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Fechado: Suporte retirado/negado, Financeiro validado e comparação final conforme. |
 | [IAM-003](#iam-003) | Leaver de Carla no Entra | Fechado: conta/grupo tratados, revogação auditada, entrada bloqueada e comparação final conforme. |
 | [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
@@ -103,9 +103,9 @@ Resolvido em 04/09/2026, com criação, matrícula e associação ao grupo compr
 - Tipo: requisição de mudança de função — Mover/JML
 - Identidade: EMP0007 — Gabriela Santos
 - Abertura e preparação: 2026-09-22
-- Status: Em andamento — estado inicial comprovado; mudança pendente
+- Status: Fechado — Mover validado no escopo
 - Responsável pela execução: Wesley
-- Execução da mudança prevista: 28–29/09/2026, conforme plano; fechamento pendente
+- Execução e fechamento: 2026-09-28
 
 ## Contexto e objetivo
 
@@ -113,13 +113,15 @@ Transferir Gabriela de Suporte para Financeiro, removendo o acesso antigo antes 
 
 ## Estado anterior
 
-Gabriela está habilitada no AD, EMP0007, Analista de Suporte, OU Suporte. Pertence ao GG_SUP_TICKET, membro de DL_SUP_TICKET_READ. A DL concede leitura no recurso fictício SuporteLab. O inventário do Entra registra a mesma matrícula e área em uma conta independente.
+Na preparação, Gabriela estava habilitada no AD, EMP0007, Analista de Suporte, OU Suporte. Pertencia ao GG_SUP_TICKET, membro de DL_SUP_TICKET_READ. A DL concede leitura no recurso fictício SuporteLab. O inventário do Entra registra a mesma matrícula e área em uma conta independente.
 
 ## Aprovação e fundamento
 
 - Preparação do laboratório solicitada por Wesley em 22/09.
-- Fonte de RH vigente: EMP0007 em Suporte, gestora Daniela Alves. Destino previsto no plano: Financeiro.
-- Evento de mudança de RH e decisão simulada dos responsáveis pelas áreas: **pendentes**, a registrar antes da execução do Mover. Nenhuma aprovação prévia da transferência é alegada nesta preparação.
+- Fonte anterior de RH: EMP0007 em Suporte, Analista de Suporte, gestora Daniela Alves; preservada como referência inicial.
+- **Evento simulado de RH registrado em 28/09/2026, com vigência em 28/09/2026:** EMP0007 passa a Analista Financeiro, área Financeiro, gestor Carlos Lima. Nova fonte copiada da versão de 23/09; somente cargo, área e gestor de Gabriela foram alterados. Matrícula, admissão, status ATIVO e demais pessoas preservados.
+- Decisão simulada registrada em 28/09/2026: os responsáveis fictícios de Suporte (Daniela Alves) e Financeiro (Carlos Lima) autorizam transferir EMP0007 para Financeiro, retirando GG_SUP_TICKET antes de conceder GG_FIN_READ, mantendo a identidade existente e sem acumulação dos dois acessos. Execução técnica: Wesley.
+- **Horário fictício da decisão no cenário: 28/09/2026, 10:53 UTC−03:00**, escolhido como 15 minutos antes das 11:08 mostradas no relógio da captura do Entra. Esse horário compõe a simulação; não é timestamp de auditoria nem comprovação de aprovação real prévia. Fonte de RH e decisão não comprovam execução nos diretórios.
 
 ## Ações realizadas
 
@@ -129,8 +131,10 @@ Gabriela está habilitada no AD, EMP0007, Analista de Suporte, OU Suporte. Perte
 - **Concluído:** conectar como Gabriela, ler o arquivo e observar criação de arquivo negada (06–07).
 - **Concluído — 23/09:** reconciliar RH × CSV Entra de 22/09 por matrícula; Gabriela conforme em habilitação e departamento Suporte, preservando o estado anterior ao Mover.
 - **Concluído — 23/09, complemento:** nova exportação confirma Gabriela True/Suporte; comparação posterior ao Leaver de Carla mantém as duas regras conformes, sem executar o Mover.
-- **Pendente:** registrar mudança/aprovação; atualizar atributos, retirar Suporte e testar negação após nova conexão; conceder Financeiro e validar o novo acesso.
-- **Pendente:** validar alterações no Entra separadamente e conferir ausência de acesso antigo/residual antes de fechar.
+- **Concluído — 28/09:** preparar fonte de RH com a mudança vigente; versão anterior preservada, nove registros mantidos e alteração limitada aos três campos de EMP0007.
+- **Concluído — 28/09:** coletar estado anterior no AD (11:01:02 UTC−03:00) e perfil no Entra (relógio da estação às 11:08); registrar decisão simulada e reversão prevista.
+- **Concluído — 28/09:** retirar Suporte, confirmar ausência no grupo e leitura negada após conexão explícita; atualizar cadastro, conceder Financeiro e comprovar leitura permitida/criação negada (15–19).
+- **Concluído — 28/09:** conferir identidade/cadastro/grupos no Entra e auditoria de remoção → cadastro → inclusão; comparar RH com exportações finais: seis regras conformes (20–23).
 
 ## Validação e teste de acesso
 
@@ -138,24 +142,33 @@ Em 22/09, UTC−03:00: associação GG/DL às 11:26:08; ACL e compartilhamento �
 
 Em 23/09 às 16:57:25 UTC−03:00, a captura da reconciliação apresenta duas verificações conformes para EMP0007: habilitação True/True e departamento Suporte/Suporte. A fonte observada continua sendo o CSV de 22/09; grupos e acessos efetivos não foram comparados pelo script.
 
+Em 28/09, Suporte ausente no AD às 11:33:46 e leitura negada às 11:36:50. Cadastro e grupos finais às 11:42:55; leitura financeira permitida às 11:52:39 e criação negada às 11:54:34. Auditoria Entra confirma remoção às 11:56:12, cadastro às 11:58:04 e inclusão às 11:58:42 (UTC−03:00). Nova comparação após as mudanças: seis regras conformes e zero exceções no escopo, com fontes e limites na prova 23.
+
 ## Evidências
 
 - [Índice das capturas — cadastro, grupos, permissões e testes](../evidencias/sanitizadas/IAM-002/README.md): inclui consulta AD de 23/09; MemberOf não abrange grupo primário nem expande aninhamentos.
 - [Entra — inventário e auditoria de 22/09](../evidencias/sanitizadas/inventario-entra-2026-09-22/README.md) e [conferência visual de 23/09](../evidencias/sanitizadas/inventario-entra-2026-09-23/README.md).
 - [Reconciliação inicial — captura e CSVs](../evidencias/sanitizadas/reconciliacao-2026-09-23/README.md): Gabriela conforme; exceção de Carla tratada no IAM-003.
 - [Nova comparação com CSV de 23/09](../evidencias/sanitizadas/IAM-003/08-validacao-final.md): Gabriela permanece True/Suporte; Mover pendente.
+- [12 — Fonte de RH para o Mover, vigente em 28/09](../evidencias/sanitizadas/IAM-002/12-fonte-rh-mover-2026-09-28.csv): recorte de Gabriela da nova versão de RH. Define o estado esperado; não é consulta ao diretório.
+- [13 — Estado anterior no AD em 28/09](../evidencias/sanitizadas/IAM-002/13-gabriela-ad-antes-mover-2026-09-28.png): EMP0007 habilitada, Suporte/Analista de Suporte, GG_SUP_TICKET presente; a consulta de GG_FIN_READ retorna somente Felipe.
+- [14 — Estado anterior no Entra em 28/09](../evidencias/sanitizadas/IAM-002/14-gabriela-entra-antes-mover-2026-09-28.png): EMP0007, Account enabled=Yes, Suporte/Analista de Suporte e sincronização local desabilitada. Não mostra grupos atuais.
+
+- [15–21 — Prints da execução e estado final](../evidencias/sanitizadas/IAM-002/README.md#execução-e-fechamento--2809).
+- [22 — Auditoria Entra](../evidencias/sanitizadas/IAM-002/22-auditoria-entra-mover.md).
+- [23 — Comparação final com RH](../evidencias/sanitizadas/IAM-002/23-comparacao-final.md).
 
 ## Riscos e reversão
 
-Riscos: acumular acessos entre áreas e confundir remoção de grupo com encerramento de contexto SMB. Na execução futura, renovar a conexão para validar o corte. Em caso de reversão autorizada, retirar a concessão nova, restaurar atributos/grupo anterior e retestar. Não alterar ACL compartilhada nem outros membros para revogar apenas Gabriela.
+Riscos: acumular acessos entre áreas e confundir remoção de grupo com encerramento de contexto SMB. Testes registram conexão explícita e resultado no recurso. Reversão prevista, não executada. Em caso de reversão autorizada, retirar a concessão nova, restaurar atributos/grupo anterior e retestar. Não alterar ACL compartilhada nem outros membros para revogar apenas Gabriela.
 
 ## Limitações e pendências
 
-Recurso é pasta de teste, sem integração com sistema de chamados. Negativo comprova criação negada pela combinação SMB/NTFS; não testa exclusão ou edição existente. Ajuste de senha tem captura de edição e relato do operador. AD e Entra não sincronizam. Aprovação e execução do Mover pendentes; sem cálculo de SLA ou horário Ready presumido.
+Recurso é pasta de teste, sem integração com sistema de chamados. Negativo comprova criação negada pela combinação SMB/NTFS; não testa exclusão ou edição existente. Ajuste de senha tem captura de edição e relato do operador. AD e Entra não sincronizam. Fonte de RH e decisão simulada registradas em 28/09; horário da decisão fictício, sem cálculo de SLA. A prova 16 mostra /delete com erro 2250, não uma desconexão bem-sucedida; a conexão e a leitura negada estão visíveis. Não foram avaliados todos os caminhos de acesso/sessões, Manager ou OU final. Entra comprova cadastro, grupos e operações, sem teste em aplicação integrada.
 
 ## Fechamento
 
-**Não fechado.** Encerrar somente após comprovar acesso antigo negado, novo permitido e grupos/atributos finais conferidos no AD e no Entra. A preparação de 22/09 permanece como evidência do estado anterior.
+**Fechado em 28/09/2026.** Identidade preservada, Suporte retirado, leitura antiga negada, Financeiro permitido somente no escopo testado e cadastro/grupos conferidos nos dois diretórios independentes. Comparação final conforme. A preparação histórica permanece preservada; SoD/recertificação serão tratados no IAM-010.
 
 <a id="iam-003"></a>
 

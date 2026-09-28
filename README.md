@@ -7,7 +7,7 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 | Etapa | Estado | Resultado e evidência |
 |---|---|---|
 | **Joiner — entrada** | **Concluído** | Pré-admissão bloqueada; ativação, grupo, troca de senha e MFA comprovados no Entra. [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
-| **Mover — mudança de área** | **Em andamento** | Acesso inicial de Suporte e reconciliação cadastral registrados; mudança para Financeiro ainda pendente. [IAM-002](00-operacao-itsm/05-fila-tickets.md#iam-002) |
+| **Mover — mudança de área** | **Concluído** | Suporte retirado e leitura negada; Financeiro com leitura permitida/criação negada, auditoria Entra e comparação final conforme. [IAM-002](00-operacao-itsm/05-fila-tickets.md#iam-002) |
 | **Leaver — desligamento** | **Concluído** | Conta bloqueada, revogação de sessões auditada, grupo removido, nova entrada negada e comparação final conforme no Entra. [IAM-003](00-operacao-itsm/05-fila-tickets.md#iam-003) |
 
 ## Outras entregas realizadas
