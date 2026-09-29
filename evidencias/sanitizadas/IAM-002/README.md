@@ -72,3 +72,19 @@ Originais movidos de Downloads para a área privada de 28/09; cópias sem ediç�
 Os horários do AD são de Get-Date junto às consultas/testes, não auditoria da alteração. No Entra, 20–21 mostram o relógio da estação; 22 contém timestamps dos eventos. Originais dos sete prints e quatro exportações preservados na área privada de 28/09 com manifesto SHA-256; CSVs integrais e JSON não foram publicados.
 
 Conclusão: Mover validado no escopo definido. Não houve teste de acesso a aplicação no Entra, nem verificação de todas as sessões/atribuições. A prova negativa de escrita testa criação, não alteração/exclusão. Reversão documentada, não executada.
+
+## Complemento — movimentação de OU em 28/09
+
+Após o inventário preparatório do IAM-010, foi decidido alinhar a localização do objeto à área Financeiro.
+
+| Prova | Horário UTC−03:00 e resultado |
+|---|---|
+| [24 — Antes](24-ad-ou-suporte-antes.png) | 16:20:03: departamento Financeiro, objeto em OU Suporte, GG_FIN_READ. |
+| [25 — Depois](25-ad-ou-financeiro-depois.png) | 16:23:08: objeto em OU Financeiro; mesmo ObjectGUID, EMP0007, cargo e grupo. |
+| [26 — Leitura financeira](26-ou-financeiro-leitura-permitida.png) | 16:29:16: conexão explícita como Gabriela aceita e arquivo financeiro lido. |
+| [27 — Criação negada](27-ou-financeiro-criacao-negada.png) | 16:31:32: criação no recurso financeiro negada. |
+| [28 — Suporte negado](28-ou-financeiro-suporte-negado.png) | 16:35:30: leitura de chamado no recurso Suporte negada. |
+
+Identidade e associação exibida preservadas, com os resultados esperados nos testes apresentados. Os prints não mostram GPOs, ACLs de delegação nem a sequência completa de encerramento das conexões; a prova 28 não repete a identidade da conexão. Não afirmar equivalência de todas as políticas/permissões ou nova autenticação em cada teste. O comando de movimentação não aparece, mas as consultas comprovam a mudança de localização. Nova exportação AD de 16:59:31 confirma a localização, o mesmo GUID e as associações, conforme [comparação posterior do IAM-010](../IAM-010/06-tratamento-validacao-ad.md).
+
+Originais preservados com manifesto SHA-256; cópias sem edição. [Decisão e escopo](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md).

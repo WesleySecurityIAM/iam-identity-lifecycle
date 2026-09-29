@@ -5,12 +5,13 @@
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
 | [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Fechado: Suporte retirado/negado, Financeiro validado e comparação final conforme. |
 | [IAM-003](#iam-003) | Leaver de Carla no Entra | Fechado: conta/grupo tratados, revogação auditada, entrada bloqueada e comparação final conforme. |
+| [IAM-004](#iam-004) | Encerrar acesso de terceiro por prazo | Em andamento: expiração configurada para 29/09 às 08:00 UTC−03:00; validação após vigência pendente. |
 | [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
 | [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
 | [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
-| [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Planejado: escopo e regra definidos; coleta, decisão e testes pendentes. |
+| [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Em andamento: comparação departamental concluída e decisões simuladas registradas; conta de serviço, Diego e SoD pendentes. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
 **Procedimento complementar:** [PROC-BG-001 — Acesso de emergência](PROC-BG-001-acesso-emergencia.md): teste administrativo validado em 24/09; independência da autenticação e custódia a validar. Não altera a contagem dos 11 cenários.
@@ -106,6 +107,8 @@ Resolvido em 04/09/2026, com criação, matrícula e associação ao grupo compr
 - Status: Fechado — Mover validado no escopo
 - Responsável pela execução: Wesley
 - Execução e fechamento: 2026-09-28
+
+Complemento de 28/09, decidido às 16:14 UTC−03:00: [movimentação para OU Financeiro](REV-2026-09-28-escopo-reconciliacao.md). Provas 24–28 mostram antes/depois com identidade e grupo preservados e testes de acesso esperados entre 16:20 e 16:35. A análise de políticas/delegação e a renovação completa das conexões não constam das capturas; nova exportação AD de 16:59:31 confirma a localização e as associações, conforme validação do IAM-010.
 
 ## Contexto e objetivo
 
@@ -228,6 +231,45 @@ Grupo cloud sem recurso financeiro integrado; sem teste de arquivo no Entra. Azu
 ## Fechamento
 
 Fechado em 23/09: conta desabilitada, associação financeira removida, ação de revogação auditada, nova entrada bloqueada e exceção de habilitação corrigida na comparação posterior. Exclusão da conta não faz parte do critério.
+
+<a id="iam-004"></a>
+
+# IAM-004 — Encerramento de terceiro — EMP0004
+
+- Ambiente: laboratório fictício — AD DS e Entra independentes, sem sincronização
+- Identidade: Diego Rocha — EMP0004
+- Tipo: encerramento de acesso de terceiro por prazo
+- Registro: 2026-09-28
+- Status: Em andamento — expiração AD configurada; validação após vigência e encerramento Entra pendentes
+- Responsável de negócio no cenário: Fernanda Souza
+- Execução técnica: Wesley
+- Encerramento vigente: **29/09/2026 às 08:00, horário de Brasília (UTC−03:00)**
+
+## Contexto e objetivo
+
+Encerrar o acesso do terceiro no início da manhã de 29/09. Configurar a expiração da conta AD e verificar uma nova autenticação após o prazo, tratando separadamente o encerramento no Entra. A conta e a matrícula existentes são preservadas.
+
+## Regra e decisão simulada
+
+Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente registra desligamento em 29/09/2026, mantendo admissão em 01/06/2026. O horário exato de vigência é definido neste ticket. Em 28/09, o status do RH permanece ATIVO; após a vigência, registrar DESLIGADO e conferir os diretórios. Não é uma aprovação corporativa real.
+
+## Ações e evidências necessárias
+
+1. **Concluído:** definir prazo e atualizar a data de desligamento na fonte de RH vigente.
+2. **Concluído:** [consulta AD de 28/09 às 17:11:26 UTC−03:00](../evidencias/sanitizadas/IAM-004/README.md) confirma EMP0004, Enabled=True e AccountExpirationDate=29/09/2026 08:00:00.
+3. **Pendente:** validar nova autenticação depois do prazo, antes de desabilitar manualmente a conta. Expiração e Enabled são atributos diferentes; Enabled=True não comprova que a conta ainda consegue autenticar.
+4. **Pendente:** bloquear a conta Entra e revogar sessões após a vigência, conferir grupos/papéis/aplicações no escopo e guardar os eventos. A expiração AD não executa essas ações no tenant independente.
+5. **Pendente:** atualizar o estado vigente do RH e preservar nova coleta para a reconciliação/recertificação do [IAM-010](#iam-010).
+
+## Validação e limites
+
+A configuração comprova o prazo; uma tentativa posterior e seu resultado sustentam a validação da expiração. Sessões existentes e autorizações são verificações distintas. Não interpretar acesso negado a arquivo, isoladamente, como prova de conta expirada. A configuração AD está comprovada; efeito após vigência, bloqueio Entra e encerramento ainda pendentes.
+
+## Reversão e fechamento
+
+Reabertura de acesso somente mediante nova decisão simulada justificada, com prazo explícito e reteste. Não remover o prazo nem reabilitar automaticamente a conta para conseguir um resultado de teste.
+
+Fechamento pendente até configuração, execução após vigência, evidências e comparação final. [Regra de população e acesso do IAM-010](REV-2026-09-28-escopo-reconciliacao.md).
 
 <a id="iam-005"></a>
 
@@ -665,8 +707,8 @@ Reprodução concluída: acesso persistiu na conexão mantida após remoção, f
 - Ambiente: laboratório fictício — AD DS e Entra independentes; microcaso SoD em dados locais simulados
 - Tipo: revisão de acesso e avaliação de segregação de funções (SoD)
 - Registro do preparo: 2026-09-26
-- Status: Planejado — execução e evidências pendentes
-- Execução prevista: preparo em 30/09 e revisão em 01/10, após validação do Mover IAM-002
+- Status: Em andamento — comparação e decisões simuladas registradas; tratamento das pendências e SoD pendentes
+- Início da coleta e análise: 2026-09-28; atividade de reconciliação prevista para 29/09 antecipada pelo operador. Conclusão após decisões, tratamento e validação, dentro da preparação da v0.5.
 - Responsável pela execução: Wesley
 - Identidade do microcaso: EMP0007 — Gabriela Santos
 - Relação com o ciclo: [IAM-002 — Mover](#iam-002) → avaliação SoD → recertificação
@@ -677,7 +719,11 @@ Revisar se as concessões da população escolhida continuam necessárias e regi
 
 ## Estado anterior
 
-O estado de Suporte e a reconciliação inicial de Gabriela estão documentados no IAM-002. A mudança para Financeiro ainda não foi executada. O IAM-010 partirá de uma coleta posterior ao Mover; essa coleta e os resultados da revisão não estão disponíveis neste registro de preparo.
+O Mover de Gabriela foi concluído em 28/09 no escopo de cadastro, grupos e acesso testado, conforme IAM-002. A coleta posterior encontrou o objeto ainda na OU Suporte. A movimentação para Financeiro foi comprovada depois por consultas e testes nas [provas 24–28 do IAM-002](../evidencias/sanitizadas/IAM-002/README.md); nova exportação AD de 16:59:31 confirma a mudança.
+
+O inventário e a reconciliação ampliada passam a integrar a preparação deste IAM-010: RH com nove pessoas; AD com nove contas, sete grupos GG/DL e oito associações diretas; Entra com doze contas e exportações dos grupos Financeiro, Suporte e RH. Fontes de 28/09, coletadas em horários distintos. A comparação de habilitação, departamento e cargo das contas correlacionadas por matrícula teve 34 verificações conformes. Não inclui todas as concessões nem comprova necessidade de acesso.
+
+A análise identificou Bruno sem GG_SUP_TICKET no AD e Gabriela ainda em OU Suporte. Na [decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md), foi definido acesso de leitura de SuporteLab para Bruno, complemento de OU para Gabriela e ausência intencional de provisionamento de EMP0009 neste recorte. Bruno foi incluído no grupo, leu o recurso de Suporte e teve criação negada. A comparação AD de 15:52:51 com 16:59:31 confirmou somente a inclusão de Bruno e a mudança de OU de Gabriela nos campos coletados. Essa decisão de escopo não substitui a recertificação individual pelo responsável de negócio.
 
 ## Aprovação e fundamento
 
@@ -694,9 +740,9 @@ O estado de Suporte e a reconciliação inicial de Gabriela estão documentados 
 
 ## Ações planejadas
 
-1. Conferir o fechamento do Mover e coletar o estado real no escopo escolhido, distinguindo AD e Entra. Identificar pessoas por matrícula e contas por identificador do diretório.
-2. Relacionar concessões observadas com RH/matriz e necessidade atual; registrar manter/remover/investigar, responsável e fundamento.
-3. Montar uma entrada didática separada com matrícula, sistema, escopo e direitos A/B. Identificar todos esses registros como **simulados**.
+1. **Iniciado em 28/09:** conferir o fechamento do Mover, preservar inventários e definir matriz por sistema. Coleta e comparação cadastral concluídas no recorte descrito; nova coleta posterior e tratamento dos dois achados concluídos; comparação departamental e decisões simuladas registradas nas evidências 07–08.
+2. **Concluído no escopo exportado:** nove associações departamentais conformes e seis ausências previstas. Recertificação simulada: quinze associações avaliadas, doze manter e três investigar a retenção de acessos da conta de serviço, com responsável e fundamento.
+3. **Preparado:** [roteiro SoD e script](../evidencias/sanitizadas/IAM-010/09-roteiro-sod.md), com cinco cenários alternativos, direitos fictícios e agrupamento por matrícula/escopo. A lógica foi verificada; capturas do exercício pelo operador pendentes.
 4. Avaliar três casos: somente A, somente B e A+B. Registrar o conflito, a decisão e a comparação após retirar um dos direitos no modelo.
 5. Aplicar correções reais somente se justificadas e autorizadas no escopo do laboratório; verificar estado final e acesso efetivo quando houver recurso integrado.
 
@@ -708,14 +754,17 @@ O estado de Suporte e a reconciliação inicial de Gabriela estão documentados 
 | A+B, mesma pessoa e mesmo escopo | Conflito SoD-001. |
 | Após decisão e retirada de A do modelo | B permanece; nova comparação sem conflito SoD-001. |
 
-Esses são critérios de teste, não resultados executados. O microcaso pode usar PowerShell para comparar entradas locais, sem conceder direitos excessivos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
+São critérios do exercício. A lógica do script foi verificada tecnicamente: um conflito antes e nenhum após o tratamento, com pessoas/escopos diferentes sem falso positivo. O exercício acompanhado pelo operador ainda precisa de capturas. O PowerShell usa entradas locais, sem conceder direitos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
 
-## Evidências previstas
+## Evidências disponíveis e pendentes
 
-- População e coleta real da revisão, com sistema, data, regra e concessões observadas.
+- [01 — Inventário e conferência inicial de 28/09](../evidencias/sanitizadas/IAM-010/01-inventario-conferencia-inicial.md): população, comparação cadastral, achados e limites; CSVs integrais preservados em área privada.
+- [Matriz e decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md): regras adotadas após análise do inventário e histórico dos encaminhamentos.
+- [07 — Comparação da população e grupos](../evidencias/sanitizadas/IAM-010/07-comparacao-populacao-grupos.md): nove associações departamentais conformes; contas especiais classificadas separadamente.
+- [08 — Recertificação simulada](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md): decisões por associação e responsável; retenção da conta de serviço, encerramento de Diego e SoD pendentes.
 - Matriz SoD-001 e entradas simuladas, identificadas separadamente da coleta real.
 - Relatório dos testes e comparação antes/depois, decisão simulada datada e justificativa.
-- Estado final e reteste das correções reais, se necessárias. Nenhuma dessas evidências foi produzida pelo preparo do ticket.
+- [02–06 — Tratamento e comparação posterior AD](../evidencias/sanitizadas/IAM-010/06-tratamento-validacao-ad.md): Bruno no grupo, leitura permitida, criação negada; nove contas preservadas e somente as duas mudanças esperadas no inventário. Script SoD preparado e verificado; capturas do exercício pendentes.
 
 ## Riscos, reversão e limitações
 

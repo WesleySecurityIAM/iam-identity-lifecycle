@@ -4,6 +4,8 @@
 
 [Acompanhamento documental do IAM-001](acompanhamentos.md).
 
+[Reconciliação de 28/09 — matriz e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md): Bruno e OU de Gabriela tratados; comparação e decisões simuladas documentadas no IAM-010.
+
 [PROC-BG-001 — Procedimento de acesso de emergência](PROC-BG-001-acesso-emergencia.md): validado em 24/09: criação, alteração e exclusão de grupo pelas contas alternativas; independência da autenticação ainda a validar.
 
 ## Convenção de registro

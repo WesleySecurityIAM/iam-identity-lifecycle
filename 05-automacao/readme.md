@@ -105,4 +105,4 @@ Este é um laboratório introdutório. O estado esperado está definido no scrip
 
 Em outros casos do portfólio, já existem comparações com fonte de RH e exportações reais do laboratório: [Leaver de Carla](../evidencias/sanitizadas/IAM-003/08-validacao-final.md) e [Mover de Gabriela](../evidencias/sanitizadas/IAM-002/23-comparacao-final.md). Elas não são resultados deste script sintético.
 
-A próxima evolução prevista é um comparador reproduzível de população, cadastro e concessões com validação de completude e correspondência. Consulta direta por Microsoft Graph permanece uma etapa futura.
+A evolução de 28/09 está no [comparador de população e grupos departamentais](Compare-DepartmentMembership.ps1), usado com exportações do laboratório no [IAM-010](../evidencias/sanitizadas/IAM-010/07-comparacao-populacao-grupos.md). Ele possui regras explícitas desta revisão, valida chaves e referências e sinaliza fontes incompletas; não calcula habilitação, expiração ou todos os acessos. É independente do exemplo sintético acima. Consulta direta por Microsoft Graph permanece uma etapa futura.
