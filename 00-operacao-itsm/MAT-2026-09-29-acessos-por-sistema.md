@@ -47,7 +47,7 @@ Para os grupos existentes, preservar os IDs e não renomear/recriar apenas para 
 |---|---|
 | Terceiros | Owner, finalidade, início e término; revisão de grupos/papéis/aplicações e sessões no encerramento; expiração AD não agenda bloqueio Entra neste ambiente independente |
 | Administração | Conta técnica separada da conta comum; adm.wesley/GG_AD_SUP_RESET é delegação específica, não perfil de todo TI; revisar escopo da delegação |
-| Serviço | svc_relatorio_fin permanece desabilitada; revisar os três vínculos residuais antes de remover; registrar owner, rotina, recurso, credencial/dependência e evidência final; não distribuir senha nem reativar para testar |
+| Serviço | svc_relatorio_fin permanece desabilitada; três vínculos retirados e comprovados em 29/09 no IAM-010 após consulta de dependências locais; nova finalidade exige decisão e concessões mínimas; não distribuir senha nem reativar para testar |
 | Emergência | Preservar as duas contas cloud-only, fora do piloto híbrido e dos grupos departamentais; manter procedimento e limitações já registrados |
 | Convidado | Sponsor, finalidade e prazo; manter encerramento comprovado e fora da sincronização AD |
 | Internas AD | Administrator, Guest e krbtgt fora da população RH; não atribuir matrícula nem tratar Guest/krbtgt desabilitados como falha |
@@ -66,4 +66,4 @@ O script Compare-DepartmentMembership.ps1 permanece **histórico de 28/09**: reg
 
 ## 5. Encaminhamento
 
-Para a v0.5: correção documental registrada; Diego encerrado no IAM-004; concluir serviço/SoD, tratar a classificação de vínculo de Diego e comparar o estado final no escopo vigente. Para a próxima fase: [análise e preparação híbrida](REV-2026-09-29-estrutura-hibrida.md), usando Isabela como candidata de menor risco ao primeiro piloto. Nenhuma mudança de diretório foi executada nesta revisão documental.
+Para a v0.5: correção documental registrada; Diego encerrado no IAM-004; serviço tratado; concluir SoD, tratar a classificação de vínculo de Diego e comparar o estado final no escopo vigente. Para a próxima fase: [análise e preparação híbrida](REV-2026-09-29-estrutura-hibrida.md), usando Isabela como candidata de menor risco ao primeiro piloto. Nenhuma mudança de diretório foi executada nesta revisão documental.

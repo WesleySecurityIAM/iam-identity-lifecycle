@@ -26,7 +26,7 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 | AD | GG_SVC_RELATORIO_FIN | DL_FIN_RELATORIOS_READ | Investigar retenção | Carlos Lima | Caminho de leitura da rotina desativada; justificar retenção ou remover após decisão. |
 | AD | GG_SVC_RELATORIO_FIN | DL_FIN_SAIDA_WRITE | Investigar retenção | Carlos Lima | Caminho de escrita da rotina desativada; preservar como pendência, não aprovar automaticamente por estar desabilitada. |
 
-**Resultado: 15 associações revisadas, 12 decisões de manter e 3 de investigar; nenhuma remoção executada nesta revisão.** As três pendências pertencem ao mesmo caso de retenção de acessos da conta de serviço, não a três incidentes independentes. Não há concessão nova nesta recertificação.
+**Resultado inicial em 28/09: 15 associações revisadas, 12 decisões de manter e 3 de investigar; nenhuma remoção executada naquela coleta.** As três pendências pertencem ao mesmo caso de retenção de acessos da conta de serviço, não a três incidentes independentes. Não há concessão nova nesta recertificação.
 
 ## Contas especiais e ausências
 
@@ -54,9 +54,9 @@ Recomendação de tratamento: retirar svc_relatorio_fin de GG_SVC_RELATORIO_FIN 
 
 Esse encaminhamento integra a entrega do IAM-010. Antes da execução, conferir novamente conta, tarefa, membros e dependências; registrar a decisão simulada final. Depois, comprovar as três associações ausentes e a preservação dos caminhos de Felipe, Gabriela e Bruno. Não remover GG_FIN_READ da DL nem alterar ACL compartilhada. A evidência será de revogação de concessões; uma tentativa com conta desabilitada não isola o efeito dessa retirada.
 
-Estado: recomendação documentada; remoções ainda não executadas nem comprovadas. O IAM-005 permanece como evidência histórica do estado entregue, incluindo as associações mantidas naquela ocasião.
+**Tratamento concluído em 29/09:** três vínculos retirados conforme antes/depois; conta desabilitada e GG_FIN_READ preservado na DL de leitura. Decisão simulada formalizada em 29/09/2026 12:23:24 -0300, após as capturas. [Decisão, provas 11–13 e limites](10-servico-remocao-concessoes.md). Consolidado: doze manter e três remover; a tabela inicial registra a decisão histórica de investigar. O IAM-005 permanece histórico, com o estado entregue naquela ocasião.
 
-1. Decidir a retenção ou remoção dos acessos da conta de serviço; registrar justificativa e eventual nova coleta após tratamento. Até lá, a pendência permanece aberta, sem concessão adicional.
+1. **Concluído:** tratar os três vínculos residuais da conta de serviço; decisão e comparação das consultas registradas na evidência 10. Nova coleta integral dos vínculos atuais fica para a conferência final da revisão.
 2. **IAM-004 concluído em 29/09:** comparação final do estado da conta conforme. [Provas](../IAM-004/README.md). Ajuste cadastral: Employee type=Funcionário no Entra versus vínculo Terceiro de Sistemas no RH; confirmar/corrigir mantendo conta bloqueada. Contadores de concessões zero já comprovados.
 3. Executar e documentar o microcaso SoD-001 em dados separados.
 

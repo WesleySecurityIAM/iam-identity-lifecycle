@@ -29,3 +29,5 @@ A tarefa foi configurada com privilégios limitados e direitos de logon em lote 
 Capturas fornecidas pelo operador, conferidas visualmente e mantidas sem edição. Renomeadas para explicar seu conteúdo; datas de execução vêm dos resultados, não do nome do arquivo. O manifesto privado registra origens, destinos e SHA-256. Credenciais não são publicadas.
 
 [Ticket, aprovação simulada e procedimento de manutenção](../../../00-operacao-itsm/05-fila-tickets.md#iam-005).
+
+**Evolução em 29/09:** na recertificação IAM-010, os três vínculos residuais foram retirados, com conta desabilitada. [Decisão e antes/depois](../IAM-010/10-servico-remocao-concessoes.md). O desenho e as execuções acima descrevem o estado histórico do IAM-005.

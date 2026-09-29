@@ -707,7 +707,7 @@ Reprodução concluída: acesso persistiu na conexão mantida após remoção, f
 - Ambiente: laboratório fictício — AD DS e Entra independentes; microcaso SoD em dados locais simulados
 - Tipo: revisão de acesso e avaliação de segregação de funções (SoD)
 - Registro do preparo: 2026-09-26
-- Status: Em andamento — comparação e decisões simuladas registradas; tratamento das pendências e SoD pendentes
+- Status: Em andamento — comparação/decisões registradas, Diego encerrado e concessões residuais da conta de serviço retiradas; SoD, ajuste cadastral e conferência final pendentes
 - Início da coleta e análise: 2026-09-28; atividade de reconciliação prevista para 29/09 antecipada pelo operador. Conclusão após decisões, tratamento e validação, dentro da preparação da v0.5.
 - Responsável pela execução: Wesley
 - Identidade do microcaso: EMP0007 — Gabriela Santos
@@ -731,7 +731,13 @@ A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, 
 
 Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. O desenho TI não será contado como acesso implementado.
 
-**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. Pendências da v0.5: serviço, SoD, verificação final e ajuste cadastral de Employee type no Entra (Funcionário na captura versus Terceiro de Sistemas no RH). O ajuste deve preservar bloqueio e identidade; Member/Guest não substitui tipo de vínculo. Registrar confirmação/correção pelo operador, sem criar acesso de TI para Diego.
+**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. Pendências da v0.5: SoD, verificação final e ajuste cadastral de Employee type no Entra (Funcionário na captura versus Terceiro de Sistemas no RH). O ajuste deve preservar bloqueio e identidade; Member/Guest não substitui tipo de vínculo. Registrar confirmação/correção pelo operador, sem criar acesso de TI para Diego.
+
+## Tratamento da conta de serviço — 29/09/2026
+
+[Decisão e provas 11–13](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md). Às 12:08, conta/tarefa desabilitadas conservavam três vínculos. Consulta local de dependências encontrou somente a tarefa conhecida e nenhum serviço pelo filtro usado. Às 12:14:13, GG de serviço e DL de escrita vazios; DL de leitura mantém GG_FIN_READ; conta continua False. Formalização da decisão simulada em **29/09/2026 12:23:24 -0300**, com Carlos Lima como responsável fictício e Wesley como executor, após as capturas.
+
+Resultado: três decisões de investigar convertidas em remover, com retirada comprovada no escopo consultado. Sem nova concessão, exclusão de grupos ou reteste de acesso dos humanos; manter os limites da consulta local explícitos. IAM-005 preservado como histórico da rotina.
 
 ## Aprovação e fundamento
 
@@ -749,7 +755,7 @@ Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado r
 ## Ações planejadas
 
 1. **Iniciado em 28/09:** conferir o fechamento do Mover, preservar inventários e definir matriz por sistema. Coleta e comparação cadastral concluídas no recorte descrito; nova coleta posterior e tratamento dos dois achados concluídos; comparação departamental e decisões simuladas registradas nas evidências 07–08.
-2. **Concluído no escopo exportado:** nove associações departamentais conformes e seis ausências previstas. Recertificação simulada: quinze associações avaliadas, doze manter e três investigar a retenção de acessos da conta de serviço, com responsável e fundamento.
+2. **Concluído no escopo exportado:** nove associações departamentais conformes e seis ausências previstas. Recertificação simulada inicial: quinze associações avaliadas, doze manter e três investigar. Em 29/09, as três pendências de serviço foram decididas como remover e a retirada foi comprovada; as demais decisões não representam nova coleta.
 3. **Preparado:** [roteiro SoD e script](../evidencias/sanitizadas/IAM-010/09-roteiro-sod.md), com cinco cenários alternativos, direitos fictícios e agrupamento por matrícula/escopo. A lógica foi verificada; capturas do exercício pelo operador pendentes.
 4. Avaliar três casos: somente A, somente B e A+B. Registrar o conflito, a decisão e a comparação após retirar um dos direitos no modelo.
 5. Aplicar correções reais somente se justificadas e autorizadas no escopo do laboratório; verificar estado final e acesso efetivo quando houver recurso integrado.

@@ -55,6 +55,8 @@ Responsabilidade de atributos: RH define situação de negócio; operador atuali
 
 [Diego encerrado no IAM-004](05-fila-tickets.md#iam-004): autenticação AD recusada com erro 1793, bloqueio/revogação auditados no Entra, contadores de concessões zero e nova comparação cadastral conforme. Identificado ajuste adicional de qualidade cadastral: Employee type=Funcionário na captura, apesar do cargo/RH de terceiro. Tratar no IAM-010, sem reativar conta, alterar User type=Member por engano ou atribuir grupo novo. As pendências sobre Diego nas tabelas anteriores descrevem a base da análise antes deste complemento.
 
+**Atualização de serviço em 29/09:** [três vínculos retirados](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md), conta desabilitada e GG_FIN_READ preservado na DL. Consulta de dependências somente no host/filtro demonstrado; nova coleta completa dos acessos permanece para conferência final.
+
 ## Sequência sem atrasar o estudo
 
 **Agora:** matriz/RH e registro do achado; terminar pendências da v0.5. **Preflight já previsto no plano:** coletar lacunas, desenhar OU piloto/autoridade e implementar TI com Isabela quando liberado. **Piloto:** um usuário, uma origem e evidências. **Depois:** coexistência/matching, troubleshooting e aplicações → API. A conta de serviço dá continuidade à futura governança NHI (owner, finalidade, consumidor, concessões e revogação), sem alegar identidade gerenciada/cloud já implementada.
