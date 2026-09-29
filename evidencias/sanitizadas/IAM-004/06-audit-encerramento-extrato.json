@@ -1,0 +1,73 @@
+{
+  "sourceSha256": "1fc489aa202187e661af8e9ca9fc67d9f477dafbc870d27cbe54d8461257356c",
+  "events": [
+    {
+      "id": "Directory_3489a503-5876-4c49-a8cd-e0678742aabb_UNUVT_397237756",
+      "activityDateTime": "2026-09-29T14:19:56.4700481Z",
+      "activityDisplayName": "Update user",
+      "category": "UserManagement",
+      "result": "success",
+      "correlationId": "3489a503-5876-4c49-a8cd-e0678742aabb",
+      "executor": "ADMIN-LAB-001",
+      "targetObjectId": "af6fd404-ebf1-491a-ade0-809bf0e7f0bf",
+      "modifiedProperties": [
+        {
+          "displayName": "StsRefreshTokensValidFrom",
+          "oldValue": "[\"2026-09-21T15:06:45Z\"]",
+          "newValue": "[\"2026-09-29T14:19:56Z\"]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_3489a503-5876-4c49-a8cd-e0678742aabb_UNUVT_397237747",
+      "activityDateTime": "2026-09-29T14:19:56.469046Z",
+      "activityDisplayName": "Update StsRefreshTokenValidFrom Timestamp",
+      "category": "UserManagement",
+      "result": "success",
+      "correlationId": "3489a503-5876-4c49-a8cd-e0678742aabb",
+      "executor": "ADMIN-LAB-001",
+      "targetObjectId": "af6fd404-ebf1-491a-ade0-809bf0e7f0bf",
+      "modifiedProperties": [
+        {
+          "displayName": "StsRefreshTokensValidFrom",
+          "oldValue": "[\"2026-09-21T15:06:45Z\"]",
+          "newValue": "[\"2026-09-29T14:19:56Z\"]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_692ab6aa-f089-4b88-84ff-f2fd851b3ba1_L6LKK_79505197",
+      "activityDateTime": "2026-09-29T14:19:45.0627899Z",
+      "activityDisplayName": "Update user",
+      "category": "UserManagement",
+      "result": "success",
+      "correlationId": "692ab6aa-f089-4b88-84ff-f2fd851b3ba1",
+      "executor": "ADMIN-LAB-001",
+      "targetObjectId": "af6fd404-ebf1-491a-ade0-809bf0e7f0bf",
+      "modifiedProperties": [
+        {
+          "displayName": "AccountEnabled",
+          "oldValue": "[true]",
+          "newValue": "[false]"
+        }
+      ]
+    },
+    {
+      "id": "Directory_692ab6aa-f089-4b88-84ff-f2fd851b3ba1_L6LKK_79505190",
+      "activityDateTime": "2026-09-29T14:19:45.0627281Z",
+      "activityDisplayName": "Disable account",
+      "category": "UserManagement",
+      "result": "success",
+      "correlationId": "692ab6aa-f089-4b88-84ff-f2fd851b3ba1",
+      "executor": "ADMIN-LAB-001",
+      "targetObjectId": "af6fd404-ebf1-491a-ade0-809bf0e7f0bf",
+      "modifiedProperties": [
+        {
+          "displayName": "AccountEnabled",
+          "oldValue": "[true]",
+          "newValue": "[false]"
+        }
+      ]
+    }
+  ]
+}

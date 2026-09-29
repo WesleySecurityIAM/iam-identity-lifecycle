@@ -12,7 +12,7 @@ Fonte RH vigente: cópia de 29/09 com Diego DESLIGADO, conforme término simulad
 
 ## 1. População por sistema
 
-“Esperado” é regra, não estado já comprovado. As últimas exportações analisadas são de 28/09. Ações de Diego em 29/09 foram relatadas pelo operador e aguardam incorporação das provas.
+“Esperado” é regra, não estado já comprovado. A população-base é da coleta de 28/09. Complemento de Diego em 29/09: prints, auditoria e novo All users comprovam encerramento e comparação final; [IAM-004](05-fila-tickets.md#iam-004). Isso não atualiza automaticamente todas as outras associações.
 
 | Pessoa | Área / situação vigente | AD: estado e acesso esperados | Entra: estado e acesso esperados |
 |---|---|---|---|
@@ -66,4 +66,4 @@ O script Compare-DepartmentMembership.ps1 permanece **histórico de 28/09**: reg
 
 ## 5. Encaminhamento
 
-Para a v0.5: publicar a correção documental e os limites, concluir Diego/serviço/SoD e comparar o estado final no escopo vigente. Para a próxima fase: [análise e preparação híbrida](REV-2026-09-29-estrutura-hibrida.md), usando Isabela como candidata de menor risco ao primeiro piloto. Nenhuma mudança de diretório foi executada nesta revisão documental.
+Para a v0.5: correção documental registrada; Diego encerrado no IAM-004; concluir serviço/SoD, tratar a classificação de vínculo de Diego e comparar o estado final no escopo vigente. Para a próxima fase: [análise e preparação híbrida](REV-2026-09-29-estrutura-hibrida.md), usando Isabela como candidata de menor risco ao primeiro piloto. Nenhuma mudança de diretório foi executada nesta revisão documental.

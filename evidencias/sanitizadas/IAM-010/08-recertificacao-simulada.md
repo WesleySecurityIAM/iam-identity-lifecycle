@@ -57,7 +57,7 @@ Esse encaminhamento integra a entrega do IAM-010. Antes da execução, conferir 
 Estado: recomendação documentada; remoções ainda não executadas nem comprovadas. O IAM-005 permanece como evidência histórica do estado entregue, incluindo as associações mantidas naquela ocasião.
 
 1. Decidir a retenção ou remoção dos acessos da conta de serviço; registrar justificativa e eventual nova coleta após tratamento. Até lá, a pendência permanece aberta, sem concessão adicional.
-2. Concluir IAM-004 e refletir o estado final de Diego na reconciliação vigente.
+2. **IAM-004 concluído em 29/09:** comparação final do estado da conta conforme. [Provas](../IAM-004/README.md). Ajuste cadastral: Employee type=Funcionário no Entra versus vínculo Terceiro de Sistemas no RH; confirmar/corrigir mantendo conta bloqueada. Contadores de concessões zero já comprovados.
 3. Executar e documentar o microcaso SoD-001 em dados separados.
 
 Esta revisão não revalida todas as ACLs, papéis administrativos, aplicações, licenças ou sessões. As decisões se limitam às associações exportadas e às finalidades documentadas. IAM-010 permanece em andamento até tratamento ou aceitação formal das pendências no cenário e conclusão dos critérios previstos.

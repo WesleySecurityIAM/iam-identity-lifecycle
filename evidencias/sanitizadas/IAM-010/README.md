@@ -1,6 +1,6 @@
 # IAM-010 — Evidências de preparação da recertificação
 
-Em andamento desde 28/09/2026. Inventário, tratamento, comparação dos grupos departamentais e decisões simuladas disponíveis. Pendentes: retenção dos acessos da conta de serviço, encerramento de Diego e microcaso SoD.
+Em andamento desde 28/09/2026. Inventário, tratamento, comparação dos grupos departamentais e decisões simuladas disponíveis. Atualização de 29/09: Diego encerrado no IAM-004; pendentes retenção dos acessos da conta de serviço, microcaso SoD, ajuste de classificação do vínculo de Diego e comparação final.
 
 - [01 — Inventário e conferência inicial](01-inventario-conferencia-inicial.md): fontes, população, 34 verificações cadastrais e pontos de análise.
 - [02–06 — Tratamento de Bruno e comparação posterior AD](06-tratamento-validacao-ad.md): antes/depois, leitura permitida, criação negada e nova coleta confirmando inclusão de Bruno e OU de Gabriela.

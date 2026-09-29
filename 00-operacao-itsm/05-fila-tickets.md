@@ -240,7 +240,7 @@ Fechado em 23/09: conta desabilitada, associação financeira removida, ação d
 - Identidade: Diego Rocha — EMP0004
 - Tipo: encerramento de acesso de terceiro por prazo
 - Registro: 2026-09-28
-- Status: Em andamento — expiração AD configurada; validação após vigência e encerramento Entra pendentes
+- Status: Fechado em 29/09/2026 — expiração/autenticação AD, bloqueio/revogação Entra, contadores de concessões zero e comparação cadastral comprovados
 - Responsável de negócio no cenário: Fernanda Souza
 - Execução técnica: Wesley
 - Encerramento vigente: **29/09/2026 às 08:00, horário de Brasília (UTC−03:00)**
@@ -257,19 +257,19 @@ Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente re
 
 1. **Concluído:** definir prazo e atualizar a data de desligamento na fonte de RH vigente.
 2. **Concluído:** [consulta AD de 28/09 às 17:11:26 UTC−03:00](../evidencias/sanitizadas/IAM-004/README.md) confirma EMP0004, Enabled=True e AccountExpirationDate=29/09/2026 08:00:00.
-3. **Pendente:** validar nova autenticação depois do prazo, antes de desabilitar manualmente a conta. Expiração e Enabled são atributos diferentes; Enabled=True não comprova que a conta ainda consegue autenticar.
-4. **Relatado pelo operador em 29/09:** bloqueio Entra e revogação de sessões, com ausência de grupos/papéis/aplicações nas telas consultadas. **Validação documental pendente:** incorporar capturas e eventos; ausência final não será apresentada como remoção de vínculos inexistentes. A expiração AD não executa essas ações no tenant independente.
-5. **RH atualizado em 29/09:** nova cópia vigente com EMP0004 DESLIGADO, preservando matrícula, admissão e demais campos; motivo e versão registrados na revisão do IAM-010. **Pendente:** incorporar provas posteriores das ações relatadas no Entra, da validação AD e da comparação final. Atualização da fonte não comprova execução nos diretórios.
+3. **Concluído em 29/09:** Enabled=True com prazo vencido às 11:08; runas retorna erro 1793 (conta expirada) às 11:16:33. [Provas 02–03](../evidencias/sanitizadas/IAM-004/README.md).
+4. **Concluído e auditado em 29/09:** bloqueio Entra às 11:19:45 e revogação às 11:19:56; perfil bloqueado e eventos success. **Concluído:** [captura final às 11:58](../evidencias/sanitizadas/IAM-004/08-entra-zero-concessoes.png) apresenta zero grupos, aplicações, papéis e licenças. Ausência final não representa remoção de vínculos inexistentes.
+5. **RH atualizado em 29/09:** nova cópia vigente com EMP0004 DESLIGADO, preservando matrícula, admissão e demais campos; motivo e versão registrados na revisão do IAM-010. **Concluído:** [comparação posterior](../evidencias/sanitizadas/IAM-004/07-comparacao-final.md) confirma EMP0004 único, mesmo Object ID e accountEnabled=False. **Encaminhamento ao IAM-010:** esclarecer Employee type=Funcionário no print versus vínculo Terceiro de Sistemas; não reabilitar a conta para corrigir cadastro. Não invalida o bloqueio nem a recusa por expiração.
 
 ## Validação e limites
 
-A configuração comprova o prazo; uma tentativa posterior e seu resultado sustentam a validação da expiração. Sessões existentes e autorizações são verificações distintas. Não interpretar acesso negado a arquivo, isoladamente, como prova de conta expirada. A configuração AD está comprovada; efeito após vigência, bloqueio Entra e encerramento ainda pendentes.
+A configuração comprova o prazo; uma tentativa posterior e seu resultado sustentam a validação da expiração. Sessões existentes e autorizações são verificações distintas. Não interpretar acesso negado a arquivo, isoladamente, como prova de conta expirada. Configuração, efeito após vigência, bloqueio Entra, revogação e comparação cadastral estão comprovados nas provas de 29/09. Captura das 11:58 completa a verificação com contadores zero de grupos, aplicações, papéis e licenças. Não foi alegada auditoria global de acessos externos ao escopo.
 
 ## Reversão e fechamento
 
 Reabertura de acesso somente mediante nova decisão simulada justificada, com prazo explícito e reteste. Não remover o prazo nem reabilitar automaticamente a conta para conseguir um resultado de teste.
 
-Fechamento pendente até configuração, execução após vigência, evidências e comparação final. [Regra de população e acesso do IAM-010](REV-2026-09-28-escopo-reconciliacao.md).
+**Fechado em 29/09/2026.** Prazo aplicado, autenticação AD recusada por expiração, conta Entra bloqueada e revogação auditada, contadores de concessões zero e comparação cadastral conforme. Ajuste de classificação do vínculo encaminhado ao IAM-010; conta preservada sem nova concessão. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md).
 
 <a id="iam-005"></a>
 
@@ -731,7 +731,7 @@ A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, 
 
 Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. O desenho TI não será contado como acesso implementado.
 
-**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Pendências da v0.5 continuam sendo Diego, serviço, SoD e verificação final.
+**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. Pendências da v0.5: serviço, SoD, verificação final e ajuste cadastral de Employee type no Entra (Funcionário na captura versus Terceiro de Sistemas no RH). O ajuste deve preservar bloqueio e identidade; Member/Guest não substitui tipo de vínculo. Registrar confirmação/correção pelo operador, sem criar acesso de TI para Diego.
 
 ## Aprovação e fundamento
 

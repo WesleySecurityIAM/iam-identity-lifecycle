@@ -51,6 +51,10 @@ Responsabilidade de atributos: RH define situação de negócio; operador atuali
 9. Antes de vincular Bruno/Felipe/Gabriela futuramente, resolver matching e impacto de senha/atributos. Não ligar contas administrativas existentes. Preservar dados cloud antes de assumir autoridade AD.
 10. Reversão planejada por objeto/atributo. Retirar uma OU do escopo pode excluir objetos sincronizados; snapshot da VM não desfaz alterações no Entra. Parar exportações e avaliar o impacto antes de alterar escopo em uma falha.
 
+## Complemento após recebimento das provas de 29/09
+
+[Diego encerrado no IAM-004](05-fila-tickets.md#iam-004): autenticação AD recusada com erro 1793, bloqueio/revogação auditados no Entra, contadores de concessões zero e nova comparação cadastral conforme. Identificado ajuste adicional de qualidade cadastral: Employee type=Funcionário na captura, apesar do cargo/RH de terceiro. Tratar no IAM-010, sem reativar conta, alterar User type=Member por engano ou atribuir grupo novo. As pendências sobre Diego nas tabelas anteriores descrevem a base da análise antes deste complemento.
+
 ## Sequência sem atrasar o estudo
 
 **Agora:** matriz/RH e registro do achado; terminar pendências da v0.5. **Preflight já previsto no plano:** coletar lacunas, desenhar OU piloto/autoridade e implementar TI com Isabela quando liberado. **Piloto:** um usuário, uma origem e evidências. **Depois:** coexistência/matching, troubleshooting e aplicações → API. A conta de serviço dá continuidade à futura governança NHI (owner, finalidade, consumidor, concessões e revogação), sem alegar identidade gerenciada/cloud já implementada.
