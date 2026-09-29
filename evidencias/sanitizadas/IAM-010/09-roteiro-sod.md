@@ -1,6 +1,6 @@
 # SoD-001 — roteiro pronto para execução didática
 
-Estado: script preparado e verificado tecnicamente; execução acompanhada pelo operador e capturas ainda pendentes. Não é evidência de direitos financeiros reais concedidos a Gabriela.
+Estado: exercício concluído pelo operador em 29/09/2026; [resultado e capturas antes/depois](14-sod-resultado.md). O roteiro abaixo permanece como referência de execução. Não é evidência de direitos financeiros reais concedidos a Gabriela.
 
 ## Propósito
 

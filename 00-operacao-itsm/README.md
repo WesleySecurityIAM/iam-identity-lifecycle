@@ -4,7 +4,7 @@
 
 [Acompanhamento documental do IAM-001](acompanhamentos.md).
 
-[Matriz vigente de 29/09](MAT-2026-09-29-acessos-por-sistema.md): quatro áreas do RH, TI planejada, população por sistema e contas especiais. [Análise para o híbrido](REV-2026-09-29-estrutura-hibrida.md): achados e critérios de entrada do piloto.
+[Matriz vigente de 29/09](MAT-2026-09-29-acessos-por-sistema.md): quatro áreas do RH, TI implementada no AD e planejada para o híbrido, população por sistema e contas especiais. [Análise para o híbrido](REV-2026-09-29-estrutura-hibrida.md): achados e critérios de entrada do piloto.
 
 [Reconciliação de 28/09 — matriz e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md): Bruno e OU de Gabriela tratados; comparação e decisões simuladas documentadas no IAM-010.
 

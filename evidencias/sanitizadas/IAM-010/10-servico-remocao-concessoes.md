@@ -32,4 +32,4 @@ Consolidado das quinze associações revisadas em 28/09: doze decisões de mante
 - Não se declara conta sem qualquer permissão: grupo primário, direitos de logon, permissões diretas e outros grupos não foram auditados integralmente. DLs/ACLs/arquivos não foram excluídos nesta operação de associação.
 - Reversão somente se houver necessidade confirmada: restaurar vínculos estritamente necessários e validar dependências antes de reativar conta/tarefa. Não reativar apenas para fabricar teste negativo.
 
-Capturas sem edição, hashes conferidos; originais e manifesto privados. Sem credenciais nas provas. [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) permanece em andamento para SoD, ajuste cadastral de Diego e conferência final.
+Capturas sem edição, hashes conferidos; originais e manifesto privados. Sem credenciais nas provas. [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) fechado em 29/09 após SoD e conferência final; esta evidência documenta o tratamento do serviço.

@@ -38,7 +38,7 @@ Responsabilidade de atributos: RH define situação de negócio; operador atuali
 
 ## Piloto recomendado e critérios de entrada
 
-**Isabela é candidata**, porque ainda não tem conta e não exige vincular imediatamente uma identidade cloud existente. A decisão de sincronização só entra em execução após os critérios abaixo; não criar grupo/conta/app agora como se já fossem evidência de híbrido.
+**Isabela é candidata**, porque agora tem conta AD validada e ainda não tem identidade cloud existente a vincular. A decisão de sincronização só entra em execução após os critérios abaixo; não criar grupo/conta/app agora como se já fossem evidência de híbrido.
 
 1. Concluir a v0.5 com provas próprias de Diego, serviço e SoD. Preservar nova coleta final e o RH de 29/09.
 2. Escolher **Cloud Sync ou Connect Sync** conforme pré-requisitos, infraestrutura e objetivos, usando documentação atual. Não instalar ambos para a mesma população. Não instalar agente no DC por conveniência sem revisar suporte/desenho.
@@ -53,13 +53,13 @@ Responsabilidade de atributos: RH define situação de negócio; operador atuali
 
 ## Complemento após recebimento das provas de 29/09
 
-[Diego encerrado no IAM-004](05-fila-tickets.md#iam-004): autenticação AD recusada com erro 1793, bloqueio/revogação auditados no Entra, contadores de concessões zero e nova comparação cadastral conforme. Identificado ajuste adicional de qualidade cadastral: Employee type=Funcionário na captura, apesar do cargo/RH de terceiro. Tratar no IAM-010, sem reativar conta, alterar User type=Member por engano ou atribuir grupo novo. As pendências sobre Diego nas tabelas anteriores descrevem a base da análise antes deste complemento.
+[Diego encerrado no IAM-004](05-fila-tickets.md#iam-004): autenticação AD recusada com erro 1793, bloqueio/revogação auditados no Entra, contadores de concessões zero e nova comparação cadastral conforme. A alteração de Employee type foi retirada do escopo pelo operador; não constitui pendência de acesso ou de fechamento.
 
 **Atualização de serviço em 29/09:** [três vínculos retirados](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md), conta desabilitada e GG_FIN_READ preservado na DL. Consulta de dependências somente no host/filtro demonstrado; nova coleta completa dos acessos permanece para conferência final.
 
 ## Sequência sem atrasar o estudo
 
-**Agora:** matriz/RH e registro do achado; terminar pendências da v0.5. **Preflight já previsto no plano:** coletar lacunas, desenhar OU piloto/autoridade e implementar TI com Isabela quando liberado. **Piloto:** um usuário, uma origem e evidências. **Depois:** coexistência/matching, troubleshooting e aplicações → API. A conta de serviço dá continuidade à futura governança NHI (owner, finalidade, consumidor, concessões e revogação), sem alegar identidade gerenciada/cloud já implementada.
+**Após a v0.5:** revisão dos casos; matriz/RH e resultados finais registrados, com IAM-004 e IAM-010 fechados. **Preflight já previsto no plano:** coletar lacunas, desenhar OU piloto/autoridade e implementar TI com Isabela quando liberado. **Piloto:** um usuário, uma origem e evidências. **Depois:** coexistência/matching, troubleshooting e aplicações → API. A conta de serviço dá continuidade à futura governança NHI (owner, finalidade, consumidor, concessões e revogação), sem alegar identidade gerenciada/cloud já implementada.
 
 Parecer: a base sustenta novas simulações, mas **ainda não está validada para habilitar sincronização**. As lacunas são delimitadas e tratáveis; não há justificativa para reconstruir AD/Entra, criar departamentos não presentes no RH ou sincronizar toda a população.
 
@@ -69,7 +69,7 @@ Referência confirmada: Plano-IAM-Cloud-Identity-NHI-Consolidado-2026-09-26.pdf,
 
 | Fase do plano | Base reutilizável | Lacuna / condição de avanço | Encaminhamento |
 |---|---|---|---|
-| v0.5: JML, terceiro, reconciliação, SoD e recertificação | Mover/Leaver/Joiner evidenciados; inventário e correções Bruno/Gabriela; decisões dos vínculos | Diego, serviço, execução acompanhada de SoD e estado final ainda precisam de provas nesta revisão | Concluir no IAM-004/IAM-010; registrar limite da nova TI sem atrasar fechamento por implantação futura |
+| v0.5: JML, terceiro, reconciliação, SoD e recertificação | Mover/Leaver/Joiner evidenciados; inventário e correções Bruno/Gabriela; decisões dos vínculos | Diego, serviço, SoD e estado final comprovados em 29/09; oito associações AD conformes no recorte | IAM-004/IAM-010 fechados; TI validada no AD, sincronização futura |
 | Revisão/entrevista e introdução IGA | Fontes, decisões e achado de cobertura TI | Distinguir estudo/mapeamento SailPoint de uso real do produto | Reusar estes casos no bloco curto pós-v0.5; nenhum tenant SailPoint é pré-requisito do AD/Entra |
 | Preflight e piloto híbrido | IDs preservados, RH/matriz separados, população classificada | Infraestrutura, UPN/aliases/anchors, GPO/delegação e escolha de método não validados | Isabela candidata; liberar somente após critérios técnicos acima |
 | Troubleshooting híbrido | Antes/depois, logs e correlação já utilizados | Ainda não há sincronização nem erros híbridos observados | Primeiro estabilizar piloto; depois dois cenários controlados, diagnóstico/correção/reteste |
@@ -101,3 +101,7 @@ Critério para cada próxima entrega: necessidade e owner definidos → fontes a
 - [Tenant existente e matching](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-install-existing-tenant): UPN/proxyAddresses/sourceAnchor; preservar identidade e considerar impacto sobre atributos/senha.
 - [Filtragem Connect Sync](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering): escopo e proteção de mudanças.
 - [Cloud Sync e comparação de capacidades](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync): selecionar método conforme cenário.
+
+## Complemento de execução — 29/09 à tarde
+
+Isabela e os grupos TI foram criados no AD pelo operador; [provas de associação, ACL e leitura/criação negada](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md). A implantação local antes planejada foi antecipada; as observações iniciais acima preservam o momento do inventário. Entra/híbrido continuam planejados. Não sincronizar automaticamente a OU TI, que também contém identidade administrativa; manter critérios de escopo, UPN, infraestrutura e exclusão de contas privilegiadas.

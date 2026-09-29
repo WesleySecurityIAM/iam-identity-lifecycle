@@ -44,7 +44,7 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 
 ## Atualização de cobertura em 29/09
 
-A ausência de TI na matriz foi tratada por nova regra documentada no [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) e na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Diego encerra pelo prazo; Isabela é implantação planejada, sem conta/concessão nova nesta revisão. As quinze decisões acima permanecem históricas dos vínculos coletados; não validam TI, todos os papéis nem prontidão híbrida. RH corrente atualizado em 29/09, sem modificar inventários anteriores.
+A ausência de TI na matriz foi tratada por nova regra documentada no [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) e na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Diego encerra pelo prazo; Isabela foi inicialmente planejada e depois implementada no AD em 29/09: [cadastro, grupos e testes](ti-isabela/README.md). Entra permanece planejado. Decisão simulada complementar por solicitação de Wesley: manter Isabela em GG_TI_READ e GG_TI_READ na DL_TI_PROCEDIMENTOS_READ, para consulta de procedimentos; responsável fictícia Fernanda Souza. São duas associações novas, separadas das quinze históricas e sujeitas à nova coleta final. As quinze decisões acima permanecem históricas dos vínculos coletados; não validam TI, todos os papéis nem prontidão híbrida. RH corrente atualizado em 29/09, sem modificar inventários anteriores.
 
 ## Pendências para conclusão
 
@@ -57,7 +57,8 @@ Esse encaminhamento integra a entrega do IAM-010. Antes da execução, conferir 
 **Tratamento concluído em 29/09:** três vínculos retirados conforme antes/depois; conta desabilitada e GG_FIN_READ preservado na DL de leitura. Decisão simulada formalizada em 29/09/2026 12:23:24 -0300, após as capturas. [Decisão, provas 11–13 e limites](10-servico-remocao-concessoes.md). Consolidado: doze manter e três remover; a tabela inicial registra a decisão histórica de investigar. O IAM-005 permanece histórico, com o estado entregue naquela ocasião.
 
 1. **Concluído:** tratar os três vínculos residuais da conta de serviço; decisão e comparação das consultas registradas na evidência 10. Nova coleta integral dos vínculos atuais fica para a conferência final da revisão.
-2. **IAM-004 concluído em 29/09:** comparação final do estado da conta conforme. [Provas](../IAM-004/README.md). Ajuste cadastral: Employee type=Funcionário no Entra versus vínculo Terceiro de Sistemas no RH; confirmar/corrigir mantendo conta bloqueada. Contadores de concessões zero já comprovados.
-3. Executar e documentar o microcaso SoD-001 em dados separados.
+2. **IAM-004 concluído em 29/09:** comparação final do estado da conta conforme. [Provas](../IAM-004/README.md). Contadores de concessões zero já comprovados.
+3. **Concluído em 29/09:** [microcaso SoD-001](14-sod-resultado.md), em dados separados, com um conflito antes e zero depois.
+4. **Concluído:** [conferência final AD às 17:24:48 de 29/09](17-conferencia-final-ad.md): oito associações conformes, zero ausentes/excedentes, identidade/cadastro e retirada dos vínculos de serviço conferidos. Alteração de Employee type retirada do escopo a pedido do operador; não há tarefa cadastral pendente nem mudança nesse atributo.
 
-Esta revisão não revalida todas as ACLs, papéis administrativos, aplicações, licenças ou sessões. As decisões se limitam às associações exportadas e às finalidades documentadas. IAM-010 permanece em andamento até tratamento ou aceitação formal das pendências no cenário e conclusão dos critérios previstos.
+Esta revisão não revalida todas as ACLs, papéis administrativos, aplicações, licenças ou sessões. As decisões se limitam às associações exportadas e às finalidades documentadas. IAM-010 fechado em 29/09/2026 no escopo documentado: tratamentos, decisões, SoD e conferência final concluídos.

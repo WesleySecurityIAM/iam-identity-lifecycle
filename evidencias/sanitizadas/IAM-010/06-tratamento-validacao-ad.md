@@ -36,4 +36,7 @@ As duas mudanças observadas correspondem aos encaminhamentos registrados: leitu
 
 Comparação limitada aos atributos e associações exportados; não inclui senha, ACLs, GPOs ou todas as sessões. Os exports não são inventário de todos os grupos do domínio: a coleta de grupos cobre GG_* e DL_*.
 
-Tratamento desses dois achados validado no escopo descrito. **IAM-010 continua em andamento:** comparação e decisões posteriores estão nas evidências 07–08; retenção da conta de serviço, encerramento de Diego e microcaso SoD ainda pendentes. O Entra não foi alterado nesta rodada.
+Tratamento desses dois achados validado no escopo descrito. **Na coleta de 28/09, IAM-010 estava em andamento:** comparação e decisões posteriores estão nas evidências 07–08; retenção da conta de serviço, encerramento de Diego e microcaso SoD ainda pendentes. O Entra não foi alterado nesta rodada.
+
+
+**Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).

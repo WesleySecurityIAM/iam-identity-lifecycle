@@ -19,8 +19,8 @@ Esta pasta funciona como índice das evidências do laboratório, sem representa
 - [Guest B2B encerrado em 25/09: bloqueio, revogação auditada e estado final](sanitizadas/REQ-GUEST-001/06-encerramento.md).
 
 - [IAM-002 fechado em 28/09: Suporte retirado, Financeiro validado e comparação final conforme](sanitizadas/IAM-002/README.md).
-- [IAM-010: inventário, tratamento de Bruno, comparação de grupos e decisões de recertificação simulada](sanitizadas/IAM-010/README.md).
-- [IAM-004: expiração de Diego configurada para 29/09 às 08:00; validação após vigência pendente](sanitizadas/IAM-004/README.md).
+- [IAM-010 fechado: recertificação, retirada dos vínculos de serviço, TI, SoD e comparação final AD](sanitizadas/IAM-010/README.md).
+- [IAM-004 fechado: expiração validada no AD, bloqueio/revogação Entra e comparação final](sanitizadas/IAM-004/README.md).
 - [Entra em 22/09: inventário, grupos e auditoria](sanitizadas/inventario-entra-2026-09-22/README.md).
 
 - [IAM-006 no ServiceNow: classificação, notas, resolução e limites dos SLAs](sanitizadas/IAM-006/servicenow/README.md).

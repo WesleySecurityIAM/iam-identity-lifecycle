@@ -1,5 +1,16 @@
 # Reconciliação de acessos — estado esperado versus estado atual
 
+## Scripts e escopos da v0.5
+
+| Script | Finalidade e limite |
+|---|---|
+| [Invoke-IamReconciliation.ps1](Invoke-IamReconciliation.ps1) | Exercício sintético com Compare-Object; detalhado abaixo. Não consulta os diretórios. |
+| [Compare-DepartmentMembership.ps1](Compare-DepartmentMembership.ps1) | Comparação histórica dos CSVs e matriz de 28/09, com três grupos departamentais. Não aplicar à matriz ampliada de TI sem adaptação. |
+| [Invoke-SoDLab.ps1](Invoke-SoDLab.ps1) | Cinco cenários fictícios em memória, com detecção e tratamento de SoD; não altera AD/Entra. [Provas](../evidencias/sanitizadas/IAM-010/14-sod-resultado.md). |
+| [Export-IamReviewSnapshot.ps1](Export-IamReviewSnapshot.ps1) | Consulta contas AD, grupos GG/DL, membros diretos e tarefa IAM-005; exporta CSVs, estado da tarefa e manifesto. Executar na VM com módulo AD. Não altera o diretório nem calcula conformidade. [Resultado comparado](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md). |
+
+As seções seguintes descrevem somente o primeiro exercício sintético. Os inventários integrais do laboratório permanecem privados.
+
 ## Objetivo
 
 Comparar associações atuais de contas e grupos com um estado esperado e gerar uma lista de exceções para análise.

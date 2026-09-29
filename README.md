@@ -2,6 +2,8 @@
 
 Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provisionamento, menor privilégio, autenticação e reconciliação de acessos. Cada entrega apresenta objetivo, resultado e evidências.
 
+**Entrega v0.5 — 29/09/2026:** JML, encerramento de terceiro, recertificação e microcaso SoD concluídos no escopo do laboratório. [Resultados e limites da versão](CHANGELOG.md#v05--2026-09-29).
+
 ## Lifecycle/JML — Joiner | Mover | Leaver
 
 | Etapa | Estado | Resultado e evidência |
@@ -15,7 +17,8 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 | Entrega | Resultado | Evidência |
 |---|---|---|
 | Provisionamento e autenticação no Entra ID | Provisionamento, recuperação de autenticação e verificação de MFA documentados. | [IAM-001](00-operacao-itsm/05-fila-tickets.md#iam-001) · [IAM-006](00-operacao-itsm/05-fila-tickets.md#iam-006) · [IAM-007](00-operacao-itsm/05-fila-tickets.md#iam-007) |
-| Reconciliação de acessos com PowerShell | Inventários AD/Entra comparados à matriz; acesso ausente de Bruno tratado e validado; nove associações conformes no recorte de três grupos. | [Comparação e provas](evidencias/sanitizadas/IAM-010/README.md) · [Scripts](05-automacao/) |
+| Reconciliação, recertificação e SoD | Decisões por acesso, vínculos de serviço retirados e TI validada; comparação final AD com oito associações conformes. SoD simulado: um conflito tratado, preservando o direito necessário. | [IAM-010: decisões e provas](evidencias/sanitizadas/IAM-010/README.md) · [Scripts](05-automacao/) |
+| Encerramento de terceiro | Expiração AD recusou nova autenticação; Entra bloqueado, revogação auditada e estado final conferido. | [IAM-004: prazo e validação](evidencias/sanitizadas/IAM-004/README.md) |
 | Governança de acesso — avaliação de permissão direta | Acesso por grupo mantido; pedido de permissão individual redundante não aprovado na simulação. | [IAM-008: decisão e evidências](00-operacao-itsm/05-fila-tickets.md#iam-008) |
 | Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |

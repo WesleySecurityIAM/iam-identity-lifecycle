@@ -5,13 +5,13 @@
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
 | [IAM-002](#iam-002) | Mover de Suporte para Financeiro | Fechado: Suporte retirado/negado, Financeiro validado e comparação final conforme. |
 | [IAM-003](#iam-003) | Leaver de Carla no Entra | Fechado: conta/grupo tratados, revogação auditada, entrada bloqueada e comparação final conforme. |
-| [IAM-004](#iam-004) | Encerrar acesso de terceiro por prazo | Em andamento: expiração configurada para 29/09 às 08:00 UTC−03:00; validação após vigência pendente. |
+| [IAM-004](#iam-004) | Encerrar acesso de terceiro por prazo | Fechado em 29/09: expiração AD validada; Entra bloqueado, sessões revogadas e comparação final conforme. |
 | [IAM-005](#iam-005) | Executar rotina com conta de serviço | Duas execuções, escritas indevidas negadas e desativação final. |
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
 | [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
 | [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
-| [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Em andamento: comparação departamental concluída e decisões simuladas registradas; conta de serviço, Diego e SoD pendentes. |
+| [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Fechado em 29/09: decisões e tratamentos registrados; TI, SoD e conferência final AD concluídos no escopo documentado. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
 **Procedimento complementar:** [PROC-BG-001 — Acesso de emergência](PROC-BG-001-acesso-emergencia.md): teste administrativo validado em 24/09; independência da autenticação e custódia a validar. Não altera a contagem dos 11 cenários.
@@ -259,7 +259,7 @@ Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente re
 2. **Concluído:** [consulta AD de 28/09 às 17:11:26 UTC−03:00](../evidencias/sanitizadas/IAM-004/README.md) confirma EMP0004, Enabled=True e AccountExpirationDate=29/09/2026 08:00:00.
 3. **Concluído em 29/09:** Enabled=True com prazo vencido às 11:08; runas retorna erro 1793 (conta expirada) às 11:16:33. [Provas 02–03](../evidencias/sanitizadas/IAM-004/README.md).
 4. **Concluído e auditado em 29/09:** bloqueio Entra às 11:19:45 e revogação às 11:19:56; perfil bloqueado e eventos success. **Concluído:** [captura final às 11:58](../evidencias/sanitizadas/IAM-004/08-entra-zero-concessoes.png) apresenta zero grupos, aplicações, papéis e licenças. Ausência final não representa remoção de vínculos inexistentes.
-5. **RH atualizado em 29/09:** nova cópia vigente com EMP0004 DESLIGADO, preservando matrícula, admissão e demais campos; motivo e versão registrados na revisão do IAM-010. **Concluído:** [comparação posterior](../evidencias/sanitizadas/IAM-004/07-comparacao-final.md) confirma EMP0004 único, mesmo Object ID e accountEnabled=False. **Encaminhamento ao IAM-010:** esclarecer Employee type=Funcionário no print versus vínculo Terceiro de Sistemas; não reabilitar a conta para corrigir cadastro. Não invalida o bloqueio nem a recusa por expiração.
+5. **RH atualizado em 29/09:** nova cópia vigente com EMP0004 DESLIGADO, preservando matrícula, admissão e demais campos; motivo e versão registrados na revisão do IAM-010. **Concluído:** [comparação posterior](../evidencias/sanitizadas/IAM-004/07-comparacao-final.md) confirma EMP0004 único, mesmo Object ID e accountEnabled=False.
 
 ## Validação e limites
 
@@ -269,7 +269,7 @@ A configuração comprova o prazo; uma tentativa posterior e seu resultado suste
 
 Reabertura de acesso somente mediante nova decisão simulada justificada, com prazo explícito e reteste. Não remover o prazo nem reabilitar automaticamente a conta para conseguir um resultado de teste.
 
-**Fechado em 29/09/2026.** Prazo aplicado, autenticação AD recusada por expiração, conta Entra bloqueada e revogação auditada, contadores de concessões zero e comparação cadastral conforme. Ajuste de classificação do vínculo encaminhado ao IAM-010; conta preservada sem nova concessão. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md).
+**Fechado em 29/09/2026.** Prazo aplicado, autenticação AD recusada por expiração, conta Entra bloqueada e revogação auditada, contadores de concessões zero e comparação cadastral conforme. Conta preservada sem nova concessão. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md).
 
 <a id="iam-005"></a>
 
@@ -707,7 +707,7 @@ Reprodução concluída: acesso persistiu na conexão mantida após remoção, f
 - Ambiente: laboratório fictício — AD DS e Entra independentes; microcaso SoD em dados locais simulados
 - Tipo: revisão de acesso e avaliação de segregação de funções (SoD)
 - Registro do preparo: 2026-09-26
-- Status: Em andamento — comparação/decisões registradas, Diego encerrado e concessões residuais da conta de serviço retiradas; SoD, ajuste cadastral e conferência final pendentes
+- Status: Fechado em 29/09/2026 — decisões registradas, serviço tratado, TI validada, SoD concluído e conferência final AD conforme no escopo documentado
 - Início da coleta e análise: 2026-09-28; atividade de reconciliação prevista para 29/09 antecipada pelo operador. Conclusão após decisões, tratamento e validação, dentro da preparação da v0.5.
 - Responsável pela execução: Wesley
 - Identidade do microcaso: EMP0007 — Gabriela Santos
@@ -727,11 +727,11 @@ A análise identificou Bruno sem GG_SUP_TICKET no AD e Gabriela ainda em OU Supo
 
 ## Revisão de cobertura — 29/09/2026
 
-A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela com implantação planejada após v0.5. Não houve criação de grupos, contas ou recurso TI nesta revisão.
+A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela inicialmente planejada e depois implementada no AD pelo operador em 29/09. [Provas TI](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md): identidade, associações, ACL/SMB, conexão como Isabela, leitura e criação negada. Entra/híbrido permanecem planejados.
 
-Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. O desenho TI não será contado como acesso implementado.
+Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. TI só é considerada implementada no AD pelas provas posteriores específicas; nova coleta integral ainda será comparada.
 
-**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. Pendências da v0.5: SoD, verificação final e ajuste cadastral de Employee type no Entra (Funcionário na captura versus Terceiro de Sistemas no RH). O ajuste deve preservar bloqueio e identidade; Member/Guest não substitui tipo de vínculo. Registrar confirmação/correção pelo operador, sem criar acesso de TI para Diego.
+**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI no AD executado depois, conforme evidências. Preflight híbrido e Entra continuam planejados. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. SoD e conferência final AD concluídos. A alteração de Employee type foi retirada do escopo por decisão de Wesley em 29/09; não condiciona o fechamento dos controles de acesso comprovados e não foi executada.
 
 ## Tratamento da conta de serviço — 29/09/2026
 
@@ -756,8 +756,8 @@ Resultado: três decisões de investigar convertidas em remover, com retirada co
 
 1. **Iniciado em 28/09:** conferir o fechamento do Mover, preservar inventários e definir matriz por sistema. Coleta e comparação cadastral concluídas no recorte descrito; nova coleta posterior e tratamento dos dois achados concluídos; comparação departamental e decisões simuladas registradas nas evidências 07–08.
 2. **Concluído no escopo exportado:** nove associações departamentais conformes e seis ausências previstas. Recertificação simulada inicial: quinze associações avaliadas, doze manter e três investigar. Em 29/09, as três pendências de serviço foram decididas como remover e a retirada foi comprovada; as demais decisões não representam nova coleta.
-3. **Preparado:** [roteiro SoD e script](../evidencias/sanitizadas/IAM-010/09-roteiro-sod.md), com cinco cenários alternativos, direitos fictícios e agrupamento por matrícula/escopo. A lógica foi verificada; capturas do exercício pelo operador pendentes.
-4. Avaliar três casos: somente A, somente B e A+B. Registrar o conflito, a decisão e a comparação após retirar um dos direitos no modelo.
+3. **Concluído em 29/09:** [SoD e provas 14–16](../evidencias/sanitizadas/IAM-010/14-sod-resultado.md): cinco cenários alternativos, um conflito às 17:06:37, zero às 17:10:04 após preservar aprovação de orçamento e retirar manutenção de fornecedor no caso A+B.
+4. **Concluído:** casos A, B, A+B, pessoas distintas e escopos distintos avaliados; decisão didática exibida na etapa Depois. Não houve alteração de direitos reais.
 5. Aplicar correções reais somente se justificadas e autorizadas no escopo do laboratório; verificar estado final e acesso efetivo quando houver recurso integrado.
 
 ## Validação prevista
@@ -768,17 +768,17 @@ Resultado: três decisões de investigar convertidas em remover, com retirada co
 | A+B, mesma pessoa e mesmo escopo | Conflito SoD-001. |
 | Após decisão e retirada de A do modelo | B permanece; nova comparação sem conflito SoD-001. |
 
-São critérios do exercício. A lógica do script foi verificada tecnicamente: um conflito antes e nenhum após o tratamento, com pessoas/escopos diferentes sem falso positivo. O exercício acompanhado pelo operador ainda precisa de capturas. O PowerShell usa entradas locais, sem conceder direitos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
+São critérios do exercício. A lógica do script foi verificada tecnicamente: um conflito antes e nenhum após o tratamento, com pessoas/escopos diferentes sem falso positivo. O operador concluiu o exercício com capturas antes/depois em 29/09, conforme evidência 14. O PowerShell usa entradas locais, sem conceder direitos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
 
-## Evidências disponíveis e pendentes
+## Evidências disponíveis
 
 - [01 — Inventário e conferência inicial de 28/09](../evidencias/sanitizadas/IAM-010/01-inventario-conferencia-inicial.md): população, comparação cadastral, achados e limites; CSVs integrais preservados em área privada.
 - [Matriz e decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md): regras adotadas após análise do inventário e histórico dos encaminhamentos.
 - [07 — Comparação da população e grupos](../evidencias/sanitizadas/IAM-010/07-comparacao-populacao-grupos.md): nove associações departamentais conformes; contas especiais classificadas separadamente.
-- [08 — Recertificação simulada](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md): decisões por associação e responsável; retenção da conta de serviço, encerramento de Diego e SoD pendentes.
+- [08 — Recertificação simulada](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md): decisões por associação e responsável; serviço e Diego tratados, TI acrescentada e SoD concluído; conferência final AD concluída nas provas 17–18.
 - Matriz SoD-001 e entradas simuladas, identificadas separadamente da coleta real.
 - Relatório dos testes e comparação antes/depois, decisão simulada datada e justificativa.
-- [02–06 — Tratamento e comparação posterior AD](../evidencias/sanitizadas/IAM-010/06-tratamento-validacao-ad.md): Bruno no grupo, leitura permitida, criação negada; nove contas preservadas e somente as duas mudanças esperadas no inventário. Script SoD preparado e verificado; capturas do exercício pendentes.
+- [02–06 — Tratamento e comparação posterior AD](../evidencias/sanitizadas/IAM-010/06-tratamento-validacao-ad.md): Bruno no grupo, leitura permitida, criação negada; nove contas preservadas e somente as duas mudanças esperadas no inventário. SoD concluído nas provas 14–16; o resultado AD histórico não inclui a criação posterior de TI.
 
 ## Riscos, reversão e limitações
 
@@ -789,4 +789,4 @@ São critérios do exercício. A lógica do script foi verificada tecnicamente: 
 
 ## Fechamento
 
-Pendente. Encerrar após coleta, decisões e validações, com regra, conflito simulado, tratamento e limites sustentados pelas evidências. Esta preparação não altera o status do Mover nem antecipa o aceite da v0.5.
+Conferência final AD concluída em 29/09 às 17:24:48: [provas 17–18](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md), oito associações conformes, zero ausentes/excedentes, TI presente e serviço sem os vínculos retirados. **IAM-010 fechado em 29/09/2026 no escopo documentado**, sem tarefa de alteração de Employee type. As fontes cloud anteriores permanecem datadas; não houve nova exportação Entra nesta conferência. O microcaso SoD está concluído, com regra, decisão e resultado comprovados no modelo local. Resultado incorporado à [entrega v0.5 de 29/09](../CHANGELOG.md#v05--2026-09-29), com limites preservados.

@@ -56,3 +56,6 @@ Validação do comparador em cópia isolada dos dados: ausência de Bruno e incl
 ## Encaminhamento
 
 As nove contas especiais sem matrícula não foram chamadas de órfãs automaticamente. A [recertificação simulada](08-recertificacao-simulada.md) classifica finalidade e decisão por associação, incluindo os demais grupos técnicos do AD. Encerramento de Diego no IAM-004, retenção de acessos da conta de serviço e microcaso SoD permanecem assuntos explicitamente pendentes.
+
+
+**Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).

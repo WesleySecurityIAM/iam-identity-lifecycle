@@ -1,6 +1,6 @@
 # IAM-004 — Prazo e encerramento de Diego
 
-**Resultado comprovado:** prazo AD vencido, nova autenticação recusada por expiração, bloqueio Entra, revogação auditada e comparação final do estado da conta conforme RH. **Encerrado em 29/09 no escopo do IAM-004:** captura final com zero grupos, aplicações, papéis e licenças. Classificação do vínculo encaminhada como ajuste cadastral separado ao IAM-010.
+**Resultado comprovado:** prazo AD vencido, nova autenticação recusada por expiração, bloqueio Entra, revogação auditada e comparação final do estado da conta conforme RH. **Encerrado em 29/09 no escopo do IAM-004:** captura final com zero grupos, aplicações, papéis e licenças.
 
 | Evidência | O que comprova |
 |---|---|
@@ -19,7 +19,7 @@ Horários narrados em Brasília UTC−03:00; JSON mantém UTC. Pares de eventos 
 ## Limites e encaminhamento
 
 - A prova 05 apresenta View; a prova 08 posterior exibe os contadores zero e completa a conferência do portal no escopo registrado. A ausência nos três grupos de 28/09 permanece histórica.
-- A prova 04 mostra Employee type=Funcionário, enquanto RH/cargo dizem Terceiro de Sistemas. Encaminhado ao IAM-010 como divergência de classificação a confirmar/corrigir, preservando matrícula e estado bloqueado; User type=Member pode permanecer para essa conta interna de terceiro. Member/Guest não é tipo de contrato.
+- Employee type não integrou os controles de acesso deste encerramento; não foi alterado. User type=Member é compatível com uma conta interna de terceiro e não define tipo de contrato.
 - A captura de runas não documenta eventual redefinição prévia de senha; nenhuma redefinição é apresentada como comprovada. O erro 1793 é a evidência da recusa por expiração.
 - As quatro capturas de hoje são cópias sem edição, com hash conferido. Originais/JSON/CSV preservados privadamente. Sem senha ou token no extrato público.
 
