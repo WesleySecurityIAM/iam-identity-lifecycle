@@ -42,6 +42,10 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 | Diego — EMP0004 | AD e Entra | Encerramento definido para 29/09 às 08:00 UTC−03:00 no IAM-004. Configuração/efeito do prazo e encerramento Entra precisam de evidência própria; a coleta de 16:59 antecede essa definição. |
 | EMP0009 e demais ausências previstas | Conforme matriz | Não provisionar por ausência isolada. Rever escopo se surgir necessidade de negócio. |
 
+## Atualização de cobertura em 29/09
+
+A ausência de TI na matriz foi tratada por nova regra documentada no [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) e na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Diego encerra pelo prazo; Isabela é implantação planejada, sem conta/concessão nova nesta revisão. As quinze decisões acima permanecem históricas dos vínculos coletados; não validam TI, todos os papéis nem prontidão híbrida. RH corrente atualizado em 29/09, sem modificar inventários anteriores.
+
 ## Pendências para conclusão
 
 ### Encaminhamento da conta de serviço

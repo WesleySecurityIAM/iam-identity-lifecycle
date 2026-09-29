@@ -1,5 +1,7 @@
 # Escopo da reconciliação — revisão de 28/09/2026
 
+> Histórico preservado. Para novas avaliações, usar a [matriz de 29/09](MAT-2026-09-29-acessos-por-sistema.md), que inclui TI e o encaminhamento de Isabela. Os resultados abaixo valem para o recorte e as coletas de 28/09.
+
 - Registro: 28/09/2026, 16:14 UTC−03:00.
 - Ambiente: laboratório simulado; AD e Entra independentes, sem sincronização.
 - Decisão: escopo adotado por Wesley nesta revisão, mediante solicitação explícita. Não representa aprovação corporativa real nem regra comprovadamente vigente antes deste registro.

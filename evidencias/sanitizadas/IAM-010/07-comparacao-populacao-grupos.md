@@ -1,5 +1,7 @@
 # População e grupos versus matriz — 28/09/2026
 
+> Revisão de 29/09: estes resultados são históricos de três grupos. TI não tinha regra de recurso neste recorte; sua ausência é uma lacuna de cobertura, tratada na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Não representam conformidade integral dos acessos de TI.
+
 ## Resultado
 
 Comparação executada após o tratamento de Bruno e a movimentação de OU de Gabriela, usando a [matriz vigente](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md).

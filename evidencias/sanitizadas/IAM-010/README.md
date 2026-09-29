@@ -11,3 +11,5 @@ Em andamento desde 28/09/2026. Inventário, tratamento, comparação dos grupos 
 - [Ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010): objetivo, execução, critérios e pendências.
 
 O inventário descreve o observado; a matriz define o esperado; a recertificação deverá registrar a decisão do responsável sobre a necessidade de cada acesso. CSVs brutos e manifesto de hashes permanecem privados.
+
+- [Revisão de 29/09 — matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md): TI incluída como regra, Isabela planejada, Diego encerrado por prazo e limites dos resultados anteriores. [Análise de preparação híbrida](../../../00-operacao-itsm/REV-2026-09-29-estrutura-hibrida.md).

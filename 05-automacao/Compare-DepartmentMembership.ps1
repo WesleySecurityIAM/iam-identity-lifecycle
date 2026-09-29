@@ -3,7 +3,8 @@ param(
     [Parameter(Mandatory=$true)][string]$FinalADDirectory
 )
 $ErrorActionPreference = 'Stop'
-# Read-only comparison. Rules: IAM-010 matrix adopted on 2026-09-28.
+# Read-only historical comparison. Fixed rules and sources: IAM-010, 2026-09-28.
+# Does not evaluate the 2026-09-29 matrix, TI, expiration or hybrid readiness.
 function Read-CheckedCsv($Path, $Columns, $UniqueKey) {
     $rows = @(Import-Csv -LiteralPath $Path)
     if (!$rows.Count) { throw "Empty source requires review: $Path" }

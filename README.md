@@ -15,7 +15,7 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 | Entrega | Resultado | Evidência |
 |---|---|---|
 | Provisionamento e autenticação no Entra ID | Provisionamento, recuperação de autenticação e verificação de MFA documentados. | [IAM-001](00-operacao-itsm/05-fila-tickets.md#iam-001) · [IAM-006](00-operacao-itsm/05-fila-tickets.md#iam-006) · [IAM-007](00-operacao-itsm/05-fila-tickets.md#iam-007) |
-| Reconciliação de acessos com PowerShell | Inventários AD/Entra comparados à matriz; acesso ausente de Bruno tratado e validado; nove associações departamentais conformes após tratamento. | [Comparação e provas](evidencias/sanitizadas/IAM-010/README.md) · [Scripts](05-automacao/) |
+| Reconciliação de acessos com PowerShell | Inventários AD/Entra comparados à matriz; acesso ausente de Bruno tratado e validado; nove associações conformes no recorte de três grupos. | [Comparação e provas](evidencias/sanitizadas/IAM-010/README.md) · [Scripts](05-automacao/) |
 | Governança de acesso — avaliação de permissão direta | Acesso por grupo mantido; pedido de permissão individual redundante não aprovado na simulação. | [IAM-008: decisão e evidências](00-operacao-itsm/05-fila-tickets.md#iam-008) |
 | Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |

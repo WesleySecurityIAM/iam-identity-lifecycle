@@ -4,6 +4,8 @@
 
 [Acompanhamento documental do IAM-001](acompanhamentos.md).
 
+[Matriz vigente de 29/09](MAT-2026-09-29-acessos-por-sistema.md): quatro áreas do RH, TI planejada, população por sistema e contas especiais. [Análise para o híbrido](REV-2026-09-29-estrutura-hibrida.md): achados e critérios de entrada do piloto.
+
 [Reconciliação de 28/09 — matriz e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md): Bruno e OU de Gabriela tratados; comparação e decisões simuladas documentadas no IAM-010.
 
 [PROC-BG-001 — Procedimento de acesso de emergência](PROC-BG-001-acesso-emergencia.md): validado em 24/09: criação, alteração e exclusão de grupo pelas contas alternativas; independência da autenticação ainda a validar.

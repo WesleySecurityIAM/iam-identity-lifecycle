@@ -247,7 +247,7 @@ Fechado em 23/09: conta desabilitada, associação financeira removida, ação d
 
 ## Contexto e objetivo
 
-Encerrar o acesso do terceiro no início da manhã de 29/09. Configurar a expiração da conta AD e verificar uma nova autenticação após o prazo, tratando separadamente o encerramento no Entra. A conta e a matrícula existentes são preservadas.
+Encerrar o acesso do terceiro no início da manhã de 29/09 por **término da vigência simulada do vínculo**, registrada no RH e neste ticket. A lacuna de TI na matriz foi identificada separadamente no IAM-010 e não é a causa da expiração. Não conceder acesso novo ao terceiro encerrado para preencher essa lacuna. Configurar a expiração da conta AD e verificar uma nova autenticação após o prazo, tratando separadamente o encerramento no Entra. A conta e a matrícula existentes são preservadas.
 
 ## Regra e decisão simulada
 
@@ -258,8 +258,8 @@ Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente re
 1. **Concluído:** definir prazo e atualizar a data de desligamento na fonte de RH vigente.
 2. **Concluído:** [consulta AD de 28/09 às 17:11:26 UTC−03:00](../evidencias/sanitizadas/IAM-004/README.md) confirma EMP0004, Enabled=True e AccountExpirationDate=29/09/2026 08:00:00.
 3. **Pendente:** validar nova autenticação depois do prazo, antes de desabilitar manualmente a conta. Expiração e Enabled são atributos diferentes; Enabled=True não comprova que a conta ainda consegue autenticar.
-4. **Pendente:** bloquear a conta Entra e revogar sessões após a vigência, conferir grupos/papéis/aplicações no escopo e guardar os eventos. A expiração AD não executa essas ações no tenant independente.
-5. **Pendente:** atualizar o estado vigente do RH e preservar nova coleta para a reconciliação/recertificação do [IAM-010](#iam-010).
+4. **Relatado pelo operador em 29/09:** bloqueio Entra e revogação de sessões, com ausência de grupos/papéis/aplicações nas telas consultadas. **Validação documental pendente:** incorporar capturas e eventos; ausência final não será apresentada como remoção de vínculos inexistentes. A expiração AD não executa essas ações no tenant independente.
+5. **RH atualizado em 29/09:** nova cópia vigente com EMP0004 DESLIGADO, preservando matrícula, admissão e demais campos; motivo e versão registrados na revisão do IAM-010. **Pendente:** incorporar provas posteriores das ações relatadas no Entra, da validação AD e da comparação final. Atualização da fonte não comprova execução nos diretórios.
 
 ## Validação e limites
 
@@ -724,6 +724,14 @@ O Mover de Gabriela foi concluído em 28/09 no escopo de cadastro, grupos e aces
 O inventário e a reconciliação ampliada passam a integrar a preparação deste IAM-010: RH com nove pessoas; AD com nove contas, sete grupos GG/DL e oito associações diretas; Entra com doze contas e exportações dos grupos Financeiro, Suporte e RH. Fontes de 28/09, coletadas em horários distintos. A comparação de habilitação, departamento e cargo das contas correlacionadas por matrícula teve 34 verificações conformes. Não inclui todas as concessões nem comprova necessidade de acesso.
 
 A análise identificou Bruno sem GG_SUP_TICKET no AD e Gabriela ainda em OU Suporte. Na [decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md), foi definido acesso de leitura de SuporteLab para Bruno, complemento de OU para Gabriela e ausência intencional de provisionamento de EMP0009 neste recorte. Bruno foi incluído no grupo, leu o recurso de Suporte e teve criação negada. A comparação AD de 15:52:51 com 16:59:31 confirmou somente a inclusão de Bruno e a mudança de OU de Gabriela nos campos coletados. Essa decisão de escopo não substitui a recertificação individual pelo responsável de negócio.
+
+## Revisão de cobertura — 29/09/2026
+
+A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela com implantação planejada após v0.5. Não houve criação de grupos, contas ou recurso TI nesta revisão.
+
+Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. O desenho TI não será contado como acesso implementado.
+
+**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI e preflight híbrido ficam planejados para a fase seguinte. Pendências da v0.5 continuam sendo Diego, serviço, SoD e verificação final.
 
 ## Aprovação e fundamento
 
