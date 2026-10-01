@@ -1,8 +1,10 @@
-# IAM-002 — Preparação do Mover de Gabriela
+# IAM-002 — Mover de Gabriela: execução e validação
 
 **Fechado em 28/09/2026.** Preparação iniciada em 22/09. Suporte removido, leitura antiga negada, Financeiro concedido com leitura permitida e criação negada. Cadastro/grupos finais conferidos no AD e Entra; seis verificações da comparação final conformes.
 
-Modelo observado: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_READ → SuporteLab`. Recurso fictício, sem integração com sistema de chamados.
+**Leitura rápida:** [execução e fechamento](#execução-e-fechamento--2809) · [comparação final](23-comparacao-final.md) · [mudança de OU e reteste](#complemento--movimentação-de-ou-em-2809). O estado anterior e a preparação estão preservados abaixo.
+
+Modelo inicial observado: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_READ → SuporteLab`. Recurso fictício, sem integração com sistema de chamados.
 
 | Prova | O que comprova |
 |---|---|

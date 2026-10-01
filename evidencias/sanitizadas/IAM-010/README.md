@@ -1,4 +1,4 @@
-# IAM-010 — Evidências de preparação da recertificação
+# IAM-010 — Recertificação, remediação e SoD
 
 **Fechado em 29/09/2026**, após revisão iniciada em 28/09. Inventário, tratamento, comparação dos grupos departamentais e decisões simuladas disponíveis. Atualização de 29/09: Diego encerrado no IAM-004; três vínculos da conta de serviço retirados e comprovados. SoD concluído e Isabela validada no AD em 29/09. Conferência final AD concluída às 17:24:48: oito associações conformes, zero ausentes/excedentes. Sem pendência de alteração de Employee type: tarefa retirada do escopo pelo operador; controles de acesso encerrados no recorte documentado.
 
@@ -10,7 +10,7 @@
 - [Matriz e decisão de escopo](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md): adotadas após análise do inventário.
 - [Ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010): objetivo, execução, critérios e pendências.
 
-O inventário descreve o observado; a matriz define o esperado; a recertificação deverá registrar a decisão do responsável sobre a necessidade de cada acesso. CSVs brutos e manifesto de hashes permanecem privados.
+O inventário descreve o observado; a matriz define o esperado; a recertificação registra a decisão simulada do responsável sobre a necessidade de cada acesso. CSVs brutos e manifesto de hashes permanecem privados.
 
 - [Revisão de 29/09 — matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md): TI incluída como regra, Isabela implementada no AD e planejada no Entra, Diego encerrado por prazo e limites dos resultados anteriores. [Análise de preparação híbrida](../../../00-operacao-itsm/REV-2026-09-29-estrutura-hibrida.md).
 

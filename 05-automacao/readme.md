@@ -11,6 +11,13 @@
 
 As seções seguintes descrevem somente o primeiro exercício sintético. Os inventários integrais do laboratório permanecem privados.
 
+### Reprodução e compatibilidade dos arquivos
+
+- **Exemplos públicos:** a reconciliação sintética usa o CSV incluído no repositório; o SoD usa cenários fictícios definidos no próprio script. Os resultados esperados estão documentados.
+- **Comparador de 28/09:** exige os arquivos históricos indicados no código. Em `associacoes-ad.csv`, espera `Grupo`, `ObjectGUID` e `ObjectClass`, sendo os dois últimos relativos ao membro.
+- **Coletor de 29/09:** exporta `Grupo`, `GrupoGUID`, `Membro`, `MembroGUID` e `TipoMembro`. Essa saída não é entrada direta do comparador histórico: mudaram o formato e a matriz, que passou a incluir TI. Apenas renomear colunas não atualiza as regras.
+- **Conferência final da v0.5:** o relatório público registra fontes, regras e resultados; as entradas integrais e a comparação detalhada permanecem privadas. Portanto, esse resultado pode ser examinado documentalmente, mas não reproduzido apenas com os arquivos públicos.
+
 ## Objetivo
 
 Comparar associações atuais de contas e grupos com um estado esperado e gerar uma lista de exceções para análise.

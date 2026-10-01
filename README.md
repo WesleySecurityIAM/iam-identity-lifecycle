@@ -1,16 +1,24 @@
-# Laboratório de IAM — identidades e controle de acesso
+# Portfólio IAM — ciclo de vida e governança de acessos
 
-Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provisionamento, menor privilégio, autenticação e reconciliação de acessos. Cada entrega apresenta objetivo, resultado e evidências.
+Portfólio prático de **Wesley**, com foco em **estágio e posições de entrada em IAM**. Laboratório com **Microsoft Entra ID, Active Directory e PowerShell**, cobrindo entrada, mudança de área e desligamento, menor privilégio, MFA e revisão de acessos.
 
-**Entrega v0.5 — 29/09/2026:** JML, encerramento de terceiro, recertificação e microcaso SoD concluídos no escopo do laboratório. [Resultados e limites da versão](CHANGELOG.md#v05--2026-09-29).
+**v0.5 entregue em 29/09/2026:** 11 cenários IAM documentados, com resultados, evidências e limites. O trabalho conecta **regra de acesso → decisão → execução → teste → conferência final**. [Resumo da entrega](CHANGELOG.md#v05--2026-09-29).
 
 ## Lifecycle/JML — Joiner | Mover | Leaver
 
 | Etapa | Estado | Resultado e evidência |
 |---|---|---|
 | **Joiner — entrada** | **Concluído** | Pré-admissão bloqueada; ativação, grupo, troca de senha e MFA comprovados no Entra. [IAM-011](00-operacao-itsm/05-fila-tickets.md#iam-011) |
-| **Mover — mudança de área** | **Concluído** | Suporte retirado; Financeiro com leitura permitida/criação negada, identidade preservada na mudança de OU e comparação final conforme. [IAM-002](00-operacao-itsm/05-fila-tickets.md#iam-002) |
-| **Leaver — desligamento** | **Concluído** | Conta bloqueada, revogação de sessões auditada, grupo removido, nova entrada negada e comparação final conforme no Entra. [IAM-003](00-operacao-itsm/05-fila-tickets.md#iam-003) |
+| **Mover — mudança de área** | **Concluído** | Suporte retirado e leitura negada; Financeiro legível, criação negada e identidade preservada. Cadastro/grupos conferidos separadamente no AD e Entra. [IAM-002: execução e resultado](evidencias/sanitizadas/IAM-002/README.md#execução-e-fechamento--2809) |
+| **Leaver — desligamento** | **Concluído** | Conta bloqueada, revogação auditada, grupo removido, nova entrada negada e comparação posterior conforme no Entra. [IAM-003: antes/depois](evidencias/sanitizadas/IAM-003/README.md) |
+
+## Três casos para começar
+
+- **Ciclo completo:** [Mover de Gabriela](evidencias/sanitizadas/IAM-002/README.md#execução-e-fechamento--2809) — fonte de RH, retirada do acesso antigo, concessão mínima e seis regras conformes na comparação final.
+- **Governança:** [Recertificação e SoD](evidencias/sanitizadas/IAM-010/README.md) — inventário versus matriz, decisão por acesso, retirada de concessões residuais e conflito detectado/tratado em dados fictícios.
+- **Diagnóstico:** [Acesso após remoção de grupo](evidencias/sanitizadas/IAM-009/README.md) — leitura persistiu na conexão SMB; reconexão negou acesso e restauração foi validada.
+
+Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação PowerShell e reprodução](05-automacao/readme.md): exercício sintético de reconciliação, comparador de grupos, coletor AD e demonstração SoD, cada um com seu escopo.
 
 ## Outras entregas realizadas
 
@@ -29,4 +37,17 @@ Prática de IAM com Microsoft Entra ID, Active Directory e PowerShell: provision
 
 [Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Índice de evidências](evidencias/README.md)
 
-**Ambiente:** laboratório com identidades de negócio e cenários fictícios. AD e Entra possuem contas independentes, sem sincronização demonstrada. As aprovações são simuladas; cada caso informa seus limites. Credenciais e tokens permanecem privados; algumas capturas (Guest e acesso de emergência) contêm dados pessoais do operador publicados com sua autorização.
+## Organização e limites
+
+| Onde consultar | Conteúdo |
+|---|---|
+| [Operação ITSM](00-operacao-itsm/) | Tickets, decisões simuladas, matriz e procedimentos. |
+| [Automação](05-automacao/readme.md) | Scripts, entradas, resultados esperados e instruções de reprodução. |
+| [Evidências](evidencias/README.md) | Casos, capturas, extratos e limites de cada prova. |
+| [Troubleshooting](06-troubleshooting/2026-09-11-aduc-rede-nat/) | Diagnóstico e recuperação do ADUC. |
+
+**Escopo:** ambiente de estudo, identidades de negócio fictícias e aprovações simuladas. AD e Entra possuem contas independentes; sincronização híbrida ainda não demonstrada. Associação a grupo no Entra não comprova acesso a aplicação. SoD é uma simulação local; as comparações finais cobrem as regras e fontes declaradas em cada caso.
+
+Credenciais, tokens e exportações integrais permanecem privados. Algumas capturas de Guest e emergência contêm dados pessoais do operador publicados com sua autorização. O procedimento de emergência registra a independência de recuperação ainda pendente.
+
+**Continuidade:** consolidar esta base e avançar em Cloud Identity e NHI. Híbrido, integrações de aplicações e APIs são próximas etapas, não resultados alegados pela v0.5.
