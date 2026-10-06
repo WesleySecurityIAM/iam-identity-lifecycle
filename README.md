@@ -14,7 +14,7 @@ Portfólio prático de **Wesley**, com foco em **estágio e posições de entrad
 
 ## Três casos para começar
 
-- **Ciclo completo:** [Mover de Gabriela](evidencias/sanitizadas/IAM-002/README.md#execução-e-fechamento--2809) — fonte de RH, retirada do acesso antigo, concessão mínima e seis regras conformes na comparação final.
+- **Provisionamento e autenticação no Entra ID:** [criação da conta e associação ao grupo](evidencias/sanitizadas/IAM-001/README.md) → [recuperação da autenticação](evidencias/sanitizadas/IAM-006/README.md) → [verificação do cadastro e uso de MFA](evidencias/sanitizadas/IAM-007/README.md), acompanhando Felipe em três tickets relacionados.
 - **Governança:** [Recertificação e SoD](evidencias/sanitizadas/IAM-010/README.md) — inventário versus matriz, decisão por acesso, retirada de concessões residuais e conflito detectado/tratado em dados fictícios.
 - **Diagnóstico:** [Acesso após remoção de grupo](evidencias/sanitizadas/IAM-009/README.md) — leitura persistiu na conexão SMB; reconexão negou acesso e restauração foi validada.
 
@@ -24,14 +24,11 @@ Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação Po
 
 | Entrega | Resultado | Evidência |
 |---|---|---|
-| Provisionamento e autenticação no Entra ID | Provisionamento, recuperação de autenticação e verificação de MFA documentados. | [IAM-001](00-operacao-itsm/05-fila-tickets.md#iam-001) · [IAM-006](00-operacao-itsm/05-fila-tickets.md#iam-006) · [IAM-007](00-operacao-itsm/05-fila-tickets.md#iam-007) |
-| Reconciliação, recertificação e SoD | Decisões por acesso, vínculos de serviço retirados e TI validada; comparação final AD com oito associações conformes. SoD simulado: um conflito tratado, preservando o direito necessário. | [IAM-010: decisões e provas](evidencias/sanitizadas/IAM-010/README.md) · [Scripts](05-automacao/) |
 | Encerramento de terceiro | Expiração AD recusou nova autenticação; Entra bloqueado, revogação auditada e estado final conferido. | [IAM-004: prazo e validação](evidencias/sanitizadas/IAM-004/README.md) |
 | Governança de acesso — avaliação de permissão direta | Acesso por grupo mantido; pedido de permissão individual redundante não aprovado na simulação. | [IAM-008: decisão e evidências](00-operacao-itsm/05-fila-tickets.md#iam-008) |
 | Acesso financeiro por grupos do AD | Felipe lê e tem criação de arquivo negada; Bruno autentica e tem leitura negada. | [AGDLP, permissões e seis evidências](evidencias/sanitizadas/agdlp-financeiro/README.md) |
 | Delegação no AD | Reset permitido em Suporte e negado em Terceiros; estado antes/depois conferido. | [Três capturas e validação](evidencias/sanitizadas/delegacao-reset-ou/README.md) |
 | Conta de serviço no AD | Rotina executada duas vezes; escrita indevida negada e conta/tarefa desabilitadas ao final. | [IAM-005: sete provas e resultados](evidencias/sanitizadas/IAM-005/README.md) |
-| Revogação de acesso e sessão SMB | Leitura persistiu após remoção do grupo; reconexão negou acesso e restauração foi validada. | [IAM-009: seis provas](evidencias/sanitizadas/IAM-009/README.md) |
 | Acesso administrativo de emergência | Duas contas com MFA por notificação e código OATH; teste administrativo comprovado, independência ainda a validar. | [Procedimento e provas](00-operacao-itsm/PROC-BG-001-acesso-emergencia.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
