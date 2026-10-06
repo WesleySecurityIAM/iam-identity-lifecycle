@@ -1,8 +1,10 @@
-# Tratamento e comparação posterior — 28/09/2026
+# Bruno — leitura de Suporte e comparação posterior de 28/09/2026
 
 ## Resultado
 
 Bruno passou a integrar GG_SUP_TICKET, com leitura permitida e criação negada em SuporteLab. A nova coleta AD confirma também Gabriela na OU Financeiro, preservando a identidade e as associações anteriores dela.
+
+**Leitura desta página:** as provas 02–05 abaixo pertencem exclusivamente ao acesso de Bruno. A seção de comparação posterior examina o inventário coletivo e inclui a mudança de OU de Gabriela porque os dois tratamentos ocorreram entre as mesmas coletas. As capturas do Mover permanecem no IAM-002; não são testes de Bruno.
 
 A concessão atende à [regra definida nesta revisão](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md). A análise do inventário motivou a definição da necessidade; não se alega descumprimento de aprovação histórica.
 
@@ -17,7 +19,7 @@ A concessão atende à [regra definida nesta revisão](../../../00-operacao-itsm
 
 Os horários são leituras exibidas junto aos comandos, não timestamps de auditoria da inclusão no grupo. A criação negada não testa todas as operações de escrita. Foi orientado reset administrativo de senha por indisponibilidade da credencial anterior; as provas recebidas não demonstram o reset, portanto ele não é apresentado como ação comprovada. Nenhuma credencial integra as evidências.
 
-## Nova comparação dos arquivos
+## Comparação coletiva posterior — Bruno e localização de Gabriela
 
 Coletas AD: **15:52:51 → 16:59:31**, ambas em 28/09, UTC−03:00. Comparação executada em PowerShell com Import-Csv e Compare-Object, por campos explícitos:
 
@@ -40,3 +42,5 @@ Tratamento desses dois achados validado no escopo descrito. **Na coleta de 28/09
 
 
 **Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).
+
+[Voltar ao índice por assunto](README.md).

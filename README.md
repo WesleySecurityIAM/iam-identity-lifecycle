@@ -35,7 +35,9 @@ Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação Po
 | Acesso administrativo de emergência | Duas contas com MFA por notificação e código OATH; teste administrativo comprovado, independência ainda a validar. | [Procedimento e provas](00-operacao-itsm/PROC-BG-001-acesso-emergencia.md) |
 | Troubleshooting do ADUC | Diagnóstico da indisponibilidade e recuperação do console documentados. | [Caso e oito capturas](06-troubleshooting/2026-09-11-aduc-rede-nat/README.md) |
 
-[Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Índice de evidências](evidencias/README.md)
+[Fila ITSM: tickets, aprovações e validações](00-operacao-itsm/05-fila-tickets.md) · [Incidente documentado no ServiceNow](evidencias/sanitizadas/IAM-006/servicenow/README.md) · [Evidências por ticket](evidencias/README.md)
+
+Para acompanhar uma entrega, comece pelo resultado do ticket e siga seu índice de provas: **estado anterior → decisão/diagnóstico → ação → validação**. Cada link identifica o assunto, a data e o alcance da prova; preparações e complementos posteriores ficam sinalizados.
 
 ## Organização e limites
 

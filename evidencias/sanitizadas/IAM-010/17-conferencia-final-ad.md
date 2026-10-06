@@ -2,6 +2,8 @@
 
 Nova comparação após as mudanças: **nenhuma associação ausente ou excedente e nenhuma divergência nas regras cadastrais/operacionais abaixo**. Isso confirma o estado esperado no recorte AD; não representa auditoria de todas as permissões nem uma nova coleta do Entra.
 
+**O que cada prova sustenta:** a captura 18 mostra o término da coleta, as contagens e o estado da tarefa. Ela informa que a comparação seria feita depois. Os resultados de conformidade abaixo pertencem à comparação documental posterior dos arquivos; a captura não mostra uma saída de “zero exceções”.
+
 ## Fontes e método
 
 - Coleta DC01: 29/09/2026, **17:24:44–17:24:48 UTC−03:00**, pasta `revisao-final-20260929-172444`; [captura do resumo](18-resumo-coleta-final-ad.png).
@@ -44,3 +46,5 @@ Nova comparação após as mudanças: **nenhuma associação ausente ou excedent
 Membros diretos de grupos GG/DL, sem grupo primário ou grupos fora desses prefixos. Não reavalia todas as ACLs, privilégios, GPOs, sessões ou dependências. As consultas são sequenciais. Os testes SMB de TI constam das [provas específicas](ti-isabela/README.md); [SoD](14-sod-resultado.md) usa dados fictícios separados.
 
 Entra permanece sustentado pelas coletas anteriores, inclusive encerramento de Diego no IAM-004; não houve nova exportação cloud neste lote. A conferência final AD está concluída. **IAM-010 fechado em 29/09/2026 no escopo de acessos revisado.** Por decisão de Wesley, a alteração de Employee type foi retirada do escopo e não constitui tarefa pendente. O atributo não foi alterado; essa decisão não modifica as provas de expiração, bloqueio e revogação do IAM-004.
+
+[Voltar ao índice por assunto](README.md).

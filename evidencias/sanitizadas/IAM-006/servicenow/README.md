@@ -2,6 +2,8 @@
 
 **Resultado:** INC0010001 em Resolved, com classificação, atribuição, investigação, tratamento e validação registrados. Transcrição didática realizada em 18/09/2026 em uma PDI; o incidente original ocorreu em 03–04/09. Nenhuma nova alteração no Entra foi executada nesta atividade.
 
+**Como acompanhar:** as capturas 01–04 abaixo mostram somente a representação do IAM-006 na ferramenta de atendimento. Para entender a causa técnica e os logins, use a [sequência de provas do Entra](../README.md). A ordem das capturas organiza a leitura do registro; não comprova o horário original de criação de cada nota.
+
 | Evidência | O que demonstra |
 |---|---|
 | [01 — Classificação e atribuição](servicenow-iam006-01-classificacao-atribuicao.png) | Caller Felipe Gomes; IAM-LAB; ADMIN-LAB-001; impacto e urgência 3-Low; prioridade exibida 4-Low; estado Resolved. |

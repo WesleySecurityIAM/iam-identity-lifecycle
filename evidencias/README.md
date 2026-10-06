@@ -1,45 +1,52 @@
-# Evidências
+# Evidências por caso
 
-Esta pasta funciona como índice das evidências do laboratório, sem representar um ambiente corporativo. As identidades de negócio são fictícias; algumas capturas (Guest e acesso de emergência) incluem dados pessoais do operador publicados com sua autorização. Credenciais e tokens permanecem privados.
+Escolha um caso e acompanhe **objetivo → referência/estado anterior → decisão ou diagnóstico → ação → validação → resultado e limites**. Cada índice explica por que a prova está ali e o que ela demonstra. O [ticket](../00-operacao-itsm/05-fila-tickets.md) reúne a história; os links do índice abrem as capturas, extratos e resultados correspondentes.
 
-## Evidências disponíveis
+RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustentam o observado. Preparação, execução e complementos posteriores aparecem identificados por data, sem tratar uma coleta antiga como estado atual.
 
-- [Estado observado no exercício sintético de associações](../05-automacao/estado-final.csv)
-- [Relatório com as três exceções encontradas](../05-automacao/excecoes.csv)
-- [Script utilizado para reproduzir a comparação](../05-automacao/Invoke-IamReconciliation.ps1)
-- [Procedimento de execução e interpretação do resultado](../05-automacao/)
+## Tickets IAM
 
-## Entregas de setembro de 2026
+| Caso | Pergunta que orienta a leitura | Roteiro das provas |
+|---|---|---|
+| IAM-001 — Felipe, provisionamento | A conta e o grupo previstos foram criados? | [RH/matriz → criação → associação → conferência cadastral](sanitizadas/IAM-001/README.md) |
+| IAM-002 — Gabriela, Mover | O acesso antigo foi retirado e o novo validado? | [Preparação → RH/matriz → antes/depois → testes → comparação; OU como complemento](sanitizadas/IAM-002/README.md) |
+| IAM-003 — Carla, Leaver | A divergência com RH desligado foi corrigida? | [Estado anterior → exceção → bloqueio/revogação/remoção → nova entrada e comparação](sanitizadas/IAM-003/README.md) |
+| IAM-004 — Diego, terceiro | O término do prazo teve efeito nos dois sistemas independentes? | [Prazo AD → autenticação expirada → bloqueio/revogação Entra → estado final](sanitizadas/IAM-004/README.md) |
+| IAM-005 — Conta de serviço | A rotina executou com a identidade e os acessos previstos? | [Preparação → execução/testes → repetição → desativação](sanitizadas/IAM-005/README.md) |
+| IAM-006 — Felipe, login | O que foi observado, tratado e validado na autenticação? | [Evidência inicial → eventos de senha → login posterior; ServiceNow como complemento](sanitizadas/IAM-006/README.md) |
+| IAM-007 — Felipe, MFA | Método cadastrado e uso efetivo foram demonstrados? | [Registro → método atual → evento específico de uso](sanitizadas/IAM-007/README.md) |
+| IAM-008 — Felipe, acesso direto | Era necessário adicionar uma permissão individual? | [Associação → encadeamento → ACL → decisão de manter acesso por grupo](sanitizadas/IAM-008/README.md) |
+| IAM-009 — Felipe, contexto SMB | Por que a leitura persistiu após retirar o grupo? | [Remoção → leitura persistente → reconexão negada → restauração e reteste](sanitizadas/IAM-009/README.md) |
+| IAM-010 — Recertificação e SoD | Quem precisa manter acesso e quais achados foram tratados? | [Inventário → matriz/comparação → decisões → tratamentos → SoD → conferência final](sanitizadas/IAM-010/README.md) |
+| IAM-011 — Ana, Joiner | A entrada foi preparada e depois ativada? | [Pré-admissão → teste bloqueado → ativação/grupo → login/MFA; RH posterior identificado](sanitizadas/IAM-011/README.md) |
 
-- [Acesso administrativo de emergência: duas contas, teste de grupo e logs; limites de autenticação registrados](sanitizadas/PROC-BG-001/README.md).
+## Casos complementares
 
-- [Reconciliação RH × Entra em 23/09: uma exceção para o Leaver e referência inicial do Mover](sanitizadas/reconciliacao-2026-09-23/README.md).
-- [IAM-003 fechado: bloqueio, revogação, grupo removido e reteste](../00-operacao-itsm/05-fila-tickets.md#iam-003).
+| Caso | Propósito | Evidências |
+|---|---|---|
+| PROC-BG-001 | Validar acesso administrativo pelas contas de emergência e registrar limites de independência | [Preparação, operação administrativa, MFA e limpeza](sanitizadas/PROC-BG-001/README.md) |
+| REQ-GUEST-001 | Acompanhar convidado do convite ao encerramento | [Solicitação, aceite, bloqueio/revogação e estado final](sanitizadas/REQ-GUEST-001/README.md) |
 
-- [Guest B2B encerrado em 25/09: bloqueio, revogação auditada e estado final](sanitizadas/REQ-GUEST-001/06-encerramento.md).
+## Fundamentos e exercícios próprios
 
-- [IAM-002 fechado em 28/09: Suporte retirado, Financeiro validado e comparação final conforme](sanitizadas/IAM-002/README.md).
-- [IAM-010 fechado: recertificação, retirada dos vínculos de serviço, TI, SoD e comparação final AD](sanitizadas/IAM-010/README.md).
-- [IAM-004 fechado: expiração validada no AD, bloqueio/revogação Entra e comparação final](sanitizadas/IAM-004/README.md).
-- [Entra em 22/09: inventário, grupos e auditoria](sanitizadas/inventario-entra-2026-09-22/README.md).
+São entregas de apoio com propósito próprio. Quando uma prova é reutilizada num ticket, o motivo e a data dessa referência são indicados.
 
-- [IAM-006 no ServiceNow: classificação, notas, resolução e limites dos SLAs](sanitizadas/IAM-006/servicenow/README.md).
+- [AGDLP financeiro](sanitizadas/agdlp-financeiro/README.md): configuração de grupos/ACL e testes com Felipe e Bruno.
+- [Delegação de reset por OU](sanitizadas/delegacao-reset-ou/README.md): operação permitida em Suporte e negada em Terceiros.
+- [Preparação inicial da conta de serviço](sanitizadas/conta-servico/README.md): estado histórico anterior à rotina do IAM-005.
+- [ADUC indisponível](../06-troubleshooting/2026-09-11-aduc-rede-nat/README.md): diagnóstico e recuperação do console.
+- [Automação e reprodução](../05-automacao/readme.md): exercício sintético de associações, coletor AD, comparador de grupos e SoD; cada resultado tem seu próprio escopo.
 
-- [Inventário AD de 18/09: 8 usuários, 5 grupos, 6 associações e estados finais](sanitizadas/inventario-ad-2026-09-18/README.md).
-- [Delegação de reset por OU: permitido e negado](sanitizadas/delegacao-reset-ou/README.md).
-- [Acesso financeiro por grupos: leitura permitida e acessos negados](sanitizadas/agdlp-financeiro/README.md).
-- [Fila de tickets IAM: resultados, evidências e pendências](../00-operacao-itsm/05-fila-tickets.md).
-- [ADUC indisponível: diagnóstico e recuperação](../06-troubleshooting/2026-09-11-aduc-rede-nat/README.md).
-- [IAM-005: integração de conta de serviço, testes e desativação](sanitizadas/IAM-005/README.md).
-- [IAM-011: preparação e ativação de Ana](../00-operacao-itsm/05-fila-tickets.md#iam-011).
-- [IAM-008: acesso por grupo mantido; pedido direto não aprovado](sanitizadas/IAM-008/README.md).
-- [IAM-009: remoção de grupo, reconexão e restauração](sanitizadas/IAM-009/README.md).
-- [Estado inicial da conta de serviço desabilitada](sanitizadas/conta-servico/README.md).
-- [Entra em 23/09: grupos de Carla/Gabriela e consultas de papéis/aplicações de Carla](sanitizadas/inventario-entra-2026-09-23/README.md).
+<details>
+<summary>Fontes históricas compartilhadas — consultar somente a identidade e a data pertinentes ao caso</summary>
 
-## Cuidados na publicação
+- [Inventário AD de 18/09](sanitizadas/inventario-ad-2026-09-18/README.md).
+- [Inventário e auditoria Entra de 22/09](sanitizadas/inventario-entra-2026-09-22/README.md).
+- [Conferências Entra de 23/09](sanitizadas/inventario-entra-2026-09-23/README.md).
+- [Comparação RH × Entra executada em 23/09](sanitizadas/reconciliacao-2026-09-23/README.md): Carla e Gabriela; os índices dos casos identificam as linhas relevantes para cada pessoa.
 
-- remover credenciais, tokens e dados pessoais;
-- registrar a origem, a data e o objetivo da evidência;
-- manter vínculo com a entrega que gerou o resultado;
-- preferir arquivos reproduzíveis a capturas de tela isoladas.
+</details>
+
+## Escopo e integridade
+
+Laboratório com identidades de negócio fictícias e decisões simuladas. Algumas capturas de Guest/emergência contêm dados pessoais do operador publicados com sua autorização; credenciais, tokens e exportações integrais permanecem privados. Os arquivos originais e as datas históricas são preservados. Um índice explicativo não representa nova coleta, e uma prova de associação no Entra não comprova acesso ao arquivo SMB do AD.

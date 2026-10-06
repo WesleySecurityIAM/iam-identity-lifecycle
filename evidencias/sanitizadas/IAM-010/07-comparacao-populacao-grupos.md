@@ -4,7 +4,7 @@
 
 ## Resultado
 
-Comparação executada após o tratamento de Bruno e a movimentação de OU de Gabriela, usando a [matriz vigente](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md).
+Comparação executada após o tratamento de Bruno e a movimentação de OU de Gabriela, usando a [regra vigente na coleta de 28/09](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md).
 
 | Controle | AD | Entra |
 |---|---|---|
@@ -59,3 +59,5 @@ As nove contas especiais sem matrícula não foram chamadas de órfãs automatic
 
 
 **Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).
+
+[Continuar para a decisão por associação](08-recertificacao-simulada.md) · [Índice por assunto](README.md).

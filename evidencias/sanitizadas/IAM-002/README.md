@@ -2,7 +2,9 @@
 
 **Fechado em 28/09/2026.** Preparação iniciada em 22/09. Suporte removido, leitura antiga negada, Financeiro concedido com leitura permitida e criação negada. Cadastro/grupos finais conferidos no AD e Entra; seis verificações da comparação final conformes.
 
-**Leitura rápida:** [execução e fechamento](#execução-e-fechamento--2809) · [comparação final](23-comparacao-final.md) · [mudança de OU e reteste](#complemento--movimentação-de-ou-em-2809). O estado anterior e a preparação estão preservados abaixo.
+**Leitura rápida:** [matriz de acesso no fundamento do ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso) · [execução e fechamento](#execução-e-fechamento--2809) · [comparação final](23-comparacao-final.md) · [mudança de OU e reteste](#complemento--movimentação-de-ou-em-2809). O estado anterior e a preparação estão preservados abaixo.
+
+## Preparação histórica — 22 e 23/09
 
 Modelo inicial observado: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_READ → SuporteLab`. Recurso fictício, sem integração com sistema de chamados.
 
@@ -18,13 +20,13 @@ Modelo inicial observado: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_R
 
 Horários visíveis de 22/09, UTC−03:00. As capturas 02 e 05 não mostram horário interno. Originais renomeados, sem edição de imagem; hashes e correspondência de nomes preservados na área privada.
 
-## Escopo da prova
+### Limites da preparação de Suporte
 
 - Caminho físico informado no atendimento: `C:\IAM-Lab\Chamados-Suporte`; acesso testado: `\\192.168.21.10\SuporteLab\chamado-teste.txt`. A captura de ACL usa uma variável e não mostra seu valor nem o mapeamento Name/Path do compartilhamento.
 - A negação foi observada pela rede, com SMB e NTFS combinados. Não isola qual camada recusou a operação. Alteração de arquivo existente e exclusão não foram testadas.
 - A tela de ajuste de senha não comprova salvamento nem troca pelo usuário. A autenticação posterior funcionou. A opção Unlock account aparece marcada, sem prova separada do estado de bloqueio anterior.
 - Herança configurada para arquivos/subpastas não equivale a uma auditoria individual de todos os filhos. Desconexão final não foi capturada.
-- Os grupos do Entra e do AD são independentes neste laboratório. [Conferências do Entra em 22/09](../inventario-entra-2026-09-22/README.md) complementam o cadastro, sem provar acesso a aplicação.
+- Os grupos do Entra e do AD são independentes neste laboratório. A referência cloud de Gabriela aparece nas [provas 09–11](09-11-referencias-antes-mover.md), sem alegar acesso a aplicação.
 
 ## Complemento de 23/09 - estado anterior preservado
 
@@ -32,17 +34,17 @@ Horários visíveis de 22/09, UTC−03:00. As capturas 02 e 05 não mostram hor�
 
 MemberOf não inclui o grupo primário nem expande associações aninhadas. A captura comprova cadastro e grupos diretos retornados, não todos os acessos efetivos; não mostra uma nova consulta GG/DL. A cadeia documentada em 22/09 permanece histórica. Nenhum Mover foi executado nesta coleta.
 
-[Conferência das fontes do Entra de 22/09 e lacunas](../inventario-entra-2026-09-22/05-conferencia-reconciliacao-2026-09-23.md).
-
 ## Preparação preservada — 23 a 28/09
 
-[10 — Reconciliação RH × Entra em 23/09](../reconciliacao-2026-09-23/README.md): duas regras conformes para EMP0007 (habilitação e departamento Suporte), com captura às 16:57:25 UTC−03:00 e CSVs preservados. A comparação usa o inventário de 22/09, não inclui grupos e não comprova execução do Mover.
-
-[09 - Grupo de Gabriela no Entra em 23/09](../inventario-entra-2026-09-23/04-gabriela-grupos.png): GG_SUP_TICKET visível na tela da usuária; coleta informada em 23/09, sem horário interno. [Escopo e limitações](../inventario-entra-2026-09-23/README.md).
+[09–11 — Referência de Gabriela no Entra e duas comparações anteriores](09-11-referencias-antes-mover.md): associação a Suporte consultada separadamente; habilitação e departamento conformes nas duas comparações. O guia mostra somente o resultado EMP0007 e identifica os CSVs compartilhados na origem, sem misturar as ações do Leaver de Carla.
 
 Na preparação de 28/09, o roteiro definido foi: retirar acesso de Suporte, renovar a conexão e provar leitura negada. Conceder o grupo financeiro, validar leitura e conferir ausência de acesso acumulado. Atualizar e conferir separadamente o Entra, mantendo EMP0007 e as contas existentes.
 
 **Atualização em 28/09:** evento de RH preparado, com vigência em 28/09/2026. O [recorte da nova fonte](12-fonte-rh-mover-2026-09-28.csv) registra Gabriela como Analista Financeiro, Financeiro, gestor Carlos Lima. A versão integral privada em `280926/hr_authoritative_source.csv` preserva os nove registros da fonte de 23/09, alterando somente esses três campos de EMP0007. Matrícula, admissão e status ATIVO permanecem. Estado anterior e decisão simulada documentados; execução comprovada nas evidências 15–23 abaixo. Esta fonte define o esperado, não prova mudança nos diretórios.
+
+## RH e regra de acesso financeiro
+
+O [RH de 28/09 — prova 12](12-fonte-rh-mover-2026-09-28.csv) informa a mudança. A matriz consolidada de 29/09 e a tabela de aplicação ao perfil de Gabriela estão em [Aprovação e fundamento → Matriz de acesso — referência do Mover](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso). Essa referência define o esperado; as provas abaixo mostram o observado.
 
 ## Estado anterior coletado em 28/09
 
@@ -55,9 +57,9 @@ Originais movidos de Downloads para a área privada de 28/09; cópias sem ediç�
 
 [Ticket e critérios de fechamento](../../../00-operacao-itsm/05-fila-tickets.md#iam-002).
 
-[11 — Nova conferência com CSV de 23/09](../IAM-003/08-validacao-final.md): Gabriela permanece True/Suporte e conforme nas duas regras. Estado anterior ao Mover preservado; nenhum acesso novo foi concedido por esta comparação.
-
 ## Execução e fechamento — 28/09
+
+### AD — retirar Suporte, conceder Financeiro e testar
 
 | Prova | Resultado e horário de Brasília |
 |---|---|
@@ -66,6 +68,11 @@ Originais movidos de Downloads para a área privada de 28/09; cópias sem ediç�
 | [17 — Estado AD final](17-ad-cadastro-grupos-finais.png) | 11:42:55: identidade preservada, Financeiro/Analista Financeiro, Suporte=False e Financeiro=True. |
 | [18 — Leitura financeira](18-financeiro-leitura-permitida.png) | 11:52:39: lista net use inicialmente vazia, conexão explícita como Gabriela e conteúdo lido. |
 | [19 — Criação negada](19-financeiro-criacao-negada.png) | 11:54:34: criação no compartilhamento financeiro retorna acesso negado. |
+
+### Entra — atualizar a conta independente e comparar novamente
+
+| Prova | Resultado e horário de Brasília |
+|---|---|
 | [20 — Perfil Entra](20-entra-cadastro-final.png) | Relógio 12:00: mesma conta, EMP0007, Financeiro/Analista Financeiro e Enabled=Yes. |
 | [21 — Grupos Entra](21-entra-grupos-finais.png) | Relógio 12:01: GG_FIN_READ na lista sem filtro de busca. |
 | [22 — Auditoria](22-auditoria-entra-mover.md) | 11:56:12 remoção Suporte; 11:58:04 cadastro; 11:58:42 inclusão Financeiro. Todos success. |

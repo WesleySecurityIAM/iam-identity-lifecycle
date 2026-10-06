@@ -1,4 +1,4 @@
-# SoD-001 — roteiro pronto para execução didática
+# SoD-001 — roteiro do exercício concluído
 
 Estado: exercício concluído pelo operador em 29/09/2026; [resultado e capturas antes/depois](14-sod-resultado.md). O roteiro abaixo permanece como referência de execução. Não é evidência de direitos financeiros reais concedidos a Gabriela.
 
@@ -35,3 +35,5 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\05-automacao\Invoke-So
 SoD estática sobre direitos fictícios. Sem ERP, workflow de aprovação ou mecanismo preventivo implantado. Não implementa a proibição dinâmica de aprovar a própria transação. Pessoas e escopos diferentes não geram conflito nesta política, o que testa falsos positivos. Isso não exclui risco de conluio ou efeitos entre unidades: são riscos fora desta regra. O script não é um motor genérico de SoD.
 
 Verificação técnica do preparo: o script foi executado nas duas etapas para conferir a lógica, com um conflito antes e nenhum depois; as saídas de desenvolvimento não substituem as capturas do exercício do operador.
+
+[Ver as provas do exercício concluído](14-sod-resultado.md) · [Índice por assunto](README.md).

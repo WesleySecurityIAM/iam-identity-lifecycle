@@ -1,23 +1,32 @@
 # IAM-003 — Reconciliação posterior e fechamento
 
-Após as mudanças, uma nova comparação entre o RH e a exportação do Entra de **23/09/2026** confirmou **três verificações conformes e zero exceções**. Foram mantidas as regras da comparação inicial.
+Após as mudanças, uma nova comparação entre o RH e a exportação do Entra de **23/09/2026** confirmou Carla desabilitada conforme o RH. Foi mantida a regra da comparação inicial. Este é o resultado cadastral que pertence ao IAM-003:
 
 | Pessoa/regra | Antes — CSV 22/09 | Depois — CSV 23/09 | Resultado posterior |
 |---|---|---|---|
 | Carla / habilitação | Esperado False, observado True | Esperado False, observado False | CONFORME |
-| Gabriela / habilitação | True / True | True / True | CONFORME |
-| Gabriela / departamento | Suporte / Suporte | Suporte / Suporte | CONFORME |
 
-[CSV posterior](07-reconciliacao-pos-leaver.csv). Carla passou a corresponder ao RH desligado; Gabriela permanece habilitada em Suporte. Relatório anterior preservado e mesmos Object IDs mantidos.
+[CSV posterior — consultar EMP0003](07-reconciliacao-pos-leaver.csv). Carla passou a corresponder ao RH desligado, preservando o Object ID da conta. O relatório anterior também foi preservado. A comparação cadastral não verifica grupos, sessões ou acesso a aplicações.
 
 ## Validação complementar
 
-- Habilitação: nova exportação, perfil e auditoria de AccountEnabled true → false.
-- Associação financeira: Remove member from group para Carla/GG_FIN_READ e tela Groups sem associações. Verificação separada; o CSV de usuários não contém grupos.
+- Habilitação: nova exportação, [perfil desabilitado](02-carla-conta-desabilitada.png) e [auditoria](05-auditoria-leaver.md) de AccountEnabled true → false.
+- Associação financeira: Remove member from group para Carla/GG_FIN_READ na auditoria e [tela Groups sem associações](03-carla-sem-grupos.png). Verificação separada; o CSV de usuários não contém grupos.
 - Revogação: atualização auditada de StsRefreshTokensValidFrom. Sem inferência de encerramento universal de sessões próprias de aplicações.
-- Nova entrada: 50057 por conta desabilitada, às 17:29:19 UTC−03:00, com captura complementar.
+- Nova entrada: [sign-in 50057](06-sign-in-bloqueado.md) por conta desabilitada, às 17:29:19 UTC−03:00, com captura complementar.
 
 **Critério atendido no escopo:** conta desabilitada, associação financeira retirada, revogação registrada, nova entrada bloqueada e exceção cadastral corrigida. Conta mantida no diretório; exclusão não integra o fechamento. AD independente e aplicações financeiras não integradas estão fora do teste.
+
+## Contexto da fonte compartilhada — por que o CSV tem três linhas
+
+A mesma execução incluiu duas regras de Gabriela, preservadas no CSV para manter a integridade da coleta. Elas não representam evidências de execução do Leaver de Carla:
+
+| Pessoa/regra | Antes — CSV 22/09 | Depois — CSV 23/09 | Resultado posterior |
+|---|---|---|---|
+| Gabriela / habilitação | True / True | True / True | CONFORME |
+| Gabriela / departamento | Suporte / Suporte | Suporte / Suporte | CONFORME |
+
+Assim, a execução completa teve **três verificações conformes e zero exceções**: uma regra de Carla e duas de Gabriela. Os mesmos Object IDs foram mantidos. O resultado de Gabriela é histórico, anterior ao Mover de 28/09; não comprova a transferência para Financeiro.
 
 ## Integridade
 

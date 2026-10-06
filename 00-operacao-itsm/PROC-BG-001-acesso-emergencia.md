@@ -13,6 +13,8 @@ No teste controlado, bg-lab-01 criou um grupo sem membros às **19:12:10**; bg-l
 
 ## Estado e limites da validação
 
+Para acompanhar as provas por assunto: [01–02 — contas e privilégios](../evidencias/sanitizadas/PROC-BG-001/README.md#preparacao) → [03–05 — operações administrativas](../evidencias/sanitizadas/PROC-BG-001/README.md#operacao) → [06–10 — entradas e métodos](../evidencias/sanitizadas/PROC-BG-001/README.md#autenticacao) → [limpeza e pendências](../evidencias/sanitizadas/PROC-BG-001/README.md#limpeza-e-limites).
+
 | Controle | Evidência / pendência |
 |---|---|
 | Duas contas alternativas | Contas e atribuições comprovadas. |

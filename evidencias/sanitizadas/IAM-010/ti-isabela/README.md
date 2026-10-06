@@ -2,6 +2,8 @@
 
 Complemento da revisão de escopo do IAM-010, executado em 29/09/2026: Isabela (EMP0009) provisionada no AD e acesso de consulta concedido por GG → DL → ACL. A preparação de TI passou de planejada a implementada no AD nas verificações abaixo. Não houve provisionamento de Isabela no Entra nem sincronização híbrida nesta etapa.
 
+**Regra esperada:** a [matriz de 29/09](../../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) prevê consulta de procedimentos de TI, sem privilégio administrativo pelo cargo. Para acompanhar esta implementação, leia identidade → associações → configuração do recurso → testes. Todas as capturas desta página pertencem a Isabela; a decisão e a conferência coletiva ficam nos documentos próprios da recertificação.
+
 | Evidência | Resultado observado |
 |---|---|
 | [01 — Cadastro](01-cadastro.png) | 16:28:36 -03:00: EMP0009 habilitada, TI, Analista de Sistemas, OU TI. ObjectGUID f0136911-ed5a-42e5-842b-c50ad7870161. |
@@ -15,4 +17,6 @@ Os horários são os exibidos nos comandos, fuso -03:00. A nova captura de leitu
 
 UserName representa o contexto de logon associado à conexão no cliente, enquanto Credential identifica a credencial usada para conectar ao servidor. O cliente pode usar credencial de rede diferente do logon. Neste caso, net use e Credential identificam Isabela; não se infere que a operação remota usou privilégios administrativos apenas porque UserName mostra Administrator. [Microsoft: Get-SmbConnection](https://learn.microsoft.com/en-us/powershell/module/smbshare/get-smbconnection).
 
-Limites: a negativa de criação não isola NTFS de SMB, pois ambos restringem a leitura. Não foram demonstrados testes de edição/exclusão ou um novo inventário completo. A conferência posterior da conexão complementa a sequência, não é registro de autenticação do servidor para cada operação. Reconciliação final e microcaso SoD continuam separados desta validação.
+Limites: a negativa de criação não isola NTFS de SMB, pois ambos restringem a leitura. Não foram demonstrados testes de edição/exclusão nem inventário completo nestas seis capturas. A conferência posterior da conexão complementa a sequência, não é registro de autenticação do servidor para cada operação. A [coleta final AD e sua comparação](../17-conferencia-final-ad.md) foram concluídas depois, em documento próprio. O microcaso SoD é independente desta validação.
+
+[Voltar ao índice por assunto do IAM-010](../README.md).

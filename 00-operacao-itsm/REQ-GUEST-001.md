@@ -32,11 +32,17 @@ Preparação solicitada por Wesley em 22/09/2026 para o próprio laboratório. F
 
 ## Evidências
 
+[Roteiro completo do convidado](../evidencias/sanitizadas/REQ-GUEST-001/README.md): convite e aceite em 22/09, encerramento em 25/09. As provas abaixo pertencem à mesma identidade externa.
+
+### Convite e aceite — 22/09
+
 - [01 — Estado inicial do Guest](../evidencias/sanitizadas/REQ-GUEST-001/01-estado-pendente.md).
 - [02 — Aceite na captura](../evidencias/sanitizadas/REQ-GUEST-001/02-estado-aceito.md).
 - [03 — Auditoria do convite, sponsor e aceite](../evidencias/sanitizadas/REQ-GUEST-001/03-auditoria-convite-aceite.md).
 
-- [04–06 — Estado final, auditoria e interpretação do encerramento](../evidencias/sanitizadas/REQ-GUEST-001/06-encerramento.md).
+### Encerramento — 25/09
+
+- [04–06 — Estado final, auditoria e interpretação do encerramento](../evidencias/sanitizadas/REQ-GUEST-001/06-encerramento.md): a captura comprova o estado observado; os eventos comprovam bloqueio e revogação. Sem teste posterior de entrada.
 
 ## Riscos, limites e reversão
 

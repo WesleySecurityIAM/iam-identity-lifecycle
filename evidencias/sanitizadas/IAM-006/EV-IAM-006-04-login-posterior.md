@@ -24,8 +24,11 @@ foram confirmadas três entradas com status Êxito:
 Os registros comprovam o restabelecimento da autenticação nos aplicativos
 listados, mas não comprovam acesso ao sistema financeiro.
 
-O uso do MFA também será referenciado no IAM-007, separado da comprovação
-do cadastro do método.
+<a id="evento-mfa-compartilhado"></a>
+
+## Evento compartilhado com o IAM-007 — somente uso de MFA
+
+**Felipe, 03/09/2026 às 20:34:08 UTC, My Signins:** entrada com êxito e `MFA completed in Azure AD`; detalhe de autenticação por notificação de aplicativo móvel. É o evento da terceira linha da tabela acima. No IAM-007, ele demonstra uso, separado das provas de cadastro do método. Os demais logins e o tratamento de senha pertencem ao IAM-006.
 
 ## Limitações
 

@@ -2,6 +2,19 @@
 
 Em 18/09/2026, a pedido do operador Wesley, foi criada uma nova versão da fonte fictícia de RH de 29/08. A única alteração de conteúdo é o status de EMP0001, Ana Ribeiro: **PRE_ADMISSAO → ATIVO**. A admissão permanece em 15/09/2026.
 
+## Linha relevante para este ticket
+
+| Campo de EMP0001 — Ana Ribeiro | RH de 29/08 | Cópia atualizada em 18/09 |
+|---|---|---|
+| Cargo / área | Analista Financeiro / Financeiro | Mantidos. |
+| Gestor | Carlos Lima | Mantido. |
+| Admissão | 15/09/2026 | Mantida. |
+| Status | PRE_ADMISSAO | ATIVO. |
+
+Esse recorte explica a mudança de Ana sem exigir a leitura das outras oito pessoas. Os arquivos completos abaixo são mantidos como fontes da comparação; as demais linhas não representam novas ações ou validações deste atendimento.
+
+## Fontes completas para conferência
+
 | Versão | Papel |
 |---|---|
 | [RH de 29/08](EV-IAM-011-07-rh-2026-08-29.csv) | Cópia integral preservada do estado histórico. |
@@ -11,4 +24,4 @@ Esta atualização manual simulada alinha o cadastro ao resultado da ativação 
 
 Validação: comparação por employee_id; nove registros nas duas versões; somente EMP0001/status difere. O arquivo original de 29/08 foi preservado e o fechamento histórico do ticket permanece em 15/09.
 
-[Ticket IAM-011](../../../00-operacao-itsm/05-fila-tickets.md#iam-011).
+[Voltar à sequência de evidências de Ana](README.md) · [Ticket IAM-011](../../../00-operacao-itsm/05-fila-tickets.md#iam-011).
