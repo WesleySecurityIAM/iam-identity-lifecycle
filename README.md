@@ -1,6 +1,6 @@
 # Portfólio IAM — ciclo de vida e governança de acessos
 
-Portfólio prático de **Wesley**, com foco em **estágio e posições de entrada em IAM**. Laboratório com **Microsoft Entra ID, Active Directory e PowerShell**, cobrindo entrada, mudança de área e desligamento, menor privilégio, MFA e revisão de acessos.
+Portfólio prático de **Wesley**, com foco em **estágio e posições de entrada em IAM**. Laboratório com **Microsoft Entra ID, Active Directory e PowerShell**, cobrindo entrada, mudança de área e desligamento, menor privilégio, MFA, reconciliação e revisão de acessos.
 
 **v0.5 entregue em 29/09/2026:** 11 cenários IAM documentados, com resultados, evidências e limites. O trabalho conecta **regra de acesso → decisão → execução → teste → conferência final**. [Resumo da entrega](CHANGELOG.md#v05--2026-09-29).
 
@@ -15,10 +15,20 @@ Portfólio prático de **Wesley**, com foco em **estágio e posições de entrad
 ## Três casos para começar
 
 - **Provisionamento e autenticação no Entra ID:** [criação da conta e associação ao grupo](evidencias/sanitizadas/IAM-001/README.md) → [recuperação da autenticação](evidencias/sanitizadas/IAM-006/README.md) → [verificação do cadastro e uso de MFA](evidencias/sanitizadas/IAM-007/README.md), acompanhando Felipe em três tickets relacionados.
-- **Governança:** [Recertificação e SoD](evidencias/sanitizadas/IAM-010/README.md) — inventário versus matriz, decisão por acesso, retirada de concessões residuais e conflito detectado/tratado em dados fictícios.
+- **Governança:** [Reconciliação, recertificação e SoD](evidencias/sanitizadas/IAM-010/README.md) — comparação com a matriz, decisão por acesso, retirada de concessões residuais e conflito detectado/tratado em dados fictícios.
 - **Diagnóstico:** [Acesso após remoção de grupo](evidencias/sanitizadas/IAM-009/README.md) — leitura persistiu na conexão SMB; reconexão negou acesso e restauração foi validada.
 
 Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação PowerShell e reprodução](05-automacao/readme.md): exercício sintético de reconciliação, comparador de grupos, coletor AD e demonstração SoD, cada um com seu escopo.
+
+## Reconciliações — esperado × observado
+
+RH e matriz comparados com exportações dos diretórios, correlacionando pessoas por matrícula e contas/grupos por seus identificadores. As comparações detectam divergências e conferem o estado após as mudanças; a recertificação registra a decisão sobre a necessidade de manter o acesso.
+
+| Comparação | Resultado demonstrado | Evidência |
+|---|---|---|
+| Cadastro — RH × Entra | Carla desligada no RH e habilitada no Entra gerou exceção. Após o bloqueio, nova comparação confirmou False esperado / False observado. | [IAM-003: antes e depois](evidencias/sanitizadas/IAM-003/08-validacao-final.md) |
+| Mover — RH e regra × Entra | Gabriela: identidade preservada, conta habilitada, área/cargo corretos, Suporte ausente e Financeiro presente. Seis verificações conformes após a mudança. | [IAM-002: comparação final](evidencias/sanitizadas/IAM-002/23-comparacao-final.md) |
+| População e grupos — matriz × AD/Entra | Comparação por sistema distingue ausência intencional, acesso ausente e excedente. Após os tratamentos, conferência final AD de 29/09: oito associações conformes, zero ausentes/excedentes no recorte avaliado. | [IAM-010: comparação de 28/09](evidencias/sanitizadas/IAM-010/07-comparacao-populacao-grupos.md) · [Conferência final AD](evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md) |
 
 ## Outras entregas realizadas
 
