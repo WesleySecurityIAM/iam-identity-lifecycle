@@ -8,6 +8,8 @@ Decisões didáticas registradas a pedido de Wesley em 28/09, após comparação
 
 Cada linha corresponde a uma associação observada, não a uma pessoa adicional. Os mesmos nomes de grupo no AD e no Entra identificam objetos independentes. Para o Entra, manter a associação não comprova permissão ou uso de aplicativo.
 
+<a id="decisoes-2809"></a>
+
 ## Decisão por associação observada
 
 | Sistema | Identidade ou grupo membro | Grupo concedido | Decisão | Responsável no cenário | Justificativa |
@@ -44,11 +46,15 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 | Diego — EMP0004 | AD e Entra | Encerramento definido para 29/09 às 08:00 UTC−03:00 no IAM-004. Configuração/efeito do prazo e encerramento Entra precisam de evidência própria; a coleta de 16:59 antecede essa definição. |
 | EMP0009 e demais ausências previstas | Conforme matriz | Não provisionar por ausência isolada. Rever escopo se surgir necessidade de negócio. |
 
+<a id="cobertura-ti-2909"></a>
+
 ## Atualização de cobertura em 29/09
 
 A ausência de TI na matriz foi tratada por nova regra documentada no [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) e na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Diego encerra pelo prazo; Isabela foi inicialmente planejada e depois implementada no AD em 29/09: [cadastro, grupos e testes](ti-isabela/README.md). Entra permanece planejado. Decisão simulada complementar por solicitação de Wesley: manter Isabela em GG_TI_READ e GG_TI_READ na DL_TI_PROCEDIMENTOS_READ, para consulta de procedimentos; responsável fictícia Fernanda Souza. São duas associações novas, separadas das quinze históricas e sujeitas à nova coleta final. As quinze decisões acima permanecem históricas dos vínculos coletados; não validam TI, todos os papéis nem prontidão híbrida. RH corrente atualizado em 29/09, sem modificar inventários anteriores.
 
 ## Encaminhamentos e conclusão em 29/09
+
+<a id="servico-2909"></a>
 
 ### Conta de serviço — encaminhamento original e resultado
 

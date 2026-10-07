@@ -26,21 +26,28 @@ O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-011) registra a deci
 | 3 | [03 — Grupo financeiro sem Ana](EV-IAM-011-03-grupo-sem-ana.md) | Ana ausente da lista de membros diretos do `GG_FIN_READ`. Felipe aparece porque já era membro desse mesmo grupo; sua presença contextualiza a lista e não é outra entrega. |
 | 4 | [04 — Entrada bloqueada](EV-IAM-011-04-entrada-bloqueada.md) | My Profile, 14/09 às 16:18:05 em Brasília: código 50057, conta desabilitada. Comprova o bloqueio dessa tentativa. |
 
-## 3. Ativação e teste positivo — 15/09
+<a id="ativacao-e-testes"></a>
 
-| Etapa | Prova correspondente | O que foi demonstrado |
+## 3. Ativação e testes — 15/09, por horário
+
+Após a confirmação/aprovação simulada das 11:24, a sequência foi a seguinte (Brasília, UTC−03:00):
+
+| Horário | Ação ou teste e propósito | Abrir a prova da etapa |
 |---|---|---|
-| Habilitar e conceder o grupo | [05 — Auditoria das ações](EV-IAM-011-05-ativacao-grupo-autenticacao.md) | Às 11:30:41, `AccountEnabled` false → true; às 11:33:44, inclusão no `GG_FIN_READ`. |
-| Cumprir a troca e cadastrar autenticação | [05 — Eventos de senha e cadastro, no mesmo documento](EV-IAM-011-05-ativacao-grupo-autenticacao.md) | Às 11:38:51, troca de senha e exigência cumprida; às 11:39:49, cadastro do Authenticator; às 11:40:18, informações exigidas concluídas. |
-| Validar a entrada | [06 — Interrupção por troca obrigatória e entrada positiva](EV-IAM-011-06-entrada-positiva.md) | Azure Portal: 50055 às 11:37:59; êxito e MFA concluído às 11:40:18. O evento bloqueado de 14/09 também está na tabela apenas como comparação antes/depois da mesma conta. |
+| 11:30:41 | Habilitar a conta após a admissão. | [05 — habilitação e grupo](EV-IAM-011-05-ativacao-grupo-autenticacao.md#habilitacao-e-grupo). |
+| 11:33:44 | Conceder o grupo financeiro previsto. | [05 — inclusão no grupo](EV-IAM-011-05-ativacao-grupo-autenticacao.md#habilitacao-e-grupo). |
+| 11:37:59 | Tentar entrar; 50055 interrompe o fluxo até cumprir a troca. | [06 — tentativa intermediária](EV-IAM-011-06-entrada-positiva.md#tentativa-intermediaria). |
+| 11:38:51 | Trocar a senha; exigência ForceChangePassword cumprida. | [05 — senha e cadastro de autenticação](EV-IAM-011-05-ativacao-grupo-autenticacao.md#senha-e-cadastro). |
+| 11:39:49–11:40:18 | Cadastrar Authenticator e concluir informações exigidas. | [05 — eventos do cadastro](EV-IAM-011-05-ativacao-grupo-autenticacao.md#senha-e-cadastro). |
+| 11:40:18 | Validar entrada no Azure Portal com errorCode=0 e MFA concluído. | [06 — resultado positivo](EV-IAM-011-06-entrada-positiva.md#entrada-positiva). |
 
-Horários desta seção: Brasília, UTC−03:00. A auditoria demonstra as mudanças; o log de entrada demonstra seu resultado na autenticação. Cadastro do Authenticator e MFA concluído pertencem à ativação de Ana e estão separados por propósito nas provas 05 e 06.
+A auditoria demonstra as mudanças; o sign-in demonstra a autenticação. O método específico está null no evento positivo: não se afirma push ou dispositivo utilizado.
 
 ## 4. Complemento documental do RH — 18/09
 
 [09 — Comparação focada em Ana e explicação das versões do RH](EV-IAM-011-09-atualizacao-rh.md) mostra **EMP0001: PRE_ADMISSAO → ATIVO**, mantendo a admissão em 15/09. É o ponto de entrada para revisar o RH deste caso.
 
-As fontes integrais [07 — RH de 29/08](EV-IAM-011-07-rh-2026-08-29.csv) e [08 — RH atualizado em 18/09](EV-IAM-011-08-rh-2026-09-18.csv) ficam como suporte para conferir que somente a linha/campo de Ana mudou. Cada arquivo tem nove pessoas fictícias; os demais registros não são evidências de execução deste ticket nem foram novamente validados aqui.
+As fontes integrais 07–08 ficam no relatório 09 para consulta opcional de origem; não é necessário percorrer as outras oito pessoas para revisar Ana.
 
 ## Limites do fechamento
 

@@ -22,7 +22,7 @@ Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação Po
 
 ## Reconciliações — esperado × observado
 
-RH e matriz comparados com exportações dos diretórios, correlacionando pessoas por matrícula e contas/grupos por seus identificadores. As comparações detectam divergências e conferem o estado após as mudanças; a recertificação registra a decisão sobre a necessidade de manter o acesso.
+A [matriz geral fictícia](00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) relaciona departamento/cargo, recurso e acesso esperado por sistema. RH e matriz são comparados com exportações dos diretórios, correlacionando pessoas por matrícula e contas/grupos por seus identificadores. As comparações detectam divergências e conferem o estado após as mudanças; a recertificação registra a decisão sobre a necessidade de manter o acesso.
 
 | Comparação | Resultado demonstrado | Evidência |
 |---|---|---|

@@ -11,7 +11,7 @@
 
 [Índices por ticket](../evidencias/README.md): cada caso tem seu roteiro de provas. Preparação e complementos posteriores ficam identificados. Uma fonte compartilhada só é citada quando sustenta aquele caso, com indicação do evento ou das linhas relevantes; não transfere o resultado de outra pessoa para o ticket em leitura.
 
-[Revisão documental de 06/10](REV-2026-10-06-organizacao-evidencias.md): escopo, ajustes e critérios usados para organizar os registros e suas provas.
+[Revisão de 07/10 — ordem, foco e redundância das provas](REV-2026-10-07-navegacao-e-provas.md): conferência dos 11 tickets e dos casos complementares, com navegação por etapa. Complementa a revisão documental de 06/10.
 
 [Acompanhamento documental do IAM-001](acompanhamentos.md).
 

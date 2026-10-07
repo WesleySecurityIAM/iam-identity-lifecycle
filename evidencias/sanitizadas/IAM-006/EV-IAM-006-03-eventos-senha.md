@@ -20,6 +20,8 @@
 | 2026-09-03T20:29:54Z | Reset password (by admin) | Êxito | Successfully completed reset. | ADMIN-LAB-001 (Administrador Global) | EMP0006 — Felipe Gomes |
 | 2026-09-03T20:33:21Z | Change password (self-service) | Êxito | None | EMP0006 — Felipe Gomes | EMP0006 — Felipe Gomes |
 
+<a id="interpretacao"></a>
+
 ## Resultado
 
 As primeiras tentativas de alteração foram recusadas pela política de senha.

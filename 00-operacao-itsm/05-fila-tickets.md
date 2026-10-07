@@ -1,5 +1,9 @@
 # Fila de tickets do laboratório
 
+**Como acompanhar um caso:** leia contexto e regra, depois siga a seção **Evidências** de cima para baixo. A ordem é a mesma do índice de provas: preparação/antes → ações e testes → validação → complementos posteriores. Números de arquivo identificam provas preservadas; datas e etapas indicam quando cada fato ocorreu.
+
+[Matriz geral fictícia — departamento/cargo → recurso → grupo/permissão](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos). A [relação com cada ticket](MAT-2026-09-29-acessos-por-sistema.md#uso-nos-tickets) distingue a regra histórica da consolidação de 29/09. A matriz define o esperado; evidências demonstram o observado.
+
 | Ticket | Objetivo | Resultado documentado |
 |---|---|---|
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
@@ -52,12 +56,14 @@ conforme o registro do atendimento.
 - Aprovador previsto: Gestor Financeiro.
 - Aprovação simulada para fins didáticos.
 
+**Consulta da regra:** a prova 02 preserva a matriz original do cargo. O [catálogo geral de Financeiro](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) consolida depois o recurso e os grupos; não altera o fundamento histórico deste provisionamento.
+
 ## Ações realizadas
 
 - **Concluído:** Conta cloud-only criada e associada ao GG_FIN_READ.
 - **Concluído:** Employee ID EMP0006 e departamento Financeiro preenchidos.
-- **Concluído:** conferir o cargo no CSV de 10/09; o preenchimento original foi informado no atendimento.
-- **Concluído:** Inventário de usuários exportado em 2026-09-04.
+- **Concluído — 04/09:** exportar inventário e conferir matrícula.
+- **Concluído — 10/09, complemento:** conferir o cargo no novo CSV; o preenchimento original foi informado no atendimento.
 
 ## Validação
 
@@ -73,12 +79,12 @@ Não realizado: o grupo não está integrado a uma aplicação. A evidência com
 
 [Roteiro do IAM-001](../evidencias/sanitizadas/IAM-001/README.md): Felipe, do fundamento à conferência cadastral.
 
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Definir identidade e acesso esperado | [01 — RH](../evidencias/sanitizadas/IAM-001/EV-IAM-001-01-fonte-rh.csv) e [02 — regra do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv). |
-| Comprovar provisionamento e associação | [03 — criação da conta](../evidencias/sanitizadas/IAM-001/EV-IAM-001-03-add-user.md) e [04 — inclusão no grupo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-04-add-member-group.md). |
-| Conferir o cadastro exportado | [05 — matrícula no inventário](../evidencias/sanitizadas/IAM-001/EV-IAM-001-05-inventario-employee-id.md). |
-| Complementar o cargo em 10/09 | [06 — tela do cadastro](../evidencias/sanitizadas/IAM-001/EV-IAM-001-06-cargo-atual.png) e [07 — confirmação no CSV](../evidencias/sanitizadas/IAM-001/EV-IAM-001-07-cargo-inventario-2026-09-10.md). Complemento posterior, sem alterar o fechamento de 04/09. |
+| Ordem | Etapa e propósito | Provas do assunto |
+|---|---|---|
+| 1 | Definir identidade e acesso esperado | [01 — RH](../evidencias/sanitizadas/IAM-001/EV-IAM-001-01-fonte-rh.csv) e [02 — regra do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv). |
+| 2 | Comprovar provisionamento e associação | [03 — criação da conta](../evidencias/sanitizadas/IAM-001/EV-IAM-001-03-add-user.md) e [04 — inclusão no grupo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-04-add-member-group.md). |
+| 3 | Conferir o cadastro exportado | [05 — matrícula no inventário](../evidencias/sanitizadas/IAM-001/EV-IAM-001-05-inventario-employee-id.md). |
+| 4 | Complementar o cargo em 10/09 | [07 — confirmação no CSV](../evidencias/sanitizadas/IAM-001/EV-IAM-001-07-cargo-inventario-2026-09-10.md). Complemento posterior, sem alterar o fechamento de 04/09. |
 
 ## Riscos e reversão
 
@@ -108,8 +114,6 @@ Resolvido em 04/09/2026, com criação, matrícula e associação ao grupo compr
 - Status: Fechado — Mover validado no escopo
 - Responsável pela execução: Wesley
 - Execução e fechamento: 2026-09-28
-
-Complemento de 28/09, decidido às 16:14 UTC−03:00: [movimentação para OU Financeiro](REV-2026-09-28-escopo-reconciliacao.md). Provas 24–28 mostram antes/depois com identidade e grupo preservados e testes de acesso esperados entre 16:20 e 16:35. A análise de políticas/delegação e a renovação completa das conexões não constam das capturas; nova exportação AD de 16:59:31 confirma a localização e as associações, conforme validação do IAM-010.
 
 ## Contexto e objetivo
 
@@ -154,7 +158,8 @@ A matriz é referência do **esperado**; as capturas, auditoria e comparação a
 - **Concluído — 28/09:** preparar fonte de RH com a mudança vigente; versão anterior preservada, nove registros mantidos e alteração limitada aos três campos de EMP0007.
 - **Concluído — 28/09:** coletar estado anterior no AD (11:01:02 UTC−03:00) e perfil no Entra (relógio da estação às 11:08); registrar decisão simulada e reversão prevista.
 - **Concluído — 28/09:** retirar Suporte, confirmar ausência no grupo e leitura negada após conexão explícita; atualizar cadastro, conceder Financeiro e comprovar leitura permitida/criação negada (15–19).
-- **Concluído — 28/09:** conferir identidade/cadastro/grupos no Entra e auditoria de remoção → cadastro → inclusão; comparar RH com exportações finais: seis regras conformes (20–23).
+- **Concluído — 28/09:** alterar no Entra, conforme auditoria de remoção → cadastro → inclusão (22); conferir identidade/cadastro/grupos finais (20–21) e comparar RH com exportações finais: seis regras conformes (23).
+- **Concluído — 28/09, à tarde:** após o inventário do IAM-010, mover para OU Financeiro, conferir identidade/grupo preservados e retestar (24–28).
 
 ## Validação e teste de acesso
 
@@ -166,25 +171,18 @@ Em 28/09, Suporte ausente no AD às 11:33:46 e leitura negada às 11:36:50. Cada
 
 ## Evidências
 
-### Fonte da mudança e execução — 28/09
+[Roteiro completo do IAM-002](../evidencias/sanitizadas/IAM-002/README.md). Siga as etapas abaixo de cima para baixo; o índice abre na mesma sequência. As provas de Suporte de 22–23/09 vêm antes da mudança de 28/09.
 
-- [12 — Fonte de RH vigente em 28/09](../evidencias/sanitizadas/IAM-002/12-fonte-rh-mover-2026-09-28.csv): define o perfil esperado; não é consulta ao diretório. A regra de acesso está em [Matriz de acesso — referência do Mover](#iam-002-regra-acesso), acima.
-- [13 — Estado anterior no AD](../evidencias/sanitizadas/IAM-002/13-gabriela-ad-antes-mover-2026-09-28.png): EMP0007 habilitada, Suporte/Analista de Suporte, GG_SUP_TICKET presente; GG_FIN_READ retorna somente Felipe.
-- [14 — Estado anterior no Entra](../evidencias/sanitizadas/IAM-002/14-gabriela-entra-antes-mover-2026-09-28.png): EMP0007 habilitada, Suporte/Analista de Suporte, sem sincronização local; não mostra grupos.
-- [15–21 — Execução e estado final](../evidencias/sanitizadas/IAM-002/README.md#execução-e-fechamento--2809): consultar a tabela desta seção para remoção, testes e cadastro/grupos finais.
-- [22 — Auditoria Entra do Mover](../evidencias/sanitizadas/IAM-002/22-auditoria-entra-mover.md): remoção de Suporte, atualização cadastral e inclusão em Financeiro.
-- [23 — Comparação final com RH](../evidencias/sanitizadas/IAM-002/23-comparacao-final.md): seis regras conformes no escopo.
+| Ordem / quando | Etapa e motivo | Abrir as provas da etapa |
+|---|---|---|
+| 1 — 22/09 | Preparar e demonstrar o acesso original de Suporte | [01–07 — cadastro, GG/DL, ACL/SMB, ajuste do teste, leitura e criação negada](../evidencias/sanitizadas/IAM-002/README.md#preparacao-suporte). São testes anteriores ao Mover. |
+| 2 — 23/09 | Preservar cadastro/grupos e comparações ainda em Suporte | [08–11 — conferências anteriores](../evidencias/sanitizadas/IAM-002/README.md#conferencias-anteriores). Somente os resultados de Gabriela; fontes conjuntas identificadas como suporte. |
+| 3 — 28/09, antes de executar | Definir perfil/acesso esperado e coletar o estado imediatamente anterior | [12–14 — RH, decisão simulada e antes no AD/Entra](../evidencias/sanitizadas/IAM-002/README.md#mudanca-e-estado-anterior). A [regra financeira](#iam-002-regra-acesso) explica o esperado; as capturas mostram o observado. |
+| 4 — 28/09, 11:33–11:54 | Retirar Suporte, validar a negação, conceder Financeiro e testar | [15–19 — alteração e testes no AD](../evidencias/sanitizadas/IAM-002/README.md#execucao-ad), na ordem: grupo removido → Suporte negado → cadastro/grupos finais → leitura financeira → criação negada. |
+| 5 — 28/09, 11:56 em diante | Executar separadamente no Entra e comparar após as mudanças | [22 → 20–21 → 23 — auditoria, consultas finais e comparação](../evidencias/sanitizadas/IAM-002/README.md#execucao-entra). Os eventos auditados antecedem as telas; seis regras conformes. |
+| 6 — 28/09, 16:20–16:35 | Alinhar a OU após o inventário e retestar | [24–28 — OU antes/depois e testes](../evidencias/sanitizadas/IAM-002/README.md#complemento-ou). Complemento posterior ao Mover da manhã, preservando a identidade e o grupo. |
 
-### Complemento — mudança de OU e retestes
-
-- [24–28 — OU Suporte → OU Financeiro](../evidencias/sanitizadas/IAM-002/README.md#complemento--movimentação-de-ou-em-2809): consultas e testes posteriores à mudança de localização; escopo e limitações próprios.
-
-### Preparação histórica — 22 e 23/09
-
-- [01–08 — Cadastro, grupos, permissões e testes de Suporte](../evidencias/sanitizadas/IAM-002/README.md#preparação-histórica--22-e-2309): estado anterior ao Mover. MemberOf não inclui grupo primário nem expande aninhamentos.
-- [09 — Grupo de Gabriela no Entra](../evidencias/sanitizadas/inventario-entra-2026-09-23/04-gabriela-grupos.png): associação a GG_SUP_TICKET antes da mudança.
-
-- [10–11 — Comparações anteriores de Gabriela](../evidencias/sanitizadas/IAM-002/09-11-referencias-antes-mover.md): guia somente de EMP0007, com as duas regras conformes em Suporte e vínculo às fontes históricas compartilhadas. Não é validação da mudança de 28/09.
+Complemento de 28/09, decidido às 16:14 UTC−03:00: [movimentação para OU Financeiro](REV-2026-09-28-escopo-reconciliacao.md). Provas 24–28 mostram antes/depois com identidade e grupo preservados e testes de acesso esperados entre 16:20 e 16:35. A análise de políticas/delegação e a renovação completa das conexões não constam das capturas; nova exportação AD de 16:59:31 confirma a localização e as associações, conforme validação do IAM-010.
 
 ## Riscos e reversão
 
@@ -196,7 +194,7 @@ Recurso é pasta de teste, sem integração com sistema de chamados. Negativo co
 
 ## Fechamento
 
-**Fechado em 28/09/2026.** Identidade preservada, Suporte retirado, leitura antiga negada, Financeiro permitido somente no escopo testado e cadastro/grupos conferidos nos dois diretórios independentes. Comparação final conforme. A preparação histórica permanece preservada; SoD/recertificação serão tratados no IAM-010.
+**Fechado em 28/09/2026.** Identidade preservada, Suporte retirado, leitura antiga negada, Financeiro permitido somente no escopo testado e cadastro/grupos conferidos nos dois diretórios independentes. Comparação final conforme. A preparação histórica permanece preservada; SoD/recertificação foram concluídos posteriormente no IAM-010.
 
 <a id="iam-003"></a>
 
@@ -224,6 +222,8 @@ RH fictício: DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a div
 - Decisão simulada solicitada por Wesley: desabilitar conta, retirar GG_FIN_READ e revogar sessões. Registro documental às 17:10; consulta do relógio às 17:10:52 e bloqueio auditado às 17:10:26. Não se comprova aprovação anterior à ação.
 - Wesley atua como responsável técnico/executor. Tela de owner do grupo não equivale a aprovação de negócio nem prova papel administrativo do tenant.
 
+**Regra aplicável:** RH desligado impede novas concessões. A [população da matriz consolidada](MAT-2026-09-29-acessos-por-sistema.md#populacao) mantém Carla bloqueada/sem concessões departamentais; é referência posterior, não aprovação retroativa.
+
 ## Ações realizadas
 
 - **Concluído:** preservar RH, exportação e provas do estado anterior.
@@ -242,13 +242,14 @@ Após as mudanças, nova comparação confirmou Carla com habilitação False es
 
 [Roteiro do IAM-003](../evidencias/sanitizadas/IAM-003/README.md): somente Carla/EMP0003, com cada ação ligada à sua validação.
 
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Delimitar o estado anterior | [Perfil, grupo, papéis e aplicações de Carla](../evidencias/sanitizadas/IAM-003/README.md#estado-anterior): links diretos às quatro capturas da pessoa. |
-| Demonstrar a divergência cadastral | [Exceção EMP0003](../evidencias/sanitizadas/reconciliacao-2026-09-23/excecoes-entra.csv): False esperado / True observado. |
-| Comprovar as três ações | [05 — auditoria do bloqueio, revogação e retirada do grupo](../evidencias/sanitizadas/IAM-003/05-auditoria-leaver.md). |
-| Validar estado e tentativa de entrada | [Capturas 02–04 e sign-in 06](../evidencias/sanitizadas/IAM-003/README.md#validacao): perfil bloqueado, grupo ausente e nova entrada negada. |
-| Comparar novamente com o RH | [08 — resultado final de Carla](../evidencias/sanitizadas/IAM-003/08-validacao-final.md): habilitação False/False, conforme. O CSV original também contém Gabriela; suas linhas são contexto da execução compartilhada. |
+| Ordem | Etapa e propósito | Provas do assunto |
+|---|---|---|
+| 1 | Delimitar o estado anterior | [Perfil, grupo, papéis e aplicações de Carla](../evidencias/sanitizadas/IAM-003/README.md#estado-anterior): links diretos às quatro capturas da pessoa. |
+| 2 | Demonstrar a divergência cadastral | [Exceção EMP0003](../evidencias/sanitizadas/reconciliacao-2026-09-23/excecoes-entra.csv): False esperado / True observado. |
+| 3 | Decisão e responsabilidade | [Registro e apoio do owner](../evidencias/sanitizadas/IAM-003/README.md#decisao): simulação; a captura 01 não é aprovação de negócio. |
+| 4 | Comprovar as três ações | [05 — auditoria do bloqueio, revogação e retirada do grupo](../evidencias/sanitizadas/IAM-003/05-auditoria-leaver.md). |
+| 5 | Validar estado e tentativa de entrada | [Capturas 02–03 e sign-in 06](../evidencias/sanitizadas/IAM-003/README.md#validacao): perfil bloqueado, grupo ausente e nova entrada negada. |
+| 6 | Comparar novamente com o RH | [08 — resultado final de Carla](../evidencias/sanitizadas/IAM-003/08-validacao-final.md): habilitação False/False, conforme. O CSV original também contém Gabriela; suas linhas são contexto da execução compartilhada. |
 
 ## Riscos e reversão
 
@@ -283,6 +284,8 @@ Encerrar o acesso do terceiro no início da manhã de 29/09 por **término da vi
 
 Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente registra desligamento em 29/09/2026, mantendo admissão em 01/06/2026. O horário exato de vigência é definido neste ticket. Em 28/09, o status do RH permanece ATIVO; após a vigência, registrar DESLIGADO e conferir os diretórios. Não é uma aprovação corporativa real.
 
+**Regra aplicável:** prazo individual de terceiro e [controles transversais](MAT-2026-09-29-acessos-por-sistema.md#controles-transversais). Estar em TI não concede acesso após o término; o encerramento é pelo prazo, não por falta de recurso na matriz.
+
 ## Ações realizadas
 
 1. **Concluído:** definir prazo e atualizar a data de desligamento na fonte de RH vigente.
@@ -295,12 +298,12 @@ Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente re
 
 [Roteiro do IAM-004](../evidencias/sanitizadas/IAM-004/README.md): configuração do prazo, efeito observado e tratamento separado no Entra.
 
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Aplicar o prazo antes do término | [01 — expiração configurada](../evidencias/sanitizadas/IAM-004/01-expiracao-configurada.png), em 28/09. |
-| Validar o efeito depois do término | [02 — prazo vencido](../evidencias/sanitizadas/IAM-004/02-ad-prazo-vencido.png) e [03 — autenticação recusada por expiração](../evidencias/sanitizadas/IAM-004/03-ad-autenticacao-conta-expirada.png). |
-| Encerrar no Entra independente | [06 — auditoria](../evidencias/sanitizadas/IAM-004/06-audit-encerramento-extrato.json), [04 — perfil/sessões](../evidencias/sanitizadas/IAM-004/04-entra-bloqueio-vigencia-sessoes.png) e [05 — mesma identidade bloqueada](../evidencias/sanitizadas/IAM-004/05-entra-identidade-bloqueada.png). |
-| Conferir o estado final | [07 — comparação cadastral](../evidencias/sanitizadas/IAM-004/07-comparacao-final.md) e [08 — contadores de concessões](../evidencias/sanitizadas/IAM-004/08-entra-zero-concessoes.png). |
+| Ordem | Etapa e propósito | Provas do assunto |
+|---|---|---|
+| 1 | Aplicar o prazo antes do término | [01 — expiração configurada](../evidencias/sanitizadas/IAM-004/01-expiracao-configurada.png), em 28/09. |
+| 2 | Validar o efeito depois do término | [02 — prazo vencido](../evidencias/sanitizadas/IAM-004/02-ad-prazo-vencido.png) e [03 — autenticação recusada por expiração](../evidencias/sanitizadas/IAM-004/03-ad-autenticacao-conta-expirada.png). |
+| 3 | Encerrar no Entra independente | [06 — auditoria](../evidencias/sanitizadas/IAM-004/06-audit-encerramento-extrato.json), [04 — perfil/sessões](../evidencias/sanitizadas/IAM-004/04-entra-bloqueio-vigencia-sessoes.png). |
+| 4 | Conferir o estado final | [07 — comparação cadastral](../evidencias/sanitizadas/IAM-004/07-comparacao-final.md) e [08 — contadores de concessões](../evidencias/sanitizadas/IAM-004/08-entra-zero-concessoes.png). |
 
 ## Validação e limites
 
@@ -339,6 +342,8 @@ Em 11/09, conta desabilitada, responsável Wesley, departamento Financeiro e int
 - Entrada: `C:\IAM-Lab\Relatorios-Financeiros\relatorio-teste.txt`; saída: `C:\IAM-Lab\Saidas-Relatorios-Financeiros\resumo.json`.
 - Script: `C:\IAM-Lab\Scripts-Relatorios\gerar-resumo.ps1`, com leitura/execução para a rotina e alteração reservada à administração.
 
+**Consulta da regra:** os caminhos de leitura e escrita abaixo são o perfil específico da rotina, separado dos cargos humanos. O [controle vigente de serviço](MAT-2026-09-29-acessos-por-sistema.md#controles-transversais) registra a retirada posterior no IAM-010, sem modificar a execução de 15/09.
+
 ## Ações realizadas
 
 - **Concluído:** conferir cadastro/grupos, responsável e corrigir AM-005 para IAM-005 na descrição, conforme operador.
@@ -361,12 +366,12 @@ Em 15/09, horário de Brasília (UTC−03:00): primeira execução iniciou às 1
 
 [Roteiro do IAM-005](../evidencias/sanitizadas/IAM-005/README.md): identidade da rotina, concessões, execução e desativação de 15/09.
 
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Preservar a referência inicial | [01 — conta ainda desabilitada em 11/09](../evidencias/sanitizadas/IAM-005/01-conta-desabilitada-2026-09-11.png). |
-| Configurar acessos da rotina | [02 — grupos e ACL](../evidencias/sanitizadas/IAM-005/02-grupos-e-permissoes-saida.png) e [03 — propagação](../evidencias/sanitizadas/IAM-005/03-aplicacao-arquivos-subpastas.png). |
-| Executar e conferir operações | [04 — primeira execução/testes](../evidencias/sanitizadas/IAM-005/04-primeira-execucao-testes.png) e [05 — resultado da tarefa](../evidencias/sanitizadas/IAM-005/05-primeira-execucao-resultado-zero.png). |
-| Repetir e desativar | [06 — reexecução](../evidencias/sanitizadas/IAM-005/06-reexecucao-testes-e-resultado-zero.png) e [07 — tarefa/conta desabilitadas](../evidencias/sanitizadas/IAM-005/07-estado-final-desabilitado.png). |
+| Ordem | Etapa e propósito | Provas do assunto |
+|---|---|---|
+| 1 | Preservar a referência inicial | [01 — conta ainda desabilitada em 11/09](../evidencias/sanitizadas/IAM-005/01-conta-desabilitada-2026-09-11.png). |
+| 2 | Configurar acessos da rotina | [02 — grupos e ACL](../evidencias/sanitizadas/IAM-005/02-grupos-e-permissoes-saida.png) e [03 — propagação](../evidencias/sanitizadas/IAM-005/03-aplicacao-arquivos-subpastas.png). |
+| 3 | Executar e conferir operações | [04 — primeira execução/testes](../evidencias/sanitizadas/IAM-005/04-primeira-execucao-testes.png) e [05 — resultado da tarefa](../evidencias/sanitizadas/IAM-005/05-primeira-execucao-resultado-zero.png). |
+| 4 | Repetir e desativar | [06 — reexecução](../evidencias/sanitizadas/IAM-005/06-reexecucao-testes-e-resultado-zero.png) e [07 — tarefa/conta desabilitadas](../evidencias/sanitizadas/IAM-005/07-estado-final-desabilitado.png). |
 
 [Script da mesma rotina](../05-automacao/IAM-005/README.md): apoio para interpretar os testes. A [retirada posterior de concessões em 29/09](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md) pertence ao IAM-010; explica a evolução da mesma conta após este fechamento.
 
@@ -441,15 +446,14 @@ O campo de código de erro não foi preenchido no CSV exportado.
 
 ## Evidências
 
-[Roteiro do IAM-006](../evidencias/sanitizadas/IAM-006/README.md): distinguir sintoma informado, eventos observados e validação posterior.
+[Roteiro do IAM-006 — linha do tempo de 03/09](../evidencias/sanitizadas/IAM-006/README.md#linha-do-tempo): falhas e intervenções estão intercaladas por horário. A tentativa das 20:32:12Z ocorreu **depois** da redefinição administrativa.
 
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Distinguir interrupção e etapa de senha | [01 — eventos com 50055](../evidencias/sanitizadas/IAM-006/EV-IAM-006-01-eventos-50055.md) e [02 — detalhes da autenticação](../evidencias/sanitizadas/IAM-006/EV-IAM-006-02-detalhes-autenticacao.md): senha aceita, entrada interrompida. |
-| Identificar as intervenções registradas | [03 — eventos de senha](../evidencias/sanitizadas/IAM-006/EV-IAM-006-03-eventos-senha.md): considerar ação, ator, horário e resultado. |
-| Comprovar entradas posteriores | [04 — logins posteriores](../evidencias/sanitizadas/IAM-006/EV-IAM-006-04-login-posterior.md): êxito e detalhes disponíveis, sem inferir causa única. |
-
-**Complemento de documentação — 18/09:** [ServiceNow](../evidencias/sanitizadas/IAM-006/servicenow/README.md) demonstra classificação, atribuição, Work notes e resolução na PDI. É representação retrospectiva; não altera a data dos eventos técnicos nem comprova SLA histórico.
+| Ordem | Etapa e propósito | Provas necessárias |
+|---|---|---|
+| 1 | Interpretar as primeiras interrupções | [01 — resultado geral](../evidencias/sanitizadas/IAM-006/EV-IAM-006-01-eventos-50055.md) e [02 — etapa de senha nos mesmos eventos](../evidencias/sanitizadas/IAM-006/EV-IAM-006-02-detalhes-autenticacao.md): eventos A/B. O evento C pertence à etapa posterior ao reset. |
+| 2 | Acompanhar tentativas de troca, recuperação e reset | [03 — auditoria de senha em ordem de horário](../evidencias/sanitizadas/IAM-006/EV-IAM-006-03-eventos-senha.md). Conferir a nova interrupção C entre reset e troca final, na linha do tempo. |
+| 3 | Validar o resultado posterior | [04 — entradas com êxito](../evidencias/sanitizadas/IAM-006/EV-IAM-006-04-login-posterior.md), após a troca das 20:33:21Z. |
+| 4 | Complemento operacional — 18/09 | [ServiceNow: classificação → investigação → tratamento/validação → resolução](../evidencias/sanitizadas/IAM-006/servicenow/README.md). Transcrição retrospectiva, sem nova intervenção ou prova de SLA histórico. |
 
 ## Riscos e reversão
 
@@ -518,11 +522,11 @@ verificar o método atual e localizar os eventos de cadastro.
 
 [Roteiro do IAM-007](../evidencias/sanitizadas/IAM-007/README.md): três perguntas diferentes sobre o MFA de Felipe.
 
-| Pergunta | Prova do assunto |
-|---|---|
-| Quando o método foi cadastrado? | [02 — auditoria do Authenticator](../evidencias/sanitizadas/IAM-007/EV-IAM-007-02-cadastro-authenticator.md), em 03/09. |
-| Há uso comprovado? | [Evento de 03/09 às 20:34:08 UTC](../evidencias/sanitizadas/IAM-006/EV-IAM-006-04-login-posterior.md#evento-mfa-compartilhado): notificação móvel e MFA concluída. É o mesmo evento preservado no IAM-006; os outros logins daquele documento não compõem esta prova de uso. |
-| O método aparece na consulta posterior? | [01 — estado consultado em 08/09](../evidencias/sanitizadas/IAM-007/EV-IAM-007-01-metodo-atual.md). Cadastro disponível e uso em um evento não demonstram exigência em todos os acessos. |
+| Ordem | Pergunta | Prova do assunto |
+|---|---|---|
+| 1 | Quando o método foi cadastrado? | [02 — auditoria do Authenticator](../evidencias/sanitizadas/IAM-007/EV-IAM-007-02-cadastro-authenticator.md), em 03/09. |
+| 2 | Há uso comprovado? | [03 — somente o evento de MFA de 03/09 às 20:34:08 UTC](../evidencias/sanitizadas/IAM-007/03-uso-mfa.md): notificação móvel e MFA concluída; recorte do mesmo evento do IAM-006. |
+| 3 | O método aparece na consulta posterior? | [01 — estado consultado em 08/09](../evidencias/sanitizadas/IAM-007/EV-IAM-007-01-metodo-atual.md). Cadastro disponível e uso em um evento não demonstram exigência em todos os acessos. |
 
 ## Riscos e reversão
 
@@ -545,81 +549,6 @@ ou nos métodos. Não há alteração a reverter.
 Critério atendido: estado atual verificado, alterações de
 cadastro localizadas e uso de MFA comprovado.
 Nenhuma alteração de configuração foi necessária.
-
-<a id="iam-011"></a>
-
-# IAM-011 — Pré-admissão e ativação — EMP0001
-
-- Ambiente: laboratório fictício — Microsoft Entra ID, cloud-only
-- Tipo: requisição de provisionamento
-- Identidade: EMP0001 — Ana Ribeiro
-- Abertura: 2026-09-14
-- Status: Fechado
-- Responsável pela execução: Wesley
-- Admissão: 2026-09-15
-- Fechamento: 2026-09-15
-
-## Contexto e objetivo
-
-Preparar Ana antes da admissão, com entrada bloqueada. Após confirmação simulada do RH e aprovação, ativar a conta, conceder o grupo previsto e validar a entrada.
-
-## Estado anterior
-
-A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da conta foi conferida conforme relato do operador. Em 14/09, a conta foi criada bloqueada e sem associação direta ao grupo financeiro.
-
-## Aprovação e fundamento
-
-- EMP0001: Analista Financeiro, Financeiro; gestor Carlos Lima. Matriz: Analista Financeiro → GG_FIN_READ.
-- Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
-- 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
-- Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).
-
-## Ações realizadas
-
-- **Concluído — 14/09:** conferir a identidade, criar a conta bloqueada e validar atributos/troca obrigatória (01 e 02).
-- **Concluído — 14/09:** conferir ausência direta no GG_FIN_READ e testar entrada bloqueada (03 e 04).
-- **Concluído — 15/09:** registrar confirmação e aprovação simuladas; habilitar a conta e adicionar ao GG_FIN_READ (05).
-- **Concluído — 15/09:** trocar a senha no fluxo do usuário e cadastrar as informações de autenticação exigidas (05).
-- **Concluído — 15/09:** conferir entrada positiva com MFA, preservar os dois JSONs e anexar extratos sanitizados (06).
-- **Concluído — 18/09, complemento documental:** copiar a fonte fictícia de RH e atualizar somente EMP0001 de PRE_ADMISSAO para ATIVO; comparar as versões e preservar o histórico (07–09).
-
-## Validação
-
-Horários de Brasília (UTC−03:00). Auditoria: AccountEnabled false → true às 11:30:41; inclusão no GG_FIN_READ às 11:33:44; troca de senha e ForceChangePassword True → False às 11:38:51. Cadastro do Authenticator às 11:39:49 e conclusão das informações exigidas às 11:40:18, com sucesso.
-
-## Teste de acesso
-
-- **Negativo:** 14/09 às 16:18:05, My Profile, 50057 — conta desabilitada.
-- **Intermediário:** 15/09 às 11:37:59, Azure Portal, 50055 — troca de senha necessária; senha correta não concluiu o login.
-- **Positivo:** 15/09 às 11:40:18, Azure Portal, errorCode=0 e MFA completed in Azure AD.
-
-## Evidências
-
-[Roteiro do IAM-011](../evidencias/sanitizadas/IAM-011/README.md): Ana/EMP0001, da pré-admissão à ativação e validação.
-
-| Etapa e propósito | Provas do assunto |
-|---|---|
-| Preparar a identidade sem habilitar entrada | [01 — estado da pré-admissão](../evidencias/sanitizadas/IAM-011/EV-IAM-011-01-estado-pre-admissao.md), [02 — criação](../evidencias/sanitizadas/IAM-011/EV-IAM-011-02-auditoria-criacao.md) e [03 — grupo sem Ana](../evidencias/sanitizadas/IAM-011/EV-IAM-011-03-grupo-sem-ana.md). |
-| Validar o bloqueio anterior | [04 — tentativa negada](../evidencias/sanitizadas/IAM-011/EV-IAM-011-04-entrada-bloqueada.md). |
-| Ativar e associar conforme decisão | [05 — ativação, grupo, senha e cadastro](../evidencias/sanitizadas/IAM-011/EV-IAM-011-05-ativacao-grupo-autenticacao.md). |
-| Validar a entrada posterior | [06 — login e MFA](../evidencias/sanitizadas/IAM-011/EV-IAM-011-06-entrada-positiva.md). |
-
-**Complemento de RH, documentado em 18/09:** [09 — linha de Ana, alteração e limites](../evidencias/sanitizadas/IAM-011/EV-IAM-011-09-atualizacao-rh.md). Os CSVs 07–08 integrais estão vinculados ali para verificar origem e preservação das demais pessoas; não representam execução sobre os outros oito registros nem aprovação retroativa.
-
-## Riscos e reversão
-
-Risco: acesso antecipado ou excessivo. Conta mantida bloqueada até a admissão/aprovação. Reversão: bloquear a conta, remover concessões indevidas e avaliar/revogar sessões.
-
-## Limitações e pendências
-
-- Aprovações são simuladas; conferência anterior à criação foi informada pelo operador. O CSV de RH de 18/09 é atualização manual simulada posterior à ativação, não evidência contemporânea de 15/09.
-- Estado após ativação comprovado por alterações auditadas e entrada, sem nova exportação cadastral anexada.
-- Cadastro do Authenticator e MFA concluído estão comprovados; o evento de entrada não detalha o método específico (null).
-- Grupo no Entra e entrada no Azure Portal não comprovam acesso ao relatório do AD ou privilégios administrativos Azure. Não há cálculo de SLA.
-
-## Fechamento
-
-Encerrado em 15/09: pré-admissão bloqueada, ativação e grupo aprovados, troca de senha e entrada com MFA comprovadas no Entra.
 
 <a id="iam-008"></a>
 
@@ -649,6 +578,8 @@ Em 14/09, o caso AGDLP comprovou Felipe no GG_FIN_READ, associado ao DL_FIN_RELA
 - Recomendação: manter o acesso por grupo, sem permissão individual adicional.
 - Decisão simulada — 17/09/2026: Gestor Financeiro aprova manter a leitura pelo modelo existente e não aprova a permissão individual redundante. Registrada por solicitação de Wesley neste atendimento; horário não informado.
 
+**Consulta da regra:** [Financeiro no catálogo consolidado](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) relaciona perfil, GG/DL e RelatoriosFin. A decisão deste caso usa a necessidade e as consultas de 17/09, anteriores à consolidação de 29/09.
+
 ## Ações realizadas
 
 - **Concluído:** registrar o pedido e a necessidade simulados.
@@ -672,13 +603,16 @@ Histórico de 14/09: leitura permitida e criação de arquivo negada para Felipe
 
 [Roteiro do IAM-008](../evidencias/sanitizadas/IAM-008/README.md): avaliar o pedido de acesso direto pela cadeia já existente.
 
-| Etapa e propósito | Prova do assunto |
-|---|---|
-| Conferir a associação de Felipe | [01 — usuário no GG_FIN_READ](../evidencias/sanitizadas/IAM-008/01-felipe-no-gg-fin-read.png). |
-| Conferir o encadeamento | [02 — GG na DL](../evidencias/sanitizadas/IAM-008/02-membros-dl-fin-relatorios-read.png): outros membros visíveis são contexto da lista do grupo. |
-| Conferir a autorização do recurso | [03 — ACL financeira](../evidencias/sanitizadas/IAM-008/03-acl-pasta-financeira.png): fundamenta manter a concessão por grupo, sem adicionar entrada individual. |
+| Ordem | Etapa e propósito | Prova do assunto |
+|---|---|---|
+| 1 | Referência anterior — 14/09 | [Leitura permitida e criação negada de Felipe](../evidencias/sanitizadas/agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png). Contexto do mesmo recurso; não é reteste de 17/09. |
+| 2 | Conferir a associação de Felipe | [01 — usuário no GG_FIN_READ](../evidencias/sanitizadas/IAM-008/01-felipe-no-gg-fin-read.png). |
+| 3 | Conferir o encadeamento | [02 — GG na DL](../evidencias/sanitizadas/IAM-008/02-membros-dl-fin-relatorios-read.png): outros membros visíveis são contexto da lista do grupo. |
+| 4 | Conferir a autorização do recurso | [03 — ACL financeira](../evidencias/sanitizadas/IAM-008/03-acl-pasta-financeira.png): fundamenta manter a concessão por grupo, sem adicionar entrada individual. |
 
-**Referência funcional anterior, de 14/09:** [teste de Felipe no mesmo recurso](../evidencias/sanitizadas/agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png). Contextualiza o acesso existente; não é reteste executado neste atendimento de 17/09.
+
+
+**Decisão e fechamento em 17/09:** manter o modelo por grupo; nenhuma permissão individual adicional foi concedida. As três consultas atuais sustentam a decisão.
 
 ## Riscos e reversão
 
@@ -720,6 +654,8 @@ O IAM-008 conferiu o acesso por grupo, sem permissão individual. Nesta rodada, 
 - Aprovação simulada — 17/09/2026, 11:50 UTC−03:00 (horário fictício do cenário): responsável autoriza remover temporariamente Felipe do GG_FIN_READ, testar as conexões e restaurar a associação ao final.
 - Escopo: Felipe e sua associação ao GG_FIN_READ; preservar ACLs e demais membros. Sem mudança no RH ou no Entra.
 
+**Consulta da regra:** [perfil financeiro e recurso](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos), como consolidação posterior. O objetivo aqui é testar a retirada temporária e restaurar a associação original de Felipe, não mudar o perfil do cargo.
+
 ## Ações realizadas
 
 - **Concluído:** conferir grupo/compartilhamento e leitura inicial como Felipe (01 e 02).
@@ -744,9 +680,16 @@ A sequência é compatível com manutenção do contexto de autorização da con
 
 ## Evidências
 
-[Roteiro do IAM-009 — seis provas na sequência dos eventos](../evidencias/sanitizadas/IAM-009/README.md): estado inicial → grupo removido e leitura persistente → nova conexão e negação → restauração e leitura permitida.
+[Roteiro do IAM-009](../evidencias/sanitizadas/IAM-009/README.md). Todas as capturas tratam Felipe e o mesmo recurso financeiro.
 
-Todas as capturas tratam Felipe e o mesmo recurso financeiro. A captura nominal de 12:25 contém o teste das 12:10 e precede a de restauração na ordem dos eventos; seguir o horário mostrado no comando, não apenas o nome do arquivo.
+| Ordem | Etapa | Abrir somente as provas correspondentes |
+|---|---|---|
+| 1 | Estado e leitura antes da retirada | [01–02 — grupo, compartilhamento, conexão e leitura](../evidencias/sanitizadas/IAM-009/README.md#antes). |
+| 2 | Grupo removido e leitura persistente | [03–04 — ausência do grupo e leitura na conexão mantida](../evidencias/sanitizadas/IAM-009/README.md#retirada). |
+| 3 | Nova conexão e negação | [05 — reconexão e leitura negada](../evidencias/sanitizadas/IAM-009/05-reconexao-leitura-negada.png). |
+| 4 | Restauração e reteste | [06 — grupo restaurado e leitura permitida](../evidencias/sanitizadas/IAM-009/06-grupo-restaurado-leitura-permitida.png). |
+
+A captura nominal de 12:25 contém o teste das 12:10 e precede a de restauração na ordem dos eventos. O horário do comando orienta a leitura; o nome original do arquivo não redefine quando o teste ocorreu.
 
 ## Riscos e reversão
 
@@ -781,25 +724,25 @@ Revisar se as concessões da população escolhida continuam necessárias e regi
 
 ## Estado anterior
 
-O Mover de Gabriela foi concluído em 28/09 no escopo de cadastro, grupos e acesso testado, conforme IAM-002. A coleta posterior encontrou o objeto ainda na OU Suporte. A movimentação para Financeiro foi comprovada depois por consultas e testes nas [provas 24–28 do IAM-002](../evidencias/sanitizadas/IAM-002/README.md#complemento--movimentação-de-ou-em-2809); nova exportação AD de 16:59:31 confirma a mudança.
+O Mover de Gabriela foi concluído em 28/09 no escopo de cadastro, grupos e acesso testado, conforme IAM-002. A coleta posterior encontrou o objeto ainda na OU Suporte. O achado foi encaminhado para movimentação, depois comprovada nas [provas 24–28 do IAM-002](../evidencias/sanitizadas/IAM-002/README.md#complemento--movimentação-de-ou-em-2809); nova exportação AD de 16:59:31 confirma a mudança.
 
 O inventário e a reconciliação ampliada passam a integrar a preparação deste IAM-010: RH com nove pessoas; AD com nove contas, sete grupos GG/DL e oito associações diretas; Entra com doze contas e exportações dos grupos Financeiro, Suporte e RH. Fontes de 28/09, coletadas em horários distintos. A comparação de habilitação, departamento e cargo das contas correlacionadas por matrícula teve 34 verificações conformes. Não inclui todas as concessões nem comprova necessidade de acesso.
 
 A análise identificou Bruno sem GG_SUP_TICKET no AD e Gabriela ainda em OU Suporte. Na [decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md), foi definido acesso de leitura de SuporteLab para Bruno, complemento de OU para Gabriela e ausência intencional de provisionamento de EMP0009 neste recorte. Bruno foi incluído no grupo, leu o recurso de Suporte e teve criação negada. A comparação AD de 15:52:51 com 16:59:31 confirmou somente a inclusão de Bruno e a mudança de OU de Gabriela nos campos coletados. Essa decisão de escopo não substitui a recertificação individual pelo responsável de negócio.
-
-## Revisão de cobertura — 29/09/2026
-
-A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela inicialmente planejada e depois implementada no AD pelo operador em 29/09. [Provas TI](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md): identidade, associações, ACL/SMB, conexão como Isabela, leitura e criação negada. Entra/híbrido permanecem planejados.
-
-Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. TI só é considerada implementada no AD pelas provas posteriores específicas; nova coleta integral ainda será comparada.
-
-**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI no AD executado depois, conforme evidências. Preflight híbrido e Entra continuam planejados. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. SoD e conferência final AD concluídos. A alteração de Employee type foi retirada do escopo por decisão de Wesley em 29/09; não condiciona o fechamento dos controles de acesso comprovados e não foi executada.
 
 ## Tratamento da conta de serviço — 29/09/2026
 
 [Decisão e provas 11–13](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md). Às 12:08, conta/tarefa desabilitadas conservavam três vínculos. Consulta local de dependências encontrou somente a tarefa conhecida e nenhum serviço pelo filtro usado. Às 12:14:13, GG de serviço e DL de escrita vazios; DL de leitura mantém GG_FIN_READ; conta continua False. Formalização da decisão simulada em **29/09/2026 12:23:24 -0300**, com Carlos Lima como responsável fictício e Wesley como executor, após as capturas.
 
 Resultado: três decisões de investigar convertidas em remover, com retirada comprovada no escopo consultado. Sem nova concessão, exclusão de grupos ou reteste de acesso dos humanos; manter os limites da consulta local explícitos. IAM-005 preservado como histórico da rotina.
+
+## Revisão de cobertura — 29/09/2026
+
+A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela inicialmente planejada e depois implementada no AD pelo operador em 29/09. [Provas TI](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md): identidade, associações, ACL/SMB, conexão como Isabela, leitura e criação negada. Entra/híbrido permanecem planejados.
+
+Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. TI só é considerada implementada no AD pelas provas posteriores específicas; a nova coleta integral foi comparada posteriormente no fechamento, prova 17.
+
+**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI no AD executado depois, conforme evidências. Preflight híbrido e Entra continuam planejados. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. SoD e conferência final AD concluídos. A alteração de Employee type foi retirada do escopo por decisão de Wesley em 29/09; não condiciona o fechamento dos controles de acesso comprovados e não foi executada.
 
 ## Aprovação e fundamento
 
@@ -816,11 +759,13 @@ Resultado: três decisões de investigar convertidas em remover, com retirada co
 
 ## Ações realizadas
 
-1. **Concluído — coletas iniciadas em 28/09:** conferir o fechamento do Mover, preservar inventários e definir matriz por sistema. Coleta e comparação cadastral concluídas no recorte descrito; nova coleta posterior e tratamento dos dois achados concluídos; comparação departamental e decisões simuladas registradas nas evidências 07–08.
-2. **Concluído no escopo exportado:** nove associações departamentais conformes e seis ausências previstas. Recertificação simulada inicial: quinze associações avaliadas, doze manter e três investigar. Em 29/09, as três pendências de serviço foram decididas como remover e a retirada foi comprovada; as demais decisões não representam nova coleta.
-3. **Concluído em 29/09:** [SoD e provas 14–16](../evidencias/sanitizadas/IAM-010/14-sod-resultado.md): cinco cenários alternativos, um conflito às 17:06:37, zero às 17:10:04 após preservar aprovação de orçamento e retirar manutenção de fornecedor no caso A+B.
-4. **Concluído:** casos A, B, A+B, pessoas distintas e escopos distintos avaliados; decisão didática exibida na etapa Depois. Não houve alteração de direitos reais.
-5. **Concluído:** conferir o AD após os tratamentos de serviço e TI, com nova coleta de 29/09 e oito associações conformes no escopo. As fontes cloud anteriores permanecem datadas; esse fechamento não inclui nova coleta Entra.
+1. **28/09 — inventário e regra:** conferir população/cadastro, identificar achados e registrar o escopo por sistema (01 e decisão de escopo).
+2. **28/09 — tratamentos e nova coleta:** alinhar a OU de Gabriela no IAM-002; incluir Bruno em Suporte e testar leitura/criação; comparar o inventário posterior (02–06 e 06b).
+3. **28/09 — comparação e decisão:** nove associações departamentais conformes; quinze associações recertificadas, doze manter e três investigar (07–08).
+4. **29/09 — encerramentos:** Diego concluído no IAM-004; três vínculos da rotina encerrada retirados, com dependências locais consultadas e formalização da decisão após as capturas (10–13).
+5. **29/09 — cobertura de TI:** matriz ampliada e Isabela implementada no AD; cadastro, GG/DL, ACL/SMB, leitura e criação negada conferidos. Entra permanece planejado.
+6. **29/09 — SoD:** cinco cenários locais, um conflito às 17:06:37 e zero às 17:10:04 após o tratamento em memória (14–16). Sem alterar direitos reais.
+7. **29/09 — fechamento:** coletar AD às 17:24:44–17:24:48 (18) e comparar posteriormente com RH/matriz (17): oito associações conformes. Sem nova coleta Entra.
 
 ## Critérios e validação do microcaso SoD
 
@@ -834,19 +779,17 @@ São critérios do exercício. A lógica do script foi verificada tecnicamente: 
 
 ## Evidências por etapa e tratamento
 
-[Roteiro do IAM-010](../evidencias/sanitizadas/IAM-010/README.md): inventário, decisão e cada tratamento possuem um bloco próprio.
+[Roteiro do IAM-010](../evidencias/sanitizadas/IAM-010/README.md). Siga a mesma ordem abaixo no índice; dentro de cada tratamento ficam somente as provas daquele assunto.
 
-| Etapa / assunto | Provas e propósito |
-|---|---|
-| Inventário de 28/09 | [01 — população e conferência cadastral](../evidencias/sanitizadas/IAM-010/01-inventario-conferencia-inicial.md): o que existia antes de decidir os acessos. |
-| Reconciliação e recertificação | [07 — comparação dos grupos](../evidencias/sanitizadas/IAM-010/07-comparacao-populacao-grupos.md) e [08 — decisões por associação](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md): esperado × observado e manter/remover/investigar. |
-| Bruno: acesso ausente | [02–06 — grupo antes/depois, leitura e criação negada](../evidencias/sanitizadas/IAM-010/06-tratamento-validacao-ad.md). A comparação coletiva é indicada separadamente no relatório. |
-| Serviço: vínculos residuais | [10–13 — dependências, decisão e retirada](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md): conta mantida desabilitada e acesso humano preservado. |
-| Isabela: nova regra de TI | [Cadastro, GG/DL, ACL/SMB e testes](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md): execução somente no AD. |
-| SoD: conflito simulado | [14–16 — regra, decisão e resultados](../evidencias/sanitizadas/IAM-010/14-sod-resultado.md): cinco cenários locais, sem mudar direitos reais nos diretórios. |
-| Conferência final AD | [17–18 — coleta e comparação](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md): captura 18 mostra coleta; relatório 17 demonstra as oito associações conformes. |
-
-Referências necessárias: a [decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md) e a [matriz consolidada de 29/09](MAT-2026-09-29-acessos-por-sistema.md) são as regras versionadas. O complemento de OU de Gabriela e o encerramento de Diego mantêm suas provas nos próprios tickets, com a relação com esta revisão explicada no índice do IAM-010.
+| Ordem / quando | Motivo e resultado | Abrir a etapa |
+|---|---|---|
+| 1 — 28/09 | Inventariar e definir o acesso esperado por sistema | [01 e decisão de escopo](../evidencias/sanitizadas/IAM-010/README.md#inventario-e-regra). |
+| 2 — 28/09, 16:20–16:59 | Tratar OU de Gabriela e acesso de Bruno; coletar novamente | [Tratamentos individuais e comparação coletiva separada](../evidencias/sanitizadas/IAM-010/README.md#tratamentos-2809). Bruno: 02–05 na página 06; inventário conjunto na página 06b. |
+| 3 — 28/09, após os tratamentos | Comparar grupos e decidir manter/investigar | [07 e decisões iniciais 08](../evidencias/sanitizadas/IAM-010/README.md#comparacao-e-decisoes-2809). Nove associações departamentais conformes; quinze decisões iniciais, doze manter e três investigar. |
+| 4 — 29/09, manhã | Concluir Diego pelo prazo e retirar vínculos residuais do serviço | [Encaminhamentos de encerramento](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego mantém provas no IAM-004; serviço usa exclusivamente 11–13 e relatório 10. |
+| 5 — 29/09 | Ampliar a matriz de TI e implementar Isabela no AD | [Regra, cadastro, GG/DL, ACL/SMB e testes de TI](../evidencias/sanitizadas/IAM-010/README.md#cobertura-ti). Capturas 01–06 de TI; Entra permanece planejado. |
+| 6 — 29/09, 17:06–17:10 | Detectar e tratar o conflito simulado | [SoD — regra, antes, decisão e depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Provas 15–16 no relatório 14; dados separados dos diretórios. |
+| 7 — 29/09, 17:24 em diante | Coletar o AD, comparar os arquivos e fechar | [18 — coleta → 17 — comparação posterior](../evidencias/sanitizadas/IAM-010/README.md#fechamento). Oito associações conformes; a captura de coleta não exibe zero exceções. |
 
 ## Riscos, reversão e limitações
 
@@ -857,4 +800,80 @@ Referências necessárias: a [decisão de escopo de 28/09](REV-2026-09-28-escopo
 
 ## Fechamento
 
-Conferência final AD concluída em 29/09 às 17:24:48: [provas 17–18](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md), oito associações conformes, zero ausentes/excedentes, TI presente e serviço sem os vínculos retirados. **IAM-010 fechado em 29/09/2026 no escopo documentado**, sem tarefa de alteração de Employee type. As fontes cloud anteriores permanecem datadas; não houve nova exportação Entra nesta conferência. O microcaso SoD está concluído, com regra, decisão e resultado comprovados no modelo local. Resultado incorporado à [entrega v0.5 de 29/09](../CHANGELOG.md#v05--2026-09-29), com limites preservados.
+Coleta final AD concluída em 29/09 às 17:24:48 e comparada posteriormente: [provas 17–18](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md), oito associações conformes, zero ausentes/excedentes, TI presente e serviço sem os vínculos retirados. **IAM-010 fechado em 29/09/2026 no escopo documentado**, sem tarefa de alteração de Employee type. As fontes cloud anteriores permanecem datadas; não houve nova exportação Entra nesta conferência. O microcaso SoD está concluído, com regra, decisão e resultado comprovados no modelo local. Resultado incorporado à [entrega v0.5 de 29/09](../CHANGELOG.md#v05--2026-09-29), com limites preservados.
+
+<a id="iam-011"></a>
+
+# IAM-011 — Pré-admissão e ativação — EMP0001
+
+- Ambiente: laboratório fictício — Microsoft Entra ID, cloud-only
+- Tipo: requisição de provisionamento
+- Identidade: EMP0001 — Ana Ribeiro
+- Abertura: 2026-09-14
+- Status: Fechado
+- Responsável pela execução: Wesley
+- Admissão: 2026-09-15
+- Fechamento: 2026-09-15
+
+## Contexto e objetivo
+
+Preparar Ana antes da admissão, com entrada bloqueada. Após confirmação simulada do RH e aprovação, ativar a conta, conceder o grupo previsto e validar a entrada.
+
+## Estado anterior
+
+A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da conta foi conferida conforme relato do operador. Em 14/09, a conta foi criada bloqueada e sem associação direta ao grupo financeiro.
+
+## Aprovação e fundamento
+
+- EMP0001: Analista Financeiro, Financeiro; gestor Carlos Lima. Matriz: Analista Financeiro → GG_FIN_READ.
+- Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
+- 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
+- Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).
+
+**Consulta da regra:** [perfil financeiro no catálogo consolidado](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos). A admissão e a decisão histórica de 15/09 controlam quando habilitar/conceder; a consolidação de 29/09 não é aprovação retroativa.
+
+## Ações realizadas
+
+- **Concluído — 14/09:** conferir a identidade, criar a conta bloqueada e validar atributos/troca obrigatória (01 e 02).
+- **Concluído — 14/09:** conferir ausência direta no GG_FIN_READ e testar entrada bloqueada (03 e 04).
+- **Concluído — 15/09:** registrar confirmação e aprovação simuladas; habilitar a conta e adicionar ao GG_FIN_READ (05).
+- **Concluído — 15/09:** trocar a senha no fluxo do usuário e cadastrar as informações de autenticação exigidas (05).
+- **Concluído — 15/09:** conferir entrada positiva com MFA, preservar os dois JSONs e anexar extratos sanitizados (06).
+- **Concluído — 18/09, complemento documental:** copiar a fonte fictícia de RH e atualizar somente EMP0001 de PRE_ADMISSAO para ATIVO; comparar as versões e preservar o histórico (07–09).
+
+## Validação
+
+Horários de Brasília (UTC−03:00). Auditoria: AccountEnabled false → true às 11:30:41; inclusão no GG_FIN_READ às 11:33:44; troca de senha e ForceChangePassword True → False às 11:38:51. Cadastro do Authenticator às 11:39:49 e conclusão das informações exigidas às 11:40:18, com sucesso.
+
+## Teste de acesso
+
+- **Negativo:** 14/09 às 16:18:05, My Profile, 50057 — conta desabilitada.
+- **Intermediário:** 15/09 às 11:37:59, Azure Portal, 50055 — troca de senha necessária; senha correta não concluiu o login.
+- **Positivo:** 15/09 às 11:40:18, Azure Portal, errorCode=0 e MFA completed in Azure AD.
+
+## Evidências
+
+[Roteiro do IAM-011](../evidencias/sanitizadas/IAM-011/README.md): Ana/EMP0001, da pré-admissão à ativação e validação.
+
+| Ordem | Etapa e propósito | Provas do assunto |
+|---|---|---|
+| 1 | Preparar a identidade sem habilitar entrada | [02 — criação](../evidencias/sanitizadas/IAM-011/EV-IAM-011-02-auditoria-criacao.md), [01 — estado da pré-admissão](../evidencias/sanitizadas/IAM-011/EV-IAM-011-01-estado-pre-admissao.md) e [03 — grupo sem Ana](../evidencias/sanitizadas/IAM-011/EV-IAM-011-03-grupo-sem-ana.md). |
+| 2 | Validar o bloqueio anterior | [04 — tentativa negada](../evidencias/sanitizadas/IAM-011/EV-IAM-011-04-entrada-bloqueada.md). |
+| 3 | Ativar e validar — 15/09 | [Ações e testes intercalados por horário](../evidencias/sanitizadas/IAM-011/README.md#ativacao-e-testes): habilitar → grupo → tentativa interrompida → troca/cadastro → entrada positiva. |
+
+**Complemento de RH, documentado em 18/09:** [09 — linha de Ana, alteração e limites](../evidencias/sanitizadas/IAM-011/EV-IAM-011-09-atualizacao-rh.md). Os CSVs 07–08 integrais estão vinculados ali para verificar origem e preservação das demais pessoas; não representam execução sobre os outros oito registros nem aprovação retroativa.
+
+## Riscos e reversão
+
+Risco: acesso antecipado ou excessivo. Conta mantida bloqueada até a admissão/aprovação. Reversão: bloquear a conta, remover concessões indevidas e avaliar/revogar sessões.
+
+## Limitações e pendências
+
+- Aprovações são simuladas; conferência anterior à criação foi informada pelo operador. O CSV de RH de 18/09 é atualização manual simulada posterior à ativação, não evidência contemporânea de 15/09.
+- Estado após ativação comprovado por alterações auditadas e entrada, sem nova exportação cadastral anexada.
+- Cadastro do Authenticator e MFA concluído estão comprovados; o evento de entrada não detalha o método específico (null).
+- Grupo no Entra e entrada no Azure Portal não comprovam acesso ao relatório do AD ou privilégios administrativos Azure. Não há cálculo de SLA.
+
+## Fechamento
+
+Encerrado em 15/09: pré-admissão bloqueada, ativação e grupo aprovados, troca de senha e entrada com MFA comprovadas no Entra.

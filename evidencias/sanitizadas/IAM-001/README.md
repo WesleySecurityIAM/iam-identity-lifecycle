@@ -40,10 +40,14 @@ O fechamento original sustenta **identidade criada + matrícula correlacionada +
 
 ## 4. Complemento cadastral — 10/09
 
-| Prova | Por que foi acrescentada | Conclusão |
-|---|---|---|
-| [06 — Tela de cargo e matrícula](EV-IAM-001-06-cargo-atual.png) | Conferência visual do campo que faltava no inventário anterior | A tela é de edição e, isoladamente, não comprova salvamento. |
-| [07 — Cargo no CSV de 10/09](EV-IAM-001-07-cargo-inventario-2026-09-10.md) | Confirmar o valor efetivamente exportado | EMP0006 único, cargo Analista Financeiro, departamento Financeiro e accountEnabled=True. |
+[07 — Cargo no CSV de 10/09](EV-IAM-001-07-cargo-inventario-2026-09-10.md) confirma EMP0006 único, cargo Analista Financeiro, departamento Financeiro e accountEnabled=True. É a prova principal do valor exportado.
+
+<details>
+<summary>Apoio visual opcional — tela de edição, sem prova de salvamento</summary>
+
+[06 — Tela de cargo e matrícula](EV-IAM-001-06-cargo-atual.png). Foi preservada como contexto da conferência. Não é necessário abri-la para comprovar o valor já confirmado pelo CSV 07.
+
+</details>
 
 A prova 07 conclui o acompanhamento cadastral REV-IAM-001-01. Demonstra o estado coletado em 10/09, sem provar retroativamente o cargo em 03/09 nem alterar a data original do fechamento.
 

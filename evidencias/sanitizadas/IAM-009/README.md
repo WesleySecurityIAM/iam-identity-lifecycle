@@ -4,12 +4,16 @@
 
 O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-009) registra a aprovação simulada do exercício e a restauração prevista. A aprovação de 11:50 é um horário fictício do cenário; os horários abaixo são exibidos junto dos comandos, em UTC−03:00.
 
+<a id="antes"></a>
+
 ## 1. Estado e teste antes da retirada
 
 | Prova desta etapa | Horário | Resultado e propósito |
 |---|---|---|
 | [01 — Grupo e compartilhamento iniciais](01-grupo-e-compartilhamento-iniciais.png) | 11:51:53 | Felipe no GG_FIN_READ; RelatoriosFin e caminho conferidos. Identifica a associação e o recurso usados no teste. |
 | [02 — Conexão e leitura como Felipe](02-conexao-felipe-leitura-permitida.png) | 11:55:20 | `net use` com EMPRESA\felipe.gomes aceito; conteúdo lido. Estabelece que a leitura funcionava antes da alteração. |
+
+<a id="retirada"></a>
 
 ## 2. Retirada do grupo e comparação das conexões
 
@@ -18,6 +22,8 @@ O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-009) registra a apro
 | [03 — Felipe ausente do grupo](03-felipe-ausente-do-grupo.png) | 12:06:10 | FelipePresente=False e TotalMembros=0. Comprova o estado consultado após a retirada relatada. |
 | [04 — Leitura com a conexão mantida](04-leitura-permitida-apos-remocao.png) | 12:07:07 | Conteúdo ainda lido após remoção; operador informa que manteve a conexão. Testa o efeito sobre o acesso existente. |
 | [05 — Nova conexão e leitura negada](05-reconexao-leitura-negada.png) | 12:10:22 | Lista `net use` vazia, conexão aceita como Felipe e leitura negada. Distingue autenticar a conexão de autorizar a leitura. |
+
+<a id="restauracao"></a>
 
 ## 3. Restauração e validação final
 

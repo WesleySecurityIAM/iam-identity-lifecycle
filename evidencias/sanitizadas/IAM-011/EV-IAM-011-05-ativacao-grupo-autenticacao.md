@@ -2,15 +2,25 @@
 
 - Identidade: Ana Ribeiro — EMP0001, correlacionada pelo Object ID com o evento de criação.
 - Origem: `AuditLogs_2026-09-15-ana.json`, Microsoft Entra ID. Original privado preservado.
-- Período: 14 e 15/09/2026. Horários abaixo em Brasília (UTC−03:00), sem frações de segundo.
+- Recorte desta evidência: ativação de 15/09/2026. Horários em Brasília (UTC−03:00), sem frações de segundo. A criação de 14/09 está na evidência 02.
 
-## Resultado
+<a id="habilitacao-e-grupo"></a>
+
+## 1. Habilitação e grupo — 11:30–11:33
 
 | Data/hora Brasília | Evento/propriedade | Resultado observado |
 |---|---|---|
-| 14/09 15:24:46 | Add user | Conta criada com AccountEnabled=false, EMP0001, Analista Financeiro e Financeiro. |
 | 15/09 11:30:41 | Enable account / Update user | Success; AccountEnabled mudou de false para true. |
 | 15/09 11:33:44 | Add member to group | Success; Ana incluída no GG_FIN_READ. |
+
+<a id="senha-e-cadastro"></a>
+
+## 2. Troca de senha e cadastro — 11:38–11:40
+
+Entre os dois blocos houve uma [entrada interrompida às 11:37:59](EV-IAM-011-06-entrada-positiva.md#tentativa-intermediaria). A sequência abaixo concluiu os requisitos de entrada.
+
+| Data/hora Brasília | Evento/propriedade | Resultado observado |
+|---|---|---|
 | 15/09 11:38:51 | Change password (self-service) / Change user password | Success; alteração de senha pela identidade Ana. |
 | 15/09 11:38:51 | Update PasswordProfile | Success; ForceChangePassword mudou de True para False. |
 | 15/09 11:39:49 | Update user | Success; StrongAuthenticationPhoneAppDetail e StrongAuthenticationMethod passaram de listas vazias a dados cadastrados; aplicativo identificado como Authenticator. |

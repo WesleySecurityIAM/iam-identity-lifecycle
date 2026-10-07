@@ -4,7 +4,11 @@
 
 **Resultado:** decisão simulada de 17/09 mantém a leitura por grupo e não aprova a permissão individual redundante. Ticket fechado sem alterar grupos ou ACLs.
 
-## 1. Conferir a cadeia que sustenta o acesso
+## 1. Referência funcional anterior — 14/09
+
+O [teste de Felipe de 14/09 — leitura permitida e criação negada](../agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png) é uma referência histórica opcional para entender o acesso existente. O link vai diretamente à prova de Felipe no mesmo recurso; não é um teste novo nem exige percorrer as demais provas daquele laboratório.
+
+## 2. Conferir a cadeia que sustenta o acesso — 17/09
 
 ```text
 Felipe → GG_FIN_READ → DL_FIN_RELATORIOS_READ → leitura na pasta financeira
@@ -16,15 +20,14 @@ Felipe → GG_FIN_READ → DL_FIN_RELATORIOS_READ → leitura na pasta financeir
 | Grupo de função no grupo do recurso | [02 — Membros da DL_FIN_RELATORIOS_READ](02-membros-dl-fin-relatorios-read.png) | O GG_FIN_READ está na DL usada pela pasta? Sim. A lista também contém GG_SVC_RELATORIO_FIN; esta prova não avalia a rotina da conta de serviço. |
 | Permissão no recurso | [03 — ACL da pasta financeira](03-acl-pasta-financeira.png) | A DL tem Allow, ReadAndExecute/Synchronize? Sim. Há entrada direta para Felipe? Não na ACL mostrada. |
 
-## 2. Análise e decisão
+## 3. Análise e decisão — 17/09
 
 As consultas sustentam a recomendação de manter a associação aos grupos, preservando o modelo de acesso previsto. A [decisão simulada no ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-008) registra a aprovação do Gestor Financeiro para manter esse modelo, sem conceder a entrada individual solicitada. Não houve mudança técnica a executar ou reverter.
 
-## 3. Validação do escopo e referência histórica
+## 4. Validação do escopo e fechamento
 
 A validação de 17/09 é **de configuração**: associação de Felipe, associação do GG à DL e permissão da DL na pasta. Não foi executado um novo teste de leitura nesse atendimento.
 
-O [teste de Felipe de 14/09 — leitura permitida e criação negada](../agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png) é uma referência histórica opcional para entender o acesso existente. O link vai diretamente à prova de Felipe no mesmo recurso; não é um teste novo nem exige percorrer as demais provas daquele laboratório.
 
 ## Limites das provas
 

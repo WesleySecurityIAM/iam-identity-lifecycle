@@ -34,7 +34,13 @@ A captura de `runas` não documenta eventual redefinição prévia de senha. Ses
 | Prova de estado | O que mostra | Limite |
 |---|---|---|
 | [04 — Perfil e validade das sessões](04-entra-bloqueio-vigencia-sessoes.png) | EMP0004, Account enabled=No, On-premises sync enabled=No e sessões válidas a partir de 11:19 | A alteração do marco de validade é complementada pelos eventos da prova 06; não demonstra corte instantâneo de todo acesso em aplicativos. |
-| [05 — Identidade bloqueada](05-entra-identidade-bloqueada.png) | Mesmo Object ID e Account status Disabled | Os links View não demonstram listas vazias. Essa dúvida é resolvida pela captura 08. |
+
+<details>
+<summary>Captura adicional preservada — repete o bloqueio</summary>
+
+[05 — Identidade bloqueada](05-entra-identidade-bloqueada.png) confirma o mesmo objeto desabilitado. Como repete o estado da prova 04 e não abre as listas de concessões, fica fora do roteiro principal; a prova 08 é a que mostra os contadores zero.
+
+</details>
 
 <a id="validacao-final"></a>
 

@@ -1,54 +1,79 @@
-# IAM-010 — Recertificação: da população ao tratamento e fechamento
+# IAM-010 — Recertificação: inventário, decisões, tratamentos e fechamento
 
-**Fechado em 29/09/2026.** A revisão começou com inventários de 28/09, definiu o esperado por sistema e registrou decisões por associação. Os achados foram tratados nos blocos abaixo. O microcaso SoD usa dados fictícios separados dos diretórios. A conferência final AD encontrou oito associações conformes, zero ausentes e zero excedentes no recorte avaliado.
+**Fechado em 29/09/2026.** A revisão começou com os inventários de 28/09. Definiu o esperado por sistema, tratou achados e registrou decisões por associação. A conferência final AD encontrou oito associações conformes, zero ausentes e zero excedentes no recorte avaliado. SoD foi um exercício local separado.
 
-**Como acompanhar:** leia primeiro a origem e as regras; depois abra o tratamento que deseja conferir. Cada página reúne as provas daquele assunto, com antes, ação/decisão, resultado e limites. Os números são identificadores preservados dos arquivos, não uma sequência única de execução.
+**Como ler:** siga as etapas datadas abaixo. Cada tratamento abre uma página com suas próprias provas. Os números dos arquivos são identificadores preservados; a sequência dos fatos é a das etapas. Comparações coletivas ficam separadas dos testes individuais.
 
-## 1. Origem da revisão e definição do esperado
+<a id="inventario-e-regra"></a>
 
-| Etapa | Documento | Propósito e alcance |
+## 1. Inventariar e definir o esperado — 28/09
+
+| Abrir | Por que foi necessário |
+|---|---|
+| [01 — Fontes, população e achados](01-inventario-conferencia-inicial.md) | Levantar o observado: nove pessoas no RH, nove contas AD, doze no Entra e 34 verificações cadastrais. Não demonstra necessidade de acesso. |
+| [Decisão de escopo de 28/09](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md) | Definir acesso de Suporte para Bruno, alinhamento de OU de Gabriela e ausências intencionais por sistema. A regra foi estabelecida nesta revisão. |
+
+<a id="tratamentos-2809"></a>
+
+## 2. Tratar os achados e testar — 28/09, antes da comparação final do dia
+
+| Ordem dos tratamentos | Abrir somente o assunto | Provas e propósito |
 |---|---|---|
-| Inventário inicial — 28/09 | [01 — Fontes, população e achados](01-inventario-conferencia-inicial.md) | Identificar contas e grupos observados; 34 verificações de cadastro. Ainda não demonstra necessidade de acesso. |
-| Regra adotada — 28/09 | [Decisão de escopo](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md) | Definir contas e acessos esperados por sistema após analisar o inventário. Fundamenta Bruno e o complemento de OU de Gabriela. |
-| Cobertura ampliada — 29/09 | [Matriz consolidada](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) | Incluir TI; distinguir pessoas, contas especiais e sistemas. A versão posterior não altera os resultados históricos de 28/09. |
+| Gabriela — 16:20–16:35 | [Complemento de OU no IAM-002](../IAM-002/README.md#complemento-ou) | 24–28: OU antes/depois, identidade preservada e retestes. O link abre essa etapa do Mover, sem repetir as capturas aqui. |
+| Bruno — 16:41–16:57 | [06 — Concessão e testes de Suporte](06-tratamento-validacao-ad.md) | 02–05: ausência do grupo → inclusão → conexão/leitura → criação negada. A página contém somente as provas de Bruno. |
+| Nova coleta — 16:59:31 | [06b — Comparação coletiva AD](06b-comparacao-coletiva-ad.md) | Confirma as duas mudanças entre coletas: associação de Bruno e OU de Gabriela. Por ser comparação de população, reúne os dois resultados. |
 
-O inventário descreve **o observado**; RH e matriz definem **o esperado**; a recertificação registra **a decisão sobre continuar precisando do acesso**. As fontes de cada momento estão identificadas nos relatórios. CSVs brutos e manifestos permanecem privados.
+<a id="comparacao-e-decisoes-2809"></a>
 
-## 2. Reconciliação e decisão por acesso
+## 3. Comparar os grupos e registrar decisões — 28/09
 
-| Etapa | Documento | Resultado documentado |
+| Abrir na ordem | Resultado e alcance |
+|---|---|
+| [07 — População e grupos versus matriz](07-comparacao-populacao-grupos.md) | Usa a coleta posterior aos tratamentos: nove associações departamentais conformes em AD + Entra; seis ausências de contas previstas. TI ainda não fazia parte desse recorte. |
+| [08 — Decisões iniciais por associação](08-recertificacao-simulada.md#decisoes-2809) | Quinze associações: doze manter e três investigar, estas da rotina encerrada. Não é uma lista de quinze pessoas. |
+
+RH e matriz definem o **esperado**; inventários mostram o **observado**; a recertificação registra se o acesso **continua necessário**. Esses relatórios abrangem a população porque essa é a unidade da revisão; não substituem os testes individuais.
+
+<a id="encerramentos-2909"></a>
+
+## 4. Concluir os encaminhamentos de encerramento — 29/09, manhã
+
+| Assunto e horário | Abrir | O que procurar |
 |---|---|---|
-| Comparação departamental — 28/09, após tratar Bruno | [07 — População e grupos versus matriz](07-comparacao-populacao-grupos.md) | Nove associações conformes em AD + Entra; seis ausências de contas intencionais. TI ainda não fazia parte deste recorte. |
-| Recertificação e acompanhamento | [08 — Decisões por associação](08-recertificacao-simulada.md) | Quinze associações: inicialmente doze manter e três investigar. As três do serviço foram depois decididas como remover. As duas relações de TI são um complemento identificado separadamente. |
+| Diego — 11:08–11:58 | [IAM-004 — efeito da expiração e encerramento](../IAM-004/README.md#validacao-ad) | Encerramento pelo prazo do terceiro: autenticação AD recusada, bloqueio/revogação Entra e contadores finais. Não foi encerrado por faltar TI na matriz. |
+| Serviço — 12:08–12:14; formalização às 12:23:24 | [10 — Dependências, retirada e registro da decisão](10-servico-remocao-concessoes.md) | 11–13: vínculos presentes → dependências locais → três vínculos ausentes. Conta desabilitada e GG_FIN_READ preservado. A formalização posterior está identificada. |
 
-Esses dois documentos abrangem várias pessoas porque a unidade da revisão é a população. Eles não substituem o teste individual de um usuário nem significam revisão de todas as permissões do ambiente.
+O IAM-005 fornece a finalidade da rotina encerrada; suas execuções de 15/09 não são testes novos desta retirada. Não houve reteste de acesso humano nessa operação.
 
-## 3. Tratamentos, cada um com suas próprias provas
+<a id="cobertura-ti"></a>
 
-| Assunto | Abrir para acompanhar | Provas daquele assunto |
-|---|---|---|
-| Bruno — conceder leitura de Suporte | [06 — Antes, concessão e testes](06-tratamento-validacao-ad.md) | 02: grupo ausente; 03: grupo presente; 04: conexão e leitura; 05: criação negada. A comparação coletiva ao final é identificada separadamente. |
-| Serviço — retirar concessões residuais | [10 — Decisão, dependências e retirada](10-servico-remocao-concessoes.md) | 11: vínculos ainda presentes; 12: dependências locais; 13: três vínculos ausentes e acesso humano preservado na DL. Conta mantida desabilitada. |
-| TI/Isabela — implementar a nova regra | [TI — Cadastro, grupos, permissões e testes](ti-isabela/README.md) | Seis capturas exclusivas: identidade, GG/DL, ACL/SMB, conexão/leitura, criação negada e identificação SMB. Implementação somente no AD. |
+## 5. Completar a cobertura de TI e validar Isabela — 29/09
 
-## 4. Microcaso SoD — exercício separado
+| Abrir na ordem | Motivo e resultado |
+|---|---|
+| [Matriz consolidada de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) | Tratar a lacuna de TI, separar contas especiais e definir leitura de procedimentos sem privilégio administrativo pelo cargo. Não altera retroativamente a comparação de 28/09. |
+| [TI/Isabela — cadastro, grupos, recurso e testes](ti-isabela/README.md) | 01–06, entre 16:28 e 16:54: identidade → GG/DL → ACL/SMB → leitura → criação negada → identificação complementar da conexão. Somente AD. |
+| [Decisão complementar de TI](08-recertificacao-simulada.md#cobertura-ti-2909) | Manter as duas novas associações, separadas das quinze relações históricas. Entra e sincronização permanecem planejados. |
 
-[14 — Regra, decisão e resultado antes/depois](14-sod-resultado.md) reúne as capturas **15–16**: um conflito no caso A+B, depois zero, preservando a aprovação de orçamento. O [roteiro 09](09-roteiro-sod.md) explica a execução e aponta o script. Os cinco cenários são alternativos; não representam permissões financeiras reais de Gabriela nem concessões de `GG_FIN_READ`.
+A matriz é uma revisão documental de 29/09 sem horário intradiário comprovado neste índice. Os horários acima descrevem a implementação, sem inventar um instante para a aprovação.
 
-## 5. Conferência final e fechamento
+<a id="sod"></a>
 
-[17 — Comparação final AD](17-conferencia-final-ad.md): coleta de 29/09 às 17:24:44–17:24:48, RH e matriz vigentes, dez contas e oito associações conformes; TI presente e vínculos de serviço ausentes.
+## 6. Avaliar e tratar o conflito SoD — 29/09, 17:06–17:10
 
-A [captura 18](18-resumo-coleta-final-ad.png) comprova **a coleta e suas contagens**. O resultado de zero ausentes/excedentes está no relatório 17, obtido da comparação posterior dos arquivos; não é uma saída de reconciliação exibida na captura. Não houve nova coleta Entra neste fechamento.
+[14 — Regra, decisão e antes/depois](14-sod-resultado.md): capturas **15–16**, um conflito A+B, depois zero, mantendo a aprovação de orçamento. O [roteiro 09](09-roteiro-sod.md) e o script explicam como a comparação foi feita.
 
-## Referências necessárias a outros tickets
+São cinco cenários alternativos em dados fictícios; não representam direitos reais de Gabriela em uma aplicação nem permissões concedidas por GG_FIN_READ.
 
-| Dependência | Por que aparece aqui | Onde está a prova própria |
-|---|---|---|
-| Gabriela — OU Financeiro | Achado do inventário, tratado como complemento do Mover; a coleta posterior confirma a localização. | [IAM-002 — complemento de OU](../IAM-002/README.md#complemento--movimentação-de-ou-em-2809). Consultar somente as provas 24–28 para este encaminhamento. |
-| Diego — encerramento por prazo | A recertificação acompanha a conclusão; a causa do encerramento é a vigência do terceiro. | [IAM-004 — encerramento](../IAM-004/README.md). Não se repete sua prova de autenticação no caso de Bruno ou de TI. |
-| Serviço — rotina encerrada | Explica por que revisar os vínculos residuais encontrados. | [IAM-005 — finalidade e encerramento da rotina](../IAM-005/README.md). A retirada posterior pertence às provas 10–13 deste IAM-010. |
+<a id="fechamento"></a>
 
-Os testes de cada tratamento não comprovam todos os controles do diretório. O preparo de identidade híbrida é um encaminhamento posterior, registrado na [análise de estrutura](../../../00-operacao-itsm/REV-2026-09-29-estrutura-hibrida.md), e não uma evidência de sincronização executada.
+## 7. Coletar novamente, comparar e encerrar — 29/09
+
+1. [18 — Resumo da coleta final AD](18-resumo-coleta-final-ad.png), 17:24:44–17:24:48: dez contas, nove grupos, oito associações e tarefa desabilitada. A captura informa que a comparação seria feita depois.
+2. [17 — Comparação dos arquivos com RH e matriz](17-conferencia-final-ad.md): oito associações conformes, zero ausentes/excedentes, TI presente e vínculos retirados do serviço ausentes.
+
+A coleta vem antes da comparação, mesmo com os identificadores 18 e 17. Não houve nova coleta Entra neste fechamento. O resultado é limitado aos campos e associações exportados; não revalida todas as ACLs, sessões ou privilégios.
+
+O preparo híbrido é um encaminhamento posterior na [análise de estrutura](../../../00-operacao-itsm/REV-2026-09-29-estrutura-hibrida.md), não evidência de sincronização executada. CSVs brutos e manifestos permanecem privados.
 
 [Voltar ao ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).

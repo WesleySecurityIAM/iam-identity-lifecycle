@@ -4,8 +4,8 @@
 
 | Prova | Resultado |
 |---|---|
-| [04 — Estado final](04-guest-desabilitado-sem-atribuicoes.png) | Convidado LAB 01, Guest, Disabled; Groups = 0, Applications = 0, Assigned roles = 0. Relógio da captura: 25/09, 11:40. |
 | [05 — Auditoria selecionada](05-auditoria-encerramento.json) | Disable account / Update user às 11:38:41; Update StsRefreshTokenValidFrom Timestamp / Update user às 11:40:20, todos success. |
+| [04 — Estado final](04-guest-desabilitado-sem-atribuicoes.png) | Convidado LAB 01, Guest, Disabled; Groups = 0, Applications = 0, Assigned roles = 0. Relógio da captura: 25/09, 11:40. |
 
 Horários de Brasília (UTC−03:00). Em UTC: **14:38:41Z** e **14:40:20Z**. Correlação pelo Object ID `2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f`; executor ADMIN-LAB-001.
 

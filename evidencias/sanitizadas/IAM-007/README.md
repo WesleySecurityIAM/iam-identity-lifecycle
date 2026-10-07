@@ -8,15 +8,15 @@
 
 Já havia uma entrada com MFA registrada durante o IAM-006. Ainda era necessário conferir o método atual e localizar o cadastro. Por isso, uma captura do método e um evento de uso não são provas intercambiáveis.
 
-## 2. Provas por pergunta
+## 2. Provas na ordem dos fatos — cadastro, uso e consulta posterior
 
 | Pergunta | Prova correspondente | O que ela demonstra |
 |---|---|---|
-| O método estava disponível na consulta? | [01 — Método atual, consultado em 08/09](EV-IAM-007-01-metodo-atual.md) | Authenticator utilizável; dispositivo identificado como iPhone 12; notificação como padrão. Não fornece a data original do cadastro. |
 | Quando os dados do método foram registrados? | [02 — Auditoria do cadastro](EV-IAM-007-02-cadastro-authenticator.md) | Em 03/09 às 20:19:20 UTC, duas atualizações bem-sucedidas incluíram dados do aplicativo e dos métodos em propriedades antes vazias. |
-| Houve uso em uma entrada? | [Evento de 03/09 às 20:34:08 UTC, preservado no IAM-006](../IAM-006/EV-IAM-006-04-login-posterior.md#evento-mfa-compartilhado) | Entrada no My Signins com êxito, notificação de aplicativo móvel e `MFA completed in Azure AD`. Consultar somente esse evento para a prova de uso. |
+| Houve uso em uma entrada? | [03 — Uso em 03/09 às 20:34:08 UTC](03-uso-mfa.md) | Entrada no My Signins com êxito, notificação de aplicativo móvel e `MFA completed in Azure AD`. Consultar somente esse evento para a prova de uso. |
+| O método estava disponível na consulta? | [01 — Método atual, consultado em 08/09](EV-IAM-007-01-metodo-atual.md) | Authenticator utilizável; dispositivo identificado como iPhone 12; notificação como padrão. Não fornece a data original do cadastro. |
 
-**Por que existe uma referência a outro ticket?** É o mesmo evento de autenticação de Felipe, já preservado no atendimento de senha. Aqui ele responde exclusivamente à pergunta sobre uso de MFA. Os outros dois logins listados naquele documento não são necessários para comprovar este método.
+**Por que reutilizar esse evento?** É a mesma autenticação de Felipe, já preservada no IAM-006. O recorte 03 abre somente a prova do uso de MFA; a origem compartilhada fica disponível como consulta opcional.
 
 ## 3. Conclusão e limites
 

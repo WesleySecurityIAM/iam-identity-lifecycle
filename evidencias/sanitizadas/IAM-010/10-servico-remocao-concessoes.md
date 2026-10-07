@@ -2,11 +2,7 @@
 
 **Resultado:** três associações residuais retiradas em 29/09/2026, conta mantida desabilitada e GG_FIN_READ preservado na DL financeira. Tratamento do achado do IAM-010; não altera o estado histórico entregue no IAM-005.
 
-## Decisão simulada
-
-Registro em **29/09/2026 12:23:24 -0300**. Responsável de negócio fictício: Carlos Lima. Execução técnica: Wesley. Formalização solicitada pelo operador após apresentação das capturas; o roteiro de retirada havia sido fornecido antes da execução. Não representa aprovação corporativa prévia.
-
-Após revisão da finalidade encerrada da rotina e das dependências locais consultadas, decidiu-se retirar svc_relatorio_fin de GG_SVC_RELATORIO_FIN e retirar esse GG das DL de leitura e escrita. Manter conta e tarefa desabilitadas e preservar os grupos. Não há necessidade futura de reativação documentada. Nova utilização exigirá nova decisão, concessões mínimas e reteste.
+A necessidade de revisar os vínculos veio da [recertificação inicial](08-recertificacao-simulada.md#decisoes-2809): a rotina já estava encerrada, mas conservava concessões. Siga antes → dependências → depois → formalização da decisão.
 
 ## Antes, dependências e depois
 
@@ -15,6 +11,12 @@ Após revisão da finalidade encerrada da rotina e das dependências locais cons
 | [11 — Antes](11-servico-antes-associacoes.png) | 12:08:09 UTC−03:00: conta Enabled=False; tarefa Disabled; GG com svc_relatorio_fin como único membro; GG associado a DL_FIN_RELATORIOS_READ e DL_FIN_SAIDA_WRITE |
 | [12 — Dependências locais](12-servico-dependencias-locais.png) | Relógio visível 12:12 de 29/09; filtro de tarefas por Principal.UserId encontra apenas IAM-005-Relatorio-Financeiro, Disabled; filtro de Win32_Service por StartName não retorna linhas |
 | [13 — Depois](13-servico-depois-remocoes.png) | 12:14:13 UTC−03:00: GG de serviço vazio; DL de escrita vazia; DL de leitura contém somente GG_FIN_READ; conta permanece Enabled=False |
+
+## Registro da decisão simulada — 12:23:24, após as capturas
+
+Registro em **29/09/2026 12:23:24 -0300**. Responsável de negócio fictício: Carlos Lima. Execução técnica: Wesley. Formalização solicitada pelo operador após apresentação das capturas; o roteiro de retirada havia sido fornecido antes da execução. Não representa aprovação corporativa prévia.
+
+Após revisão da finalidade encerrada da rotina e das dependências locais consultadas, decidiu-se retirar svc_relatorio_fin de GG_SVC_RELATORIO_FIN e retirar esse GG das DL de leitura e escrita. Manter conta e tarefa desabilitadas e preservar os grupos. Não há necessidade futura de reativação documentada. Nova utilização exigirá nova decisão, concessões mínimas e reteste.
 
 | Associação revisada | Decisão final | Verificação |
 |---|---|---|

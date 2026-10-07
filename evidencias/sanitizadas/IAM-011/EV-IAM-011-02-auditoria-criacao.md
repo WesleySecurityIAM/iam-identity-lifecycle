@@ -4,8 +4,8 @@ Eventos de Ana no Entra, identificados no original pelo UPN da conta. Aprovaçõ
 
 | Data/hora UTC | Atividade | Resultado |
 |---|---|---|
-| 2026-09-14T18:24:46.0013757+00:00 | Add user | Success |
 | 2026-09-14T18:24:45.7423764+00:00 | Update PasswordProfile | Success |
+| 2026-09-14T18:24:46.0013757+00:00 | Add user | Success |
 
 Horários aproximados em Brasília: 15:24:45 para Update PasswordProfile e 15:24:46 para Add user, em 14/09/2026. Não inferir uma redefinição manual separada somente pela presença de Update PasswordProfile na criação.
 

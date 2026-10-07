@@ -13,13 +13,7 @@
 
 ## Resultado
 
-Após a alteração de senha registrada em 2026-09-03T20:33:21Z,
-foram confirmadas três entradas com status Êxito:
-
-- 20:33:27Z — My Profile: primeira entrada bem-sucedida após a alteração.
-- 20:33:43Z — My Signins: primeiro fator satisfeito por uma informação
-  já presente no token, sem indicar nova digitação da senha.
-- 20:34:08Z — My Signins: MFA concluído por notificação de aplicativo móvel.
+As três entradas da tabela ocorreram após a alteração de senha das 20:33:21Z. O primeiro fator satisfeito por claim às 20:33:43Z não significa nova digitação da senha.
 
 Os registros comprovam o restabelecimento da autenticação nos aplicativos
 listados, mas não comprovam acesso ao sistema financeiro.
@@ -34,5 +28,5 @@ listados, mas não comprovam acesso ao sistema financeiro.
 
 - o evento das 20:33:27Z não apresentou uma etapa correspondente no arquivo de detalhes de autenticação;
 - a entrada com MFA comprova seu uso, mas não comprova quando o método foi cadastrado;
-- o cadastro do método MFA será documentado no IAM-007;
+- cadastro e consulta do método estão documentados no IAM-007;
 - IP, UPN, Request ID, Correlation ID e Session ID foram removidos.

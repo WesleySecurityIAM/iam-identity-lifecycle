@@ -4,12 +4,13 @@
 
 ## Sequência das provas
 
-| Passo e propósito | Abrir a evidência | O que ela demonstra |
+| Ordem / data | Provas necessárias | O que demonstram |
 |---|---|---|
-| 1. Criar o convite | [01 — Estado pendente e captura](01-estado-pendente.md) | Guest criado por Invitation, habilitado e com Pending acceptance. |
-| 2. Confirmar o aceite | [02 — Estado aceito e captura](02-estado-aceito.md) | O mesmo convidado passou a Accepted. Aceite não demonstra acesso a aplicação. |
-| 3. Correlacionar os eventos | [03 — Convite, sponsor e resgate](03-auditoria-convite-aceite.md) | Eventos de criação/convite, associação do sponsor e resgate, com horários e resultados. Este relatório pertence aos passos 1–2. |
-| 4. Encerrar no prazo e conferir | [06 — Encerramento explicado](06-encerramento.md) | Reúne a captura 04 (Disabled e contadores zero) e o extrato 05 (bloqueio e revogação com success). |
+| 1 — Convite, 22/09 às 14:09 | [03 — criação, convite e sponsor](03-auditoria-convite-aceite.md#convite) + [01 — estado pendente](01-estado-pendente.md). | Criação por Invitation; Guest habilitado, responsável técnico vinculado e Pending acceptance. |
+| 2 — Aceite, 22/09 às 14:17 | [03 — resgate do convite](03-auditoria-convite-aceite.md#aceite) + [02 — estado aceito](02-estado-aceito.md). | O mesmo convidado passou a Accepted. Não demonstra acesso a aplicação. |
+| 3 — Encerramento, 25/09 | [06 — ações auditadas e conferência final](06-encerramento.md). | Bloqueio e revogação (05), mais Disabled/contadores zero (04). |
+
+Auditoria e captura não duplicam a conclusão: a primeira registra a ação e seu horário; a segunda mostra o estado consultado. Não há uma quarta etapa só para repetir a auditoria de convite/aceite.
 
 A [requisição](../../../00-operacao-itsm/REQ-GUEST-001.md) registra finalidade, responsável, autorização de laboratório, prazo, ações e conclusão. Este índice contém somente provas do Guest. A conta ADMIN-LAB-001 aparece como executor/sponsor necessário à explicação dos eventos; não é evidência de outro teste administrativo.
 

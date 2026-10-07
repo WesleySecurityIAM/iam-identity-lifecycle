@@ -1,10 +1,10 @@
-# Bruno — leitura de Suporte e comparação posterior de 28/09/2026
+# Bruno — concessão e testes de leitura de Suporte em 28/09/2026
 
 ## Resultado
 
-Bruno passou a integrar GG_SUP_TICKET, com leitura permitida e criação negada em SuporteLab. A nova coleta AD confirma também Gabriela na OU Financeiro, preservando a identidade e as associações anteriores dela.
+Bruno passou a integrar GG_SUP_TICKET, com leitura permitida e criação negada em SuporteLab.
 
-**Leitura desta página:** as provas 02–05 abaixo pertencem exclusivamente ao acesso de Bruno. A seção de comparação posterior examina o inventário coletivo e inclui a mudança de OU de Gabriela porque os dois tratamentos ocorreram entre as mesmas coletas. As capturas do Mover permanecem no IAM-002; não são testes de Bruno.
+**Leitura desta página:** conferir ausência do grupo → conferir inclusão → conectar como Bruno e ler → tentar criar e observar negação. As quatro capturas abaixo pertencem somente a Bruno/EMP0002.
 
 A concessão atende à [regra definida nesta revisão](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md). A análise do inventário motivou a definição da necessidade; não se alega descumprimento de aprovação histórica.
 
@@ -19,28 +19,10 @@ A concessão atende à [regra definida nesta revisão](../../../00-operacao-itsm
 
 Os horários são leituras exibidas junto aos comandos, não timestamps de auditoria da inclusão no grupo. A criação negada não testa todas as operações de escrita. Foi orientado reset administrativo de senha por indisponibilidade da credencial anterior; as provas recebidas não demonstram o reset, portanto ele não é apresentado como ação comprovada. Nenhuma credencial integra as evidências.
 
-## Comparação coletiva posterior — Bruno e localização de Gabriela
+## Limites e continuação
 
-Coletas AD: **15:52:51 → 16:59:31**, ambas em 28/09, UTC−03:00. Comparação executada em PowerShell com Import-Csv e Compare-Object, por campos explícitos:
+O teste negativo comprova criação negada pela rede, sem isolar SMB de NTFS nem testar edição/exclusão. A inclusão é sustentada pela consulta posterior; o comando de alteração não está na captura.
 
-| Verificação | Resultado |
-|---|---|
-| População de usuários | 9 antes e 9 depois; mesmas identidades. |
-| Cadastro | SamAccountName, ObjectGUID, EmployeeID, Enabled, Department, Title e AccountExpirationDate sem diferenças. |
-| Localização | Única diferença: DistinguishedName de Gabriela mudou de OU Suporte para OU Financeiro. |
-| Grupos GG/DL | Mesmos 7 grupos e mesmos GUIDs, escopos e categorias. |
-| Associações diretas | 8 antes e 9 depois; única inclusão: bruno.costa em GG_SUP_TICKET. Nenhuma remoção. |
-| Encadeamento de Suporte | GG_SUP_TICKET permanece membro de DL_SUP_TICKET_READ. |
-
-As duas mudanças observadas correspondem aos encaminhamentos registrados: leitura de Suporte para Bruno e localização de Gabriela em Financeiro. Os CSVs originais, horários, comparação detalhada e manifesto SHA-256 estão preservados em área privada, em uma coleta posterior separada. Quatro prints publicados sem edição.
-
-## Limites e pendências
-
-Comparação limitada aos atributos e associações exportados; não inclui senha, ACLs, GPOs ou todas as sessões. Os exports não são inventário de todos os grupos do domínio: a coleta de grupos cobre GG_* e DL_*.
-
-Tratamento desses dois achados validado no escopo descrito. **Na coleta de 28/09, IAM-010 estava em andamento:** comparação e decisões posteriores estão nas evidências 07–08; retenção da conta de serviço, encerramento de Diego e microcaso SoD ainda pendentes. O Entra não foi alterado nesta rodada.
-
-
-**Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).
+Depois dos testes foi coletado um novo inventário às 16:59:31. A [comparação coletiva 06b](06b-comparacao-coletiva-ad.md) documenta separadamente as mudanças de Bruno e da localização de Gabriela; não é outro teste de Bruno. IAM-010 ainda estava em andamento nessa data e foi fechado em 29/09 após os tratamentos e a conferência final.
 
 [Voltar ao índice por assunto](README.md).

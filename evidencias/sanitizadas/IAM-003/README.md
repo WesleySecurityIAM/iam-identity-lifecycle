@@ -50,8 +50,14 @@ O extrato reúne cinco eventos referentes a essas três ações; eventos pareado
 |---|---|---|
 | [02 — Perfil desabilitado](02-carla-conta-desabilitada.png) | EMP0003, Account enabled=No; relógio às 17:15 | Fuso não explícito na captura. |
 | [03 — Consulta sem grupos](03-carla-sem-grupos.png) | Not a member of any groups, sem filtro de pesquisa; relógio às 17:18 | Estado da consulta, complementado pela auditoria de retirada. |
-| [04 — Mensagem de entrada bloqueada](04-entrada-bloqueada.png) | Identidade de Carla e indicação de bloqueio | Sem horário interno; o horário exato está no log. |
 | [06 — Sign-in bloqueado](06-sign-in-bloqueado.md) | Às 17:29:19 UTC−03:00, AMC PROD, 50057 por conta desabilitada | Comprova uma nova entrada negada; não valida senha nem encerra toda sessão anterior. |
+
+<details>
+<summary>Apoio visual opcional — mensagem de bloqueio</summary>
+
+[04 — Tela da entrada bloqueada](04-entrada-bloqueada.png) mostra a mensagem para Carla, sem horário interno. O log 06 é a prova principal da tentativa, pois informa identidade, horário e código 50057.
+
+</details>
 
 <a id="comparacao-final"></a>
 
@@ -59,7 +65,7 @@ O extrato reúne cinco eventos referentes a essas três ações; eventos pareado
 
 [08 — Resultado de Carla e critérios de fechamento](08-validacao-final.md): usando a exportação de 23/09, a regra de habilitação passou a **False esperado / False observado / CONFORME**. Conta preservada, sem exclusão.
 
-[07 — CSV posterior compartilhado](07-reconciliacao-pos-leaver.csv): consultar a linha **EMP0003** para este Leaver. O arquivo original contém também duas regras de Gabriela, que permaneceu em Suporte; essas linhas explicam o total da execução (**três conformes, zero exceções**), mas não são ações ou testes sobre Carla. O documento 08 distingue esse contexto do resultado deste ticket.
+A fonte compartilhada e seus totais podem ser conferidos na seção opcional do relatório 08. A leitura principal permanece na linha EMP0003; as linhas de Gabriela não são provas do Leaver.
 
 ## Limites e preservação
 

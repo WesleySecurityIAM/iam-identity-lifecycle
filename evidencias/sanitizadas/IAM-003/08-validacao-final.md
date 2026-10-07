@@ -6,7 +6,7 @@ Após as mudanças, uma nova comparação entre o RH e a exportação do Entra d
 |---|---|---|---|
 | Carla / habilitação | Esperado False, observado True | Esperado False, observado False | CONFORME |
 
-[CSV posterior — consultar EMP0003](07-reconciliacao-pos-leaver.csv). Carla passou a corresponder ao RH desligado, preservando o Object ID da conta. O relatório anterior também foi preservado. A comparação cadastral não verifica grupos, sessões ou acesso a aplicações.
+Carla passou a corresponder ao RH desligado, preservando o Object ID da conta. O relatório anterior também foi preservado. A comparação cadastral não verifica grupos, sessões ou acesso a aplicações.
 
 ## Validação complementar
 
@@ -17,16 +17,12 @@ Após as mudanças, uma nova comparação entre o RH e a exportação do Entra d
 
 **Critério atendido no escopo:** conta desabilitada, associação financeira retirada, revogação registrada, nova entrada bloqueada e exceção cadastral corrigida. Conta mantida no diretório; exclusão não integra o fechamento. AD independente e aplicações financeiras não integradas estão fora do teste.
 
-## Contexto da fonte compartilhada — por que o CSV tem três linhas
+<details>
+<summary>Origem compartilhada do CSV — somente para conferir a fonte</summary>
 
-A mesma execução incluiu duas regras de Gabriela, preservadas no CSV para manter a integridade da coleta. Elas não representam evidências de execução do Leaver de Carla:
+O [CSV preservado](07-reconciliacao-pos-leaver.csv) tem três linhas: uma regra de Carla e duas de Gabriela ainda em Suporte. Para este ticket, consultar **EMP0003**. O total da execução foi três conformes/zero exceções, mas somente a regra False/False de Carla sustenta esta reconciliação de Leaver. As linhas EMP0007 são tratadas no [histórico de Gabriela](../IAM-002/09-11-referencias-antes-mover.md); não representam ações sobre Carla.
 
-| Pessoa/regra | Antes — CSV 22/09 | Depois — CSV 23/09 | Resultado posterior |
-|---|---|---|---|
-| Gabriela / habilitação | True / True | True / True | CONFORME |
-| Gabriela / departamento | Suporte / Suporte | Suporte / Suporte | CONFORME |
-
-Assim, a execução completa teve **três verificações conformes e zero exceções**: uma regra de Carla e duas de Gabriela. Os mesmos Object IDs foram mantidos. O resultado de Gabriela é histórico, anterior ao Mover de 28/09; não comprova a transferência para Financeiro.
+</details>
 
 ## Integridade
 

@@ -2,6 +2,8 @@
 
 Escolha um caso e acompanhe **objetivo → referência/estado anterior → decisão ou diagnóstico → ação → validação → resultado e limites**. Cada índice explica por que a prova está ali e o que ela demonstra. O [ticket](../00-operacao-itsm/05-fila-tickets.md) reúne a história; os links do índice abrem as capturas, extratos e resultados correspondentes.
 
+O roteiro principal usa as provas necessárias. Capturas repetidas ou fontes com outras identidades ficam em complementos opcionais, com a utilidade indicada. Os números dos arquivos são preservados; etapas e horários determinam a ordem de leitura.
+
 RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustentam o observado. Preparação, execução e complementos posteriores aparecem identificados por data, sem tratar uma coleta antiga como estado atual.
 
 ## Tickets IAM
@@ -14,17 +16,17 @@ RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustent
 | IAM-004 — Diego, terceiro | O término do prazo teve efeito nos dois sistemas independentes? | [Prazo AD → autenticação expirada → bloqueio/revogação Entra → estado final](sanitizadas/IAM-004/README.md) |
 | IAM-005 — Conta de serviço | A rotina executou com a identidade e os acessos previstos? | [Preparação → execução/testes → repetição → desativação](sanitizadas/IAM-005/README.md) |
 | IAM-006 — Felipe, login | O que foi observado, tratado e validado na autenticação? | [Evidência inicial → eventos de senha → login posterior; ServiceNow como complemento](sanitizadas/IAM-006/README.md) |
-| IAM-007 — Felipe, MFA | Método cadastrado e uso efetivo foram demonstrados? | [Registro → método atual → evento específico de uso](sanitizadas/IAM-007/README.md) |
+| IAM-007 — Felipe, MFA | Método cadastrado e uso efetivo foram demonstrados? | [Cadastro → uso → consulta posterior do método](sanitizadas/IAM-007/README.md) |
 | IAM-008 — Felipe, acesso direto | Era necessário adicionar uma permissão individual? | [Associação → encadeamento → ACL → decisão de manter acesso por grupo](sanitizadas/IAM-008/README.md) |
 | IAM-009 — Felipe, contexto SMB | Por que a leitura persistiu após retirar o grupo? | [Remoção → leitura persistente → reconexão negada → restauração e reteste](sanitizadas/IAM-009/README.md) |
-| IAM-010 — Recertificação e SoD | Quem precisa manter acesso e quais achados foram tratados? | [Inventário → matriz/comparação → decisões → tratamentos → SoD → conferência final](sanitizadas/IAM-010/README.md) |
+| IAM-010 — Recertificação e SoD | Quem precisa manter acesso e quais achados foram tratados? | [Inventário/regra → tratamentos e comparação de 28/09 → decisões → encerramentos/TI → SoD → fechamento](sanitizadas/IAM-010/README.md) |
 | IAM-011 — Ana, Joiner | A entrada foi preparada e depois ativada? | [Pré-admissão → teste bloqueado → ativação/grupo → login/MFA; RH posterior identificado](sanitizadas/IAM-011/README.md) |
 
 ## Casos complementares
 
 | Caso | Propósito | Evidências |
 |---|---|---|
-| PROC-BG-001 | Validar acesso administrativo pelas contas de emergência e registrar limites de independência | [Preparação, operação administrativa, MFA e limpeza](sanitizadas/PROC-BG-001/README.md) |
+| PROC-BG-001 | Validar acesso administrativo pelas contas de emergência e registrar limites de independência | [Contas, autenticação e operações por horário, com limpeza ao final](sanitizadas/PROC-BG-001/README.md) |
 | REQ-GUEST-001 | Acompanhar convidado do convite ao encerramento | [Solicitação, aceite, bloqueio/revogação e estado final](sanitizadas/REQ-GUEST-001/README.md) |
 
 ## Fundamentos e exercícios próprios
