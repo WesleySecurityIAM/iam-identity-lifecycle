@@ -16,3 +16,5 @@ O fuso não aparece na captura. A auditoria fornece timestamps UTC e permite a c
 
 - SHA-256 do original: `6bdfdc9c89f0eed3d36911a721f6430b9113ccd44881f3fad9b97d8d2c1511db`.
 - [Auditoria e linha do tempo](03-auditoria-convite-aceite.md).
+
+[Voltar à sequência de evidências](README.md).

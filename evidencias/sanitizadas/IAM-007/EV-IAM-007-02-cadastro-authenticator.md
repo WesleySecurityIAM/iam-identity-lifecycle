@@ -28,12 +28,9 @@
 
 ## Resultado
 
-Os dois eventos registram a inclusão dos dados do aplicativo
-e dos métodos de autenticação na identidade de EMP0006 em
-03/09/2026, às 20:19:20 UTC, com sucesso.
-
-A notificação foi definida como método padrão. O código do
-aplicativo também foi registrado como alternativa.
+Inclusão bem-sucedida dos dados do aplicativo e dos métodos na identidade
+de EMP0006 em 03/09/2026, às 20:19:20 UTC: notificação como padrão e código
+do aplicativo como alternativa.
 
 ## Limitações
 
@@ -44,3 +41,5 @@ aplicativo também foi registrado como alternativa.
 - Os eventos comprovam alterações no cadastro, não o uso em um login.
 - DeviceToken, UPN e identificadores técnicos foram omitidos
   desta versão pública.
+
+[Voltar à sequência de evidências](README.md).

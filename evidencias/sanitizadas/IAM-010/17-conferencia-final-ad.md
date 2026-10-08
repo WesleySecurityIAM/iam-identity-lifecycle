@@ -2,7 +2,7 @@
 
 Nova comparação após as mudanças: **nenhuma associação ausente ou excedente e nenhuma divergência nas regras cadastrais/operacionais abaixo**. Isso confirma o estado esperado no recorte AD; não representa auditoria de todas as permissões nem uma nova coleta do Entra.
 
-**O que cada prova sustenta:** a captura 18 mostra o término da coleta, as contagens e o estado da tarefa. Ela informa que a comparação seria feita depois. Os resultados de conformidade abaixo pertencem à comparação documental posterior dos arquivos; a captura não mostra uma saída de “zero exceções”.
+A captura 18 mostra coleta, contagens e estado da tarefa. Os resultados abaixo são da comparação documental posterior dos arquivos.
 
 ## Fontes e método
 
@@ -41,10 +41,10 @@ Nova comparação após as mudanças: **nenhuma associação ausente ou excedent
 
 **Oito associações diretas conformes; zero ausentes e zero excedentes.** As três relações de serviço anteriormente removidas continuam ausentes, e os caminhos humanos de Financeiro, Suporte e TI permanecem. Não somar esses números às nove associações departamentais históricas (AD + Entra) de 28/09: são recortes e momentos diferentes.
 
-## Limites e encaminhamento
+## Limites
 
-Membros diretos de grupos GG/DL, sem grupo primário ou grupos fora desses prefixos. Não reavalia todas as ACLs, privilégios, GPOs, sessões ou dependências. As consultas são sequenciais. Os testes SMB de TI constam das [provas específicas](ti-isabela/README.md); [SoD](14-sod-resultado.md) usa dados fictícios separados.
+Membros diretos de grupos GG/DL, sem grupo primário ou grupos fora desses prefixos. Não reavalia todas as ACLs, privilégios, GPOs, sessões ou dependências. As consultas são sequenciais. Testes SMB de TI: [provas específicas](ti-isabela/README.md).
 
-Entra permanece sustentado pelas coletas anteriores, inclusive encerramento de Diego no IAM-004; não houve nova exportação cloud neste lote. A conferência final AD está concluída. **IAM-010 fechado em 29/09/2026 no escopo de acessos revisado.** Por decisão de Wesley, a alteração de Employee type foi retirada do escopo e não constitui tarefa pendente. O atributo não foi alterado; essa decisão não modifica as provas de expiração, bloqueio e revogação do IAM-004.
+Sem nova exportação Entra neste lote. **IAM-010 fechado em 29/09/2026 no escopo revisado.**
 
 [Voltar ao índice por assunto](README.md).

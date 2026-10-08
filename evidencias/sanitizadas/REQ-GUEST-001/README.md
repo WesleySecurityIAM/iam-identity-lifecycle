@@ -10,9 +10,7 @@
 | 2 — Aceite, 22/09 às 14:17 | [03 — resgate do convite](03-auditoria-convite-aceite.md#aceite) + [02 — estado aceito](02-estado-aceito.md). | O mesmo convidado passou a Accepted. Não demonstra acesso a aplicação. |
 | 3 — Encerramento, 25/09 | [06 — ações auditadas e conferência final](06-encerramento.md). | Bloqueio e revogação (05), mais Disabled/contadores zero (04). |
 
-Auditoria e captura não duplicam a conclusão: a primeira registra a ação e seu horário; a segunda mostra o estado consultado. Não há uma quarta etapa só para repetir a auditoria de convite/aceite.
-
-A [requisição](../../../00-operacao-itsm/REQ-GUEST-001.md) registra finalidade, responsável, autorização de laboratório, prazo, ações e conclusão. Este índice contém somente provas do Guest. A conta ADMIN-LAB-001 aparece como executor/sponsor necessário à explicação dos eventos; não é evidência de outro teste administrativo.
+Auditoria registra ação, executor e horário; captura mostra o estado consultado. A [requisição](../../../00-operacao-itsm/REQ-GUEST-001.md) contém finalidade, responsável e prazo.
 
 ## Limites do fechamento
 

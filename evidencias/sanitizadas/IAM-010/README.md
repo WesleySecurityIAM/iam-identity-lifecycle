@@ -2,7 +2,7 @@
 
 **Fechado em 29/09/2026.** A revisão começou com os inventários de 28/09. Definiu o esperado por sistema, tratou achados e registrou decisões por associação. A conferência final AD encontrou oito associações conformes, zero ausentes e zero excedentes no recorte avaliado. SoD foi um exercício local separado.
 
-**Como ler:** siga as etapas datadas abaixo. Cada tratamento abre uma página com suas próprias provas. Os números dos arquivos são identificadores preservados; a sequência dos fatos é a das etapas. Comparações coletivas ficam separadas dos testes individuais.
+Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números dos arquivos são identificadores.
 
 <a id="inventario-e-regra"></a>
 
@@ -32,8 +32,6 @@
 | [07 — População e grupos versus matriz](07-comparacao-populacao-grupos.md) | Usa a coleta posterior aos tratamentos: nove associações departamentais conformes em AD + Entra; seis ausências de contas previstas. TI ainda não fazia parte desse recorte. |
 | [08 — Decisões iniciais por associação](08-recertificacao-simulada.md#decisoes-2809) | Quinze associações: doze manter e três investigar, estas da rotina encerrada. Não é uma lista de quinze pessoas. |
 
-RH e matriz definem o **esperado**; inventários mostram o **observado**; a recertificação registra se o acesso **continua necessário**. Esses relatórios abrangem a população porque essa é a unidade da revisão; não substituem os testes individuais.
-
 <a id="encerramentos-2909"></a>
 
 ## 4. Concluir os encaminhamentos de encerramento — 29/09, manhã
@@ -42,8 +40,6 @@ RH e matriz definem o **esperado**; inventários mostram o **observado**; a rece
 |---|---|---|
 | Diego — 11:08–11:58 | [IAM-004 — efeito da expiração e encerramento](../IAM-004/README.md#validacao-ad) | Encerramento pelo prazo do terceiro: autenticação AD recusada, bloqueio/revogação Entra e contadores finais. Não foi encerrado por faltar TI na matriz. |
 | Serviço — 12:08–12:14; formalização às 12:23:24 | [10 — Dependências, retirada e registro da decisão](10-servico-remocao-concessoes.md) | 11–13: vínculos presentes → dependências locais → três vínculos ausentes. Conta desabilitada e GG_FIN_READ preservado. A formalização posterior está identificada. |
-
-O IAM-005 fornece a finalidade da rotina encerrada; suas execuções de 15/09 não são testes novos desta retirada. Não houve reteste de acesso humano nessa operação.
 
 <a id="cobertura-ti"></a>
 
@@ -74,6 +70,6 @@ São cinco cenários alternativos em dados fictícios; não representam direitos
 
 A coleta vem antes da comparação, mesmo com os identificadores 18 e 17. Não houve nova coleta Entra neste fechamento. O resultado é limitado aos campos e associações exportados; não revalida todas as ACLs, sessões ou privilégios.
 
-O preparo híbrido é um encaminhamento posterior na [análise de estrutura](../../../00-operacao-itsm/REV-2026-09-29-estrutura-hibrida.md), não evidência de sincronização executada. CSVs brutos e manifestos permanecem privados.
+CSVs brutos e manifestos permanecem privados. Sem sincronização híbrida executada.
 
 [Voltar ao ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).

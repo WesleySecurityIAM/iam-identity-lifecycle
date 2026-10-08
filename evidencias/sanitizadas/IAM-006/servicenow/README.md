@@ -1,8 +1,8 @@
 # IAM-006 no ServiceNow — Incident Management
 
-**Resultado:** INC0010001 em Resolved, com classificação, atribuição, investigação, tratamento e validação registrados. Transcrição didática realizada em 18/09/2026 em uma PDI; o incidente original ocorreu em 03–04/09. Nenhuma nova alteração no Entra foi executada nesta atividade.
+**Resultado:** INC0010001 em Resolved. Documentação retrospectiva realizada em **18/09/2026** em uma PDI, sobre o incidente de **03–04/09**; nenhuma nova alteração no Entra.
 
-**Como acompanhar:** as capturas 01–04 abaixo mostram somente a representação do IAM-006 na ferramenta de atendimento. Para entender a causa técnica e os logins, use a [sequência de provas do Entra](../README.md). A ordem das capturas organiza a leitura do registro; não comprova o horário original de criação de cada nota.
+As capturas seguem as etapas registradas, sem comprovar o horário original de criação de cada nota. A causa técnica e os logins constam nas [provas do Entra](../README.md).
 
 | Evidência | O que demonstra |
 |---|---|
@@ -13,13 +13,11 @@
 
 ## SLAs, horários e limites
 
-- Os SLAs pertencem à PDI e à transcrição de 18/09; não medem o SLA didático histórico do IAM-006. A definição de resolução não foi inspecionada: a causa de Paused não está comprovada. Estado Resolved do incidente não equivale a SLA de resolução Completed.
+- Os SLAs da PDI não medem o atendimento de 03–04/09. A definição de resolução não foi inspecionada: a causa de Paused não está comprovada. Incidente Resolved não equivale a SLA de resolução Completed.
 - O operador informou configuração America/Los_Angeles. A captura não mostra essa configuração. Os horários do histórico são mantidos como exibidos; os eventos Entra dentro das notas estão explicitamente em UTC.
-- O operador informou ter preenchido manualmente Resolved com horário de Brasília; a tela mostra 18/09 às 15:52:00, enquanto o histórico da transição mostra 11:51:51. Digitar outro fuso nesse campo não é conversão de exibição. Esse valor manual não é usado para calcular duração nem certificar SLA. Para comparação de fusos, preservar o timestamp automático e registrar a conversão com offset em nota.
+- O operador informou preenchimento manual de Resolved com horário de Brasília: a tela mostra 18/09 às 15:52:00, enquanto a transição mostra 11:51:51. O valor manual não representa conversão de exibição nem comprova duração ou SLA.
 - Categoria Software / Operating System foi a classificação escolhida no exercício; não é uma causa de falha do sistema operacional nem uma taxonomia IAM validada. Service e Configuration item estão vazios.
-- Quatro capturas preservadas sem edição; origens e hashes no manifesto privado. Sem exportação do registro ou das definições de SLA: demonstram operação básica de Incident Management, não configuração ou validação de SLA.
-
-Os logs Entra são a prova técnica do incidente; estas telas comprovam sua representação operacional no ServiceNow.
+- Quatro capturas preservadas sem edição; origens e hashes no manifesto privado. Sem exportação do registro ou das definições de SLA.
 
 [IAM-006 e evidências técnicas](../../../../00-operacao-itsm/05-fila-tickets.md#iam-006).
 

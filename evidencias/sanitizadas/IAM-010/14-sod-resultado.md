@@ -11,6 +11,6 @@ Cinco cenários independentes: A somente, B somente, A+B, pessoas distintas e es
 
 Cada execução recria os dados e a etapa Depois aplica o tratamento em memória. Isso demonstra detecção e tratamento da regra conhecida, não execução de revogação numa aplicação. A decisão é simulada e exibida no exercício; não é uma aprovação corporativa externa.
 
-Limites: SoD estática; sem ERP, transações financeiras, API de concessão ou prevenção implantada. GG_FIN_READ não concede esses direitos. Zero conflitos não comprova necessidade de cada acesso, nem encerra a reconciliação do estado atual dos diretórios. A conferência final foi concluída depois, nas provas 17–18; IAM-010 fechado em 29/09 no escopo documentado.
+Limites: SoD estática; sem ERP, transações financeiras, API de concessão ou prevenção implantada. GG_FIN_READ não concede esses direitos. Zero conflitos não comprova necessidade de cada acesso.
 
 [Voltar ao índice por assunto](README.md).

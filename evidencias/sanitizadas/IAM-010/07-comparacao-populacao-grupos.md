@@ -1,6 +1,6 @@
 # População e grupos versus matriz — 28/09/2026
 
-> Revisão de 29/09: estes resultados são históricos de três grupos. TI não tinha regra de recurso neste recorte; sua ausência é uma lacuna de cobertura, tratada na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Não representam conformidade integral dos acessos de TI.
+Recorte de 28/09: Financeiro, Suporte e RH. TI foi incluída na [matriz de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) e não está coberta por estes resultados.
 
 ## Resultado
 
@@ -14,8 +14,6 @@ Comparação executada após o tratamento de Bruno e a movimentação de OU de G
 | Associações departamentais ausentes | 0 | 0 |
 | Associações departamentais excedentes | 0 | 0 |
 | Contas que exigem classificação separada | 5 | 4 |
-
-Nenhuma ausência ou excesso nos grupos departamentais avaliados. Isso não equivale a ausência de risco em todos os acessos: as associações técnicas/delegação são revisadas separadamente e a conta de serviço conserva pendência de decisão sobre retenção de acessos.
 
 ## Associações conferidas
 
@@ -42,22 +40,8 @@ Carla e Diego não aparecem nos três grupos departamentais Entra; Diego não ap
 
 O script confere colunas, chaves de objeto e matrículas duplicadas, referências de membros e tipos suportados. Arquivo ausente ou vazio interrompe a execução para revisão, em vez de virar resultado sem exceções. Grupo vazio legítimo exigiria tratamento explícito da fonte; este comparador é delimitado aos arquivos e regras desta rodada. A coleta AD só cobre GG_* e DL_*, não todos os grupos do domínio nem grupo primário. Não trata aninhamento dentro dos GG departamentais automaticamente.
 
-Execução com os diretórios privados de coleta:
-
-```powershell
-.\05-automacao\Compare-DepartmentMembership.ps1 `
-    -InitialDirectory $pastaColetaInicial `
-    -FinalADDirectory $pastaColetaFinalAD |
-    Format-Table Sistema,Regra,Chave,Resultado -AutoSize
-```
-
 Validação do comparador em cópia isolada dos dados: ausência de Bruno e inclusão indevida de Diego em Financeiro produziram um AUSENTE e um EXCEDENTE. Matrícula duplicada interrompeu a comparação. Essas alterações existiram apenas em arquivos de validação; não foram feitas nos diretórios nem integram o resultado real do laboratório.
 
-## Encaminhamento
-
-As nove contas especiais sem matrícula não foram chamadas de órfãs automaticamente. A [recertificação simulada](08-recertificacao-simulada.md) classifica finalidade e decisão por associação, incluindo os demais grupos técnicos do AD. Encerramento de Diego no IAM-004, retenção de acessos da conta de serviço e microcaso SoD permanecem assuntos explicitamente pendentes.
-
-
-**Estado final da revisão:** as pendências citadas acima pertencem à etapa histórica desta coleta. IAM-010 fechado em 29/09 após tratamento do serviço, encerramento de Diego, SoD e [conferência final AD](17-conferencia-final-ad.md).
+As nove contas especiais sem matrícula e as associações técnicas/delegação estão na [recertificação simulada](08-recertificacao-simulada.md). Fechamento de 29/09: [conferência final AD](17-conferencia-final-ad.md).
 
 [Continuar para a decisão por associação](08-recertificacao-simulada.md) · [Índice por assunto](README.md).

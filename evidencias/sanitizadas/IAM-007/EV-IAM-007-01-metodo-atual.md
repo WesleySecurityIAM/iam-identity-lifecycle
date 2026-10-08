@@ -16,3 +16,5 @@ Notificação do aplicativo exibida como método padrão.
 
 A captura comprova o estado observado na consulta,
 mas não a data original do cadastro nem o uso em um login.
+
+[Voltar à sequência de evidências](README.md).

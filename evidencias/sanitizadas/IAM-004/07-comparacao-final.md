@@ -8,3 +8,5 @@ Em 29/09/2026 foi feita nova comparação depois das mudanças, usando o RH vige
 | Preservar identidade existente | Mesmo Object ID | af6fd404-ebf1-491a-ade0-809bf0e7f0bf | CONFORME |
 
 O resultado confirma o bloqueio cadastral da mesma conta. Não é comparação de grupos, papéis ou aplicações; o CSV All users não contém esses vínculos. Não comprova encerramento imediato de todos os tokens/sessões de recursos. Coletas integrais e hashes preservados em área privada.
+
+[Voltar à sequência de evidências](README.md).

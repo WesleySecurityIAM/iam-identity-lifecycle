@@ -41,7 +41,7 @@ Após a confirmação/aprovação simulada das 11:24, a sequência foi a seguint
 | 11:39:49–11:40:18 | Cadastrar Authenticator e concluir informações exigidas. | [05 — eventos do cadastro](EV-IAM-011-05-ativacao-grupo-autenticacao.md#senha-e-cadastro). |
 | 11:40:18 | Validar entrada no Azure Portal com errorCode=0 e MFA concluído. | [06 — resultado positivo](EV-IAM-011-06-entrada-positiva.md#entrada-positiva). |
 
-A auditoria demonstra as mudanças; o sign-in demonstra a autenticação. O método específico está null no evento positivo: não se afirma push ou dispositivo utilizado.
+A auditoria demonstra as mudanças; o sign-in demonstra a autenticação.
 
 ## 4. Complemento documental do RH — 18/09
 

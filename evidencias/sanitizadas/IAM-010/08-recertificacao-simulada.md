@@ -1,10 +1,10 @@
 # Recertificação simulada — 28/09/2026
 
-**Como ler:** a tabela inicial preserva as decisões de 28/09. As seções posteriores registram TI e a resolução dos encaminhamentos em 29/09. IAM-010 está fechado no escopo documentado; “investigar” na tabela histórica não significa pendência atual. Esta página contém decisões; as provas de execução ficam nos documentos de cada tratamento.
+Decisões de 28/09 e conclusão em 29/09. As três decisões iniciais de investigar foram resolvidas pela retirada dos vínculos de serviço.
 
 ## Escopo e decisão
 
-Decisões didáticas registradas a pedido de Wesley em 28/09, após comparação dos CSVs com a matriz. Os responsáveis de negócio abaixo são os personagens do cenário; não houve comunicação ou aprovação real dessas pessoas. Wesley executa e documenta a simulação. Fontes e limites: [comparação de população/grupos](07-comparacao-populacao-grupos.md).
+Decisões simuladas por Wesley, após [comparação dos CSVs com a matriz](07-comparacao-populacao-grupos.md). Responsáveis de negócio fictícios, sem comunicação ou aprovação externa real.
 
 Cada linha corresponde a uma associação observada, não a uma pessoa adicional. Os mesmos nomes de grupo no AD e no Entra identificam objetos independentes. Para o Entra, manter a associação não comprova permissão ou uso de aplicativo.
 
@@ -30,7 +30,7 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 | AD | GG_SVC_RELATORIO_FIN | DL_FIN_RELATORIOS_READ | Investigar retenção | Carlos Lima | Caminho de leitura da rotina desativada; justificar retenção ou remover após decisão. |
 | AD | GG_SVC_RELATORIO_FIN | DL_FIN_SAIDA_WRITE | Investigar retenção | Carlos Lima | Caminho de escrita da rotina desativada; preservar como pendência, não aprovar automaticamente por estar desabilitada. |
 
-**Resultado inicial em 28/09: 15 associações revisadas, 12 decisões de manter e 3 de investigar; nenhuma remoção executada naquela coleta.** As três pendências pertencem ao mesmo caso de retenção de acessos da conta de serviço, não a três incidentes independentes. Não há concessão nova nesta recertificação.
+**28/09: 15 associações revisadas, 12 manter e 3 investigar**, estas da mesma conta de serviço. Sem nova concessão ou remoção nesta etapa.
 
 ## Contas especiais e ausências
 
@@ -50,25 +50,20 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 
 ## Atualização de cobertura em 29/09
 
-A ausência de TI na matriz foi tratada por nova regra documentada no [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) e na [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md). Diego encerra pelo prazo; Isabela foi inicialmente planejada e depois implementada no AD em 29/09: [cadastro, grupos e testes](ti-isabela/README.md). Entra permanece planejado. Decisão simulada complementar por solicitação de Wesley: manter Isabela em GG_TI_READ e GG_TI_READ na DL_TI_PROCEDIMENTOS_READ, para consulta de procedimentos; responsável fictícia Fernanda Souza. São duas associações novas, separadas das quinze históricas e sujeitas à nova coleta final. As quinze decisões acima permanecem históricas dos vínculos coletados; não validam TI, todos os papéis nem prontidão híbrida. RH corrente atualizado em 29/09, sem modificar inventários anteriores.
+A [matriz de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) incluiu TI. Isabela foi implementada no AD: [cadastro, grupos e testes](ti-isabela/README.md). Decisão simulada por Wesley, com Fernanda Souza como responsável fictícia: manter Isabela em GG_TI_READ e GG_TI_READ na DL_TI_PROCEDIMENTOS_READ para consulta de procedimentos. São duas associações adicionais às quinze de 28/09. Entra permanece planejado. RH atualizado em 29/09; inventários anteriores preservados. Registro: [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).
 
-## Encaminhamentos e conclusão em 29/09
+## Conclusão em 29/09
 
 <a id="servico-2909"></a>
 
-### Conta de serviço — encaminhamento original e resultado
+**Serviço:** três vínculos retirados; conta desabilitada e GG_FIN_READ preservado na DL de leitura. Capturas 12:08–12:14; decisão simulada formalizada às **12:23:24 -0300**, posteriormente. [Provas 11–13](10-servico-remocao-concessoes.md). Consolidado das quinze associações: **12 manter e 3 remover**.
 
-Recomendação de tratamento: retirar svc_relatorio_fin de GG_SVC_RELATORIO_FIN e, confirmada a ausência de outra rotina ou membro dependente, retirar esse GG das DL_FIN_RELATORIOS_READ e DL_FIN_SAIDA_WRITE. A finalidade original foi demonstrada e encerrada no IAM-005; não há necessidade futura de reativação documentada neste registro. Preservar a conta desabilitada e os grupos para rastreabilidade, sem reabilitar só para testar.
+| Demais verificações | Prova e resultado |
+|---|---|
+| Diego — encerramento pelo prazo | [IAM-004](../IAM-004/README.md): encerramento concluído; contadores de concessões zero. |
+| SoD em dados separados | [SoD-001](14-sod-resultado.md): um conflito antes e zero depois. |
+| Conferência final AD | [17](17-conferencia-final-ad.md), após a coleta das 17:24:44–17:24:48: oito associações conformes; zero ausentes/excedentes; cadastro e retirada dos vínculos de serviço conferidos. |
 
-Esse encaminhamento integra a entrega do IAM-010. Antes da execução, conferir novamente conta, tarefa, membros e dependências; registrar a decisão simulada final. Depois, comprovar as três associações ausentes e a preservação dos caminhos de Felipe, Gabriela e Bruno. Não remover GG_FIN_READ da DL nem alterar ACL compartilhada. A evidência será de revogação de concessões; uma tentativa com conta desabilitada não isola o efeito dessa retirada.
-
-**Tratamento concluído em 29/09:** três vínculos retirados conforme antes/depois; conta desabilitada e GG_FIN_READ preservado na DL de leitura. Decisão simulada formalizada em 29/09/2026 12:23:24 -0300, após as capturas. [Decisão, provas 11–13 e limites](10-servico-remocao-concessoes.md). Consolidado: doze manter e três remover; a tabela inicial registra a decisão histórica de investigar. O IAM-005 permanece histórico, com o estado entregue naquela ocasião.
-
-1. **Concluído:** tratar os três vínculos residuais da conta de serviço; decisão e comparação das consultas registradas na evidência 10. A coleta posterior dos vínculos foi comparada na conferência final, prova 17.
-2. **IAM-004 concluído em 29/09:** comparação final do estado da conta conforme. [Provas](../IAM-004/README.md). Contadores de concessões zero já comprovados.
-3. **Concluído em 29/09:** [microcaso SoD-001](14-sod-resultado.md), em dados separados, com um conflito antes e zero depois.
-4. **Concluído:** [conferência final AD às 17:24:48 de 29/09](17-conferencia-final-ad.md): oito associações conformes, zero ausentes/excedentes, identidade/cadastro e retirada dos vínculos de serviço conferidos. Alteração de Employee type retirada do escopo a pedido do operador; não há tarefa cadastral pendente nem mudança nesse atributo.
-
-Esta revisão não revalida todas as ACLs, papéis administrativos, aplicações, licenças ou sessões. As decisões se limitam às associações exportadas e às finalidades documentadas. IAM-010 fechado em 29/09/2026 no escopo documentado: tratamentos, decisões, SoD e conferência final concluídos.
+IAM-010 fechado em 29/09 no escopo das associações exportadas e finalidades documentadas; sem revalidação integral de ACLs, papéis, aplicações, licenças ou sessões.
 
 [Voltar ao índice por assunto](README.md).

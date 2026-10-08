@@ -29,3 +29,5 @@ authenticationRequirement=multiFactorAuthentication; authenticationDetails.succe
 O evento final comprova MFA concluído, mas não especifica notificação push nem o aparelho que aprovou. O teste positivo ocorreu no Azure Portal; não comprova entrada positiva no My Profile, autorização para administrar recursos Azure ou acesso ao relatório financeiro do AD.
 
 UPNs, IPs e identificadores de correlação/sessão foram omitidos. O manifesto privado preserva as origens e SHA-256.
+
+[Voltar à sequência de evidências](README.md).

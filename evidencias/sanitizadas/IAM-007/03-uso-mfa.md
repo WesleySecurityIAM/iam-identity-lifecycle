@@ -1,6 +1,6 @@
 # IAM-007 — Uso de MFA em uma entrada de Felipe
 
-Recorte documental de 07/10/2026 do evento já preservado no IAM-006. Não houve novo login ou nova coleta. Esta página contém somente o evento necessário à verificação do uso de MFA.
+Recorte documental de 07/10/2026 do evento preservado no IAM-006, sem novo login ou coleta.
 
 | Campo | Resultado observado |
 |---|---|
@@ -16,6 +16,6 @@ Recorte documental de 07/10/2026 do evento já preservado no IAM-006. Não houve
 <details>
 <summary>Origem compartilhada — mesmo evento do atendimento de senha</summary>
 
-[Extrato original do IAM-006, evento de 20:34:08Z](../IAM-006/EV-IAM-006-04-login-posterior.md#evento-mfa-compartilhado). O documento de origem contém outras duas entradas pertinentes ao restabelecimento do login. Somente o evento transcrito acima sustenta esta prova de uso de MFA; não é outra execução.
+[Extrato original do IAM-006, evento de 20:34:08Z](../IAM-006/EV-IAM-006-04-login-posterior.md#evento-mfa-compartilhado), mantido com as demais entradas do atendimento de senha.
 
 </details>

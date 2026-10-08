@@ -11,17 +11,18 @@ Em 18/09/2026, a pedido do operador Wesley, foi criada uma nova versão da fonte
 | Admissão | 15/09/2026 | Mantida. |
 | Status | PRE_ADMISSAO | ATIVO. |
 
-Esse recorte explica a mudança de Ana sem exigir a leitura das outras oito pessoas. Os arquivos completos abaixo são mantidos como fontes da comparação; as demais linhas não representam novas ações ou validações deste atendimento.
+Esta atualização manual simulada alinha o cadastro ao resultado da ativação já demonstrada pelas evidências 05 e 06. Não é exportação de um sistema de RH, nem prova de atualização do RH em 15/09. Os demais oito registros foram copiados sem nova validação do estado atual.
 
-## Fontes completas para conferência
+Validação: comparação por employee_id; nove registros nas duas versões; somente EMP0001/status difere. O arquivo original de 29/08 foi preservado e o fechamento histórico do ticket permanece em 15/09.
+
+<details>
+<summary>Fontes integrais — consulta opcional da origem</summary>
 
 | Versão | Papel |
 |---|---|
 | [RH de 29/08](EV-IAM-011-07-rh-2026-08-29.csv) | Cópia integral preservada do estado histórico. |
 | [RH atualizado em 18/09](EV-IAM-011-08-rh-2026-09-18.csv) | Nove registros fictícios; somente o status de Ana foi alterado. |
 
-Esta atualização manual simulada alinha o cadastro ao resultado da ativação já demonstrada pelas evidências 05 e 06. Não é exportação de um sistema de RH, nem prova de atualização do RH em 15/09. Os demais oito registros foram copiados sem nova validação do estado atual.
-
-Validação: comparação por employee_id; nove registros nas duas versões; somente EMP0001/status difere. O arquivo original de 29/08 foi preservado e o fechamento histórico do ticket permanece em 15/09.
+</details>
 
 [Voltar à sequência de evidências de Ana](README.md) · [Ticket IAM-011](../../../00-operacao-itsm/05-fila-tickets.md#iam-011).

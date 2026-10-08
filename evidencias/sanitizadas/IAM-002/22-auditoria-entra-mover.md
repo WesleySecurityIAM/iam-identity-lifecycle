@@ -30,3 +30,5 @@ Recorte de três eventos de Gabriela, Object ID `2d5bee1a-e26c-47ef-bea2-a55a2fd
 - Group.DisplayName: `None` → `"GG_FIN_READ"`.
 
 A remoção de Suporte precede a inclusão em Financeiro. Esses eventos comprovam operações de diretório; não comprovam acesso a uma aplicação nem revogação de todos os tokens.
+
+[Voltar à sequência de evidências](README.md).

@@ -1,6 +1,6 @@
 # Entra ID — conferências de 22/09/2026
 
-Inventário e auditoria complementares à preparação dos casos JML. Contas cloud-only, independentes do AD. Nenhuma nova operação foi executada para produzir estes extratos.
+Fonte coletiva de inventário e auditoria usada na preparação dos casos JML. Contas cloud-only, independentes do AD. Para acompanhar uma identidade, use o [índice de casos](../../README.md); esta página preserva a coleta conjunta.
 
 ## Inventário cadastral
 
@@ -24,7 +24,6 @@ Carla permanece habilitada apesar do desligamento na fonte de RH: a divergência
 - [01 — GG_FIN_READ](01-membros-financeiro.png): Ana e Felipe na captura de membros.
 - [02 — GG_RH_READ](02-membros-rh.png): Elisa e Henrique na captura de membros.
 - A auditoria abaixo comprova inclusões de Bruno/Gabriela no GG_SUP_TICKET e owners nos três grupos. Os eventos demonstram alterações naquele momento; não substituem uma exportação completa do estado atual dos grupos.
-- A captura administrativa original mostra atribuição direta de Global Administrator. Original preservado em área privada por conter o nome pessoal do operador. Papel administrativo e owner do grupo são relações distintas. Seu uso aqui é uma condição do laboratório, não requisito para cada operação.
 
 ## Complemento — preparação do Leaver de Carla
 
@@ -62,4 +61,4 @@ CSV completo, JSON completo e captura administrativa preservados sem alteração
 - SHA-256 de `exportUsers_2026-9-22.csv`: `47fb8a68e4ccd4717d5d81025ccccd607c7c52fdab1ad9998571eaacab35a1a0`.
 - SHA-256 de `AuditLogs_2026-09-22.json`: `b4134e720a9f793955caa2e1c76fe48cae19c69d341499e2a85a1a89ecff7a7b`.
 
-[Preparação e provas do IAM-002](../IAM-002/README.md).
+[Voltar às evidências por caso](../../README.md).

@@ -22,3 +22,5 @@ Origens e SHA-256:
 - `InteractiveSignIns_AuthDetails_2026-09-13_2026-09-14.csv`: `970d9865958eb67d29699786cec4e0fe078a71f2592ee0e9f47ac87ccc309921`.
 
 Identificadores, UPN e dados de rede foram omitidos. O exportador repetiu o cabeçalho Incoming token type no CSV principal; a leitura preservou o original e utilizou os campos acima, que não têm nomes duplicados.
+
+[Voltar à sequência de evidências](README.md).

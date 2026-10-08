@@ -14,13 +14,12 @@ Fonte esperada: cópia preservada em 23/09 do RH vigente de 18/09, com Carla DES
 
 A habilitação é comparada para as duas pessoas. O departamento é comparado apenas para ATIVO no RH. Cada linha representa uma regra, não uma pessoa distinta. Os CSVs originais foram copiados sem alteração e conferidos contra a captura; o comparador não foi reexecutado nesta organização documental.
 
-## Limites e tratamento pendente
+## Limites do resultado histórico
 
 - A [conferência visual de 23/09](../inventario-entra-2026-09-23/README.md) confirma Carla habilitada e no GG_FIN_READ. A associação incompatível foi constatada separadamente e **não integra a contagem de uma exceção deste CSV**.
 - O resultado CONFORME de Gabriela vale para habilitação e departamento nas fontes utilizadas. Não representa Mover executado nem auditoria completa de acessos.
 - Este relatório não compara grupos, AD, papéis, aplicações ou sessões. As consultas visuais e os testes SMB possuem evidências próprias.
 - O desligamento fictício de Carla em 28/08 e a criação real da conta no laboratório em 21/09 reproduzem uma divergência. Não demonstram acesso contínuo desde agosto nem SLA histórico.
-- Atualização posterior: Leaver concluído em 23/09 e Mover em 28/09, ambos com validações próprias. Este relatório preserva a divergência inicial e não deve ser tratado como inventário atual.
 
 ## Integridade
 

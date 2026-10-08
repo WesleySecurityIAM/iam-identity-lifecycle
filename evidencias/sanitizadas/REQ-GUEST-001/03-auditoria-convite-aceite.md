@@ -34,3 +34,5 @@ IDs, endereços, IPs, tokens/identificadores de sessão e dados de convite foram
 - SHA-256 do JSON original: `dd82da41fa06825bd540816cf0b5470fd5292d979b1c3079ef7170b6aaa7e5fe`.
 
 [Solicitação](../../../00-operacao-itsm/REQ-GUEST-001.md).
+
+[Voltar à sequência de evidências](README.md).

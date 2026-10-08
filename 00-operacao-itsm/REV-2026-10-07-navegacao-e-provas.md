@@ -6,7 +6,7 @@
 
 **Fundamento e antes → ações e testes por data → comparação/validação → fechamento.** Números de arquivos são identificadores preservados; não substituem horários dos acontecimentos. Uma consulta posterior não se torna evidência anterior pela posição no texto.
 
-O roteiro principal contém as provas necessárias ao assunto. Captura e log permanecem juntos quando demonstram coisas diferentes, como estado observado e ação auditada. Repetições sem nova informação ficam como apoio opcional. Fontes coletivas têm recortes identificados; a origem permanece consultável.
+O roteiro principal contém as provas necessárias ao assunto. Captura e log permanecem juntos quando demonstram coisas diferentes, como estado observado e ação auditada. Repetições sem nova informação ficam como apoio opcional. Fontes coletivas têm recortes identificados; a origem permanece consultável. Nas páginas de prova, foram retirados tutoriais, próximos passos e repetições da história do ticket; permanecem identidade, data, método, resultado e limites necessários para avaliar a conclusão.
 
 ## Conferência por caso
 
@@ -28,9 +28,10 @@ O roteiro principal contém as provas necessárias ao assunto. Captura e log per
 
 ## Matriz e verificações
 
-- A [matriz geral fictícia](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) explicita departamento/cargo, recurso, concessão por sistema e responsável. A relação com cada ticket identifica a fonte histórica; esta edição não criou concessões.
+- A [matriz geral fictícia](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) concentra perfis/recursos, população por sistema e restrições. Histórico detalhado, instruções de reconciliação e planejamento híbrido saíram dessa página. A referência opcional aos tickets distingue regras históricas da consolidação; esta edição não criou concessões.
 - Capturas da área sanitizada inspecionadas visualmente, além dos índices e relatórios vinculados. Nenhuma captura, CSV, JSON ou script foi alterado por esta revisão.
 - Caminhos e âncoras dos links Markdown locais conferidos; nenhuma referência local quebrada. A verificação de links não substituiu a leitura do conteúdo das provas.
+- Páginas individuais sem retorno receberam link para o índice do próprio caso, permitindo continuar a sequência sem procurar novamente o ticket.
 - Mantidos os limites: associação não comprova acesso ao recurso; expiração não é desabilitação; coleta não é comparação; MFA cadastrado não comprova uso; decisão simulada não é aprovação corporativa.
 - Não foi criada uma prova financeira negativa anterior ao Mover nem uma aprovação anterior à execução sem fonte. Novos recortes são explicações das fontes preservadas, não novos eventos.
 

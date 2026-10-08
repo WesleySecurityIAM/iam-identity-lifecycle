@@ -5,3 +5,5 @@ Na preparação da admissão de Ana Ribeiro (EMP0001), em 14/09/2026, a consulta
 [Ver captura original](EV-IAM-011-03-grupo-sem-ana.png).
 
 A evidência registra a associação ao grupo naquele momento; não comprova, isoladamente, ausência de outros acessos da conta nem bloqueio de entrada. O inventário e o teste negativo são apresentados nas evidências 01 e 04.
+
+[Voltar à sequência de evidências](README.md).

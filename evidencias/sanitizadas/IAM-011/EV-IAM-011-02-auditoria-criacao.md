@@ -11,3 +11,5 @@ Horários aproximados em Brasília: 15:24:45 para Update PasswordProfile e 15:24
 
 Origem: `AuditLogs_2026-09-14.csv`. SHA-256: `bdaf67abdb9deec11483fd77d2faa8b29700f08c1d2c14682cccafa765422b1b`.
 Identificadores, conta administrativa e IP foram omitidos desta transcrição sanitizada.
+
+[Voltar à sequência de evidências](README.md).

@@ -56,8 +56,6 @@ conforme o registro do atendimento.
 - Aprovador previsto: Gestor Financeiro.
 - Aprovação simulada para fins didáticos.
 
-**Consulta da regra:** a prova 02 preserva a matriz original do cargo. O [catálogo geral de Financeiro](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) consolida depois o recurso e os grupos; não altera o fundamento histórico deste provisionamento.
-
 ## Ações realizadas
 
 - **Concluído:** Conta cloud-only criada e associada ao GG_FIN_READ.
@@ -222,8 +220,6 @@ RH fictício: DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a div
 - Decisão simulada solicitada por Wesley: desabilitar conta, retirar GG_FIN_READ e revogar sessões. Registro documental às 17:10; consulta do relógio às 17:10:52 e bloqueio auditado às 17:10:26. Não se comprova aprovação anterior à ação.
 - Wesley atua como responsável técnico/executor. Tela de owner do grupo não equivale a aprovação de negócio nem prova papel administrativo do tenant.
 
-**Regra aplicável:** RH desligado impede novas concessões. A [população da matriz consolidada](MAT-2026-09-29-acessos-por-sistema.md#populacao) mantém Carla bloqueada/sem concessões departamentais; é referência posterior, não aprovação retroativa.
-
 ## Ações realizadas
 
 - **Concluído:** preservar RH, exportação e provas do estado anterior.
@@ -284,8 +280,6 @@ Encerrar o acesso do terceiro no início da manhã de 29/09 por **término da vi
 
 Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente registra desligamento em 29/09/2026, mantendo admissão em 01/06/2026. O horário exato de vigência é definido neste ticket. Em 28/09, o status do RH permanece ATIVO; após a vigência, registrar DESLIGADO e conferir os diretórios. Não é uma aprovação corporativa real.
 
-**Regra aplicável:** prazo individual de terceiro e [controles transversais](MAT-2026-09-29-acessos-por-sistema.md#controles-transversais). Estar em TI não concede acesso após o término; o encerramento é pelo prazo, não por falta de recurso na matriz.
-
 ## Ações realizadas
 
 1. **Concluído:** definir prazo e atualizar a data de desligamento na fonte de RH vigente.
@@ -341,8 +335,6 @@ Em 11/09, conta desabilitada, responsável Wesley, departamento Financeiro e int
 - Modelo: svc_relatorio_fin → GG_SVC_RELATORIO_FIN → DL_FIN_RELATORIOS_READ / DL_FIN_SAIDA_WRITE. O GG_FIN_READ dos usuários foi preservado.
 - Entrada: `C:\IAM-Lab\Relatorios-Financeiros\relatorio-teste.txt`; saída: `C:\IAM-Lab\Saidas-Relatorios-Financeiros\resumo.json`.
 - Script: `C:\IAM-Lab\Scripts-Relatorios\gerar-resumo.ps1`, com leitura/execução para a rotina e alteração reservada à administração.
-
-**Consulta da regra:** os caminhos de leitura e escrita abaixo são o perfil específico da rotina, separado dos cargos humanos. O [controle vigente de serviço](MAT-2026-09-29-acessos-por-sistema.md#controles-transversais) registra a retirada posterior no IAM-010, sem modificar a execução de 15/09.
 
 ## Ações realizadas
 
@@ -578,8 +570,6 @@ Em 14/09, o caso AGDLP comprovou Felipe no GG_FIN_READ, associado ao DL_FIN_RELA
 - Recomendação: manter o acesso por grupo, sem permissão individual adicional.
 - Decisão simulada — 17/09/2026: Gestor Financeiro aprova manter a leitura pelo modelo existente e não aprova a permissão individual redundante. Registrada por solicitação de Wesley neste atendimento; horário não informado.
 
-**Consulta da regra:** [Financeiro no catálogo consolidado](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) relaciona perfil, GG/DL e RelatoriosFin. A decisão deste caso usa a necessidade e as consultas de 17/09, anteriores à consolidação de 29/09.
-
 ## Ações realizadas
 
 - **Concluído:** registrar o pedido e a necessidade simulados.
@@ -654,8 +644,6 @@ O IAM-008 conferiu o acesso por grupo, sem permissão individual. Nesta rodada, 
 - Aprovação simulada — 17/09/2026, 11:50 UTC−03:00 (horário fictício do cenário): responsável autoriza remover temporariamente Felipe do GG_FIN_READ, testar as conexões e restaurar a associação ao final.
 - Escopo: Felipe e sua associação ao GG_FIN_READ; preservar ACLs e demais membros. Sem mudança no RH ou no Entra.
 
-**Consulta da regra:** [perfil financeiro e recurso](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos), como consolidação posterior. O objetivo aqui é testar a retirada temporária e restaurar a associação original de Felipe, não mudar o perfil do cargo.
-
 ## Ações realizadas
 
 - **Concluído:** conferir grupo/compartilhamento e leitura inicial como Felipe (01 e 02).
@@ -709,98 +697,52 @@ Reprodução concluída: acesso persistiu na conexão mantida após remoção, f
 
 # IAM-010 — Recertificação de acessos e segregação de funções
 
-- Ambiente: laboratório fictício — AD DS e Entra independentes; microcaso SoD em dados locais simulados
-- Tipo: revisão de acesso e avaliação de segregação de funções (SoD)
-- Registro do preparo: 2026-09-26
-- Status: Fechado em 29/09/2026 — decisões registradas, serviço tratado, TI validada, SoD concluído e conferência final AD conforme no escopo documentado
-- Início da coleta e análise: 2026-09-28; atividade de reconciliação prevista para 29/09 antecipada pelo operador. Conclusão após decisões, tratamento e validação, dentro da preparação da v0.5.
-- Responsável pela execução: Wesley
-- Identidade do microcaso: EMP0007 — Gabriela Santos
-- Relação com o ciclo: [IAM-002 — Mover](#iam-002) → avaliação SoD → recertificação
+- Ambiente: laboratório fictício; AD e Entra independentes; SoD em dados locais.
+- Tipo: revisão de acessos e avaliação de SoD.
+- Preparação: 26/09/2026; coletas e execução: 28–29/09/2026.
+- Status: **Fechado em 29/09/2026, no escopo documentado**.
+- Execução técnica: Wesley; responsáveis de negócio simulados por acesso.
 
-## Contexto e objetivo
+## Contexto e estado anterior
 
-Revisar se as concessões da população escolhida continuam necessárias e registrar decisão por acesso: manter, remover ou investigar. Usar Gabriela após o Mover como contexto para um microcaso de combinação incompatível de direitos. A revisão deve ter responsável de negócio, justificativa e verificação posterior.
+Verificar se as concessões continuam necessárias, registrar manter/remover/investigar e tratar os achados. O inventário inicial reuniu nove pessoas do RH, nove contas AD e doze contas Entra, coletadas em horários distintos.
 
-## Estado anterior
-
-O Mover de Gabriela foi concluído em 28/09 no escopo de cadastro, grupos e acesso testado, conforme IAM-002. A coleta posterior encontrou o objeto ainda na OU Suporte. O achado foi encaminhado para movimentação, depois comprovada nas [provas 24–28 do IAM-002](../evidencias/sanitizadas/IAM-002/README.md#complemento--movimentação-de-ou-em-2809); nova exportação AD de 16:59:31 confirma a mudança.
-
-O inventário e a reconciliação ampliada passam a integrar a preparação deste IAM-010: RH com nove pessoas; AD com nove contas, sete grupos GG/DL e oito associações diretas; Entra com doze contas e exportações dos grupos Financeiro, Suporte e RH. Fontes de 28/09, coletadas em horários distintos. A comparação de habilitação, departamento e cargo das contas correlacionadas por matrícula teve 34 verificações conformes. Não inclui todas as concessões nem comprova necessidade de acesso.
-
-A análise identificou Bruno sem GG_SUP_TICKET no AD e Gabriela ainda em OU Suporte. Na [decisão de escopo de 28/09](REV-2026-09-28-escopo-reconciliacao.md), foi definido acesso de leitura de SuporteLab para Bruno, complemento de OU para Gabriela e ausência intencional de provisionamento de EMP0009 neste recorte. Bruno foi incluído no grupo, leu o recurso de Suporte e teve criação negada. A comparação AD de 15:52:51 com 16:59:31 confirmou somente a inclusão de Bruno e a mudança de OU de Gabriela nos campos coletados. Essa decisão de escopo não substitui a recertificação individual pelo responsável de negócio.
-
-## Tratamento da conta de serviço — 29/09/2026
-
-[Decisão e provas 11–13](../evidencias/sanitizadas/IAM-010/10-servico-remocao-concessoes.md). Às 12:08, conta/tarefa desabilitadas conservavam três vínculos. Consulta local de dependências encontrou somente a tarefa conhecida e nenhum serviço pelo filtro usado. Às 12:14:13, GG de serviço e DL de escrita vazios; DL de leitura mantém GG_FIN_READ; conta continua False. Formalização da decisão simulada em **29/09/2026 12:23:24 -0300**, com Carlos Lima como responsável fictício e Wesley como executor, após as capturas.
-
-Resultado: três decisões de investigar convertidas em remover, com retirada comprovada no escopo consultado. Sem nova concessão, exclusão de grupos ou reteste de acesso dos humanos; manter os limites da consulta local explícitos. IAM-005 preservado como histórico da rotina.
-
-## Revisão de cobertura — 29/09/2026
-
-A recertificação identificou uma lacuna: Diego e Isabela constam em TI no RH, mas os grupos comparados cobriam Suporte, Financeiro e RH. Wesley solicitou a ampliação da matriz. [Matriz vigente](MAT-2026-09-29-acessos-por-sistema.md): TI com leitura de procedimentos proposta, sem privilégio administrativo automático; Diego encerrado pelo prazo; Isabela inicialmente planejada e depois implementada no AD pelo operador em 29/09. [Provas TI](../evidencias/sanitizadas/IAM-010/ti-isabela/README.md): identidade, associações, ACL/SMB, conexão como Isabela, leitura e criação negada. Entra/híbrido permanecem planejados.
-
-Nova fonte de RH de 29/09 registra Diego DESLIGADO. Cadastro técnico separado relaciona as nove matrículas aos IDs observados e ao futuro escopo híbrido. [Análise completa do recorte disponível](REV-2026-09-29-estrutura-hibrida.md): não há outra área de RH omitida; contas especiais têm controles próprios. A comparação histórica das nove associações permanece válida somente para os três grupos de 28/09. TI só é considerada implementada no AD pelas provas posteriores específicas; a nova coleta integral foi comparada posteriormente no fechamento, prova 17.
-
-**Decisão simulada de desenho em 29/09:** incluir TI e as regras transversais na matriz por solicitação de Wesley; Fernanda Souza é a responsável de negócio fictícia pelo perfil TI. Lacuna documental tratada; provisionamento TI no AD executado depois, conforme evidências. Preflight híbrido e Entra continuam planejados. Atualização: Diego foi encerrado no IAM-004 com provas de 29/09. SoD e conferência final AD concluídos. A alteração de Employee type foi retirada do escopo por decisão de Wesley em 29/09; não condiciona o fechamento dos controles de acesso comprovados e não foi executada.
+Foram encontrados Bruno sem grupo de Suporte, Gabriela em OU Suporte após o Mover e três vínculos da rotina de serviço já encerrada. A comparação inicial cobria Financeiro, Suporte e RH; a necessidade de TI foi definida na revisão de 29/09.
 
 ## Aprovação e fundamento
 
-- Conferir RH e matriz vigentes, definir população, sistemas, recursos e data das coletas antes da revisão.
-- Registrar a decisão simulada do responsável de negócio no momento do exercício, com data e justificativa. Wesley executa o laboratório; atuação técnica não equivale a aprovação independente.
-- A regra abaixo é uma política fictícia do processo **Compras-LAB**. Não é uma incompatibilidade universal deduzida pelo nome do cargo ou do grupo.
+- **28/09:** [regra por sistema e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md), definidos por Wesley às 16:14 UTC−03:00. A nova regra não transforma a ausência anterior de Bruno em descumprimento de uma aprovação antiga.
+- **Recertificação inicial:** [quinze decisões por associação](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md#decisoes-2809), com responsáveis e justificativas: doze manter, três investigar os vínculos do serviço.
+- **29/09, serviço:** decisão de remover formalizada às 12:23:24, depois das capturas de retirada; Carlos Lima como responsável fictício. Não representa aprovação corporativa prévia.
+- **29/09, TI:** [matriz ampliada](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos), por solicitação de Wesley; Fernanda Souza como responsável fictícia. Isabela prevista no AD; Entra planejado para outra etapa.
 
-| Regra SoD-001 | Definição do microcaso |
-|---|---|
-| Direito A — `FORNECEDOR_MANTER` | Cadastrar ou alterar fornecedores no processo simulado. |
-| Direito B — `ORCAMENTO_APROVAR` | Aprovar orçamento de compra no mesmo processo. |
-| Conflito | A mesma pessoa acumular A e B no escopo Compras-LAB. Apenas indicar fornecedores ou mudar de departamento não estabelece esse conflito. |
-| Tratamento aplicado no modelo | Manter B e retirar A do caso A+B, conforme decisão didática registrada na etapa Depois. Uma exceção futura exigiria justificativa, prazo, revisão e controle compensatório. |
-
-## Ações realizadas
-
-1. **28/09 — inventário e regra:** conferir população/cadastro, identificar achados e registrar o escopo por sistema (01 e decisão de escopo).
-2. **28/09 — tratamentos e nova coleta:** alinhar a OU de Gabriela no IAM-002; incluir Bruno em Suporte e testar leitura/criação; comparar o inventário posterior (02–06 e 06b).
-3. **28/09 — comparação e decisão:** nove associações departamentais conformes; quinze associações recertificadas, doze manter e três investigar (07–08).
-4. **29/09 — encerramentos:** Diego concluído no IAM-004; três vínculos da rotina encerrada retirados, com dependências locais consultadas e formalização da decisão após as capturas (10–13).
-5. **29/09 — cobertura de TI:** matriz ampliada e Isabela implementada no AD; cadastro, GG/DL, ACL/SMB, leitura e criação negada conferidos. Entra permanece planejado.
-6. **29/09 — SoD:** cinco cenários locais, um conflito às 17:06:37 e zero às 17:10:04 após o tratamento em memória (14–16). Sem alterar direitos reais.
-7. **29/09 — fechamento:** coletar AD às 17:24:44–17:24:48 (18) e comparar posteriormente com RH/matriz (17): oito associações conformes. Sem nova coleta Entra.
-
-## Critérios e validação do microcaso SoD
-
-| Caso local simulado | Resultado esperado pela regra |
-|---|---|
-| A somente ou B somente | Sem conflito SoD-001; isso não prova que a concessão é necessária. |
-| A+B, mesma pessoa e mesmo escopo | Conflito SoD-001. |
-| Após decisão e retirada de A do modelo | B permanece; nova comparação sem conflito SoD-001. |
-
-São critérios do exercício. A lógica do script foi verificada tecnicamente: um conflito antes e nenhum após o tratamento, com pessoas/escopos diferentes sem falso positivo. O operador concluiu o exercício com capturas antes/depois em 29/09, conforme evidência 14. O PowerShell usa entradas locais, sem conceder direitos no AD/Entra. Na revisão real, zero achados também pode ser um resultado válido.
+**SoD-001:** no processo fictício Compras-LAB, a mesma pessoa acumular `FORNECEDOR_MANTER` e `ORCAMENTO_APROVAR` no mesmo escopo é conflito. Tratamento no modelo: manter aprovação de orçamento e retirar manutenção de fornecedor. Leitura via GG_FIN_READ não confere esses direitos.
 
 ## Evidências por etapa e tratamento
 
-[Roteiro do IAM-010](../evidencias/sanitizadas/IAM-010/README.md). Siga a mesma ordem abaixo no índice; dentro de cada tratamento ficam somente as provas daquele assunto.
+As ações e suas provas seguem a mesma ordem do [índice do IAM-010](../evidencias/sanitizadas/IAM-010/README.md). Cada tratamento abre somente seu assunto; comparações coletivas têm relatório próprio.
 
-| Ordem / quando | Motivo e resultado | Abrir a etapa |
+| Ordem / quando | Ação e propósito | Evidência e resultado |
 |---|---|---|
-| 1 — 28/09 | Inventariar e definir o acesso esperado por sistema | [01 e decisão de escopo](../evidencias/sanitizadas/IAM-010/README.md#inventario-e-regra). |
-| 2 — 28/09, 16:20–16:59 | Tratar OU de Gabriela e acesso de Bruno; coletar novamente | [Tratamentos individuais e comparação coletiva separada](../evidencias/sanitizadas/IAM-010/README.md#tratamentos-2809). Bruno: 02–05 na página 06; inventário conjunto na página 06b. |
-| 3 — 28/09, após os tratamentos | Comparar grupos e decidir manter/investigar | [07 e decisões iniciais 08](../evidencias/sanitizadas/IAM-010/README.md#comparacao-e-decisoes-2809). Nove associações departamentais conformes; quinze decisões iniciais, doze manter e três investigar. |
-| 4 — 29/09, manhã | Concluir Diego pelo prazo e retirar vínculos residuais do serviço | [Encaminhamentos de encerramento](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego mantém provas no IAM-004; serviço usa exclusivamente 11–13 e relatório 10. |
-| 5 — 29/09 | Ampliar a matriz de TI e implementar Isabela no AD | [Regra, cadastro, GG/DL, ACL/SMB e testes de TI](../evidencias/sanitizadas/IAM-010/README.md#cobertura-ti). Capturas 01–06 de TI; Entra permanece planejado. |
-| 6 — 29/09, 17:06–17:10 | Detectar e tratar o conflito simulado | [SoD — regra, antes, decisão e depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Provas 15–16 no relatório 14; dados separados dos diretórios. |
-| 7 — 29/09, 17:24 em diante | Coletar o AD, comparar os arquivos e fechar | [18 — coleta → 17 — comparação posterior](../evidencias/sanitizadas/IAM-010/README.md#fechamento). Oito associações conformes; a captura de coleta não exibe zero exceções. |
+| 1 — 28/09 | Inventariar e definir o esperado | [01 — fontes e regra](../evidencias/sanitizadas/IAM-010/README.md#inventario-e-regra). Delimita população e sistemas. |
+| 2 — 28/09, 16:20–16:59 | Alinhar OU de Gabriela; conceder Suporte a Bruno e testar | [Tratamentos individuais e comparação coletiva](../evidencias/sanitizadas/IAM-010/README.md#tratamentos-2809). Bruno: grupo incluído, leitura permitida/criação negada; nova coleta confirma sua associação e a OU de Gabriela. |
+| 3 — 28/09, após os tratamentos | Comparar grupos e recertificar | [07 e decisões 08](../evidencias/sanitizadas/IAM-010/README.md#comparacao-e-decisoes-2809). Nove associações departamentais conformes; quinze decisões iniciais. |
+| 4 — 29/09, manhã | Encerrar Diego pelo prazo e retirar vínculos residuais do serviço | [Encerramentos](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego: provas no IAM-004. Serviço: três vínculos retirados, conta mantida desabilitada; formalização posterior identificada. |
+| 5 — 29/09, tarde | Implantar o perfil de TI para Isabela no AD | [Cadastro, GG/DL, ACL/SMB e testes](../evidencias/sanitizadas/IAM-010/README.md#cobertura-ti). Leitura permitida e criação negada; Entra continua planejado. |
+| 6 — 29/09, 17:06–17:10 | Detectar e tratar o conflito SoD local | [14–16 — antes/decisão/depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Cinco cenários alternativos, um conflito antes e zero depois; sem alterar direitos reais. |
+| 7 — 29/09, 17:24 em diante | Coletar novamente, comparar e encerrar | [18 — coleta → 17 — comparação](../evidencias/sanitizadas/IAM-010/README.md#fechamento). Oito associações AD conformes, zero ausentes/excedentes. |
 
-## Riscos, reversão e limitações
+## Validação e limites
 
-- Aprovação de orçamento e manutenção de fornecedor são direitos fictícios; não há ERP, workflow financeiro ou integração IGA implementados. Pertencer a `GG_FIN_READ` não demonstra esses poderes.
-- A regra é **SoD estática**, sobre acumular direitos. Impedir que alguém aprove a própria transação é um controle dinâmico no aplicativo e não será apresentado como executado.
-- Para uma correção real, registrar dependências e reversão antes da mudança; preservar concessões de outras pessoas. A reversão da entrada simulada não exige mudar diretórios.
-- O microcaso tem limite de cerca de 90 minutos, incluindo preparo, dentro da revisão já prevista. Sem cálculo de SLA ou aprovação corporativa real.
+A conferência final AD sustenta TI presente, vínculos do serviço retirados e oito associações conformes. A captura 18 comprova coleta às 17:24:44–17:24:48; a conformidade vem da comparação posterior dos arquivos. Não houve nova coleta Entra no fechamento.
+
+O escopo cobre os campos e associações exportados, sem auditoria integral de ACLs, sessões, privilégios ou dependências externas. As contagens das comparações inicial e final não são somadas: representam datas e regras diferentes. SoD foi validado apenas no modelo local; as decisões de negócio são simuladas.
+
+Reversão prevista: se uma retirada precisar ser desfeita por necessidade confirmada, restaurar somente os vínculos justificados e retestar. Não houve reversão executada nesta revisão.
 
 ## Fechamento
 
-Coleta final AD concluída em 29/09 às 17:24:48 e comparada posteriormente: [provas 17–18](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md), oito associações conformes, zero ausentes/excedentes, TI presente e serviço sem os vínculos retirados. **IAM-010 fechado em 29/09/2026 no escopo documentado**, sem tarefa de alteração de Employee type. As fontes cloud anteriores permanecem datadas; não houve nova exportação Entra nesta conferência. O microcaso SoD está concluído, com regra, decisão e resultado comprovados no modelo local. Resultado incorporado à [entrega v0.5 de 29/09](../CHANGELOG.md#v05--2026-09-29), com limites preservados.
+**Fechado em 29/09/2026:** decisões e tratamentos registrados, TI validada no AD, SoD concluído e comparação final conforme no recorte documentado. Resultado incorporado à [v0.5](../CHANGELOG.md#v05--2026-09-29).
 
 <a id="iam-011"></a>
 
@@ -829,8 +771,6 @@ A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da co
 - Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
 - 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
 - Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).
-
-**Consulta da regra:** [perfil financeiro no catálogo consolidado](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos). A admissão e a decisão histórica de 15/09 controlam quando habilitar/conceder; a consolidação de 29/09 não é aprovação retroativa.
 
 ## Ações realizadas
 

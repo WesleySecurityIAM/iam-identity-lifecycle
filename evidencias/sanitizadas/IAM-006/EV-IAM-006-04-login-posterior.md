@@ -30,3 +30,5 @@ listados, mas não comprovam acesso ao sistema financeiro.
 - a entrada com MFA comprova seu uso, mas não comprova quando o método foi cadastrado;
 - cadastro e consulta do método estão documentados no IAM-007;
 - IP, UPN, Request ID, Correlation ID e Session ID foram removidos.
+
+[Voltar à sequência de evidências](README.md).

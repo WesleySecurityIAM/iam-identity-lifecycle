@@ -14,3 +14,5 @@ Fonte: JSON complementar de 22/09, original privado. Alvo correlacionado por Obj
 Confirma a inclusão que a [captura posterior](03-membros-financeiro-com-carla.png) mostra. Preparação do IAM-003, sem revogação executada. Associação não prova acesso a aplicação nem autorização válida pela matriz. IDs e conta do executor omitidos deste extrato público.
 
 - SHA-256 do JSON: `dd82da41fa06825bd540816cf0b5470fd5292d979b1c3079ef7170b6aaa7e5fe`.
+
+[Voltar à sequência de evidências](README.md).

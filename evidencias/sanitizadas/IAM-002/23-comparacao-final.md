@@ -11,9 +11,7 @@ Nova comparação executada após as mudanças, usando a fonte RH de 28/09 e os 
 | GG_SUP_TICKET: associação direta | False | False | CONFORME |
 | GG_FIN_READ: associação direta | True | True | CONFORME |
 
-**Resultado: seis verificações conformes, zero exceções nesse escopo.** Suporte tem um membro (Bruno); Financeiro tem três (Ana, Felipe e Gabriela). Os totais vêm dos CSVs exportados e não representam uma consulta ao tenant em tempo real.
-
-No AD, conferência visual da prova 17: mesmo ObjectGUID do antes, EMP0007, Enabled=True, Financeiro/Analista Financeiro, Suporte=False e Financeiro=True. Essa validação é por captura, não por exportação AD processada automaticamente.
+**Resultado: seis verificações conformes, zero exceções nesse escopo.** Estado das exportações de 28/09, sem consulta ao tenant em tempo real.
 
 ## Fontes e integridade
 
@@ -25,4 +23,6 @@ No AD, conferência visual da prova 17: mesmo ObjectGUID do antes, EMP0007, Enab
 
 ## Limites
 
-Não compara Manager, OU, papéis, outras concessões, grupos aninhados ou sessões. Gestor Carlos Lima está no RH, sem validação do atributo Manager nos diretórios. Nenhuma correção foi executada por esta comparação. A matriz do cenário prevê retirar GG_SUP_TICKET e conceder GG_FIN_READ; o nome do grupo sozinho não concede acesso ao recurso.
+Não compara Manager, OU, papéis, outras concessões, grupos aninhados ou sessões, nem executa correções. Carlos Lima consta do RH, sem validação do atributo Manager. Associação aos grupos não comprova acesso ao recurso.
+
+[Voltar à sequência de evidências](README.md).

@@ -33,3 +33,5 @@ Os eventos de habilitação e inclusão no grupo identificam a conta administrat
 A auditoria comprova alterações nos horários registrados, não uma nova consulta do inventário após todos os eventos. Aprovação de RH/gestor é simulação registrada no ticket. Associação ao grupo no Entra não comprova acesso ao relatório do AD. Cadastro do Authenticator não comprova, isoladamente, uso em uma entrada: consultar a evidência 06.
 
 UPNs, IPs, identificadores de objeto/sessão e dados técnicos do dispositivo/token foram omitidos. SHA-256 e caminhos de origem constam apenas no manifesto privado dos brutos.
+
+[Voltar à sequência de evidências](README.md).

@@ -14,11 +14,12 @@
 
 ## Resultado
 
-Foram confirmadas três entradas interativas interrompidas pelo código 50055.
-Em todas elas, o Microsoft Entra ID informou que a senha estava expirada.
+Três entradas interativas interrompidas por expiração da senha (50055).
 
 ## Limitações
 
 - IP, UPN e identificadores técnicos foram removidos;
 - os arquivos brutos permanecem no cofre privado;
 - esta evidência comprova a interrupção da autenticação, mas não comprova acesso a um sistema financeiro.
+
+[Voltar à sequência de evidências](README.md).

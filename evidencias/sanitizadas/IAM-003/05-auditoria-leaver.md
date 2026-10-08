@@ -1,6 +1,6 @@
 # IAM-003 — Auditoria das ações sobre Carla
 
-Fonte privada: `AuditLogs_2026-09-23.json`, com 17 registros. Cinco eventos referenciam o Object ID de EMP0003 em targetResources. Os pares registram a mesma ação, não cinco intervenções distintas. Todos retornam result=success em 23/09/2026.
+Origem: `AuditLogs_2026-09-23.json`, privado, 17 registros. Recorte: cinco eventos de EMP0003 em targetResources, todos result=success em 23/09/2026. Eventos pareados representam três ações.
 
 | UTC — activityDateTime | Brasília (UTC−03:00) | activityDisplayName | Propriedade e resultado |
 |---|---|---|---|
@@ -10,17 +10,11 @@ Fonte privada: `AuditLogs_2026-09-23.json`, com 17 registros. Cinco eventos refe
 | 20:15:36.8108078Z | 17:15:36 | Update user | Mesma atualização do marco de validade |
 | 20:17:18.2094674Z | 17:17:18 | Remove member from group | Alvos User/Group; Group.DisplayName: `GG_FIN_READ` → null |
 
-## Correlação e leitura
-
-O ID do alvo User foi conferido contra a conta de Carla no perfil e na reconciliação. O último evento inclui também o ID do grupo. A remoção é sustentada pela atividade, alvos e propriedades em conjunto, não pelo null isoladamente.
-
-initiatedBy.user contém ID e UPN do executor; displayName está null. O mesmo ID de executor aparece nas cinco operações. UPN, IP e identificadores de eventos/correlação permanecem no original privado. Nome vazio não significa ausência de identificação do executor.
+O alvo User corresponde ao perfil e à reconciliação de Carla; a remoção também identifica o grupo. Mesmo ID de executor nos cinco eventos. UPN, IP e identificadores de eventos/correlação permanecem privados.
 
 A atualização de StsRefreshTokensValidFrom sustenta a ação de revogação dos refresh tokens anteriores. Não demonstra término imediato de sessões próprias de todas as aplicações. A [entrada posterior bloqueada](06-sign-in-bloqueado.md) é uma verificação separada.
 
-## Cronologia da decisão
-
-A decisão simulada foi registrada neste atendimento às 17:10, com consulta de relógio local às 17:10:52. A auditoria situa o bloqueio às 17:10:26. O registro documental não comprova aprovação anterior ao bloqueio. Mantida essa limitação, sem alterar datas dos eventos.
+A decisão simulada foi registrada às 17:10, com consulta de relógio às 17:10:52; o bloqueio auditado ocorreu às 17:10:26. O registro não comprova aprovação anterior ao bloqueio.
 
 SHA256 da fonte privada: `A6E67A59BE68309C101F7449A1B2946EF03C051772292C940EC44890DCF28A7F`.
 

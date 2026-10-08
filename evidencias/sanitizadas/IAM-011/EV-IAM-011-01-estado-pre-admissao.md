@@ -17,3 +17,5 @@ O perfil exige troca de senha; ainda não comprova a troca pelo usuário. False 
 
 Origem: `exportUsers_2026-9-14.csv`. SHA-256: `df17cc0f643edc84310ba52f366b7eaf9048ce8ca5556893f15e6cd5d78be843`.
 UPN, IDs e outros campos sem necessidade para esta evidência foram omitidos.
+
+[Voltar à sequência de evidências](README.md).

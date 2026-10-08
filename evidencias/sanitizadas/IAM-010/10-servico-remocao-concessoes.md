@@ -2,7 +2,7 @@
 
 **Resultado:** três associações residuais retiradas em 29/09/2026, conta mantida desabilitada e GG_FIN_READ preservado na DL financeira. Tratamento do achado do IAM-010; não altera o estado histórico entregue no IAM-005.
 
-A necessidade de revisar os vínculos veio da [recertificação inicial](08-recertificacao-simulada.md#decisoes-2809): a rotina já estava encerrada, mas conservava concessões. Siga antes → dependências → depois → formalização da decisão.
+Tratamento das três associações apontadas na [recertificação inicial](08-recertificacao-simulada.md#decisoes-2809), pois a rotina já estava encerrada.
 
 ## Antes, dependências e depois
 
@@ -16,7 +16,7 @@ A necessidade de revisar os vínculos veio da [recertificação inicial](08-rece
 
 Registro em **29/09/2026 12:23:24 -0300**. Responsável de negócio fictício: Carlos Lima. Execução técnica: Wesley. Formalização solicitada pelo operador após apresentação das capturas; o roteiro de retirada havia sido fornecido antes da execução. Não representa aprovação corporativa prévia.
 
-Após revisão da finalidade encerrada da rotina e das dependências locais consultadas, decidiu-se retirar svc_relatorio_fin de GG_SVC_RELATORIO_FIN e retirar esse GG das DL de leitura e escrita. Manter conta e tarefa desabilitadas e preservar os grupos. Não há necessidade futura de reativação documentada. Nova utilização exigirá nova decisão, concessões mínimas e reteste.
+A decisão registra a retirada dos vínculos abaixo, mantendo conta/tarefa desabilitadas e os grupos preservados. Sem necessidade futura de reativação documentada.
 
 | Associação revisada | Decisão final | Verificação |
 |---|---|---|
@@ -24,16 +24,12 @@ Após revisão da finalidade encerrada da rotina e das dependências locais cons
 | GG_SVC_RELATORIO_FIN → DL_FIN_RELATORIOS_READ | Remover | DL contém somente GG_FIN_READ |
 | GG_SVC_RELATORIO_FIN → DL_FIN_SAIDA_WRITE | Remover | DL com zero membros |
 
-Consolidado das quinze associações revisadas em 28/09: doze decisões de manter e três de remover, estas comprovadas nas consultas de 29/09. Isso atualiza o tratamento do achado, não constitui nova exportação completa dos dois diretórios. As outras doze decisões continuam referenciando suas próprias evidências/coletas.
-
-## Limites e reversão
+## Limites
 
 - Consultas locais filtradas pelo nome; não cobrem outros hosts, consumidores externos ou todas as formas de referência, como SID. Ausência de linhas não prova ausência universal de dependências.
 - Antes/depois sustenta a retirada dos três vínculos; os comandos de remoção não aparecem nas capturas. A tarefa foi observada desabilitada antes e na consulta de dependências; seu estado não é reconsultado na prova 13.
 - GG_FIN_READ permanece na DL de leitura. Não foram repetidos testes dos usuários humanos nem consultados todos os membros do GG humano nesta rodada. ACLs e demais caminhos de acesso não foram reexportados.
 - Não se declara conta sem qualquer permissão: grupo primário, direitos de logon, permissões diretas e outros grupos não foram auditados integralmente. DLs/ACLs/arquivos não foram excluídos nesta operação de associação.
-- Reversão somente se houver necessidade confirmada: restaurar vínculos estritamente necessários e validar dependências antes de reativar conta/tarefa. Não reativar apenas para fabricar teste negativo.
-
-Capturas sem edição, hashes conferidos; originais e manifesto privados. Sem credenciais nas provas. [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010) fechado em 29/09 após SoD e conferência final; esta evidência documenta o tratamento do serviço.
+Capturas sem edição, hashes conferidos; originais e manifesto privados. [Ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).
 
 [Voltar ao índice por assunto](README.md).

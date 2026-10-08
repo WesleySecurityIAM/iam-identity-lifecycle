@@ -9,9 +9,9 @@
 
 Horários de Brasília (UTC−03:00). Em UTC: **14:38:41Z** e **14:40:20Z**. Correlação pelo Object ID `2e8dbab8-6f77-4652-9d2e-ca567b3c1b9f`; executor ADMIN-LAB-001.
 
-## Como localizar a revogação
+## Propriedades que confirmam as ações
 
-Em Audit logs, filtrar 25/09 e o usuário alvo. Procurar **Update StsRefreshTokenValidFrom Timestamp**, confirmar **success** e abrir **Target(s) → Modified properties**. A propriedade **StsRefreshTokensValidFrom** mudou de `2026-09-22T17:09:48Z` para `2026-09-25T14:40:20Z`. O Update user associado registra a mesma mudança. Para o bloqueio, procurar **Disable account** e **AccountEnabled**, de true para false.
+**Revogação:** `Update StsRefreshTokenValidFrom Timestamp`, success; `StsRefreshTokensValidFrom` mudou de `2026-09-22T17:09:48Z` para `2026-09-25T14:40:20Z`, também registrado no Update user associado. **Bloqueio:** Disable account, com `AccountEnabled` de true para false.
 
 ## Limites e origem
 
@@ -20,3 +20,5 @@ O evento comprova a ação administrativa e a atualização do marco de validade
 O prazo foi executado manualmente; não houve expiração automática. Accepted permanece como histórico do aceite, mesmo com a conta Disabled. Não foi necessário excluir o objeto. Captura sem edição, com e-mail pessoal autorizado pelo operador; JSON integral preservado em área privada. O extrato mantém IDs dos eventos e SHA-256 da fonte.
 
 [Solicitação e ciclo completo](../../../00-operacao-itsm/REQ-GUEST-001.md).
+
+[Voltar à sequência de evidências](README.md).

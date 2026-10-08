@@ -6,7 +6,7 @@
 
 ## 1. Referência funcional anterior — 14/09
 
-O [teste de Felipe de 14/09 — leitura permitida e criação negada](../agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png) é uma referência histórica opcional para entender o acesso existente. O link vai diretamente à prova de Felipe no mesmo recurso; não é um teste novo nem exige percorrer as demais provas daquele laboratório.
+Consulta opcional: [teste de Felipe no mesmo recurso em 14/09 — leitura permitida e criação negada](../agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png). Não houve novo teste funcional neste atendimento.
 
 ## 2. Conferir a cadeia que sustenta o acesso — 17/09
 
@@ -14,25 +14,18 @@ O [teste de Felipe de 14/09 — leitura permitida e criação negada](../agdlp-f
 Felipe → GG_FIN_READ → DL_FIN_RELATORIOS_READ → leitura na pasta financeira
 ```
 
-| Passo | Prova do passo | Pergunta respondida |
+| Passo | Prova | Resultado |
 |---|---|---|
-| Identidade no grupo de função | [01 — Felipe no GG_FIN_READ](01-felipe-no-gg-fin-read.png) | Felipe pertence ao grupo pelo qual deve receber leitura? Sim. |
-| Grupo de função no grupo do recurso | [02 — Membros da DL_FIN_RELATORIOS_READ](02-membros-dl-fin-relatorios-read.png) | O GG_FIN_READ está na DL usada pela pasta? Sim. A lista também contém GG_SVC_RELATORIO_FIN; esta prova não avalia a rotina da conta de serviço. |
-| Permissão no recurso | [03 — ACL da pasta financeira](03-acl-pasta-financeira.png) | A DL tem Allow, ReadAndExecute/Synchronize? Sim. Há entrada direta para Felipe? Não na ACL mostrada. |
+| Identidade no grupo de função | [01 — Felipe no GG_FIN_READ](01-felipe-no-gg-fin-read.png) | Felipe pertence ao GG_FIN_READ. |
+| Grupo de função no grupo do recurso | [02 — Membros da DL_FIN_RELATORIOS_READ](02-membros-dl-fin-relatorios-read.png) | GG_FIN_READ pertence à DL. O grupo adicional é contexto da consulta. |
+| Permissão no recurso | [03 — ACL da pasta financeira](03-acl-pasta-financeira.png) | DL com Allow, ReadAndExecute/Synchronize; nenhuma entrada direta para Felipe na ACL mostrada. |
 
-## 3. Análise e decisão — 17/09
+## 3. Decisão e fechamento — 17/09
 
-As consultas sustentam a recomendação de manter a associação aos grupos, preservando o modelo de acesso previsto. A [decisão simulada no ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-008) registra a aprovação do Gestor Financeiro para manter esse modelo, sem conceder a entrada individual solicitada. Não houve mudança técnica a executar ou reverter.
-
-## 4. Validação do escopo e fechamento
-
-A validação de 17/09 é **de configuração**: associação de Felipe, associação do GG à DL e permissão da DL na pasta. Não foi executado um novo teste de leitura nesse atendimento.
-
+A validação **de configuração** sustenta a [decisão simulada do Gestor Financeiro](../../../00-operacao-itsm/05-fila-tickets.md#iam-008): manter a leitura por grupos, sem conceder a permissão individual redundante. Nenhum grupo ou ACL foi alterado.
 
 ## Limites das provas
 
 - `IsInherited=False` indica entradas explícitas na pasta. `ContainerInherit/ObjectInherit` permitem propagação aos filhos, sem comprovar a ACL efetiva de cada arquivo ou subpasta.
-- As consultas não reavaliam todos os caminhos de acesso nem os consumidores dos demais grupos mostrados. O foco é a solicitação de Felipe.
+- As consultas não reavaliam todos os caminhos de acesso de Felipe.
 - Capturas originais sem edição, renomeadas por conteúdo. Datas/horários nominais dos arquivos: 17/09 às 10:54:45, 10:56:07 e 10:58:13; as telas não exibem relógio. Origem e hashes preservados no manifesto privado.
-
-[Voltar ao ticket: solicitação, decisão e fechamento](../../../00-operacao-itsm/05-fila-tickets.md#iam-008).

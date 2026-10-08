@@ -24,13 +24,10 @@
 
 ## Resultado
 
-As primeiras tentativas de alteração foram recusadas pela política de senha.
-Uma alteração foi concluída às 20:12:18Z.
-
-Posteriormente, EMP0006 iniciou um fluxo de recuperação, mas a redefinição por
-autoatendimento não estava habilitada. Às 20:29:54Z, ADMIN-LAB-001 realizou
-uma redefinição administrativa. Às 20:33:21Z, EMP0006 concluiu a alteração
-obrigatória da senha temporária.
+Cinco alterações foram recusadas pela política; uma foi concluída às 20:12:18Z.
+O fluxo posterior de recuperação mostrou que o autoatendimento não estava
+habilitado. A redefinição administrativa às 20:29:54Z foi seguida pela
+alteração do usuário às 20:33:21Z.
 
 ## Limitações
 
@@ -38,3 +35,5 @@ obrigatória da senha temporária.
 - as identidades foram substituídas por identificadores sanitizados;
 - nenhuma senha temporária ou definitiva foi documentada;
 - IDs técnicos, IP e UPN foram removidos.
+
+[Voltar à sequência de evidências](README.md).

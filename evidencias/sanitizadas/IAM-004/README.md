@@ -1,61 +1,55 @@
 # IAM-004 — Prazo e encerramento de Diego
 
-**Objetivo:** encerrar o acesso de Diego (EMP0004) pelo término do vínculo fictício em **29/09/2026 às 08:00 UTC−03:00**. **Fechado em 29/09:** expiração e nova autenticação recusada no AD, bloqueio/revogação no Entra, contadores de concessões zero e comparação cadastral conforme.
-
-[Ticket: prazo, decisão simulada e fechamento](../../../00-operacao-itsm/05-fila-tickets.md#iam-004).
-
-Leia na ordem: **prazo decidido e configurado → efeito no AD → tratamento no Entra → estado final e comparação**. AD e Entra eram independentes; a expiração local não executou o bloqueio cloud.
+Diego (EMP0004): vínculo fictício encerrado em **29/09/2026 às 08:00 UTC−03:00**. Fechado em 29/09 com nova autenticação recusada no AD, bloqueio/revogação no Entra e comparação cadastral conforme. [Ticket e decisão simulada](../../../00-operacao-itsm/05-fila-tickets.md#iam-004).
 
 <a id="prazo-e-regra"></a>
 
-## 1. Prazo e regra — por que encerrar
+## 1. Prazo configurado — 28/09/2026
 
-O ticket registra a decisão didática do prazo por Wesley, Fernanda Souza como responsável de negócio fictícia e a atualização do RH. Em 28/09, Diego ainda estava ATIVO; após a vigência de 29/09, o RH passa a DESLIGADO. A admissão de 01/06/2026 é preservada. O horário exato do término vem do ticket, não do campo de data do RH.
+O ticket registra Wesley como responsável pela decisão didática e Fernanda Souza como responsável de negócio fictícia. RH: ATIVO em 28/09 e DESLIGADO após a vigência de 29/09; admissão de 01/06/2026 preservada. O horário de término vem do ticket.
 
-[01 — Expiração configurada](01-expiracao-configurada.png): consulta de 28/09 às 17:11:26 UTC−03:00 mostra EMP0004, Enabled=True e AccountExpirationDate=29/09/2026 08:00:00. É prova da configuração antes do vencimento, não da recusa de uma autenticação.
+| Prova | O que demonstra — UTC−03:00 |
+|---|---|
+| [01 — Expiração configurada](01-expiracao-configurada.png) | 17:11:26: EMP0004, Enabled=True, AccountExpirationDate=29/09/2026 08:00:00. |
 
 <a id="validacao-ad"></a>
 
-## 2. Validação AD — o prazo produziu o efeito esperado
+## 2. Expiração e tentativa no AD — 29/09/2026
 
-| Prova | Resultado em 29/09, UTC−03:00 | O que permite concluir |
-|---|---|---|
-| [02 — Prazo vencido](02-ad-prazo-vencido.png) | Às 11:08:10, mesmo prazo e Enabled=True; fuso da VM conferido | O atributo de habilitação continua True; a expiração é um controle distinto. |
-| [03 — Nova autenticação](03-ad-autenticacao-conta-expirada.png) | Às 11:16:33, `runas` como EMPRESA\diego.rocha retorna 1793: The user's account has expired | A nova tentativa foi recusada por conta expirada. Não é uma simples negação de permissão em arquivo. |
-
-A captura de `runas` não documenta eventual redefinição prévia de senha. Sessões já existentes não foram encerradas ou verificadas por esse teste.
+| Prova | O que demonstra — UTC−03:00 |
+|---|---|
+| [02 — Prazo vencido](02-ad-prazo-vencido.png) | 11:08:10: prazo vencido, Enabled=True e fuso da VM conferido. |
+| [03 — Nova autenticação](03-ad-autenticacao-conta-expirada.png) | 11:16:33: `runas` como EMPRESA\diego.rocha retorna 1793, conta expirada. |
 
 <a id="execucao-entra"></a>
 
-## 3. Execução Entra — bloquear e revogar separadamente
+## 3. Bloqueio e revogação no Entra — 29/09/2026
 
-[06 — Extrato de auditoria somente de Diego](06-audit-encerramento-extrato.json) registra duas ações bem-sucedidas: **bloqueio às 11:19:45** e **revogação às 11:19:56**, em 29/09, UTC−03:00. O JSON preserva UTC. Os pares Disable account/Update user e Update StsRefreshTokenValidFrom Timestamp/Update user descrevem duas ações, não quatro intervenções independentes.
-
-| Prova de estado | O que mostra | Limite |
-|---|---|---|
-| [04 — Perfil e validade das sessões](04-entra-bloqueio-vigencia-sessoes.png) | EMP0004, Account enabled=No, On-premises sync enabled=No e sessões válidas a partir de 11:19 | A alteração do marco de validade é complementada pelos eventos da prova 06; não demonstra corte instantâneo de todo acesso em aplicativos. |
+| Prova | O que demonstra — UTC−03:00 |
+|---|---|
+| [06 — Auditoria de Diego](06-audit-encerramento-extrato.json) | Bloqueio às 11:19:45 e revogação às 11:19:56, ambos bem-sucedidos. Eventos pareados representam duas ações; JSON preserva UTC. |
+| [04 — Perfil e validade das sessões](04-entra-bloqueio-vigencia-sessoes.png) | EMP0004, Account enabled=No, On-premises sync enabled=No e sessões válidas a partir de 11:19. |
 
 <details>
-<summary>Captura adicional preservada — repete o bloqueio</summary>
+<summary>Apoio visual — bloqueio</summary>
 
-[05 — Identidade bloqueada](05-entra-identidade-bloqueada.png) confirma o mesmo objeto desabilitado. Como repete o estado da prova 04 e não abre as listas de concessões, fica fora do roteiro principal; a prova 08 é a que mostra os contadores zero.
+[05 — Identidade bloqueada](05-entra-identidade-bloqueada.png): captura complementar do mesmo objeto desabilitado, sem abrir as listas de concessões.
 
 </details>
 
 <a id="validacao-final"></a>
 
-## 4. Conferência final — cadastro e concessões
+## 4. Conferência final — 29/09/2026
 
-| Prova | Verificação | Resultado |
-|---|---|---|
-| [07 — Comparação posterior](07-comparacao-final.md) | RH DESLIGADO × CSV de usuários do Entra de 29/09 | Matrícula única EMP0004, mesmo Object ID, accountEnabled=False; conforme. |
-| [08 — Contadores finais no portal](08-entra-zero-concessoes.png) | Captura de 29/09 às 11:58: estado e resumo de associações da mesma conta | Disabled e zero em Group memberships, Applications, Assigned roles e Assigned licenses. |
+| Prova | O que demonstra |
+|---|---|
+| [07 — Comparação posterior](07-comparacao-final.md) | RH DESLIGADO × CSV de 29/09: EMP0004 único, mesmo Object ID e accountEnabled=False; conforme. |
+| [08 — Contadores no portal](08-entra-zero-concessoes.png) | 11:58: Disabled e zero em Group memberships, Applications, Assigned roles e Assigned licenses. |
 
-Não houve remoção de vínculos inexistentes. O CSV de usuários comprova cadastro; os contadores são uma verificação separada. Nenhum dos dois representa auditoria de permissões internas de todo aplicativo ou de todos os tokens.
+## Limites e origem
 
-## Limites, assunto relacionado e preservação
-
-- O motivo do encerramento é o término do vínculo. A cobertura do departamento TI na matriz foi revisada no IAM-010 e não é condição nem justificativa para expirar Diego.
-- Employee type não integrou os controles deste encerramento e não foi alterado. User type=Member não define tipo de contrato.
-- O AD permaneceu com Enabled=True e conta expirada; o Entra foi desabilitado. São estados documentados de dois sistemas independentes.
-- Capturas, JSON e CSV de origem foram preservados em área privada; as provas públicas não contêm senha ou token. Esta reorganização preserva arquivos de prova e datas históricas.
+- AD e Entra independentes: o AD permaneceu Enabled=True e expirado; o Entra foi desabilitado separadamente.
+- O teste `runas` não documenta eventual redefinição prévia de senha nem encerramento de sessões existentes. A revogação no Entra não comprova corte imediato de toda sessão de aplicação.
+- CSV comprova cadastro; contadores comprovam o resumo consultado, sem auditoria de permissões internas de todos os aplicativos. Não houve remoção de vínculos inexistentes.
+- Employee type não foi alterado nem integrou o controle; User type=Member não define contrato.
+- Capturas, JSON, CSV e hashes de origem preservados em área privada.

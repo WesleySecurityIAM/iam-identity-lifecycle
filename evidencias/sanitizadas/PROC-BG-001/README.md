@@ -24,11 +24,9 @@ O grupo validado tem Object ID `5e11f8b2-05a8-449f-96d9-cd91e708c85e`. O recorte
 <a id="operacao"></a>
 <a id="autenticacao"></a>
 
-## Como interpretar as provas sem duplicar conclusões
+## Correlação e limites da autenticação
 
-- **Contas/papéis:** as telas confirmam tipo, origem e atribuição direta; a auditoria fornece executor, mudança e horário. Por isso elas se complementam.
-- **Criação/alteração:** capturas 03–04 e eventos identificam o mesmo grupo. A exclusão é comprovada pela auditoria; não exige outra captura.
-- **Métodos:** cada par 07–08 e 09–10 é necessário para ligar identidade à etapa de autenticação. As etapas têm `Succeeded=Yes` e MFA concluída, mas o status geral `Interrupted` corresponde à pergunta sobre permanecer conectado. Essas capturas sozinhas não comprovam conclusão do acesso à aplicação; os eventos de código 0 estão separados na sequência.
+Cada par 07–08 e 09–10 liga identidade à etapa de autenticação. As etapas têm `Succeeded=Yes` e MFA concluída, mas o status geral `Interrupted` corresponde à pergunta sobre permanecer conectado. Essas capturas sozinhas não comprovam conclusão do acesso à aplicação; os eventos de código 0 estão separados na sequência.
 
 Request IDs das capturas: bg-lab-01 `cc3ffdbf-291f-4445-abff-9d6afca9a600`; bg-lab-02 `f51695f7-242a-4999-a26b-a338a5e81800`. Security Defaults aparece aplicado. As capturas foram coletadas às 20:25–20:26; o roteiro usa os horários dos eventos exibidos nelas.
 

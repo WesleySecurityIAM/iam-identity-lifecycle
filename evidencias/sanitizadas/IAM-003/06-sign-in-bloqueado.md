@@ -16,9 +16,9 @@ Fonte privada: `InteractiveSignIns_2026-09-22_2026-09-23.json`, três registros.
 
 **Resultado:** entrada bloqueada por conta desabilitada, após as alterações auditadas. Não é interpretada como senha incorreta nem como validação bem-sucedida da senha.
 
-A [captura da mensagem](04-entrada-bloqueada.png) mostra Carla e indicação de bloqueio, sem horário interno. A hora exata vem do log. O nome técnico da aplicação foi preservado como AMC PROD.
+A [captura da mensagem](04-entrada-bloqueada.png) é apoio visual sem horário interno; identidade, hora e código vêm do log.
 
-O teste comprova uma nova tentativa bloqueada, não encerramento de toda sessão anterior ou negação de acesso a arquivo financeiro. A conta foi desabilitada, não excluída. O [significado oficial de AADSTS50057](https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50057-user-account-is-disabled) é compatível com o resultado observado.
+O teste não comprova encerramento de toda sessão anterior ou negação de acesso a arquivo financeiro. Conta desabilitada, sem exclusão. Referência: [AADSTS50057](https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50057-user-account-is-disabled).
 
 SHA256 da fonte privada: `628948E68E48FD9CD43420388754E068B1892B79A7C367F52575D0441EC9AA98`.
 
