@@ -416,6 +416,8 @@ A auditoria mostrou cinco alterações recusadas pela política de senha,
 uma alteração concluída às 20:12:18Z e, depois, uma tentativa de
 redefinição por autoatendimento indisponível para Felipe às 20:14:27Z.
 
+Os extratos não esclarecem por que foi solicitada recuperação/reset após a alteração bem-sucedida das 20:12:18; a sequência e o resultado posterior estão registrados, sem causa adicional comprovada.
+
 ## Ações realizadas
 
 - **Concluído:** ADMIN-LAB-001 redefiniu a senha às 20:29:54Z.
@@ -674,8 +676,8 @@ A sequência é compatível com manutenção do contexto de autorização da con
 |---|---|---|
 | 1 | Estado e leitura antes da retirada | [01–02 — grupo, compartilhamento, conexão e leitura](../evidencias/sanitizadas/IAM-009/README.md#antes). |
 | 2 | Grupo removido e leitura persistente | [03–04 — ausência do grupo e leitura na conexão mantida](../evidencias/sanitizadas/IAM-009/README.md#retirada). |
-| 3 | Nova conexão e negação | [05 — reconexão e leitura negada](../evidencias/sanitizadas/IAM-009/05-reconexao-leitura-negada.png). |
-| 4 | Restauração e reteste | [06 — grupo restaurado e leitura permitida](../evidencias/sanitizadas/IAM-009/06-grupo-restaurado-leitura-permitida.png). |
+| 3 | Nova conexão e negação | [05 — reconexão e leitura negada](../evidencias/sanitizadas/IAM-009/README.md#reconexao). |
+| 4 | Restauração e reteste | [06 — grupo restaurado e leitura permitida](../evidencias/sanitizadas/IAM-009/README.md#restauracao). |
 
 A captura nominal de 12:25 contém o teste das 12:10 e precede a de restauração na ordem dos eventos. O horário do comando orienta a leitura; o nome original do arquivo não redefine quando o teste ocorreu.
 

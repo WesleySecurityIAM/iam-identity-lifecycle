@@ -15,17 +15,24 @@ O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-009) registra a apro
 
 <a id="retirada"></a>
 
-## 2. Retirada do grupo e comparação das conexões
+## 2. Retirada do grupo e leitura na conexão mantida
 
 | Prova | Horário | Resultado |
 |---|---|---|
 | [03 — Felipe ausente do grupo](03-felipe-ausente-do-grupo.png) | 12:06:10 | FelipePresente=False e TotalMembros=0 após a retirada relatada. |
 | [04 — Leitura com a conexão mantida](04-leitura-permitida-apos-remocao.png) | 12:07:07 | Conteúdo ainda lido após remoção; operador informa que manteve a conexão. |
+
+<a id="reconexao"></a>
+
+## 3. Nova conexão e leitura negada
+
+| Prova | Horário | Resultado |
+|---|---|---|
 | [05 — Nova conexão e leitura negada](05-reconexao-leitura-negada.png) | 12:10:22 | Lista `net use` vazia, conexão aceita como Felipe e leitura negada. |
 
 <a id="restauracao"></a>
 
-## 3. Restauração e validação final
+## 4. Restauração e validação final
 
 [06 — Grupo restaurado e leitura permitida](06-grupo-restaurado-leitura-permitida.png) mostra Felipe novamente no grupo às **12:12:19** e, após desconexão/reconexão, leitura permitida às **12:16:59**, encerrando o exercício com a associação original restabelecida.
 

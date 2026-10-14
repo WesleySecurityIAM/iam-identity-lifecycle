@@ -7,6 +7,8 @@ Auditoria do Microsoft Entra ID: identidade cloud-only de **EMP0006 — Felipe G
 | Data/hora UTC | 2026-09-03T19:47:28.0287472Z |
 | Serviço / categoria | Core Directory / UserManagement |
 | Atividade / status | Add user / Bem-sucedido |
+| AccountEnabled — valor novo no evento | `[true]` |
+| Department — valor novo no evento | `["Financeiro"]` |
 | Executor sanitizado | ADMIN-LAB-001 |
 | UPN sanitizado | felipe.gomes@empresa.example |
 

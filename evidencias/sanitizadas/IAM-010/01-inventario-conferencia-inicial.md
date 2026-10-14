@@ -1,6 +1,6 @@
 # Reconciliação ampliada — conferência inicial de 28/09/2026
 
-Coleta inicial de 28/09/2026, anterior à definição completa do escopo por sistema. Nenhuma conta ou permissão foi alterada nesta conferência. Tratamentos e fechamento em 29/09: [índice](README.md).
+Coleta inicial de 28/09/2026, anterior à definição completa do escopo por sistema. Nenhuma conta ou permissão foi alterada nesta conferência. Tratamentos em 28–29/09 e fechamento em 29/09: [índice](README.md).
 
 ## Fontes e população
 

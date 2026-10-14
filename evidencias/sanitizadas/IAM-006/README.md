@@ -18,6 +18,8 @@
 | 20:33:21 | Alteração de senha concluída pelo usuário. | [03 — última alteração](EV-IAM-006-03-eventos-senha.md). |
 | 20:33:27–20:34:08 | Entradas posteriores com êxito, concluindo a validação. | [04 — entradas posteriores](EV-IAM-006-04-login-posterior.md). |
 
+Os extratos não esclarecem por que foi solicitada recuperação/reset após a alteração bem-sucedida das 20:12:18; comprovam a sequência registrada e o êxito posterior.
+
 ## 2. Validação e fechamento original — 03–04/09
 
 Na [prova 04](EV-IAM-006-04-login-posterior.md), o êxito das 20:33:27Z vem do log principal, sem etapa correspondente no arquivo de detalhes. Às 20:33:43Z, o primeiro fator foi satisfeito por informação no token; não significa nova digitação de senha.
