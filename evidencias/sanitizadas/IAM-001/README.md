@@ -2,6 +2,8 @@
 
 Felipe (EMP0006): identidade cloud-only criada, associada a GG_FIN_READ e matrícula conferida no fechamento de **04/09/2026**. Cargo confirmado em complemento de 10/09. [Ticket e aprovação simulada](../../../00-operacao-itsm/05-fila-tickets.md#iam-001).
 
+**Etapas:** [Fundamento](#1-rh-e-acesso-esperado--fonte-de-29082026) · [Criação](#2-criação-e-associação--03092026) · [Validação](#3-conferência-e-fechamento--04092026) · [Complemento](#4-complemento-cadastral--10092026) · [Limites](#limites-e-origem).
+
 <a id="fundamento"></a>
 
 ## 1. RH e acesso esperado — fonte de 29/08/2026

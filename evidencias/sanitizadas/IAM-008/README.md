@@ -4,6 +4,8 @@
 
 **Resultado:** decisão simulada de 17/09 mantém a leitura por grupo e não aprova a permissão individual redundante. Ticket fechado sem alterar grupos ou ACLs.
 
+**Etapas:** [Referência](#1-referência-funcional-anterior--1409) · [Grupos e ACL](#2-conferir-a-cadeia-que-sustenta-o-acesso--1709) · [Decisão](#3-decisão-e-fechamento--1709) · [Limites](#limites-das-provas).
+
 ## 1. Referência funcional anterior — 14/09
 
 Consulta opcional: [teste de Felipe no mesmo recurso em 14/09 — leitura permitida e criação negada](../agdlp-financeiro/05-felipe-leitura-permitida-escrita-negada.png). Não houve novo teste funcional neste atendimento.

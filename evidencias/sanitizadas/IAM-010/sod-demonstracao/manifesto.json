@@ -1,0 +1,18 @@
+{
+  "tipo": "Demonstracao complementar refeita; nao e captura historica",
+  "data_ficticia_cenario": "2026-09-29",
+  "metodo": "HTML e JSON gerados pelo PowerShell; imagens capturadas dos HTMLs no navegador",
+  "arquivos": {
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/antes.json": "961610d87c02af948713c3c191b892c9098aa2ac82db0814d74f7f6b2be6fc4b",
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/depois.json": "d2ac65eb097a2913c85dfc6d735b113eaeac1cb015c0f553071adf5fa6756d57",
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/antes.html": "f3e2ea70292245d07d721dc485acb0c3a6f38350a7aa4e0e1593a8bad75b9b28",
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/depois.html": "6bdd76fbb0d35bf368c2562954687751c95c34fbf31224fc27de3425c05a5f00",
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/antes.png": "a802cc429399bd30a2adbe70c16c23c4e9e4e45c0fc3d373c5f8c9e32d5ea9b2",
+    "evidencias/sanitizadas/IAM-010/sod-demonstracao/depois.png": "eb1882f41d2d97763d6df0c309d2ef227b242ad7bdbc249c1ccf18cac3fbd599",
+    "05-automacao/SoD-001/Invoke-SoDCase.ps1": "194bda683919228ebfbd08b30812292a75bbecac88230988d44801e25d1e4845",
+    "05-automacao/SoD-001/regra.json": "176ac2538c9590d0d07f857e492aa0e85713de516264f32918c2115ff96e5231",
+    "05-automacao/SoD-001/acessos.csv": "46454e975e9b91a8152d5bf696eb02391941816bd9125686c5b7ae3f3ab12735",
+    "05-automacao/SoD-001/decisao.json": "5654815bd28c5a36f55b63ca11867ec860586c30c76fa02070013231021231bc",
+    "05-automacao/SoD-001/relatorio.html": "79d01dbf1a3684320716f916721cd51385449be9182d4c7a52538fe7bdcffcc8"
+  }
+}

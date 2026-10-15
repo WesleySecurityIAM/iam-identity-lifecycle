@@ -1,0 +1,9 @@
+{
+  "regra_id": "SoD-001",
+  "employee_id": "EMP0007",
+  "escopo": "Compras-LAB",
+  "responsavel_simulado": "Carlos Lima",
+  "retirar": "FORNECEDOR_MANTER",
+  "manter": "ORCAMENTO_APROVAR",
+  "justificativa": "Neste cenário, Gabriela aprova orçamentos; manter fornecedores cabe a outra pessoa."
+}

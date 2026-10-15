@@ -4,6 +4,8 @@
 
 [Ticket: aprovação simulada, execução e manutenção da credencial](../../../00-operacao-itsm/05-fila-tickets.md#iam-005).
 
+**Etapas:** [Antes](#1-estado-anterior--1109) · [Permissões](#2-concessões--1509) · [Execução e testes](#3-execuções-e-testes--1509) · [Desativação](#4-desativação-e-fechamento--1509) · [Limites](#limites-e-preservação).
+
 <a id="estado-anterior"></a>
 
 ## 1. Estado anterior — 11/09

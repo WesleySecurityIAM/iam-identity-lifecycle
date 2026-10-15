@@ -4,6 +4,8 @@
 
 **Resultado:** pré-admissão bloqueada em 14/09; ativação, inclusão no grupo, troca de senha e entrada com MFA comprovadas em 15/09. A atualização documental do RH foi anexada em 18/09 e aparece separada abaixo.
 
+**Etapas:** [Fundamento](#1-fundamento--pessoa-data-e-acesso-esperado) · [Preparação](#2-preparação-e-teste-negativo--1409) · [Ativação e testes](#3-ativação-e-testes--1509-por-horário) · [RH complementar](#4-complemento-documental-do-rh--1809) · [Limites](#limites-do-fechamento).
+
 ## 1. Fundamento — pessoa, data e acesso esperado
 
 | Campo relevante de Ana | Esperado no cenário |

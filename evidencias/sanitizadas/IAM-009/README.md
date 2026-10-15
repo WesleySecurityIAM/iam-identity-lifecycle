@@ -4,6 +4,8 @@
 
 O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-009) registra a aprovação simulada do exercício e a restauração prevista. A aprovação de 11:50 é um horário fictício do cenário; os horários abaixo são exibidos junto dos comandos, em UTC−03:00.
 
+**Etapas:** [Antes](#1-estado-e-teste-antes-da-retirada) · [Retirada](#2-retirada-do-grupo-e-leitura-na-conexão-mantida) · [Reconexão](#3-nova-conexão-e-leitura-negada) · [Restauração](#4-restauração-e-validação-final) · [Conclusão](#o-que-a-sequência-permite-concluir) · [Limites](#origem-e-limites).
+
 <a id="antes"></a>
 
 ## 1. Estado e teste antes da retirada

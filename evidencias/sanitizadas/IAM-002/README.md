@@ -2,6 +2,8 @@
 
 **Fechado em 28/09/2026.** Gabriela (EMP0007) passou de Suporte para Financeiro: leitura antiga negada, leitura financeira permitida e criação negada no AD. Cadastro e grupos conferidos no AD e Entra; seis regras finais conformes. [Ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-002).
 
+**Etapas:** [Preparação](#1-preparação-do-acesso-de-suporte--22092026) · [Conferências anteriores](#2-conferências-ainda-em-suporte--23092026) · [RH e decisão](#3-mudança-de-rh-e-estado-anterior--28092026) · [AD](#4-alteração-e-testes-no-ad--28092026) · [Entra](#5-alteração-e-conferência-no-entra--28092026) · [OU](#6-complemento-de-ou-e-retestes--28092026-à-tarde) · [Limites](#limites-e-origem).
+
 <a id="preparacao-suporte"></a>
 <a id="preparação-histórica--22-e-2309"></a>
 

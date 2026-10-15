@@ -1,0 +1,9 @@
+{
+  "id": "SoD-001",
+  "processo": "Compras-LAB",
+  "direito_a": "FORNECEDOR_MANTER",
+  "descricao_a": "Manter fornecedores",
+  "direito_b": "ORCAMENTO_APROVAR",
+  "descricao_b": "Aprovar orçamento",
+  "condicao": "A mesma pessoa não pode acumular A e B no mesmo escopo."
+}

@@ -4,6 +4,8 @@
 
 Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números dos arquivos são identificadores.
 
+**Etapas:** [Inventário e regra](#1-inventariar-e-definir-o-esperado--2809) · [Tratamentos](#2-tratar-os-achados-e-testar--2809-antes-da-comparação-final-do-dia) · [Comparação e decisões](#3-comparar-os-grupos-e-registrar-decisões--2809) · [Encerramentos](#4-concluir-os-encaminhamentos-de-encerramento--2909-manhã) · [TI](#5-completar-a-cobertura-de-ti-e-validar-isabela--2909) · [SoD](#6-avaliar-e-tratar-o-conflito-sod--2909-17061710) · [Fechamento](#7-coletar-novamente-comparar-e-encerrar--2909).
+
 <a id="inventario-e-regra"></a>
 
 ## 1. Inventariar e definir o esperado — 28/09
@@ -58,7 +60,7 @@ A matriz é uma revisão documental de 29/09 sem horário intradiário comprovad
 
 ## 6. Avaliar e tratar o conflito SoD — 29/09, 17:06–17:10
 
-[14 — Regra, decisão e antes/depois](14-sod-resultado.md): leia a regra e o resumo do caso principal de Gabriela: dois direitos conflitantes → decisão → somente aprovação de orçamento. As capturas originais **15–16** e os quatro cenários de controle ficam em seções expansíveis para conferência. O [roteiro 09](09-roteiro-sod.md) é apoio técnico.
+[14 — Regra, decisão e antes/depois](14-sod-resultado.md): leia o caso de Gabriela nas imagens da demonstração refeita: regra → dois direitos conflitantes → decisão → aprovação preservada. A data de 29/09 é fictícia nessas novas imagens. As capturas históricas **15–16** e os cenários de controle ficam em apoio expansível; o [roteiro 09](09-roteiro-sod.md) descreve a versão original.
 
 São cinco cenários alternativos em dados fictícios; não representam direitos reais de Gabriela em uma aplicação nem permissões concedidas por GG_FIN_READ.
 

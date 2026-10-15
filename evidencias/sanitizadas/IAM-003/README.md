@@ -2,6 +2,8 @@
 
 Carla (EMP0003), desligada no RH fictício: **fechado em 23/09/2026** com conta desabilitada, GG_FIN_READ retirado, revogação registrada e nova entrada bloqueada. A regra cadastral passou de EXCECAO para CONFORME. [Ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-003).
 
+**Etapas:** [Antes](#1-divergência-inicial--23092026) · [Decisão](#2-decisão-simulada--23092026) · [Ações](#3-ações-auditadas--23092026) · [Validação](#4-validar-estado-e-nova-tentativa-de-entrada) · [Comparação final](#5-comparação-posterior-e-fechamento--23092026) · [Limites](#limites-e-origem).
+
 <a id="estado-anterior"></a>
 
 ## 1. Divergência inicial — 23/09/2026

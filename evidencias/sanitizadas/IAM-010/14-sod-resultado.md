@@ -1,6 +1,6 @@
 # SoD-001 — conflito tratado no modelo local
 
-**Objetivo:** detectar e tratar uma combinação de direitos incompatíveis pela regra fictícia de Compras-LAB. Exercício executado em 29/09/2026, separado dos inventários AD/Entra. Leia regra → caso principal de Gabriela → decisão e depois. As tabelas abaixo são um resumo documental das capturas históricas, não uma nova execução; as imagens completas e os demais cenários ficam disponíveis para conferência.
+**Objetivo:** detectar e tratar uma combinação de direitos incompatíveis pela regra fictícia de Compras-LAB. Leia regra → conflito → decisão → resultado. As imagens principais são relatórios de uma **demonstração refeita**, com data fictícia do cenário de **29/09/2026**; não são capturas originais daquele dia. As provas históricas 15–16 permanecem em seções de apoio.
 
 <a id="regra"></a>
 
@@ -15,20 +15,22 @@
 
 O risco considerado é concentrar a manutenção de fornecedores e a aprovação de orçamento na mesma pessoa. O cenário exige separar essas responsabilidades; esses direitos, sozinhos, não demonstram capacidade de executar pagamentos. A regra é específica deste modelo.
 
-**Caso principal:** Gabriela (EMP0007), no escopo Compras-LAB, acumula A+B. A decisão simulada mantém sua aprovação de orçamento e retira a manutenção de fornecedores. As outras linhas das capturas são cenários alternativos para validar o comparador, não concessões adicionais à mesma pessoa neste caso.
+**Caso principal:** Gabriela (EMP0007), no escopo Compras-LAB, acumula A+B. A decisão simulada mantém sua aprovação de orçamento e retira a manutenção de fornecedores. O [novo roteiro](../../../05-automacao/SoD-001/README.md) usa somente esse caso; os cenários alternativos do script histórico ficam no apoio técnico.
 
 <a id="antes"></a>
 
-## 2. Prova 15 — detectar o conflito
+## 2. Antes — detectar o conflito
 
-**29/09/2026, 17:06:37 UTC−03:00.** Resumo da linha **A+B** da prova 15:
+O script lê os direitos de Gabriela no CSV fictício: manter fornecedores **e** aprovar orçamento no mesmo escopo. Resultado: **CONFLITO** pela SoD-001.
 
-| Pessoa / escopo | Direitos observados no modelo | Resultado |
-|---|---|---|
-| Gabriela — EMP0007 / Compras-LAB | Manter fornecedores **e** aprovar orçamento | **CONFLITO**: combinação proibida pela SoD-001. |
+![Demonstração refeita: regra, dois direitos presentes e conflito de Gabriela](sod-demonstracao/antes.png)
+
+[Relatório estruturado — antes](sod-demonstracao/antes.json).
 
 <details>
 <summary>Conferir a captura original 15 — olhar somente a linha A+B</summary>
+
+**Captura histórica de 29/09/2026, 17:06:37 UTC−03:00**, com cinco cenários independentes do script original. Não é a execução que gerou o relatório novo acima.
 
 ![Prova 15: cenário A+B com os dois direitos e resultado CONFLITO](15-sod-antes.png)
 
@@ -38,18 +40,18 @@ O risco considerado é concentrar a manutenção de fornecedores e a aprovação
 
 <a id="depois"></a>
 
-## 3. Prova 16 — decisão e validação após o tratamento
+## 3. Decisão e resultado após o tratamento
 
-**29/09/2026, 17:10:04 UTC−03:00.** A captura exibe a decisão didática atribuída a Carlos Lima: **manter B e retirar A do caso A+B**, pois Gabriela aprova orçamentos no cenário e a manutenção de fornecedores cabe a outra pessoa. A atribuição dessa função a outra pessoa não foi implementada neste exercício.
+**Decisão simulada atribuída a Carlos Lima:** manter B e retirar A, pois Gabriela aprova orçamentos no cenário e a manutenção de fornecedores cabe a outra pessoa. A atribuição dessa função a outra pessoa não foi implementada. A etapa Depois aplica a decisão somente aos dados em memória e avalia novamente:
 
-| Pessoa / escopo | Direito preservado | Direito retirado no modelo | Resultado |
-|---|---|---|---|
-| Gabriela — EMP0007 / Compras-LAB | Aprovar orçamento | Manter fornecedores | **SEM_CONFLITO** pela SoD-001. |
+![Demonstração refeita: manutenção de fornecedores retirada no modelo, aprovação preservada e sem conflito](sod-demonstracao/depois.png)
 
-**Comparação:** no caso principal, a combinação passou de A+B para somente B. O total da execução passou de um para zero conflitos. O nome da linha **A+B** permanece no depois para identificar o cenário original; a coluna **Direitos** mostra o que restou.
+**Validação:** somente B permanece; a contagem passa de um para zero conflitos. [Relatório estruturado — depois](sod-demonstracao/depois.json).
 
 <details>
 <summary>Conferir a captura original 16 — decisão exibida e linha A+B somente com B</summary>
+
+**Captura histórica de 29/09/2026, 17:10:04 UTC−03:00.** O nome da linha A+B identifica o cenário original; a coluna Direitos mostra somente B após o tratamento. Não é a execução que gerou o relatório novo acima.
 
 ![Prova 16: decisão simulada, caso A+B somente com ORCAMENTO_APROVAR e zero conflitos](16-sod-depois.png)
 
@@ -59,10 +61,12 @@ O risco considerado é concentrar a manutenção de fornecedores e a aprovação
 
 ## 4. Como o script compara e quais são os limites
 
-O [script PowerShell](../../../05-automacao/Invoke-SoDLab.ps1) cria os direitos fictícios e agrupa por **caso, matrícula e escopo**. O caso separa as alternativas de validação; matrícula e escopo identificam a pessoa e o contexto. Dentro de cada conjunto, a presença simultânea de A e B produz conflito. Na etapa Depois, o script retira A do caso conflitante em memória e avalia novamente, preservando B. [Roteiro técnico](09-roteiro-sod.md).
+O [novo script PowerShell](../../../05-automacao/SoD-001/Invoke-SoDCase.ps1) lê **regra.json** (esperado), **acessos.csv** (observado fictício) e **decisao.json** (tratamento simulado). Confere pessoa, escopo, campos e duplicidades. A presença de A e B gera conflito; Depois retira A em memória, preserva B e compara novamente. Cada etapa exporta JSON e HTML; as imagens desta página são capturas desses HTMLs. [Entradas e reprodução](../../../05-automacao/SoD-001/README.md) · [arquivos da demonstração](sod-demonstracao/README.md).
 
 <details>
 <summary>Apoio técnico — por que as capturas têm cinco cenários e matrículas repetidas</summary>
+
+O [script histórico](../../../05-automacao/Invoke-SoDLab.ps1) agrupa por caso, matrícula e escopo para separar cinco alternativas de validação, descritas no [roteiro original](09-roteiro-sod.md). As capturas 15–16 correspondem a essa versão; os relatórios novos usam um único caso.
 
 | Cenário independente | Por que recebe esse resultado |
 |---|---|

@@ -2,6 +2,8 @@
 
 Diego (EMP0004): vínculo fictício encerrado em **29/09/2026 às 08:00 UTC−03:00**. Fechado em 29/09 com nova autenticação recusada no AD, bloqueio/revogação no Entra e comparação cadastral conforme. [Ticket e decisão simulada](../../../00-operacao-itsm/05-fila-tickets.md#iam-004).
 
+**Etapas:** [Prazo](#1-prazo-configurado--28092026) · [AD](#2-expiração-e-tentativa-no-ad--29092026) · [Entra](#3-bloqueio-e-revogação-no-entra--29092026) · [Fechamento](#4-conferência-final--29092026) · [Limites](#limites-e-origem).
+
 <a id="prazo-e-regra"></a>
 
 ## 1. Prazo configurado — 28/09/2026

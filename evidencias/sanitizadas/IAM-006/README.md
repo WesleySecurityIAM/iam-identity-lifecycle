@@ -2,6 +2,8 @@
 
 **Resultado:** a senha de Felipe (EMP0006) era aceita, mas a entrada no Entra era interrompida por expiração/exigência de troca. A auditoria e os logs de **03/09/2026** registram o tratamento e a autenticação restabelecida. Ticket fechado em **04/09**.
 
+**Etapas:** [Diagnóstico e ações](#1-diagnóstico-e-tratamento--0309-horários-utc) · [Validação](#2-validação-e-fechamento-original--030409) · [ServiceNow](#3-documentação-posterior--1809) · [Limites](#origem-e-limites).
+
 <a id="linha-do-tempo"></a>
 
 ## 1. Diagnóstico e tratamento — 03/09, horários UTC

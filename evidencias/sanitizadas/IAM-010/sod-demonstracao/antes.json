@@ -1,0 +1,22 @@
+{
+  "Tipo": "DEMONSTRACAO LOCAL REFEITA; nao e captura historica de 29/09",
+  "DataFicticiaCenario": "2026-09-29",
+  "Etapa": "Antes",
+  "Regra": "SoD-001",
+  "Condicao": "A mesma pessoa não pode acumular A e B no mesmo escopo.",
+  "Pessoa": "Gabriela Santos",
+  "Matricula": "EMP0007",
+  "Escopo": "Compras-LAB",
+  "DireitosAntes": [
+    "FORNECEDOR_MANTER",
+    "ORCAMENTO_APROVAR"
+  ],
+  "DecisaoAplicadaNoModelo": null,
+  "DireitosAvaliados": [
+    "FORNECEDOR_MANTER",
+    "ORCAMENTO_APROVAR"
+  ],
+  "Resultado": "CONFLITO",
+  "Conflitos": 1,
+  "Limite": "Somente dados ficticios locais; nao altera AD, Entra ou ERP. Sem conflito nao comprova necessidade de acesso."
+}

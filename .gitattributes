@@ -8,6 +8,11 @@
 evidencias/sanitizadas/fontes-rh/*.csv -text whitespace=cr-at-eol
 *.ps1 text eol=crlf
 
+# Arquivos da demonstracao SoD com hashes reproduziveis em outros checkouts.
+05-automacao/SoD-001/* text eol=lf
+evidencias/sanitizadas/IAM-010/sod-demonstracao/*.json text eol=lf
+evidencias/sanitizadas/IAM-010/sod-demonstracao/*.html text eol=lf
+
 *.png binary
 *.jpg binary
 *.jpeg binary
