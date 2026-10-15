@@ -1,16 +1,56 @@
 # SoD-001 — conflito tratado no modelo local
 
-Exercício concluído pelo operador em 29/09/2026, com [script](../../../05-automacao/Invoke-SoDLab.ps1) e [regra/roteiro](09-roteiro-sod.md). Dados fictícios separados dos inventários AD/Entra; nenhuma concessão real foi alterada.
+**Objetivo:** detectar e tratar uma combinação de direitos incompatíveis pela regra fictícia de Compras-LAB. Exercício executado em 29/09/2026, separado dos inventários AD/Entra. Leia regra → antes → decisão e depois → método e limites. As capturas originais estão abaixo, com a explicação de cada resultado.
 
-| Etapa | Evidência e resultado |
+<a id="regra"></a>
+
+## 1. Regra e motivo da separação
+
+**SoD significa segregação de funções. Regra SoD-001:** a mesma pessoa não pode acumular os direitos A e B no mesmo escopo de Compras-LAB.
+
+| Direito fictício | Significado no processo |
 |---|---|
-| Antes, 17:06:37 -03:00 | [15 — Antes](15-sod-antes.png): um conflito, no cenário A+B para EMP0007 em Compras-LAB. |
-| Decisão e depois, 17:10:04 -03:00 | [16 — Depois](16-sod-depois.png): decisão didática de Carlos Lima exibida; manter ORCAMENTO_APROVAR e retirar FORNECEDOR_MANTER do cenário A+B, pois a manutenção de fornecedores cabe a outra pessoa. Zero conflitos após o filtro, preservando B. |
+| A — `FORNECEDOR_MANTER` | Manter o cadastro de fornecedores. |
+| B — `ORCAMENTO_APROVAR` | Aprovar orçamento. |
 
-Cinco cenários independentes: A somente, B somente, A+B, pessoas distintas e escopos distintos. O script agrupa por caso/matrícula/escopo e verifica presença simultânea dos dois direitos. Os quatro casos sem conflito permanecem sem conflito; não foram somados direitos entre pessoas ou escopos diferentes.
+O risco considerado é concentrar a manutenção de fornecedores e a aprovação de orçamento na mesma pessoa. O cenário exige separar essas responsabilidades; esses direitos, sozinhos, não demonstram capacidade de executar pagamentos. A regra é específica deste modelo.
 
-Cada execução recria os dados e a etapa Depois aplica o tratamento em memória. Isso demonstra detecção e tratamento da regra conhecida, não execução de revogação numa aplicação. A decisão é simulada e exibida no exercício; não é uma aprovação corporativa externa.
+<a id="antes"></a>
 
-Limites: SoD estática; sem ERP, transações financeiras, API de concessão ou prevenção implantada. GG_FIN_READ não concede esses direitos. Zero conflitos não comprova necessidade de cada acesso.
+## 2. Prova 15 — detectar o conflito
+
+**29/09/2026, 17:06:37 UTC−03:00.** Procure a linha **A+B**, matrícula **EMP0007**, escopo **Compras-LAB**: os dois direitos aparecem juntos e o resultado é **CONFLITO**. O total é um conflito.
+
+![Prova 15: cenário A+B com os dois direitos e resultado CONFLITO](15-sod-antes.png)
+
+[Abrir a captura original 15](15-sod-antes.png).
+
+### Como interpretar os cinco cenários da captura
+
+| Cenário independente | Por que recebe esse resultado |
+|---|---|
+| A somente | Só mantém fornecedores; não acumula B. |
+| B somente | Só aprova orçamento; não acumula A. |
+| A+B | Mesma matrícula e escopo com os dois direitos: conflito. |
+| Pessoas distintas | Uma pessoa tem A e outra tem B: não acumulam os dois na mesma identidade. |
+| Escopos distintos | A e B estão em escopos diferentes: sem conflito pela regra delimitada, que não avalia efeitos entre escopos. |
+
+São alternativas de validação, não concessões simultâneas a Gabriela. Pessoas e escopos distintos ocupam duas linhas cada; por isso há sete linhas de resultado para cinco cenários.
+
+<a id="depois"></a>
+
+## 3. Prova 16 — decisão e validação após o tratamento
+
+**29/09/2026, 17:10:04 UTC−03:00.** A captura exibe a decisão didática atribuída a Carlos Lima: **manter B e retirar A do caso A+B**, pois Gabriela aprova orçamentos no cenário e a manutenção de fornecedores cabe a outra pessoa. A atribuição dessa função a outra pessoa não foi implementada neste exercício.
+
+![Prova 16: decisão simulada, caso A+B somente com ORCAMENTO_APROVAR e zero conflitos](16-sod-depois.png)
+
+**O que comprova:** no caso A+B, restou `ORCAMENTO_APROVAR`, com resultado **SEM_CONFLITO**; o total passou de um para zero. Os outros quatro cenários permaneceram sem conflito. [Abrir a captura original 16](16-sod-depois.png).
+
+## 4. Como o script compara e quais são os limites
+
+O [script PowerShell](../../../05-automacao/Invoke-SoDLab.ps1) cria os direitos fictícios e agrupa por **caso, matrícula e escopo**. O caso separa as alternativas de validação; matrícula e escopo identificam a pessoa e o contexto. Dentro de cada conjunto, a presença simultânea de A e B produz conflito. Na etapa Depois, o script retira A do caso conflitante em memória e avalia novamente, preservando B. [Roteiro técnico](09-roteiro-sod.md).
+
+Cada execução recria os dados. As provas demonstram detecção e tratamento no modelo local, sem revogação em aplicação real. SoD estática: sem ERP, transações financeiras, API de concessão, prevenção implantada ou avaliação de conluio. A decisão é simulada, sem aprovação corporativa externa. `GG_FIN_READ` não concede esses direitos, e **zero conflitos não comprova necessidade de cada acesso**.
 
 [Voltar ao índice por assunto](README.md).

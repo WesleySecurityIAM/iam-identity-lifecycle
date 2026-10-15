@@ -58,7 +58,7 @@ A matriz é uma revisão documental de 29/09 sem horário intradiário comprovad
 
 ## 6. Avaliar e tratar o conflito SoD — 29/09, 17:06–17:10
 
-[14 — Regra, decisão e antes/depois](14-sod-resultado.md): capturas **15–16**, um conflito A+B, depois zero, mantendo a aprovação de orçamento. O [roteiro 09](09-roteiro-sod.md) e o script explicam como a comparação foi feita.
+[14 — Regra, decisão e antes/depois](14-sod-resultado.md): leia a regra A+B e seu motivo, depois as capturas **15–16** exibidas com explicação na mesma página. Um conflito antes e zero depois, mantendo a aprovação de orçamento. A página também explica os cinco cenários e o método; o [roteiro 09](09-roteiro-sod.md) é apoio técnico.
 
 São cinco cenários alternativos em dados fictícios; não representam direitos reais de Gabriela em uma aplicação nem permissões concedidas por GG_FIN_READ.
 
