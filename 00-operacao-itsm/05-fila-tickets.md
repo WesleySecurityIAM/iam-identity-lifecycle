@@ -156,8 +156,8 @@ A matriz é referência do **esperado**; as capturas, auditoria e comparação a
 - **Concluído — 28/09:** preparar fonte de RH com a mudança vigente; versão anterior preservada, nove registros mantidos e alteração limitada aos três campos de EMP0007.
 - **Concluído — 28/09:** coletar estado anterior no AD (11:01:02 UTC−03:00) e perfil no Entra (relógio da estação às 11:08); registrar decisão simulada e reversão prevista.
 - **Concluído — 28/09:** retirar Suporte, confirmar ausência no grupo e leitura negada após conexão explícita; atualizar cadastro, conceder Financeiro e comprovar leitura permitida/criação negada (15–19).
-- **Concluído — 28/09:** alterar no Entra, conforme auditoria de remoção → cadastro → inclusão (22); conferir identidade/cadastro/grupos finais (20–21) e comparar RH com exportações finais: seis regras conformes (23).
-- **Concluído — 28/09, à tarde:** após o inventário do IAM-010, mover para OU Financeiro, conferir identidade/grupo preservados e retestar (24–28).
+- **Concluído — 28/09:** alterar no Entra, conforme auditoria de remoção → cadastro → inclusão (22); conferir identidade/cadastro/grupos finais (20–21) e reconciliar RH/regra de acesso com exportações finais, por rotina Python: seis regras conformes (23).
+- **Concluído — 28/09, à tarde:** a análise do inventário AD do IAM-010 encontrou Gabriela ainda em OU Suporte; após a decisão de 16:14, mover para OU Financeiro, conferir identidade/grupo preservados e retestar (24–28). Comparação posterior em PowerShell confirma a localização e os campos preservados (29).
 
 ## Validação e teste de acesso
 
@@ -166,6 +166,8 @@ Em 22/09, UTC−03:00: associação GG/DL às 11:26:08; ACL e compartilhamento �
 Em 23/09 às 16:57:25 UTC−03:00, a captura da reconciliação apresenta duas verificações conformes para EMP0007: habilitação True/True e departamento Suporte/Suporte. A fonte observada continua sendo o CSV de 22/09; grupos e acessos efetivos não foram comparados pelo script.
 
 Em 28/09, Suporte ausente no AD às 11:33:46 e leitura negada às 11:36:50. Cadastro e grupos finais às 11:42:55; leitura financeira permitida às 11:52:39 e criação negada às 11:54:34. Auditoria Entra confirma remoção às 11:56:12, cadastro às 11:58:04 e inclusão às 11:58:42 (UTC−03:00). Nova comparação após as mudanças: seis regras conformes e zero exceções no escopo, com fontes e limites na prova 23.
+
+**Como foi feita a reconciliação:** a rotina histórica `fechar-mover-2809.py` leu os CSVs com Python, correlacionou EMP0007 entre RH e usuários Entra e procurou o Object ID nos membros dos grupos. Habilitação, departamento e cargo vieram do RH; a regra de acesso exigia Suporte ausente e Financeiro presente; o Object ID anterior serviu para conferir a identidade. O objetivo era confrontar **esperado × observado após as ações**, não apenas registrar que os comandos haviam sido executados. [Prova 23 — entradas, método e resultado](../evidencias/sanitizadas/IAM-002/23-comparacao-final.md) · [Código e execução das comparações](../05-automacao/IAM-002/README.md).
 
 ## Evidências
 
@@ -177,10 +179,10 @@ Em 28/09, Suporte ausente no AD às 11:33:46 e leitura negada às 11:36:50. Cada
 | 2 — 23/09 | Preservar cadastro/grupos e comparações ainda em Suporte | [08–11 — conferências anteriores](../evidencias/sanitizadas/IAM-002/README.md#conferencias-anteriores). Somente os resultados de Gabriela; fontes conjuntas identificadas como suporte. |
 | 3 — 28/09, antes de executar | Definir perfil/acesso esperado e coletar o estado imediatamente anterior | [12–14 — RH, decisão simulada e antes no AD/Entra](../evidencias/sanitizadas/IAM-002/README.md#mudanca-e-estado-anterior). A [regra financeira](#iam-002-regra-acesso) explica o esperado; as capturas mostram o observado. |
 | 4 — 28/09, 11:33–11:54 | Retirar Suporte, validar a negação, conceder Financeiro e testar | [15–19 — alteração e testes no AD](../evidencias/sanitizadas/IAM-002/README.md#execucao-ad), na ordem: grupo removido → Suporte negado → cadastro/grupos finais → leitura financeira → criação negada. |
-| 5 — 28/09, 11:56 em diante | Executar separadamente no Entra e comparar após as mudanças | [22 → 20–21 → 23 — auditoria, consultas finais e comparação](../evidencias/sanitizadas/IAM-002/README.md#execucao-entra). Os eventos auditados antecedem as telas; seis regras conformes. |
-| 6 — 28/09, 16:20–16:35 | Alinhar a OU após o inventário e retestar | [24–28 — OU antes/depois e testes](../evidencias/sanitizadas/IAM-002/README.md#complemento-ou). Complemento posterior ao Mover da manhã, preservando a identidade e o grupo. |
+| 5 — 28/09, 11:56 em diante | Executar separadamente no Entra e comparar após as mudanças | [22 → 20–21 → 23 — auditoria, consultas finais e reconciliação em Python](../evidencias/sanitizadas/IAM-002/README.md#execucao-entra). Os eventos auditados antecedem as telas; seis regras conformes. |
+| 6 — 28/09, 15:52–16:59 | Identificar a OU no inventário AD, decidir o alinhamento, mover, retestar e comparar | [24–29 — OU antes/depois, testes e comparação PowerShell](../evidencias/sanitizadas/IAM-002/README.md#complemento-ou). Complemento posterior ao Mover da manhã, preservando a identidade e o grupo. |
 
-Complemento de 28/09, decidido às 16:14 UTC−03:00: [movimentação para OU Financeiro](REV-2026-09-28-escopo-reconciliacao.md). Provas 24–28 mostram antes/depois com identidade e grupo preservados e testes de acesso esperados entre 16:20 e 16:35. A análise de políticas/delegação e a renovação completa das conexões não constam das capturas; nova exportação AD de 16:59:31 confirma a localização e as associações, conforme validação do IAM-010.
+**Origem e validação do complemento de OU:** a análise do inventário **AD** de 15:52:51 identificou departamento Financeiro com `DistinguishedName` ainda em OU Suporte. A [decisão de 16:14](REV-2026-09-28-escopo-reconciliacao.md) definiu a mudança; provas 24–28 mostram antes/depois e retestes entre 16:20 e 16:35. A rotina `arquivar-bruno-final.ps1` importou as coletas de 15:52:51 e 16:59:31 e usou `Compare-Object` por campos, além de conferir o DN esperado: OU Financeiro, mesma identidade e demais campos preservados. [Prova 29 — recorte de Gabriela, método e fontes](../evidencias/sanitizadas/IAM-002/29-conferencia-ou-ad.md). O achado inicial não foi uma exceção automática de OU no comparador cadastral. GPO/delegação e a renovação completa das conexões não constam das capturas.
 
 ## Riscos e reversão
 

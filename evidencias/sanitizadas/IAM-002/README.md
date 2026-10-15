@@ -62,12 +62,14 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 | [22 — Auditoria](22-auditoria-entra-mover.md) | 11:56:12: remoção de Suporte; 11:58:04: cadastro; 11:58:42: inclusão em Financeiro. Todos success. |
 | [20 — Perfil final](20-entra-cadastro-final.png) | Relógio 12:00: mesma conta, EMP0007, Financeiro/Analista Financeiro e Enabled=Yes. |
 | [21 — Grupos finais](21-entra-grupos-finais.png) | Relógio 12:01: GG_FIN_READ na lista sem filtro. |
-| [23 — Comparação final](23-comparacao-final.md) | RH e exportações de 28/09: seis regras conformes, zero exceções no escopo. |
+| [23 — Comparação final](23-comparacao-final.md) | Rotina Python: RH × cadastro Entra e regra × membros dos grupos, por matrícula/Object ID. Seis regras conformes, zero exceções; método e código vinculados. |
 
 <a id="complemento-ou"></a>
 <a id="complemento--movimentação-de-ou-em-2809"></a>
 
 ## 6. Complemento de OU e retestes — 28/09/2026, à tarde
+
+**Origem:** a análise do inventário AD de 15:52:51 encontrou Gabriela em Financeiro, mas ainda em OU Suporte. A decisão de 16:14 definiu alinhar a OU. A comparação cadastral inicial não avaliava OU automaticamente; o achado veio da análise do `DistinguishedName`. [Origem e método da conferência](29-conferencia-ou-ad.md).
 
 | Prova | O que demonstra — UTC−03:00 |
 |---|---|
@@ -76,6 +78,7 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 | [26 — Leitura financeira](26-ou-financeiro-leitura-permitida.png) | 16:29:16: conexão como Gabriela aceita e arquivo lido. |
 | [27 — Criação negada](27-ou-financeiro-criacao-negada.png) | 16:31:32: criação no recurso financeiro negada. |
 | [28 — Suporte negado](28-ou-financeiro-suporte-negado.png) | 16:35:30: leitura do chamado negada. |
+| [29 — Comparação posterior da OU](29-conferencia-ou-ad.md) | Coleta de 16:59:31 comparada à de 15:52:51 em PowerShell: DN em OU Financeiro, identidade e demais campos preservados. Recorte documental de Gabriela, organizado em 15/10. |
 
 ## Limites e origem
 
@@ -85,10 +88,3 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 - Provas 02 e 05 sem horário interno. No AD, horários vêm de Get-Date junto às consultas/testes; no Entra, 14 e 20–21 usam o relógio da estação, e 22 usa timestamps dos eventos. As datas 22/09 exibidas em campos da prova 14 não datam a coleta.
 - A movimentação de OU é demonstrada pelas consultas antes/depois, sem captura do comando. Não foram verificadas GPOs ou ACLs de delegação. A sequência completa de encerramento de conexões não foi capturada; 28 não repete a identidade da conexão.
 - Originais, nomes de origem e hashes preservados na área privada; imagens sem edição. RH integral: `280926/hr_authoritative_source.csv`.
-
-<details>
-<summary>Origem complementar da conferência de OU</summary>
-
-A exportação AD de 16:59:31 confirma OU, GUID e associações de EMP0007: [comparação coletiva — consultar somente a linha de localização de Gabriela](../IAM-010/06b-comparacao-coletiva-ad.md). [Decisão e escopo](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md).
-
-</details>

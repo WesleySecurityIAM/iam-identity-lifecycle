@@ -2,6 +2,17 @@
 
 Nova comparação executada após as mudanças, usando a fonte RH de 28/09 e os CSVs de usuários e membros de 28/09. Correlação por matrícula única EMP0007; membros por Object ID da conta.
 
+## Como e por que foi comparado
+
+A rotina histórica **`fechar-mover-2809.py` usou Python**, com `csv.DictReader`, para calcular esta tabela. O [código de comparação publicado](../../../05-automacao/IAM-002/Compare-MoverEntra.py) foi extraído dessa rotina em 15/10; [entradas e execução](../../../05-automacao/IAM-002/README.md).
+
+1. Ler o [RH vigente de Gabriela](12-fonte-rh-mover-2026-09-28.csv) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.
+2. Comparar `status == ATIVO` com `accountEnabled`, `area` com `department` e `cargo` com `jobTitle`. Conferir o Object ID observado contra o registrado antes da mudança.
+3. Procurar esse Object ID nos dois CSVs de membros. A [regra do Mover](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso) exige ausência em Suporte e presença em Financeiro; essas regras de acesso não vêm apenas do RH.
+4. Comparar esperado e observado nas seis regras. A tabela registra o resultado calculado, para conferir se as mudanças atenderam ao cenário; não é somente uma lista de ações executadas.
+
+## Resultado
+
 | Regra | Esperado | Observado | Resultado |
 |---|---|---|---|
 | Object ID preservado | 2d5bee1a-e26c-47ef-bea2-a55a2fd8614d | 2d5bee1a-e26c-47ef-bea2-a55a2fd8614d | CONFORME |
@@ -12,6 +23,8 @@ Nova comparação executada após as mudanças, usando a fonte RH de 28/09 e os 
 | GG_FIN_READ: associação direta | True | True | CONFORME |
 
 **Resultado: seis verificações conformes, zero exceções nesse escopo.** Estado das exportações de 28/09, sem consulta ao tenant em tempo real.
+
+A conferência de OU ocorreu depois, sobre inventários do **AD** e usando PowerShell: [complemento de OU e comparação posterior](README.md#complemento-ou). Ela não integra estas seis regras do Entra.
 
 ## Fontes e integridade
 
