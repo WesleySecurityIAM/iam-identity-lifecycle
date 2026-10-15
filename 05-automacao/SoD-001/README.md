@@ -1,6 +1,6 @@
 # SoD-001 — demonstração refeita com leitura focada
 
-Mesmo cenário fictício de 29/09/2026: Gabriela não pode manter fornecedores e aprovar orçamento no mesmo escopo. Esta demonstração complementar foi refeita para facilitar a leitura; não é a captura original daquela data. O script histórico de cinco cenários [permanece disponível](../Invoke-SoDLab.ps1).
+Mesmo cenário fictício de 29/09/2026: Gabriela não pode manter fornecedores e aprovar orçamento no mesmo escopo. Esta demonstração foi refeita para facilitar a leitura; não é uma captura original daquela data.
 
 | Arquivo | Papel |
 |---|---|
@@ -17,7 +17,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File '.\05-automacao\SoD-001\
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File '.\05-automacao\SoD-001\Invoke-SoDCase.ps1' -Etapa Depois -PastaSaida $destino
 ```
 
-Abrir `antes.html` e `depois.html` na pasta indicada. `ExecutionPolicy Bypass` vale somente para cada processo iniciado, sem alterar a política persistente. Cada HTML tem um JSON com os mesmos resultados: conflito antes; depois, aprovação preservada e zero conflitos. A data exibida é explicitamente fictícia. Uma nova captura deve ser identificada como demonstração refeita, preservando as capturas históricas.
+Abrir `antes.html` e `depois.html` na pasta indicada. `ExecutionPolicy Bypass` vale somente para cada processo iniciado, sem alterar a política persistente. Cada HTML tem um JSON com os mesmos resultados: conflito antes; depois, aprovação preservada e zero conflitos. A data exibida é explicitamente fictícia; as duas imagens públicas são identificadas como demonstração refeita.
 
 O script exige uma única pessoa/escopo, verifica campos obrigatórios, duplicidades, direitos fora da regra e compatibilidade da decisão. Entradas inválidas interrompem a execução. A etapa Depois recria o antes a partir do CSV e aplica o filtro; não há alteração persistente de permissões, API, ERP ou transferência implementada a outra pessoa. `SEM_CONFLITO` não significa acesso necessário ou aprovado.
 

@@ -1,6 +1,6 @@
 # SoD-001 — relatórios da demonstração refeita
 
-Data **fictícia do cenário: 29/09/2026**. Estes arquivos foram gerados numa demonstração complementar, não na execução histórica das capturas 15–16. As imagens são capturas do HTML produzido pelo script; não são prints de revogação em aplicação real.
+Data **fictícia do cenário: 29/09/2026**. Estes arquivos foram gerados numa demonstração refeita. As duas imagens são capturas do HTML produzido pelo script; não são prints de revogação em aplicação real.
 
 | Etapa | Captura do relatório | Dados calculados | HTML original |
 |---|---|---|---|

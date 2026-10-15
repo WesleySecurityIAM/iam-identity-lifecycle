@@ -736,7 +736,7 @@ As ações e suas provas seguem a mesma ordem do [índice do IAM-010](../evidenc
 | 3 — 28/09, após os tratamentos | Comparar grupos e recertificar | [07 e decisões 08](../evidencias/sanitizadas/IAM-010/README.md#comparacao-e-decisoes-2809). Nove associações departamentais conformes; quinze decisões iniciais. |
 | 4 — 29/09, manhã | Encerrar Diego pelo prazo e retirar vínculos residuais do serviço | [Encerramentos](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego: provas no IAM-004. Serviço: três vínculos retirados, conta mantida desabilitada; decisão simulada registrada após a retirada. |
 | 5 — 29/09, tarde | Implantar o perfil de TI para Isabela no AD | [Cadastro, GG/DL, ACL/SMB e testes](../evidencias/sanitizadas/IAM-010/README.md#cobertura-ti). Leitura permitida e criação negada; Entra continua planejado. |
-| 6 — 29/09, 17:06–17:10 | Detectar e tratar o conflito SoD local | [14–16 — antes/decisão/depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Cinco cenários alternativos, um conflito antes e zero depois; sem alterar direitos reais. |
+| 6 — cenário SoD de 29/09 | Detectar e tratar o conflito SoD local | [Regra e duas provas de antes/depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Demonstração refeita de Gabriela: um conflito antes e zero depois, preservando a aprovação; sem alterar direitos reais. |
 | 7 — 29/09, 17:24 em diante | Coletar novamente, comparar e encerrar | [18 — coleta → 17 — comparação](../evidencias/sanitizadas/IAM-010/README.md#fechamento). Oito associações AD conformes, zero ausentes/excedentes. |
 
 ## Validação e limites
