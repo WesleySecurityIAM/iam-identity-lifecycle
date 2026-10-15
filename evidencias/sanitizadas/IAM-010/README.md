@@ -47,6 +47,7 @@ Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números
 
 | Abrir na ordem | Motivo e resultado |
 |---|---|
+| [RH de TI × matriz anterior: origem da lacuna](00-fontes-rh-e-lacuna-ti.md) | Isabela e Diego já constavam em TI no RH; faltava o perfil de recursos na matriz. Explica por que o escopo foi ampliado. |
 | [Matriz consolidada de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) | Tratar a lacuna de TI, separar contas especiais e definir leitura de procedimentos sem privilégio administrativo pelo cargo. Não altera retroativamente a comparação de 28/09. |
 | [TI/Isabela — cadastro, grupos, recurso e testes](ti-isabela/README.md) | 01–06, entre 16:28 e 16:54: identidade → GG/DL → ACL/SMB → leitura → criação negada → identificação complementar da conexão. Somente AD. |
 | [Decisão complementar de TI](08-recertificacao-simulada.md#cobertura-ti-2909) | Manter as duas novas associações, separadas das quinze relações históricas. Entra e sincronização permanecem planejados. |

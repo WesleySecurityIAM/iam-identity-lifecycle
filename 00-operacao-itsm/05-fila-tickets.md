@@ -4,6 +4,8 @@
 
 [Matriz geral fictícia — departamento/cargo → recurso → grupo/permissão](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos). A [relação com cada ticket](MAT-2026-09-29-acessos-por-sistema.md#uso-nos-tickets) distingue a regra histórica da consolidação de 29/09. A matriz define o esperado; evidências demonstram o observado.
 
+**Quando consultar as fontes:** antes da mudança, leia o fundamento e a versão de RH/regra citada no caso; depois, compare a nova coleta com esse esperado. RH informa vínculo e cadastro; matriz e decisão definem acesso. CSV/JSON são formatos, não indicam sozinhos se o conteúdo é regra, inventário ou resultado. Nos casos técnicos de senha/MFA, sessões e conta de serviço, use a política/finalidade pertinente, sem acrescentar RH sem relação com o controle.
+
 | Ticket | Objetivo | Resultado documentado |
 |---|---|---|
 | [IAM-001](#iam-001) | Provisionar Felipe no Entra | Identidade/grupo comprovados; cadastro complementado em 10/09. |
@@ -125,7 +127,7 @@ Na preparação, Gabriela estava habilitada no AD, EMP0007, Analista de Suporte,
 
 - Preparação do laboratório solicitada por Wesley em 22/09.
 - Fonte anterior de RH: EMP0007 em Suporte, Analista de Suporte, gestora Daniela Alves; preservada como referência inicial.
-- **Evento simulado de RH registrado em 28/09/2026, com vigência em 28/09/2026:** EMP0007 passa a Analista Financeiro, área Financeiro, gestor Carlos Lima. Nova fonte copiada da versão de 23/09; somente cargo, área e gestor de Gabriela foram alterados. Matrícula, admissão, status ATIVO e demais pessoas preservados.
+- **Evento simulado de RH registrado em 28/09/2026, com vigência em 28/09/2026:** o [recorte da fonte RH](../evidencias/sanitizadas/IAM-002/12-fonte-rh-mover-2026-09-28.csv) registra EMP0007 como Analista Financeiro, área Financeiro, gestor Carlos Lima. Nova fonte copiada da versão de 23/09; somente cargo, área e gestor de Gabriela foram alterados. Matrícula, admissão, status ATIVO e demais pessoas preservados.
 - Decisão simulada registrada em 28/09/2026: os responsáveis fictícios de Suporte (Daniela Alves) e Financeiro (Carlos Lima) autorizam transferir EMP0007 para Financeiro, retirando GG_SUP_TICKET antes de conceder GG_FIN_READ, mantendo a identidade existente e sem acumulação dos dois acessos. Execução técnica: Wesley.
 - **Horário fictício da decisão no cenário: 28/09/2026, 10:53 UTC−03:00**, escolhido como 15 minutos antes das 11:08 mostradas no relógio da captura do Entra. Esse horário compõe a simulação; não é timestamp de auditoria nem comprovação de aprovação real prévia. Fonte de RH e decisão não comprovam execução nos diretórios.
 
@@ -214,7 +216,7 @@ Corrigir a incompatibilidade entre RH desligado e conta habilitada com associaç
 
 ## Estado anterior
 
-RH fictício: DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a divergência; não se alega acesso contínuo desde agosto. CSV de 22/09 e perfil de 23/09 mostram habilitação; GG_FIN_READ presente. Telas de papéis de diretório e aplicações retornaram sem atribuições no escopo consultado.
+[Fonte RH usada em 23/09 — somente Carla](../evidencias/sanitizadas/IAM-003/00-fonte-rh-carla.md): DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a divergência; não se alega acesso contínuo desde agosto. CSV de 22/09 e perfil de 23/09 mostram habilitação; GG_FIN_READ presente. Telas de papéis de diretório e aplicações retornaram sem atribuições no escopo consultado.
 
 ## Aprovação e fundamento
 
@@ -242,11 +244,11 @@ Após as mudanças, nova comparação confirmou Carla com habilitação False es
 
 | Ordem | Etapa e propósito | Provas do assunto |
 |---|---|---|
-| 1 | Delimitar o estado anterior | [Perfil, grupo, papéis e aplicações de Carla](../evidencias/sanitizadas/IAM-003/README.md#estado-anterior): links diretos às quatro capturas da pessoa. |
-| 2 | Demonstrar a divergência cadastral | [Exceção EMP0003](../evidencias/sanitizadas/reconciliacao-2026-09-23/excecoes-entra.csv): False esperado / True observado. |
+| 1 | Delimitar o esperado e o estado anterior | [RH de Carla: DESLIGADO](../evidencias/sanitizadas/IAM-003/00-fonte-rh-carla.md) → [perfil, grupo, papéis e aplicações](../evidencias/sanitizadas/IAM-003/README.md#estado-anterior). |
+| 2 | Demonstrar a divergência cadastral | [Exceção EMP0003](../evidencias/sanitizadas/reconciliacao-2026-09-23/excecoes-entra.csv): False esperado pela regra do Leaver / True observado no Entra. |
 | 3 | Decisão e responsabilidade | [Registro e apoio do owner](../evidencias/sanitizadas/IAM-003/README.md#decisao): simulação; a captura 01 não é aprovação de negócio. |
-| 4 | Comprovar as três ações | [05 — auditoria do bloqueio, revogação e retirada do grupo](../evidencias/sanitizadas/IAM-003/05-auditoria-leaver.md). |
-| 5 | Validar estado e tentativa de entrada | [Capturas 02–03 e sign-in 06](../evidencias/sanitizadas/IAM-003/README.md#validacao): perfil bloqueado, grupo ausente e nova entrada negada. |
+| 4 | Comprovar as três ações | [05 — auditoria do bloqueio, revogação e retirada do grupo](../evidencias/sanitizadas/IAM-003/05-auditoria-leaver.md). [Localizar e interpretar a revogação](../evidencias/sanitizadas/IAM-003/05-auditoria-leaver.md#revogacao). |
+| 5 | Validar estado e tentativa de entrada | [02 — perfil bloqueado](../evidencias/sanitizadas/IAM-003/02-carla-conta-desabilitada.png), [03 — sem grupos](../evidencias/sanitizadas/IAM-003/03-carla-sem-grupos.png) e **[06 — entrada negada: log e captura 04](../evidencias/sanitizadas/IAM-003/06-sign-in-bloqueado.md)**. |
 | 6 | Comparar novamente com o RH | [08 — resultado final de Carla](../evidencias/sanitizadas/IAM-003/08-validacao-final.md): habilitação False/False, conforme. O CSV original também contém Gabriela; suas linhas são contexto da execução compartilhada. |
 
 ## Riscos e reversão
@@ -280,7 +282,7 @@ Encerrar o acesso do terceiro no início da manhã de 29/09 por **término da vi
 
 ## Regra e decisão simulada
 
-Wesley definiu o prazo acima para o cenário didático. A fonte de RH vigente registra desligamento em 29/09/2026, mantendo admissão em 01/06/2026. O horário exato de vigência é definido neste ticket. Em 28/09, o status do RH permanece ATIVO; após a vigência, registrar DESLIGADO e conferir os diretórios. Não é uma aprovação corporativa real.
+Wesley definiu o prazo acima para o cenário didático. A [linha de Diego na fonte RH vigente](../evidencias/sanitizadas/IAM-004/00-fonte-rh-encerramento.md) registra desligamento em 29/09/2026, mantendo admissão em 01/06/2026. O horário exato de vigência é definido neste ticket. Em 28/09, o status do RH permanece ATIVO; após a vigência, registrar DESLIGADO e conferir os diretórios. Não é uma aprovação corporativa real.
 
 ## Ações realizadas
 
@@ -711,14 +713,14 @@ Reprodução concluída: acesso persistiu na conexão mantida após remoção, f
 
 Verificar se as concessões continuam necessárias, registrar manter/remover/investigar e tratar os achados. O inventário inicial reuniu nove pessoas do RH, nove contas AD e doze contas Entra, coletadas em horários distintos.
 
-Foram encontrados Bruno sem grupo de Suporte, Gabriela em OU Suporte após o Mover e três vínculos da rotina de serviço já encerrada. A comparação inicial cobria Financeiro, Suporte e RH; a necessidade de TI foi definida na revisão de 29/09.
+Foram encontrados Bruno sem grupo de Suporte, Gabriela em OU Suporte após o Mover e três vínculos da rotina de serviço já encerrada. A comparação inicial cobria Financeiro, Suporte e RH. Na revisão de cobertura de 29/09, [o RH já continha Isabela e Diego em TI, mas a matriz inicial não definia recursos para essa área](../evidencias/sanitizadas/IAM-010/00-fontes-rh-e-lacuna-ti.md). A regra de acesso de TI foi então acrescentada; não foi criado um novo departamento no RH.
 
 ## Aprovação e fundamento
 
 - **28/09:** [regra por sistema e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md), definidos por Wesley às 16:14 UTC−03:00. A nova regra não transforma a ausência anterior de Bruno em descumprimento de uma aprovação antiga.
 - **Recertificação inicial:** [quinze decisões por associação](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md#decisoes-2809), com responsáveis e justificativas: doze manter, três investigar os vínculos do serviço.
 - **29/09, serviço:** decisão de remover formalizada às 12:23:24, depois das capturas de retirada; Carlos Lima como responsável fictício. Não representa aprovação corporativa prévia.
-- **29/09, TI:** [matriz ampliada](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos), por solicitação de Wesley; Fernanda Souza como responsável fictícia. Isabela prevista no AD; Entra planejado para outra etapa.
+- **29/09, TI:** após a lacuna de cobertura, [matriz ampliada](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos), por solicitação de Wesley; Fernanda Souza como responsável fictícia. Isabela ativa recebe perfil de leitura de procedimentos no AD; [decisão e justificativas das duas associações](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md#cobertura-ti-2909). Entra planejado para outra etapa; Diego permanece encerrado pelo prazo.
 
 **SoD-001:** no processo fictício Compras-LAB, a mesma pessoa acumular `FORNECEDOR_MANTER` e `ORCAMENTO_APROVAR` no mesmo escopo é conflito. Tratamento no modelo: manter aprovação de orçamento e retirar manutenção de fornecedor. Leitura via GG_FIN_READ não confere esses direitos.
 
@@ -771,7 +773,7 @@ A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da co
 
 ## Aprovação e fundamento
 
-- EMP0001: Analista Financeiro, Financeiro; gestor Carlos Lima. Matriz: Analista Financeiro → GG_FIN_READ.
+- [RH original — linha EMP0001](../evidencias/sanitizadas/IAM-011/EV-IAM-011-07-rh-2026-08-29.csv): Ana, Analista Financeiro, Financeiro, gestor Carlos Lima. [Regra original do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv): Analista Financeiro → GG_FIN_READ.
 - Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
 - 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
 - Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).

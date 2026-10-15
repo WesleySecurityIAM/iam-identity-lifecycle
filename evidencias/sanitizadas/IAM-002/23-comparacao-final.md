@@ -4,6 +4,8 @@
 
 **Leitura:** fontes e regra → comparação → resultado → limites. A tabela principal reúne seis verificações do Entra; a seção PowerShell identifica separadamente as comparações de cadastro e grupos realizadas sobre as coletas do dia.
 
+**Entradas desta conferência Entra:** um CSV de RH para o esperado + três CSVs observados (usuários, membros de GG_FIN_READ e membros de GG_SUP_TICKET). A regra de acesso vem do ticket/matriz; o Object ID anterior sustenta a checagem de identidade preservada. Portanto, são quatro CSVs contando o RH, não três arquivos totais. A comparação cadastral PowerShell RH × AD × Entra usa outro conjunto de três CSVs, descrito abaixo.
+
 ## Como e por que foi comparado
 
 1. Ler o [RH vigente de Gabriela](12-fonte-rh-mover-2026-09-28.csv) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.

@@ -2,6 +2,8 @@
 
 Em 29/09/2026, Isabela (EMP0009) foi provisionada no AD com leitura de procedimentos por GG → DL → ACL, conforme a [matriz de 29/09](../../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md), sem privilégio administrativo pelo cargo. Sem provisionamento no Entra ou sincronização híbrida nesta etapa.
 
+**Antes das provas técnicas:** leia o [RH e a lacuna da matriz](../00-fontes-rh-e-lacuna-ti.md). Isabela já pertencia a TI; a revisão definiu o perfil de acesso que ainda não estava coberto. A decisão veio antes de avaliar as duas associações novas na recertificação.
+
 | Evidência | Resultado observado |
 |---|---|
 | [01 — Cadastro](01-cadastro.png) | 16:28:36 -03:00: EMP0009 habilitada, TI, Analista de Sistemas, OU TI. ObjectGUID f0136911-ed5a-42e5-842b-c50ad7870161. |

@@ -6,7 +6,7 @@ Carla (EMP0003), desligada no RH fictício: **fechado em 23/09/2026** com conta 
 
 ## 1. Divergência inicial — 23/09/2026
 
-RH: DESLIGADO desde 28/08. A conta foi criada em 21/09 para reproduzir a divergência; não demonstra acesso contínuo desde agosto.
+Comece pela [linha de Carla na fonte de RH de 23/09](00-fonte-rh-carla.md): DESLIGADO desde 28/08. Esse é o fundamento para esperar a conta desabilitada. A conta foi criada em 21/09 para reproduzir a divergência; não demonstra acesso contínuo desde agosto.
 
 | Prova | O que demonstra |
 |---|---|
@@ -25,31 +25,30 @@ Wesley solicitou o tratamento e foi o executor/responsável técnico. Registro �
 [01 — Owner do grupo](01-owner-grupo-financeiro.png): “wesley lima” como único owner; apoio de responsabilidade técnica, sem prova de aprovação de negócio ou papel administrativo do tenant.
 
 <a id="execucao"></a>
-<a id="validacao"></a>
 
-## 3. Ações e conferências — 23/09/2026
+## 3. Ações auditadas — 23/09/2026
 
 | Horário | Prova | O que demonstra |
 |---|---|---|
 | 17:10:26 | [05 — Auditoria](05-auditoria-leaver.md) | AccountEnabled true → false; success. |
-| Relógio 17:15 | [02 — Perfil desabilitado](02-carla-conta-desabilitada.png) | EMP0003, Account enabled=No. |
-| 17:15:36 | [05 — Auditoria](05-auditoria-leaver.md) | Atualização de StsRefreshTokensValidFrom; success. |
+| 17:15:36 | [05 — Revogação e significado do evento](05-auditoria-leaver.md#revogacao) | Update StsRefreshTokenValidFrom Timestamp; success. |
 | 17:17:18 | [05 — Auditoria](05-auditoria-leaver.md) | Remove member from group: Carla/GG_FIN_READ; success. |
-| Relógio 17:18 | [03 — Sem grupos](03-carla-sem-grupos.png) | Not a member of any groups, sem filtro. |
-| 17:29:19 | [06 — Sign-in bloqueado](06-sign-in-bloqueado.md) | AMC PROD, código 50057: conta desabilitada. |
 
 Horários de eventos em UTC−03:00; capturas de perfil sem fuso explícito. Os cinco eventos da auditoria representam três ações.
 
-<details>
-<summary>Apoio visual — mensagem de bloqueio</summary>
+<a id="validacao"></a>
 
-[04 — Mensagem de bloqueio](04-entrada-bloqueada.png): captura de Carla sem horário interno. Identidade, horário e código da tentativa constam do log 06.
+## 4. Validar estado e nova tentativa de entrada
 
-</details>
+| Horário | Prova | O que demonstra |
+|---|---|---|
+| Relógio 17:15 | [02 — Perfil desabilitado](02-carla-conta-desabilitada.png) | EMP0003, Account enabled=No. |
+| Relógio 17:18 | [03 — Sem grupos](03-carla-sem-grupos.png) | Not a member of any groups, sem filtro. |
+| 17:29:19 | [06 — Tentativa negada: log e captura](06-sign-in-bloqueado.md) | AMC PROD, código 50057: conta desabilitada. A mesma página exibe a captura 04 como apoio visual, sem atribuir horário à imagem. |
 
 <a id="comparacao-final"></a>
 
-## 4. Comparação posterior e fechamento — 23/09/2026
+## 5. Comparação posterior e fechamento — 23/09/2026
 
 | Prova | O que demonstra |
 |---|---|

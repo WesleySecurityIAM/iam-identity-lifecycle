@@ -16,7 +16,11 @@ Fonte privada: `InteractiveSignIns_2026-09-22_2026-09-23.json`, três registros.
 
 **Resultado:** entrada bloqueada por conta desabilitada, após as alterações auditadas. Não é interpretada como senha incorreta nem como validação bem-sucedida da senha.
 
-A [captura da mensagem](04-entrada-bloqueada.png) é apoio visual sem horário interno; identidade, hora e código vêm do log.
+## Captura da tentativa bloqueada
+
+![Carla: mensagem de conta bloqueada na tentativa de entrada](04-entrada-bloqueada.png)
+
+**Prova 04:** mostra Carla e a mensagem de bloqueio. A imagem não tem horário interno; a identificação, o horário e o código da tentativa documentada vêm do log acima. [Abrir a captura](04-entrada-bloqueada.png).
 
 O teste não comprova encerramento de toda sessão anterior ou negação de acesso a arquivo financeiro. Conta desabilitada, sem exclusão. Referência: [AADSTS50057](https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50057-user-account-is-disabled).
 

@@ -6,7 +6,7 @@ Diego (EMP0004): vínculo fictício encerrado em **29/09/2026 às 08:00 UTC−03
 
 ## 1. Prazo configurado — 28/09/2026
 
-O ticket registra Wesley como responsável pela decisão didática e Fernanda Souza como responsável de negócio fictícia. RH: ATIVO em 28/09 e DESLIGADO após a vigência de 29/09; admissão de 01/06/2026 preservada. O horário de término vem do ticket.
+O ticket registra Wesley como responsável pela decisão didática e Fernanda Souza como responsável de negócio fictícia. RH: ATIVO em 28/09 e DESLIGADO após a vigência de 29/09; admissão de 01/06/2026 preservada. [Linha de Diego no RH vigente e interpretação do prazo](00-fonte-rh-encerramento.md). O horário de término vem do ticket, não do CSV.
 
 | Prova | O que demonstra — UTC−03:00 |
 |---|---|

@@ -1,6 +1,6 @@
 # IAM-003 — Reconciliação posterior e fechamento
 
-Comparação do RH com a exportação Entra de **23/09/2026**, mantendo a regra inicial e o Object ID da conta de Carla (EMP0003):
+Comparação da [fonte de RH de Carla](00-fonte-rh-carla.md) com a exportação Entra de **23/09/2026**, mantendo a regra inicial e o Object ID da conta (EMP0003):
 
 | Regra | Antes — CSV 22/09 | Depois — CSV 23/09 | Resultado posterior |
 |---|---|---|---|

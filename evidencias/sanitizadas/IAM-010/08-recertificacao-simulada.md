@@ -50,7 +50,18 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 
 ## Atualização de cobertura em 29/09
 
-A [matriz de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) incluiu TI. Isabela foi implementada no AD: [cadastro, grupos e testes](ti-isabela/README.md). Decisão simulada por Wesley, com Fernanda Souza como responsável fictícia: manter Isabela em GG_TI_READ e GG_TI_READ na DL_TI_PROCEDIMENTOS_READ para consulta de procedimentos. São duas associações adicionais às quinze de 28/09. Entra permanece planejado. RH atualizado em 29/09; inventários anteriores preservados. Registro: [IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).
+**Por que ampliar:** a revisão encontrou pessoas de TI no RH, mas a matriz inicial só definia perfis de Financeiro, Suporte e RH. Isabela (EMP0009) já era Analista de Sistemas, ativa, em TI; faltava definir o acesso necessário. [Fontes de RH e lacuna da matriz](00-fontes-rh-e-lacuna-ti.md).
+
+**Decisão simulada de 29/09:** Wesley, com Fernanda Souza como responsável de negócio fictícia, definiu leitura de procedimentos de TI para Isabela no AD. A [matriz ampliada](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) passou a cobrir esse perfil. A ausência anterior era prevista no escopo de 28/09, não uma infração retroativa.
+
+Após [provisionamento e testes de leitura permitida/criação negada](ti-isabela/README.md), a decisão complementar foi:
+
+| Associação AD | Decisão | Justificativa |
+|---|---|---|
+| Isabela → GG_TI_READ | Manter | Consulta de procedimentos necessária à função simulada. |
+| GG_TI_READ → DL_TI_PROCEDIMENTOS_READ | Manter | Encadeamento que concede leitura no recurso; sem privilégio administrativo pelo cargo. |
+
+São **duas associações adicionais** às quinze de 28/09. Entra permanece planejado. Isabela não mudou de área no RH; a atualização de 29/09 registrou o encerramento de Diego. Inventários e regras anteriores foram preservados. A [conferência final AD](17-conferencia-final-ad.md) valida o novo recorte.
 
 ## Conclusão em 29/09
 

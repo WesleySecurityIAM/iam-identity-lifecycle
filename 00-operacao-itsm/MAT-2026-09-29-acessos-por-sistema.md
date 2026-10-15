@@ -19,6 +19,8 @@ Aplicar à pessoa ativa, com necessidade e decisão registradas. Área, cargo ou
 
 AD e Entra são independentes neste recorte. Associação no Entra não comprova acesso ao arquivo SMB. TI não recebe administração, reset de senhas ou acesso a outras áreas pelo cargo.
 
+**Origem da ampliação de TI:** Isabela e Diego já constavam nessa área no RH; faltava o perfil de recursos na matriz inicial. A revisão do IAM-010 definiu a cobertura e implementou Isabela no AD. [Fontes, lacuna e decisão de 29/09](../evidencias/sanitizadas/IAM-010/00-fontes-rh-e-lacuna-ti.md).
+
 <a id="populacao"></a>
 
 ## 2. Pessoas e sistemas previstos — 29/09
