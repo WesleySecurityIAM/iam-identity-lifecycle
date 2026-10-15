@@ -10,7 +10,7 @@
 
 ## Regra e origem
 
-Fonte esperada: cópia preservada em 23/09 do RH vigente de 18/09, com Carla DESLIGADO e Gabriela ATIVO/Suporte. Fonte observada: exportação de usuários do Entra de **22/09**, identificada nos próprios resultados. Correlação por employee_id/employeeId; identificação da conta por Object ID. A execução em 23/09 não atualiza a data do inventário.
+Fonte esperada: [RH completo preservado em 23/09](../fontes-rh/rh-2026-09-23.csv), cópia do RH vigente de 18/09, com Carla DESLIGADO e Gabriela ATIVO/Suporte. Fonte observada: exportação de usuários do Entra de **22/09**, identificada nos próprios resultados. Correlação por employee_id/employeeId; identificação da conta por Object ID. A execução em 23/09 não atualiza a data do inventário.
 
 A habilitação é comparada para as duas pessoas. O departamento é comparado apenas para ATIVO no RH. Cada linha representa uma regra, não uma pessoa distinta. Os CSVs originais foram copiados sem alteração e conferidos contra a captura; o comparador não foi reexecutado nesta organização documental.
 

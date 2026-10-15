@@ -4,7 +4,7 @@
 
 [Matriz geral fictícia — departamento/cargo → recurso → grupo/permissão](MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos). A [relação com cada ticket](MAT-2026-09-29-acessos-por-sistema.md#uso-nos-tickets) distingue a regra histórica da consolidação de 29/09. A matriz define o esperado; evidências demonstram o observado.
 
-**Quando consultar as fontes:** antes da mudança, leia o fundamento e a versão de RH/regra citada no caso; depois, compare a nova coleta com esse esperado. RH informa vínculo e cadastro; matriz e decisão definem acesso. CSV/JSON são formatos, não indicam sozinhos se o conteúdo é regra, inventário ou resultado. Nos casos técnicos de senha/MFA, sessões e conta de serviço, use a política/finalidade pertinente, sem acrescentar RH sem relação com o controle.
+**Quando consultar as fontes:** antes da mudança, leia o fundamento e a versão de RH/regra citada no caso; depois, compare a nova coleta com esse esperado. O recorte relevante dá acesso ao [RH fictício completo da versão utilizada](../evidencias/sanitizadas/fontes-rh/README.md). RH informa vínculo e cadastro; matriz e decisão definem acesso. CSV/JSON são formatos, não indicam sozinhos se o conteúdo é regra, inventário ou resultado. Nos casos técnicos de senha/MFA, sessões e conta de serviço, use a política/finalidade pertinente, sem acrescentar RH sem relação com o controle.
 
 | Ticket | Objetivo | Resultado documentado |
 |---|---|---|
@@ -50,7 +50,7 @@ conforme o registro do atendimento.
 
 ## Aprovação e fundamento
 
-- [Fonte de RH](../evidencias/sanitizadas/IAM-001/EV-IAM-001-01-fonte-rh.csv), versão informada
+- [Fonte de RH — recorte de Felipe e arquivo completo](../evidencias/sanitizadas/IAM-001/00-fonte-rh-felipe.md), versão
   de 2026-08-29: EMP0006, Analista Financeiro, área Financeiro,
   gestor Carlos Lima.
 - [Matriz de acesso](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv):
@@ -81,7 +81,7 @@ Não realizado: o grupo não está integrado a uma aplicação. A evidência com
 
 | Ordem | Etapa e propósito | Provas do assunto |
 |---|---|---|
-| 1 | Definir identidade e acesso esperado | [01 — RH](../evidencias/sanitizadas/IAM-001/EV-IAM-001-01-fonte-rh.csv) e [02 — regra do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv). |
+| 1 | Definir identidade e acesso esperado | [01 — RH: recorte e fonte completa](../evidencias/sanitizadas/IAM-001/00-fonte-rh-felipe.md) e [02 — regra do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv). |
 | 2 | Comprovar provisionamento e associação | [03 — criação da conta](../evidencias/sanitizadas/IAM-001/EV-IAM-001-03-add-user.md) e [04 — inclusão no grupo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-04-add-member-group.md). |
 | 3 | Conferir o cadastro exportado | [05 — matrícula no inventário](../evidencias/sanitizadas/IAM-001/EV-IAM-001-05-inventario-employee-id.md). |
 | 4 | Complementar o cargo em 10/09 | [07 — confirmação no CSV](../evidencias/sanitizadas/IAM-001/EV-IAM-001-07-cargo-inventario-2026-09-10.md). Complemento posterior, sem alterar o fechamento de 04/09. |
@@ -126,8 +126,8 @@ Na preparação, Gabriela estava habilitada no AD, EMP0007, Analista de Suporte,
 ## Aprovação e fundamento
 
 - Preparação do laboratório solicitada por Wesley em 22/09.
-- Fonte anterior de RH: EMP0007 em Suporte, Analista de Suporte, gestora Daniela Alves; preservada como referência inicial.
-- **Evento simulado de RH registrado em 28/09/2026, com vigência em 28/09/2026:** o [recorte da fonte RH](../evidencias/sanitizadas/IAM-002/12-fonte-rh-mover-2026-09-28.csv) registra EMP0007 como Analista Financeiro, área Financeiro, gestor Carlos Lima. Nova fonte copiada da versão de 23/09; somente cargo, área e gestor de Gabriela foram alterados. Matrícula, admissão, status ATIVO e demais pessoas preservados.
+- [Fonte anterior de RH — 23/09](../evidencias/sanitizadas/fontes-rh/rh-2026-09-23.csv): EMP0007 em Suporte, Analista de Suporte, gestora Daniela Alves; preservada como referência inicial.
+- **Evento simulado de RH registrado em 28/09/2026, com vigência em 28/09/2026:** o [recorte da fonte RH, com acesso ao arquivo completo](../evidencias/sanitizadas/IAM-002/12-fonte-rh-mover-2026-09-28.md) registra EMP0007 como Analista Financeiro, área Financeiro, gestor Carlos Lima. Nova fonte copiada da versão de 23/09; somente cargo, área e gestor de Gabriela foram alterados. Matrícula, admissão, status ATIVO e demais pessoas preservados.
 - Decisão simulada registrada em 28/09/2026: os responsáveis fictícios de Suporte (Daniela Alves) e Financeiro (Carlos Lima) autorizam transferir EMP0007 para Financeiro, retirando GG_SUP_TICKET antes de conceder GG_FIN_READ, mantendo a identidade existente e sem acumulação dos dois acessos. Execução técnica: Wesley.
 - **Horário fictício da decisão no cenário: 28/09/2026, 10:53 UTC−03:00**, escolhido como 15 minutos antes das 11:08 mostradas no relógio da captura do Entra. Esse horário compõe a simulação; não é timestamp de auditoria nem comprovação de aprovação real prévia. Fonte de RH e decisão não comprovam execução nos diretórios.
 
@@ -216,7 +216,7 @@ Corrigir a incompatibilidade entre RH desligado e conta habilitada com associaç
 
 ## Estado anterior
 
-[Fonte RH usada em 23/09 — somente Carla](../evidencias/sanitizadas/IAM-003/00-fonte-rh-carla.md): DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a divergência; não se alega acesso contínuo desde agosto. CSV de 22/09 e perfil de 23/09 mostram habilitação; GG_FIN_READ presente. Telas de papéis de diretório e aplicações retornaram sem atribuições no escopo consultado.
+[Fonte RH usada em 23/09 — recorte de Carla e arquivo completo](../evidencias/sanitizadas/IAM-003/00-fonte-rh-carla.md): DESLIGADO desde 28/08. Conta criada em 21/09 para reproduzir a divergência; não se alega acesso contínuo desde agosto. CSV de 22/09 e perfil de 23/09 mostram habilitação; GG_FIN_READ presente. Telas de papéis de diretório e aplicações retornaram sem atribuições no escopo consultado.
 
 ## Aprovação e fundamento
 
@@ -717,6 +717,7 @@ Foram encontrados Bruno sem grupo de Suporte, Gabriela em OU Suporte após o Mov
 
 ## Aprovação e fundamento
 
+- **Fontes de RH:** [28/09 — inventário inicial](../evidencias/sanitizadas/fontes-rh/rh-2026-09-28-mover.csv) e [29/09 — fechamento](../evidencias/sanitizadas/fontes-rh/rh-2026-09-29.csv), com nove pessoas fictícias em cada versão. A antecipação do prazo de Diego tem fonte própria no IAM-004; não substitui o arquivo da coleta inicial.
 - **28/09:** [regra por sistema e encaminhamentos](REV-2026-09-28-escopo-reconciliacao.md), definidos por Wesley às 16:14 UTC−03:00. A nova regra não transforma a ausência anterior de Bruno em descumprimento de uma aprovação antiga.
 - **Recertificação inicial:** [quinze decisões por associação](../evidencias/sanitizadas/IAM-010/08-recertificacao-simulada.md#decisoes-2809), com responsáveis e justificativas: doze manter, três investigar os vínculos do serviço.
 - **29/09, serviço:** decisão de remover formalizada às 12:23:24, depois das capturas de retirada; Carlos Lima como responsável fictício. Não representa aprovação corporativa prévia.
@@ -773,7 +774,7 @@ A fonte de RH de 29/08 registra Ana como PRE_ADMISSAO. A ausência inicial da co
 
 ## Aprovação e fundamento
 
-- [RH original — linha EMP0001](../evidencias/sanitizadas/IAM-011/EV-IAM-011-07-rh-2026-08-29.csv): Ana, Analista Financeiro, Financeiro, gestor Carlos Lima. [Regra original do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv): Analista Financeiro → GG_FIN_READ.
+- [RH original completo — consultar EMP0001](../evidencias/sanitizadas/fontes-rh/rh-2026-08-29.csv): Ana, Analista Financeiro, Financeiro, gestor Carlos Lima. [Recorte de Ana e comparação com o RH de 18/09](../evidencias/sanitizadas/IAM-011/EV-IAM-011-09-atualizacao-rh.md), com acesso aos dois arquivos completos. [Regra original do cargo](../evidencias/sanitizadas/IAM-001/EV-IAM-001-02-regra-matriz.csv): Analista Financeiro → GG_FIN_READ.
 - Preparação bloqueada: aprovação simulada informada pelo operador em 14/09.
 - 15/09/2026, 11:24 UTC−03:00: confirmação simulada da admissão pelo RH e aprovação de Carlos Lima, Gestor Financeiro, registradas por Wesley na fila antes da execução.
 - Atualização do RH para ATIVO informada no fechamento de 15/09. Em 18/09, foi criada e anexada uma nova versão simulada do CSV, preservando a fonte de 29/08 (07–09).

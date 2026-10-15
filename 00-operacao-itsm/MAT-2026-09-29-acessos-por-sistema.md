@@ -2,7 +2,7 @@
 
 **Regra vigente no recorte: 29/09/2026.** Define o acesso esperado das nove pessoas do laboratório. Decisão de desenho simulada no [IAM-010](05-fila-tickets.md#iam-010); não comprova execução. Texto reorganizado em 07/10, sem alterar concessões.
 
-RH informa pessoa, área, cargo e situação. Esta matriz define perfil e sistemas previstos. A decisão do ticket autoriza a execução; suas evidências mostram o resultado.
+RH informa pessoa, área, cargo e situação: [arquivo completo vigente de 29/09](../evidencias/sanitizadas/fontes-rh/rh-2026-09-29.csv). Esta matriz define perfil e sistemas previstos. A decisão do ticket autoriza a execução; suas evidências mostram o resultado.
 
 <a id="catalogo-acessos"></a>
 

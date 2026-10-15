@@ -8,7 +8,7 @@
 
 ## Como e por que foi comparado
 
-1. Ler o [RH vigente de Gabriela](12-fonte-rh-mover-2026-09-28.csv) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.
+1. Ler o [RH vigente de Gabriela — recorte e fonte completa](12-fonte-rh-mover-2026-09-28.md) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.
 2. Traduzir o status **ATIVO** do RH em habilitação esperada **True** e comparar com `accountEnabled`; comparar também `area` com `department` e `cargo` com `jobTitle`. Conferir o Object ID observado contra o registrado antes da mudança.
 3. Procurar esse Object ID nos dois CSVs de membros. A [regra do Mover](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso) exige ausência em Suporte e presença em Financeiro; essas regras de acesso não vêm apenas do RH.
 4. Comparar esperado e observado nas seis regras. A tabela registra o resultado calculado, para conferir se as mudanças atenderam ao cenário; não é somente uma lista de ações executadas.

@@ -10,7 +10,7 @@
 
 ## Objetivo
 
-Definir quem precisa de conta em cada sistema e quais grupos departamentais são esperados. Distinguir acesso ausente/excedente de ausência intencional de provisionamento. A fonte de RH de 28/09 permanece preservada, com nove pessoas; matrícula não implica necessidade automática de conta em todos os sistemas.
+Definir quem precisa de conta em cada sistema e quais grupos departamentais são esperados. Distinguir acesso ausente/excedente de ausência intencional de provisionamento. A [fonte completa de RH da coleta de 28/09](../evidencias/sanitizadas/fontes-rh/rh-2026-09-28-mover.csv) permanece preservada, com nove pessoas; matrícula não implica necessidade automática de conta em todos os sistemas.
 
 ## Origem da decisão: inventário levantado
 

@@ -35,7 +35,7 @@ Carla e Diego não aparecem nos três grupos departamentais Entra; Diego não ap
 
 - AD: usuarios-ad.csv, grupos-ad.csv e associacoes-ad.csv, coleta final de 28/09 às 16:59:31 UTC−03:00.
 - Entra: exportUsers_2026-9-28.csv (arquivo de 12:04), membros Financeiro/Suporte (12:08) e RH (15:50). As fontes não são simultâneas; sem nova consulta ao tenant nesta comparação.
-- RH: nove matrículas da população definida. O script contém a regra explícita da matriz de 28/09; não calcula departamento/habilitação nem o horário de expiração. Esses controles possuem registros próprios.
+- RH: [nove matrículas da população definida em 28/09](../fontes-rh/rh-2026-09-28-mover.csv). O script contém a regra explícita da matriz de 28/09; não calcula departamento/habilitação nem o horário de expiração. Esses controles possuem registros próprios.
 - [Comparador PowerShell](../../../05-automacao/Compare-DepartmentMembership.ps1): lê os arquivos privados, resolve membros por ObjectGUID no AD e id no Entra e usa matrícula para relacionar à matriz. Compara o par matrícula/grupo, incluindo membros inesperados sem matrícula. Não altera diretórios nem grava credenciais.
 
 O script confere colunas, chaves de objeto e matrículas duplicadas, referências de membros e tipos suportados. Arquivo ausente ou vazio interrompe a execução para revisão, em vez de virar resultado sem exceções. Grupo vazio legítimo exigiria tratamento explícito da fonte; este comparador é delimitado aos arquivos e regras desta rodada. A coleta AD só cobre GG_* e DL_*, não todos os grupos do domínio nem grupo primário. Não trata aninhamento dentro dos GG departamentais automaticamente.

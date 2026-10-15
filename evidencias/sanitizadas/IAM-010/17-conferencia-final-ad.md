@@ -8,9 +8,9 @@ A captura 18 mostra coleta, contagens e estado da tarefa. Os resultados abaixo s
 
 - Coleta DC01: 29/09/2026, **17:24:44–17:24:48 UTC−03:00**, pasta `revisao-final-20260929-172444`; [captura do resumo](18-resumo-coleta-final-ad.png).
 - Três CSVs: usuários, grupos e associações diretas; JSON da tarefa IAM-005 e manifesto. Quatro hashes SHA-256 conferidos contra o manifesto; contagens e referências entre GUIDs consistentes.
-- RH vigente de 29/09 (nove pessoas) e [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md), incluindo TI implantada no AD.
+- [RH completo vigente de 29/09](../fontes-rh/rh-2026-09-29.csv) (nove pessoas) e [matriz vigente](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md), incluindo TI implantada no AD.
 - Matrícula única relaciona pessoa e conta; GUIDs relacionam membros e grupos. Comparação bidirecional: esperado sem observado = ausente; observado sem esperado = excedente. Grupos vazios são identificados no catálogo e conferidos contra as associações.
-- Comparação de GUIDs com a coleta AD de 28/09 às 16:59: as nove contas anteriores foram preservadas; Isabela é a décima conta. Sem alteração dos CSVs de origem. Fontes integrais e resultado detalhado preservados em área privada.
+- Comparação de GUIDs com a coleta AD de 28/09 às 16:59: as nove contas anteriores foram preservadas; Isabela é a décima conta. Sem alteração dos CSVs de origem. Inventários integrais AD e resultado detalhado preservados em área privada; o RH fictício completo está vinculado acima.
 
 ## População e controles
 

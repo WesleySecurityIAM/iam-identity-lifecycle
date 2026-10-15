@@ -15,14 +15,13 @@ Esta atualização manual simulada alinha o cadastro ao resultado da ativação 
 
 Validação: comparação por employee_id; nove registros nas duas versões; somente EMP0001/status difere. O arquivo original de 29/08 foi preservado e o fechamento histórico do ticket permanece em 15/09.
 
-<details>
-<summary>Fontes integrais — consulta opcional da origem</summary>
+## Consultar os arquivos completos utilizados
 
 | Versão | Papel |
 |---|---|
-| [RH de 29/08](EV-IAM-011-07-rh-2026-08-29.csv) | Cópia integral preservada do estado histórico. |
-| [RH atualizado em 18/09](EV-IAM-011-08-rh-2026-09-18.csv) | Nove registros fictícios; somente o status de Ana foi alterado. |
+| [RH de 29/08 — prova 07](../fontes-rh/rh-2026-08-29.csv) | Nove registros fictícios; Ana em PRE_ADMISSAO. |
+| [RH atualizado em 18/09 — prova 08](../fontes-rh/rh-2026-09-18.csv) | Nove registros fictícios; somente o status de Ana foi alterado. |
 
-</details>
+As cópias originais das provas [07](EV-IAM-011-07-rh-2026-08-29.csv) e [08](EV-IAM-011-08-rh-2026-09-18.csv) foram mantidas e têm conteúdo idêntico às versões do catálogo. O recorte acima permite revisar Ana; os CSVs completos permitem conferir origem e preservação das demais pessoas.
 
 [Voltar à sequência de evidências de Ana](README.md) · [Ticket IAM-011](../../../00-operacao-itsm/05-fila-tickets.md#iam-011).

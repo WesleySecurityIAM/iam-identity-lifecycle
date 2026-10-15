@@ -34,7 +34,7 @@ Cadeia observada: `gabriela.santos → GG_SUP_TICKET → DL_SUP_TICKET_READ → 
 
 | Prova | O que demonstra |
 |---|---|
-| [12 — RH vigente em 28/09](12-fonte-rh-mover-2026-09-28.csv) | Gabriela: Analista Financeiro, Financeiro, gestor Carlos Lima; EMP0007, admissão e status ATIVO preservados. |
+| [12 — RH vigente em 28/09: recorte e arquivo completo](12-fonte-rh-mover-2026-09-28.md) | Gabriela: Analista Financeiro, Financeiro, gestor Carlos Lima; EMP0007, admissão e status ATIVO preservados. |
 | [13 — Antes no AD](13-gabriela-ad-antes-mover-2026-09-28.png) | 11:01:02: GUID cc17f00e-178a-47be-91be-dab949512b83, EMP0007, Enabled=True, Suporte/Analista de Suporte. Gabriela em GG_SUP_TICKET; GG_FIN_READ retorna somente Felipe. |
 | [14 — Antes no Entra](14-gabriela-entra-antes-mover-2026-09-28.png) | Relógio 11:08: Object ID 2d5bee1a-e26c-47ef-bea2-a55a2fd8614d, EMP0007, Member, Enabled=Yes, Suporte/Analista de Suporte, sincronização local=No. Não mostra grupos. |
 
@@ -89,4 +89,4 @@ Se a prévia da prova 23 apresentar erro ao abrir, [ler o mesmo arquivo em texto
 - Em 22/09, caminho físico informado: `C:\IAM-Lab\Chamados-Suporte`; teste: `\\192.168.21.10\SuporteLab\chamado-teste.txt`. A prova 04 não mostra o valor da variável de caminho nem o mapeamento SMB. A prova 05 não confirma salvamento, troca de senha ou bloqueio anterior; a autenticação posterior funcionou.
 - Provas 02 e 05 sem horário interno. No AD, horários vêm de Get-Date junto às consultas/testes; no Entra, 14 e 20–21 usam o relógio da estação, e 22 usa timestamps dos eventos. As datas 22/09 exibidas em campos da prova 14 não datam a coleta.
 - A movimentação de OU é demonstrada pelas consultas antes/depois, sem captura do comando. Não foram verificadas GPOs ou ACLs de delegação. A sequência completa de encerramento de conexões não foi capturada; 28 não repete a identidade da conexão.
-- Originais, nomes de origem e hashes preservados na área privada; imagens sem edição. RH integral: `280926/hr_authoritative_source.csv`.
+- Originais, nomes de origem e hashes preservados na área privada; imagens sem edição. [RH completo utilizado no Mover](../fontes-rh/rh-2026-09-28-mover.csv), conforme a cópia histórica preservada com o inventário, anterior à revisão do prazo de Diego.

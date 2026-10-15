@@ -4,7 +4,7 @@ Escolha um caso e acompanhe **objetivo → referência/estado anterior → decis
 
 O roteiro principal usa as provas necessárias. Capturas repetidas ou fontes com outras identidades ficam em complementos opcionais, com a utilidade indicada. Os números dos arquivos são preservados; etapas e horários determinam a ordem de leitura.
 
-RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustentam o observado. Preparação, execução e complementos posteriores aparecem identificados por data, sem tratar uma coleta antiga como estado atual.
+RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustentam o observado. Preparação, execução e complementos posteriores aparecem identificados por data, sem tratar uma coleta antiga como estado atual. Nos casos que usam RH, o recorte relevante oferece acesso ao [CSV completo da versão utilizada](sanitizadas/fontes-rh/README.md).
 
 ## Tickets IAM
 

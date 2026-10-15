@@ -71,6 +71,6 @@ São cinco cenários alternativos em dados fictícios; não representam direitos
 
 A coleta vem antes da comparação, mesmo com os identificadores 18 e 17. Não houve nova coleta Entra neste fechamento. O resultado é limitado aos campos e associações exportados; não revalida todas as ACLs, sessões ou privilégios.
 
-CSVs brutos e manifestos permanecem privados. Sem sincronização híbrida executada.
+RH fictício completo disponível nas versões de [28/09 — coleta inicial](../fontes-rh/rh-2026-09-28-mover.csv) e [29/09 — fechamento](../fontes-rh/rh-2026-09-29.csv). Inventários brutos AD/Entra e manifestos permanecem privados. Sem sincronização híbrida executada.
 
 [Voltar ao ticket IAM-010](../../../00-operacao-itsm/05-fila-tickets.md#iam-010).

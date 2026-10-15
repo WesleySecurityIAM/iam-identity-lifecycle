@@ -7,7 +7,7 @@ employee_id,nome,cargo,area,gestor,admissao,desligamento,status
 EMP0003,Carla Mendes,Assistente Financeiro,Financeiro,Carlos Lima,2024-03-18,2026-08-28,DESLIGADO
 ```
 
-Recorte literal de uma linha do arquivo fictício; os demais registros foram omitidos por não pertencerem a este ticket. A fonte integral permanece privada, com SHA-256 `532D4EB71ACF3DCBFE7C8BF94848FE1112F21A58D5501D64695B2F296D45B510`.
+**Consultar a fonte:** [RH completo utilizado em 23/09 — nove pessoas fictícias](../fontes-rh/rh-2026-09-23.csv). A linha acima mantém o foco em Carla; o CSV permite conferir o contexto e a versão. A cópia pública tem o mesmo conteúdo da fonte preservada, SHA-256 `532D4EB71ACF3DCBFE7C8BF94848FE1112F21A58D5501D64695B2F296D45B510`.
 
 | Elemento | Interpretação neste caso |
 |---|---|

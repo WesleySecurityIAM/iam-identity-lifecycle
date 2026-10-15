@@ -4,7 +4,7 @@ Coleta inicial de 28/09/2026, anterior à definição completa do escopo por sis
 
 ## Fontes e população
 
-- RH vigente: 9 pessoas. Fonte de 28/09 preservada na coleta privada.
+- RH vigente: 9 pessoas; [arquivo completo de 28/09 usado nesta coleta](../fontes-rh/rh-2026-09-28-mover.csv), preservado antes da revisão do prazo de Diego.
 - AD: 9 contas, 7 grupos GG/DL e 8 associações diretas. Horário declarado: 28/09/2026 15:52:51 -03:00.
 - Entra: 12 contas na exportação de 12:04; Financeiro e Suporte exportados às 12:08, reaproveitados do Mover. RH coletado à tarde (arquivo recebido às 15:50). Não é uma fotografia simultânea dos dois sistemas.
 - Entra GG_RH_READ: Elisa Martins e Henrique Oliveira; os dois IDs correspondem ao inventário de usuários.
@@ -31,6 +31,6 @@ Ausência observada não significa automaticamente falha de provisionamento: é 
 | Diego | Enabled=True; AccountExpirationDate=01/10/2026 00:00:00 no texto exportado, antes da antecipação do prazo. |
 | Contas sem matrícula | AD: Administrator, Guest, krbtgt, adm.wesley e svc_relatorio_fin. Entra: administrador, duas contas de emergência e convidado. A coleta não verifica owner, papel administrativo ou necessidade atual. |
 
-CSVs originais privados; manifesto com origem, destino e SHA-256.
+Inventários originais AD/Entra privados; manifesto com origem, destino e SHA-256. O RH fictício completo está disponível no link acima.
 
 Etapas posteriores: [decisão de escopo de 28/09](../../../00-operacao-itsm/REV-2026-09-28-escopo-reconciliacao.md), [comparação de grupos](07-comparacao-populacao-grupos.md) e [decisões por associação](08-recertificacao-simulada.md).

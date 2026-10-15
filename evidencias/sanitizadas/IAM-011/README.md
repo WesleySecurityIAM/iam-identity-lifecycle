@@ -17,7 +17,7 @@
 
 O [ticket](../../../00-operacao-itsm/05-fila-tickets.md#iam-011) registra a decisão simulada: preparar a conta bloqueada em 14/09 e confirmar a admissão/ativação em 15/09 às 11:24 UTC−03:00. Essa decisão dá o fundamento do atendimento; logs técnicos não comprovam aprovação real do RH ou gestor.
 
-Fontes para conferir o esperado: [RH original de 29/08 — linha EMP0001](EV-IAM-011-07-rh-2026-08-29.csv) e [regra original do cargo Analista Financeiro](../IAM-001/EV-IAM-001-02-regra-matriz.csv). O [recorte das versões de Ana](EV-IAM-011-09-atualizacao-rh.md) distingue o RH anterior da atualização documental posterior de 18/09.
+Fontes para conferir o esperado: [RH completo de 29/08 — consultar EMP0001](../fontes-rh/rh-2026-08-29.csv) e [regra original do cargo Analista Financeiro](../IAM-001/EV-IAM-001-02-regra-matriz.csv). O [recorte das versões de Ana](EV-IAM-011-09-atualizacao-rh.md) distingue o RH anterior da atualização documental posterior de 18/09 e oferece acesso aos dois arquivos completos.
 
 ## 2. Preparação e teste negativo — 14/09
 
