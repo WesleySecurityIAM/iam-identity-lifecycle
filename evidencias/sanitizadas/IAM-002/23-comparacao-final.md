@@ -1,11 +1,13 @@
-# Conferência final — RH × Entra — 28/09/2026
+# Prova 23 — Conferência final do Mover — 28/09/2026
 
-Conferência documental após as mudanças, usando a fonte RH de 28/09 e os CSVs de usuários e membros de 28/09. Correlação por matrícula única EMP0007; membros por Object ID da conta. Abaixo estão o resultado consolidado e as rotinas PowerShell das reconciliações relacionadas, com seus escopos identificados.
+**Objetivo:** verificar se Gabriela (EMP0007) ficou com o cadastro e os grupos esperados após a transferência para Financeiro. A conferência usa a fonte RH e as exportações de usuários e membros de **28/09/2026**.
+
+**Leitura:** fontes e regra → comparação → resultado → limites. A tabela principal reúne seis verificações do Entra; a seção PowerShell identifica separadamente as comparações de cadastro e grupos realizadas sobre as coletas do dia.
 
 ## Como e por que foi comparado
 
 1. Ler o [RH vigente de Gabriela](12-fonte-rh-mover-2026-09-28.csv) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.
-2. Comparar `status == ATIVO` com `accountEnabled`, `area` com `department` e `cargo` com `jobTitle`. Conferir o Object ID observado contra o registrado antes da mudança.
+2. Traduzir o status **ATIVO** do RH em habilitação esperada **True** e comparar com `accountEnabled`; comparar também `area` com `department` e `cargo` com `jobTitle`. Conferir o Object ID observado contra o registrado antes da mudança.
 3. Procurar esse Object ID nos dois CSVs de membros. A [regra do Mover](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso) exige ausência em Suporte e presença em Financeiro; essas regras de acesso não vêm apenas do RH.
 4. Comparar esperado e observado nas seis regras. A tabela registra o resultado calculado, para conferir se as mudanças atenderam ao cenário; não é somente uma lista de ações executadas.
 
@@ -56,4 +58,4 @@ A rotina auxiliar local `fechar-mover-2809.py` processou os CSVs e escreveu o re
 
 Não compara Manager, OU, papéis, outras concessões, grupos aninhados ou sessões, nem executa correções. Carlos Lima consta do RH, sem validação do atributo Manager. Associação aos grupos não comprova acesso ao recurso.
 
-[Voltar à sequência de evidências](README.md).
+[Voltar à etapa 5 — Entra](README.md#execucao-entra) · [Próxima etapa — OU no AD](README.md#complemento-ou) · [Ticket IAM-002](../../../00-operacao-itsm/05-fila-tickets.md#iam-002).

@@ -62,7 +62,9 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 | [22 — Auditoria](22-auditoria-entra-mover.md) | 11:56:12: remoção de Suporte; 11:58:04: cadastro; 11:58:42: inclusão em Financeiro. Todos success. |
 | [20 — Perfil final](20-entra-cadastro-final.png) | Relógio 12:00: mesma conta, EMP0007, Financeiro/Analista Financeiro e Enabled=Yes. |
 | [21 — Grupos finais](21-entra-grupos-finais.png) | Relógio 12:01: GG_FIN_READ na lista sem filtro. |
-| [23 — Conferência final](23-comparacao-final.md) | RH/regra × cadastro e membros Entra: seis verificações conformes. Fontes e método explícitos; as reconciliações PowerShell posteriores de cadastro/grupos têm resultado e script próprios vinculados na página. |
+| [23 — Conferência final](23-comparacao-final.md) | RH/regra × cadastro e membros Entra: seis verificações conformes. Explica fontes, método, resultado e limites; identifica separadamente as comparações PowerShell de cadastro/grupos. |
+
+Se a prévia da prova 23 apresentar erro ao abrir, [ler o mesmo arquivo em texto](https://github.com/WesleySecurityIAM/iam-identity-lifecycle/raw/refs/heads/main/evidencias/sanitizadas/IAM-002/23-comparacao-final.md).
 
 <a id="complemento-ou"></a>
 <a id="complemento--movimentação-de-ou-em-2809"></a>
