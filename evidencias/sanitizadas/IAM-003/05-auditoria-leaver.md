@@ -8,9 +8,11 @@ Origem: `AuditLogs_2026-09-23.json`, privado, 17 registros. Recorte: cinco event
 | 20:10:26.8450568Z | 17:10:26 | Update user | Mesma alteração de AccountEnabled |
 | 20:15:36.8098081Z | 17:15:36 | Update StsRefreshTokenValidFrom Timestamp | StsRefreshTokensValidFrom: `2026-09-21T14:59:32Z` → `2026-09-23T20:15:36Z` |
 | 20:15:36.8108078Z | 17:15:36 | Update user | Mesma atualização do marco de validade |
-| 20:17:18.2094674Z | 17:17:18 | Remove member from group | Alvos User/Group; Group.DisplayName: `GG_FIN_READ` → null |
+| 20:17:18.2094674Z | 17:17:18 | Remove member from group | Carla (EMP0003) removida de `GG_FIN_READ`; resultado: sucesso (`result=success`). Alvos: usuário e grupo; `Group.DisplayName`: `GG_FIN_READ` → `null`. |
 
 O alvo User corresponde ao perfil e à reconciliação de Carla; a remoção também identifica o grupo. Mesmo ID de executor nos cinco eventos. UPN, IP e identificadores de eventos/correlação permanecem privados.
+
+**Como interpretar a remoção:** ação, alvos e resultado confirmam a retirada da associação de Carla ao grupo financeiro. Nesse evento, `GG_FIN_READ` → `null` registra a remoção do vínculo; não significa exclusão ou renomeação do grupo. A prova sustenta a retirada dessa concessão após o desligamento; a [nova entrada bloqueada](06-sign-in-bloqueado.md) é validada separadamente.
 
 <a id="revogacao"></a>
 
