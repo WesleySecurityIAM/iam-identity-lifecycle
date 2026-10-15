@@ -2,7 +2,7 @@
 
 **Resultado:** três associações residuais retiradas em 29/09/2026, conta mantida desabilitada e GG_FIN_READ preservado na DL financeira. Tratamento do achado do IAM-010; não altera o estado histórico entregue no IAM-005.
 
-Tratamento das três associações apontadas na [recertificação inicial](08-recertificacao-simulada.md#decisoes-2809), pois a rotina já estava encerrada.
+Na [recertificação de 28/09](08-recertificacao-simulada.md#decisoes-2809), os três vínculos receberam a decisão **investigar retenção**: conta e tarefa já estavam desabilitadas, mas era necessário conferir a finalidade e as dependências antes de decidir se os acessos deveriam permanecer. As consultas e a retirada abaixo ocorreram em 29/09.
 
 ## Antes, dependências e depois
 
@@ -12,11 +12,15 @@ Tratamento das três associações apontadas na [recertificação inicial](08-re
 | [12 — Dependências locais](12-servico-dependencias-locais.png) | Relógio visível 12:12 de 29/09; filtro de tarefas por Principal.UserId encontra apenas IAM-005-Relatorio-Financeiro, Disabled; filtro de Win32_Service por StartName não retorna linhas |
 | [13 — Depois](13-servico-depois-remocoes.png) | 12:14:13 UTC−03:00: GG de serviço vazio; DL de escrita vazia; DL de leitura contém somente GG_FIN_READ; conta permanece Enabled=False |
 
-## Registro da decisão simulada — 12:23:24, após as capturas
+<a id="decisao-servico"></a>
 
-Registro em **29/09/2026 12:23:24 -0300**. Responsável de negócio fictício: Carlos Lima. Execução técnica: Wesley. Formalização solicitada pelo operador após apresentação das capturas; o roteiro de retirada havia sido fornecido antes da execução. Não representa aprovação corporativa prévia.
+## Decisão final: retirar os acessos da rotina encerrada
 
-A decisão registra a retirada dos vínculos abaixo, mantendo conta/tarefa desabilitadas e os grupos preservados. Sem necessidade futura de reativação documentada.
+**O que foi decidido e por quê:** retirar os três vínculos abaixo, mantendo conta e tarefa desabilitadas e os grupos preservados. A rotina estava encerrada e não havia necessidade futura de reativação documentada. As consultas de dependências locais estão na prova 12, dentro dos limites descritos nesta página.
+
+**Quem representa cada papel:** Carlos Lima é o responsável financeiro fictício no cenário; Wesley registra a decisão simulada e executa o tratamento. Esta decisão trata somente dos acessos da conta de serviço dentro do IAM-010.
+
+**Quando foi documentado:** em **29/09/2026 às 12:23:24 UTC−03:00**, depois da retirada já demonstrada na captura das **12:14:13**. O roteiro técnico havia sido fornecido antes da execução; a decisão foi registrada no ticket após a apresentação das capturas. Portanto, 12:23:24 é o horário do registro, não uma prova de autorização anterior à retirada. Para comprovar aprovação prévia, seria necessário um registro anterior à execução.
 
 | Associação revisada | Decisão final | Verificação |
 |---|---|---|

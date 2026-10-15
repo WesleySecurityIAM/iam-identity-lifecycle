@@ -67,7 +67,7 @@ São **duas associações adicionais** às quinze de 28/09. Entra permanece plan
 
 <a id="servico-2909"></a>
 
-**Serviço:** três vínculos retirados; conta desabilitada e GG_FIN_READ preservado na DL de leitura. Capturas 12:08–12:14; decisão simulada formalizada às **12:23:24 -0300**, posteriormente. [Provas 11–13](10-servico-remocao-concessoes.md). Consolidado das quinze associações: **12 manter e 3 remover**.
+**Serviço — investigar → remover:** rotina encerrada, sem necessidade futura de reativação documentada; três vínculos retirados, conta desabilitada e GG_FIN_READ preservado na DL de leitura. Carlos Lima representa o responsável financeiro fictício e Wesley executa. Capturas 12:08–12:14; a [decisão simulada foi registrada às 12:23:24 UTC−03:00](10-servico-remocao-concessoes.md#decisao-servico), depois da retirada, sem comprovar aprovação anterior. [Provas 11–13](10-servico-remocao-concessoes.md). Consolidado das quinze associações: **12 manter e 3 remover**.
 
 | Demais verificações | Prova e resultado |
 |---|---|

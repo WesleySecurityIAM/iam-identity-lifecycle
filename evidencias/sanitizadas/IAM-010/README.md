@@ -39,7 +39,7 @@ Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números
 | Assunto e horário | Abrir | O que procurar |
 |---|---|---|
 | Diego — 11:08–11:58 | [IAM-004 — efeito da expiração e encerramento](../IAM-004/README.md#validacao-ad) | Encerramento pelo prazo do terceiro: autenticação AD recusada, bloqueio/revogação Entra e contadores finais. Não foi encerrado por faltar TI na matriz. |
-| Serviço — 12:08–12:14; formalização às 12:23:24 | [10 — Dependências, retirada e registro da decisão](10-servico-remocao-concessoes.md) | 11–13: vínculos presentes → dependências locais → três vínculos ausentes. Conta desabilitada e GG_FIN_READ preservado. A formalização posterior está identificada. |
+| Serviço — 12:08–12:14; decisão registrada às 12:23:24 | [10 — Dependências, retirada e registro da decisão](10-servico-remocao-concessoes.md) | 11–13: vínculos presentes → dependências locais → três vínculos ausentes. Conta desabilitada e GG_FIN_READ preservado. O registro posterior explica o motivo e os responsáveis simulados; não comprova aprovação anterior à execução. |
 
 <a id="cobertura-ti"></a>
 
