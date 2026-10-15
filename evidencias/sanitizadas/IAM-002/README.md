@@ -62,7 +62,7 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 | [22 — Auditoria](22-auditoria-entra-mover.md) | 11:56:12: remoção de Suporte; 11:58:04: cadastro; 11:58:42: inclusão em Financeiro. Todos success. |
 | [20 — Perfil final](20-entra-cadastro-final.png) | Relógio 12:00: mesma conta, EMP0007, Financeiro/Analista Financeiro e Enabled=Yes. |
 | [21 — Grupos finais](21-entra-grupos-finais.png) | Relógio 12:01: GG_FIN_READ na lista sem filtro. |
-| [23 — Comparação final](23-comparacao-final.md) | Rotina Python: RH × cadastro Entra e regra × membros dos grupos, por matrícula/Object ID. Seis regras conformes, zero exceções; método e código vinculados. |
+| [23 — Conferência final](23-comparacao-final.md) | RH/regra × cadastro e membros Entra: seis verificações conformes. Fontes e método explícitos; as reconciliações PowerShell posteriores de cadastro/grupos têm resultado e script próprios vinculados na página. |
 
 <a id="complemento-ou"></a>
 <a id="complemento--movimentação-de-ou-em-2809"></a>
@@ -78,7 +78,7 @@ Regra: retirar GG_SUP_TICKET e conceder GG_FIN_READ; [fundamento e matriz consol
 | [26 — Leitura financeira](26-ou-financeiro-leitura-permitida.png) | 16:29:16: conexão como Gabriela aceita e arquivo lido. |
 | [27 — Criação negada](27-ou-financeiro-criacao-negada.png) | 16:31:32: criação no recurso financeiro negada. |
 | [28 — Suporte negado](28-ou-financeiro-suporte-negado.png) | 16:35:30: leitura do chamado negada. |
-| [29 — Comparação posterior da OU](29-conferencia-ou-ad.md) | Coleta de 16:59:31 comparada à de 15:52:51 em PowerShell: DN em OU Financeiro, identidade e demais campos preservados. Recorte documental de Gabriela, organizado em 15/10. |
+| [29 — Comparação posterior da OU](29-conferencia-ou-ad.md) | Coleta de 16:59:31 comparada à de 15:52:51 em PowerShell: DN em OU Financeiro, identidade e demais campos preservados. Recorte documental de Gabriela, referente a 28/09. |
 
 ## Limites e origem
 

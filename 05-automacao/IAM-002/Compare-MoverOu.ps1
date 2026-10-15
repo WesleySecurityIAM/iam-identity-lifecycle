@@ -1,4 +1,4 @@
-# Recorte de arquivar-bruno-final.ps1, publicado em 15/10/2026.
+# Fontes e regras de 28/09/2026: recorte de arquivar-bruno-final.ps1.
 # Import-Csv / Compare-Object e regra de DN preservados; recorte apenas EMP0007.
 # Le arquivos locais; nao consulta ou altera AD/Entra. Nao compara grupos.
 [CmdletBinding()]

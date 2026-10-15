@@ -1,6 +1,7 @@
-"""Recorte de leitura da comparacao de fechar-mover-2809.py, publicado em 15/10/2026.
+"""Conferencia auxiliar do relatorio de 28/09/2026, derivada de fechar-mover-2809.py.
 
 Preserva as seis regras historicas; acrescenta argumentos e validacao de entrada.
+Nao representa a execucao PowerShell do operador.
 Somente le CSVs locais. Nao consulta nem altera AD/Entra ou arquivos de evidencias.
 """
 import argparse

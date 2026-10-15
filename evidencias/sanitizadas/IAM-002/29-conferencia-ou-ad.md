@@ -1,6 +1,6 @@
 # Gabriela — origem do achado e conferência posterior de OU
 
-**Recorte documental de EMP0007 organizado em 15/10/2026**, a partir dos inventários e da comparação de 28/09. Não é nova coleta. Horários em UTC−03:00.
+**Data dos inventários e da comparação: 28/09/2026.** Recorte documental de EMP0007, sem nova coleta. Horários em UTC−03:00.
 
 ## Origem e decisão
 
@@ -14,7 +14,7 @@ As [provas 24–28](README.md#complemento-ou) mostram a sequência: consulta ant
 
 Após a nova coleta de **16:59:31**, a rotina histórica `arquivar-bruno-final.ps1` usou `Import-Csv` e `Compare-Object` para comparar os inventários AD anterior e posterior, especificando os campos. Além de detectar diferenças, verificou se o DN final de EMP0007 era exatamente o esperado em Financeiro.
 
-O [recorte PowerShell de Gabriela](../../../05-automacao/IAM-002/Compare-MoverOu.ps1), publicado em 15/10, permite consultar essa comparação sem as operações de arquivamento do original. [Como executar](../../../05-automacao/IAM-002/README.md).
+O [recorte PowerShell de Gabriela](../../../05-automacao/IAM-002/Compare-MoverOu.ps1) é uma versão de consulta extraída da rotina histórica, sem as operações de arquivamento do original. [Entradas, execução e limites](../../../05-automacao/IAM-002/README.md).
 
 | Verificação | Antes — 15:52:51 | Depois — 16:59:31 | Conclusão |
 |---|---|---|---|
