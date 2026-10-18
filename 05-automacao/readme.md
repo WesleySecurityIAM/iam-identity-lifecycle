@@ -7,14 +7,14 @@
 | [Invoke-IamReconciliation.ps1](Invoke-IamReconciliation.ps1) | Exercício sintético com Compare-Object; detalhado abaixo. Não consulta os diretórios. |
 | [IAM-002 — comparações do Mover de 28/09](IAM-002/README.md) | PowerShell para cadastro, associações departamentais e localização de Gabriela. Recortes de consulta com fontes, regras e resultados vinculados; processamento auxiliar do relatório identificado à parte. |
 | [Compare-DepartmentMembership.ps1](Compare-DepartmentMembership.ps1) | Comparação histórica dos CSVs e matriz de 28/09, com três grupos departamentais. Não aplicar à matriz ampliada de TI sem adaptação. |
-| [SoD-001 — caso principal e relatórios](SoD-001/README.md) | Demonstração refeita: lê regra, direitos e decisão fictícios; gera JSON/HTML de Gabriela antes/depois. Capturas históricas permanecem identificadas separadamente. |
+| [SoD-001 — caso principal e relatórios](SoD-001/README.md) | Demonstração refeita: lê regra, direitos e decisão fictícios; gera JSON/HTML de Gabriela antes/depois. A navegação do caso usa somente as duas capturas atuais, identificadas como demonstração refeita. |
 | [Export-IamReviewSnapshot.ps1](Export-IamReviewSnapshot.ps1) | Consulta contas AD, grupos GG/DL, membros diretos e tarefa IAM-005; exporta CSVs, estado da tarefa e manifesto. Executar na VM com módulo AD. Não altera o diretório nem calcula conformidade. [Resultado comparado](../evidencias/sanitizadas/IAM-010/17-conferencia-final-ad.md). |
 
 As seções seguintes descrevem somente o primeiro exercício sintético. Os inventários integrais do laboratório permanecem privados.
 
 ### Reprodução e compatibilidade dos arquivos
 
-- **Exemplos públicos:** a reconciliação sintética usa o CSV incluído no repositório; o SoD usa cenários fictícios definidos no próprio script. Os resultados esperados estão documentados.
+- **Exemplos públicos:** a reconciliação sintética usa o CSV incluído no repositório; o SoD lê as três entradas públicas `regra.json`, `acessos.csv` e `decisao.json`, descritas no [caso SoD-001](SoD-001/README.md). Os resultados esperados estão documentados.
 - **Comparador de 28/09:** exige os arquivos históricos indicados no código. Em `associacoes-ad.csv`, espera `Grupo`, `ObjectGUID` e `ObjectClass`, sendo os dois últimos relativos ao membro.
 - **Coletor de 29/09:** exporta `Grupo`, `GrupoGUID`, `Membro`, `MembroGUID` e `TipoMembro`. Essa saída não é entrada direta do comparador histórico: mudaram o formato e a matriz, que passou a incluir TI. Apenas renomear colunas não atualiza as regras.
 - **Conferência final da v0.5:** o relatório público registra fontes, regras e resultados; as entradas integrais e a comparação detalhada permanecem privadas. Portanto, esse resultado pode ser examinado documentalmente, mas não reproduzido apenas com os arquivos públicos.
