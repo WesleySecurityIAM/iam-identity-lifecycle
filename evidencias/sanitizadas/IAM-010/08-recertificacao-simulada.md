@@ -46,6 +46,14 @@ Cada linha corresponde a uma associação observada, não a uma pessoa adicional
 | Diego — EMP0004 | AD e Entra | Encerramento definido para 29/09 às 08:00 UTC−03:00 no IAM-004. Configuração/efeito do prazo e encerramento Entra precisam de evidência própria; a coleta de 16:59 antecede essa definição. |
 | EMP0009 e demais ausências previstas | Conforme matriz | Não provisionar por ausência isolada. Rever escopo se surgir necessidade de negócio. |
 
+## Encaminhamentos de 29/09
+
+**Diego — 11:08–11:58.** A autenticação no AD foi recusada por expiração. No Entra, os logs registraram o bloqueio e a revogação. [IAM-004 — testes e conferência final](../IAM-004/README.md#validacao-ad).
+
+<a id="servico-2909"></a>
+
+**Conta de serviço — 12:08–12:23.** A revisão de 28/09 deixou três vínculos para investigar. Em 29/09, Wesley conferiu a tarefa desabilitada e os serviços locais. Como a rotina terminou, retirou os três vínculos e verificou que a conta continuava desabilitada. A decisão simulada, atribuída a Carlos Lima, foi registrada às **12:23:24**, após a captura do resultado às **12:14:13**. Das quinze associações originais, doze foram mantidas e três removidas. [Antes, dependências, retirada e registro da decisão](10-servico-remocao-concessoes.md).
+
 <a id="cobertura-ti-2909"></a>
 
 ## Atualização de cobertura em 29/09
@@ -65,13 +73,8 @@ São **duas associações adicionais** às quinze de 28/09. Entra permanece plan
 
 ## Conclusão em 29/09
 
-<a id="servico-2909"></a>
-
-**Serviço — investigar → remover:** rotina encerrada, sem necessidade futura de reativação documentada; três vínculos retirados, conta desabilitada e GG_FIN_READ preservado na DL de leitura. Carlos Lima representa o responsável financeiro fictício e Wesley executa. Capturas 12:08–12:14; a [decisão simulada foi registrada às 12:23:24 UTC−03:00](10-servico-remocao-concessoes.md#decisao-servico), depois da retirada, sem comprovar aprovação anterior. [Provas 11–13](10-servico-remocao-concessoes.md). Consolidado das quinze associações: **12 manter e 3 remover**.
-
 | Demais verificações | Prova e resultado |
 |---|---|
-| Diego — encerramento pelo prazo | [IAM-004](../IAM-004/README.md): encerramento concluído; contadores de concessões zero. |
 | SoD em dados separados | [SoD-001](14-sod-resultado.md): um conflito antes e zero depois. |
 | Conferência final AD | [17](17-conferencia-final-ad.md), após a coleta das 17:24:44–17:24:48: oito associações conformes; zero ausentes/excedentes; cadastro e retirada dos vínculos de serviço conferidos. |
 

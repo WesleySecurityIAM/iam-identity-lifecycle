@@ -4,7 +4,7 @@
 
 Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números dos arquivos são identificadores.
 
-**Etapas:** [Inventário e regra](#1-inventariar-e-definir-o-esperado--2809) · [Tratamentos](#2-tratar-os-achados-e-testar--2809-antes-da-comparação-final-do-dia) · [Comparação e decisões](#3-comparar-os-grupos-e-registrar-decisões--2809) · [Encerramentos](#4-concluir-os-encaminhamentos-de-encerramento--2909-manhã) · [TI](#5-completar-a-cobertura-de-ti-e-validar-isabela--2909) · [SoD](#sod) · [Fechamento](#7-coletar-novamente-comparar-e-encerrar--2909).
+**Etapas:** [Inventário e regra](#inventario-e-regra) · [Tratamentos](#tratamentos-2809) · [Comparação e decisões](#comparacao-e-decisoes-2809) · [Encerramentos](#encerramentos-2909) · [TI](#cobertura-ti) · [SoD](#sod) · [Fechamento](#fechamento).
 
 <a id="inventario-e-regra"></a>
 
@@ -35,8 +35,9 @@ Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números
 | [08 — Decisões iniciais por associação](08-recertificacao-simulada.md#decisoes-2809) | Quinze associações: doze manter e três investigar, estas da rotina encerrada. Não é uma lista de quinze pessoas. |
 
 <a id="encerramentos-2909"></a>
+<a id="4-concluir-os-encaminhamentos-de-encerramento--2909-manhã"></a>
 
-## 4. Concluir os encaminhamentos de encerramento — 29/09, manhã
+## 4. Encerramentos de Diego e da rotina de serviço — 29/09, 11:08–12:23
 
 | Assunto e horário | Abrir | O que procurar |
 |---|---|---|
@@ -50,7 +51,7 @@ Horários em Brasília (UTC−03:00). A ordem abaixo segue os fatos; os números
 | Abrir na ordem | Motivo e resultado |
 |---|---|
 | [RH de TI × matriz anterior: origem da lacuna](00-fontes-rh-e-lacuna-ti.md) | Isabela e Diego já constavam em TI no RH; faltava o perfil de recursos na matriz. Explica por que o escopo foi ampliado. |
-| [Matriz consolidada de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md) | Tratar a lacuna de TI, separar contas especiais e definir leitura de procedimentos sem privilégio administrativo pelo cargo. Não altera retroativamente a comparação de 28/09. |
+| [Perfil de TI na matriz de 29/09](../../../00-operacao-itsm/MAT-2026-09-29-acessos-por-sistema.md#catalogo-acessos) | A linha TI / Analista de Sistemas define leitura de ProcedimentosTI no AD. No Entra, o provisionamento de Isabela ficou para o piloto híbrido. |
 | [TI/Isabela — cadastro, grupos, recurso e testes](ti-isabela/README.md) | 01–06, entre 16:28 e 16:54: identidade → GG/DL → ACL/SMB → leitura → criação negada → identificação complementar da conexão. Somente AD. |
 | [Decisão complementar de TI](08-recertificacao-simulada.md#cobertura-ti-2909) | Manter as duas novas associações, separadas das quinze relações históricas. Entra e sincronização permanecem planejados. |
 

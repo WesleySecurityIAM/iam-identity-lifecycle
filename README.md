@@ -16,7 +16,7 @@ Portfólio prático de **Wesley**, com foco em **estágio e posições de entrad
 
 - **Provisionamento e autenticação no Entra ID:** [criação da conta e associação ao grupo](evidencias/sanitizadas/IAM-001/README.md) → [recuperação da autenticação](evidencias/sanitizadas/IAM-006/README.md) → [verificação do cadastro e uso de MFA](evidencias/sanitizadas/IAM-007/README.md), acompanhando Felipe em três tickets relacionados.
 - **Governança:** [Reconciliação, recertificação e SoD](evidencias/sanitizadas/IAM-010/README.md) — comparação com a matriz, decisão por acesso, retirada de concessões residuais e conflito detectado/tratado em dados fictícios.
-- **Diagnóstico:** [Acesso após remoção de grupo](evidencias/sanitizadas/IAM-009/README.md) — leitura persistiu na conexão SMB; reconexão negou acesso e restauração foi validada.
+- **Diagnóstico:** Após a remoção do grupo, Felipe ainda leu o arquivo na conexão SMB existente. A nova conexão foi aceita, mas a leitura foi negada. Ao recuperar o grupo e reconectar, Felipe voltou a ler. [IAM-009 — capturas em ordem](evidencias/sanitizadas/IAM-009/README.md).
 
 Os casos ligam o resultado a capturas, extratos de logs ou CSVs. [Automação PowerShell e reprodução](05-automacao/readme.md): exercício sintético de reconciliação, comparador de grupos, coletor AD e demonstração SoD, cada um com seu escopo.
 

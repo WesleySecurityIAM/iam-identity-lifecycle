@@ -1,17 +1,14 @@
 # Prova 23 — Conferência final do Mover — 28/09/2026
 
-**Objetivo:** verificar se Gabriela (EMP0007) ficou com o cadastro e os grupos esperados após a transferência para Financeiro. A conferência usa a fonte RH e as exportações de usuários e membros de **28/09/2026**.
+**Gabriela (EMP0007) após o Mover de 28/09:** as seis verificações do Entra ficaram conformes. A mesma conta passou a ter o cadastro de Financeiro e a associação prevista. Para conferir, use a tabela de [esperado e observado](#resultado).
 
-**Leitura:** fontes e regra → comparação → resultado → limites. A tabela principal reúne seis verificações do Entra; a seção PowerShell identifica separadamente as comparações de cadastro e grupos realizadas sobre as coletas do dia.
-
-**Entradas desta conferência Entra:** um CSV de RH para o esperado + três CSVs observados (usuários, membros de GG_FIN_READ e membros de GG_SUP_TICKET). A regra de acesso vem do ticket/matriz; o Object ID anterior sustenta a checagem de identidade preservada. Portanto, são quatro CSVs contando o RH, não três arquivos totais. A comparação cadastral PowerShell RH × AD × Entra usa outro conjunto de três CSVs, descrito abaixo.
+Esta comparação usa um CSV do RH e três exportações do Entra (usuários, membros de Financeiro e membros de Suporte). Já a conferência cadastral em PowerShell usa três CSVs ao todo, um de cada sistema de origem (RH, AD e Entra). [Conferências em PowerShell](#powershell).
 
 ## Como e por que foi comparado
 
 1. Ler o [RH vigente de Gabriela — recorte e fonte completa](12-fonte-rh-mover-2026-09-28.md) e o CSV de usuários exportado **depois** das alterações. Exigir uma correspondência de EMP0007 em cada fonte.
 2. Traduzir o status **ATIVO** do RH em habilitação esperada **True** e comparar com `accountEnabled`; comparar também `area` com `department` e `cargo` com `jobTitle`. Conferir o Object ID observado contra o registrado antes da mudança.
 3. Procurar esse Object ID nos dois CSVs de membros. A [regra do Mover](../../../00-operacao-itsm/05-fila-tickets.md#iam-002-regra-acesso) exige ausência em Suporte e presença em Financeiro; essas regras de acesso não vêm apenas do RH.
-4. Comparar esperado e observado nas seis regras. A tabela registra o resultado calculado, para conferir se as mudanças atenderam ao cenário; não é somente uma lista de ações executadas.
 
 ## Resultado
 
@@ -24,9 +21,7 @@
 | GG_SUP_TICKET: associação direta | False | False | CONFORME |
 | GG_FIN_READ: associação direta | True | True | CONFORME |
 
-**Resultado: seis verificações conformes, zero exceções nesse escopo.** Estado das exportações de 28/09, sem consulta ao tenant em tempo real.
-
-A conferência de OU ocorreu depois, sobre inventários do **AD** e usando PowerShell: [complemento de OU e comparação posterior](README.md#complemento-ou). Ela não integra estas seis regras do Entra.
+As seis linhas retratam as exportações de 28/09. A OU foi conferida à tarde, nos inventários do AD. [Mudança de OU e retestes](README.md#complemento-ou).
 
 <a id="powershell"></a>
 

@@ -10,7 +10,7 @@ RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustent
 
 | Caso | Pergunta que orienta a leitura | Roteiro das provas |
 |---|---|---|
-| IAM-001 — Felipe, provisionamento | A conta e o grupo previstos foram criados? | [RH/matriz → criação → associação → conferência cadastral](sanitizadas/IAM-001/README.md) |
+| IAM-001 — Felipe, provisionamento | A conta foi criada e Felipe foi incluído no grupo previsto? | [RH/matriz → criação da conta → associação ao grupo → conferência cadastral](sanitizadas/IAM-001/README.md) |
 | IAM-002 — Gabriela, Mover | O acesso antigo foi retirado e o novo validado? | [Preparação → RH/matriz → antes/depois → testes → comparação; OU como complemento](sanitizadas/IAM-002/README.md) |
 | IAM-003 — Carla, Leaver | A divergência com RH desligado foi corrigida? | [Estado anterior → exceção → bloqueio/revogação/remoção → nova entrada e comparação](sanitizadas/IAM-003/README.md) |
 | IAM-004 — Diego, terceiro | O término do prazo teve efeito nos dois sistemas independentes? | [Prazo AD → autenticação expirada → bloqueio/revogação Entra → estado final](sanitizadas/IAM-004/README.md) |
@@ -18,7 +18,7 @@ RH, matriz e decisão definem o esperado. Capturas, logs e comparações sustent
 | IAM-006 — Felipe, login | O que foi observado, tratado e validado na autenticação? | [Evidência inicial → eventos de senha → login posterior; ServiceNow como complemento](sanitizadas/IAM-006/README.md) |
 | IAM-007 — Felipe, MFA | Método cadastrado e uso efetivo foram demonstrados? | [Cadastro → uso → consulta posterior do método](sanitizadas/IAM-007/README.md) |
 | IAM-008 — Felipe, acesso direto | Era necessário adicionar uma permissão individual? | [Associação → encadeamento → ACL → decisão de manter acesso por grupo](sanitizadas/IAM-008/README.md) |
-| IAM-009 — Felipe, contexto SMB | Por que a leitura persistiu após retirar o grupo? | [Remoção → leitura persistente → reconexão negada → restauração e reteste](sanitizadas/IAM-009/README.md) |
+| IAM-009 — Felipe, contexto SMB | O que mudou ao abrir uma nova conexão após retirar Felipe do grupo? | [Leitura na conexão anterior → nova conexão aceita, leitura negada → grupo restaurado e leitura permitida](sanitizadas/IAM-009/README.md) |
 | IAM-010 — Recertificação e SoD | Quem precisa manter acesso e quais achados foram tratados? | [Inventário/regra → tratamentos e comparação de 28/09 → decisões → encerramentos/TI → SoD → fechamento](sanitizadas/IAM-010/README.md) |
 | IAM-011 — Ana, Joiner | A entrada foi preparada e depois ativada? | [Pré-admissão → teste bloqueado → ativação/grupo → login/MFA; RH posterior identificado](sanitizadas/IAM-011/README.md) |
 

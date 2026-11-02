@@ -20,7 +20,7 @@ O roteiro principal contém as provas necessárias ao assunto. Captura e log per
 | IAM-006 | Interrupções e alterações intercaladas por horário. O evento C ocorreu depois do reset, antes da troca final. ServiceNow continua separado como documentação retrospectiva. |
 | IAM-007 | Cadastro, uso e consulta posterior. Novo recorte documental abre somente o evento necessário ao uso de MFA, sem os outros logins do atendimento de senha. |
 | IAM-008 | Referência funcional de 14/09 identificada; cadeia usuário/GG/DL/ACL consultada em 17/09 fundamenta a decisão sem novo teste. |
-| IAM-009 | Antes, retirada, leitura persistente, reconexão negada, restauração e reteste. Seis capturas do mesmo exercício, ordenadas pelo horário dos comandos. |
+| IAM-009 | Antes, retirada, leitura persistente, nova conexão aceita com leitura negada, restauração e reteste. Seis capturas do mesmo exercício, ordenadas pelo horário dos comandos. |
 | IAM-010 | Inventário/regra, tratamentos de 28/09, comparação/decisões, encerramentos de 29/09, TI, SoD e fechamento. Testes de Bruno separados da comparação coletiva. Coleta 18 precede comparação 17. |
 | IAM-011 | Criação antes da consulta de estado; tentativa interrompida entre inclusão no grupo e troca de senha. Validação positiva aparece uma vez no roteiro; RH de 18/09 é complemento. |
 | Emergência | MFA e operações intercalados por horário. Recorte de eventos mantém somente as duas contas e o grupo validado; ensaio em outro objeto é consulta opcional. |

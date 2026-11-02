@@ -16,7 +16,7 @@
 | [IAM-006](#iam-006) | Restabelecer autenticação | Alteração/redefinição de senha e entradas posteriores confirmadas. |
 | [IAM-007](#iam-007) | Verificar cadastro e uso de MFA | Método cadastrado e uso comprovados separadamente. |
 | [IAM-008](#iam-008) | Avaliar acesso direto | Fechado: acesso por grupo mantido; permissão individual não concedida. |
-| [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Fechado: acesso persistiu; reconexão negou leitura; restauração comprovada. |
+| [IAM-009](#iam-009) | Investigar acesso após remoção de grupo | Leitura persistiu na conexão anterior. Nova conexão aceita, leitura negada. Leitura restabelecida após restaurar o grupo e reconectar. |
 | [IAM-010](#iam-010) | Recertificar acessos e avaliar conflito SoD | Fechado em 29/09: decisões e tratamentos registrados; TI, SoD e conferência final AD concluídos no escopo documentado. |
 | [IAM-011](#iam-011) | Preparar e ativar Ana | Pré-admissão bloqueada; ativação, grupo, troca de senha e entrada com MFA. |
 
@@ -184,7 +184,7 @@ Em 28/09, Suporte ausente no AD às 11:33:46 e leitura negada às 11:36:50. Cada
 | 5 — 28/09, 11:56 em diante | Executar separadamente no Entra e conferir após as mudanças | [22 → 20–21 → 23 — auditoria, consultas e conferência final](../evidencias/sanitizadas/IAM-002/README.md#execucao-entra). Os eventos auditados antecedem as telas; seis verificações conformes. Na prova 23, as comparações PowerShell posteriores estão identificadas como complemento. |
 | 6 — 28/09, 15:52–16:59 | Identificar a OU no inventário AD, decidir o alinhamento, mover, retestar e comparar | [24–29 — OU antes/depois, testes e comparação PowerShell](../evidencias/sanitizadas/IAM-002/README.md#complemento-ou). Complemento posterior ao Mover da manhã, preservando a identidade e o grupo. |
 
-**Origem e validação do complemento de OU:** a análise do inventário **AD** de 15:52:51 identificou departamento Financeiro com `DistinguishedName` ainda em OU Suporte. A [decisão de 16:14](REV-2026-09-28-escopo-reconciliacao.md) definiu a mudança; provas 24–28 mostram antes/depois e retestes entre 16:20 e 16:35. A rotina `arquivar-bruno-final.ps1` importou as coletas de 15:52:51 e 16:59:31 e usou `Compare-Object` por campos, além de conferir o DN esperado: OU Financeiro, mesma identidade e demais campos preservados. [Prova 29 — recorte de Gabriela, método e fontes](../evidencias/sanitizadas/IAM-002/29-conferencia-ou-ad.md). O achado inicial não foi uma exceção automática de OU no comparador cadastral. GPO/delegação e a renovação completa das conexões não constam das capturas.
+Na etapa 6, a leitura do `DistinguishedName` revelou que Gabriela ainda estava na OU Suporte. Após a [decisão de 16:14](REV-2026-09-28-escopo-reconciliacao.md), a comparação em PowerShell confirmou a OU Financeiro para o mesmo ObjectGUID. [Prova 29 — inventários antes/depois e método de comparação](../evidencias/sanitizadas/IAM-002/29-conferencia-ou-ad.md).
 
 ## Riscos e reversão
 
@@ -734,7 +734,7 @@ As ações e suas provas seguem a mesma ordem do [índice do IAM-010](../evidenc
 | 1 — 28/09 | Inventariar e definir o esperado | [01 — fontes e regra](../evidencias/sanitizadas/IAM-010/README.md#inventario-e-regra). Delimita população e sistemas. |
 | 2 — 28/09, 16:20–16:59 | Alinhar OU de Gabriela; conceder Suporte a Bruno e testar | [Tratamentos individuais e comparação coletiva](../evidencias/sanitizadas/IAM-010/README.md#tratamentos-2809). Bruno: grupo incluído, leitura permitida/criação negada; nova coleta confirma sua associação e a OU de Gabriela. |
 | 3 — 28/09, após os tratamentos | Comparar grupos e recertificar | [07 e decisões 08](../evidencias/sanitizadas/IAM-010/README.md#comparacao-e-decisoes-2809). Nove associações departamentais conformes; quinze decisões iniciais. |
-| 4 — 29/09, manhã | Encerrar Diego pelo prazo e retirar vínculos residuais do serviço | [Encerramentos](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego: provas no IAM-004. Serviço: três vínculos retirados, conta mantida desabilitada; decisão simulada registrada após a retirada. |
+| 4 — 29/09, 11:08–12:23 | Validar o encerramento de Diego e retirar os vínculos residuais da conta de serviço | [Encerramentos](../evidencias/sanitizadas/IAM-010/README.md#encerramentos-2909). Diego encerrou pelo prazo. A conta de serviço continuou desabilitada após a retirada dos três vínculos. A decisão simulada foi documentada depois da retirada. |
 | 5 — 29/09, tarde | Implantar o perfil de TI para Isabela no AD | [Cadastro, GG/DL, ACL/SMB e testes](../evidencias/sanitizadas/IAM-010/README.md#cobertura-ti). Leitura permitida e criação negada; Entra continua planejado. |
 | 6 — cenário SoD de 29/09 | Detectar e tratar o conflito SoD local | [Regra e duas provas de antes/depois](../evidencias/sanitizadas/IAM-010/README.md#sod). Demonstração refeita de Gabriela: um conflito antes e zero depois, preservando a aprovação; sem alterar direitos reais. |
 | 7 — 29/09, 17:24 em diante | Coletar novamente, comparar e encerrar | [18 — coleta → 17 — comparação](../evidencias/sanitizadas/IAM-010/README.md#fechamento). Oito associações AD conformes, zero ausentes/excedentes. |
